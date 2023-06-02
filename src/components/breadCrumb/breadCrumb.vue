@@ -13,21 +13,21 @@ import { watch, ref } from 'vue'
 const route = useRoute()
 
 interface breadCrumbsType {
-  title: String
-  path: String
+  title: string
+  path: string
 }
 //用于渲染面包屑导航的数组
 const breadCrumbs = ref(<breadCrumbsType[]>[])
 
 //监听路由变化，当路由改变时，切割路由形成面包屑
 watch(() => route, (newValue) => {
-  const moduleName: String = newValue.path.split('/')[1]
+  const moduleName: string = newValue.path.split('/')[1]
   breadCrumbs.value = []
   newValue.matched.forEach(item => {
     if (item.path.split('/')[1] == moduleName) {
       if (!item.meta.hideBreadcrumb) {
         breadCrumbs.value.push({
-          title: item.meta.title as String,
+          title: item.meta.title as string,
           path: item.path
         })
       }

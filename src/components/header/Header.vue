@@ -26,7 +26,6 @@
 
 <script setup lang="ts">
 import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue';
-import { ref } from 'vue'
 const props = defineProps({
   //菜单栏的展开和折叠
   isCollapse: {
@@ -34,8 +33,6 @@ const props = defineProps({
     tyle: Boolean
   }
 })
-// 切换主题色
-const themeSwitch = ref(false)
 const emits = defineEmits(['update:isCollapse'])
 /**
  * 点击图标后，通过自定义事件，更新折叠状态
