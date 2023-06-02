@@ -8,7 +8,7 @@ const HOME: RouterType = {
     title: '首页',
     hideBreadcrumb: false,
     hideMenu: false,
-    keepChild: true,
+    keepChild: true
   },
   children: [
     {
@@ -21,10 +21,10 @@ const HOME: RouterType = {
         hideMenu: true,
         hideBreadcrumb: true,
         hideChildrenInMenu: true,
-        keepChild: false,
+        keepChild: false
       },
-      children: [],
-    },
-  ],
+      children: []
+    }
+  ]
 }
 export default HOME
