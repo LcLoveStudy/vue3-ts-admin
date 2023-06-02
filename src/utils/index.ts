@@ -3,7 +3,7 @@ import { deepFreeze, objectCopy } from './object'
 import { getToken, setToken, removeToken } from './token'
 import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
-import { dateFormat } from './obj/dateFormat'
+import { dateFormat } from './dateFormat'
 import getCopy from './copy'
 export {
   arrNoRepeat,
@@ -17,5 +17,5 @@ export {
   getCopy,
   objectCopy,
   dateFormat,
-  Percentage,
+  Percentage
 }
