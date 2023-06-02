@@ -1,0 +1,211 @@
+:root {
+  --theme-color: #000;
+  /* 被选中和鼠标经过的侧边菜单的字体颜色 */
+  --menu-item-active: #2089df;
+  /* 当前选中的子菜单背景色 */
+  --menu-item-active-bgc: rgba(73, 166, 242, 0.1);
+  /* 侧边菜单每项的高度 */
+  --menu-item-height: 40px;
+  /* 头部和侧边栏的背景色的颜色 */
+  --container-bgc: #fff;
+  /* 鼠标经过时的颜色 */
+  --hover-backgroundColor: #eee;
+  /* 主体部分的背景颜色 */
+  --container-main-bgc: #eceff4;
+}
+
+// 用于存放公共样式
+//字体水平居中
+.text-center {
+  text-align: center;
+}
+//单行文本溢出省略号
+.text-ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//鼠标经过变小手
+.hover-pointer{
+  cursor: pointer;
+}
+//鼠标经过禁止
+.hover-not-allow{
+  cursor: not-allowed;
+}
+//字体加粗
+.font-bold {
+  font-weight: bold;
+}
+
+//循环创建12-25的字体大小
+.fontSize(@i) when(@i <= 12) {
+  .fs-@{i} {
+    font-size: @i + 0px;
+  }
+  .fontSize((@i + 1));
+}
+.fontSize(12);
+
+//循环创建1-20的margin-left
+.marginLeft(@i) when(@i <= 20){
+  .ml-@{i}{
+    margin-left: @i+0px;
+  }
+  .marginLeft(@i+1);
+}
+.marginLeft(1);
+
+//循环创建1-20的margin-right
+.marginRigth(@i) when(@i <= 20){
+  .mr-@{i}{
+    margin-right: @i+0px;
+  }
+  .marginRigth(@i+1);
+}
+.marginRigth(1);
+
+//循环创建1-20的margin-top
+.marginTop(@i) when(@i <= 20){
+  .mt-@{i}{
+    margin-top: @i+0px;
+  }
+  .marginTop(@i+1);
+}
+.marginTop(1);
+
+//循环创建1-20的margin-bottom
+.marginBottom(@i) when(@i <= 20){
+  .mb-@{i}{
+    margin-bottom: @i+0px;
+  }
+  .marginBottom(@i+1);
+}
+.marginBottom(1);
+
+//循环创建1-20的padding-left
+.paddingLeft(@i) when(@i <= 20){
+  .pl-@{i}{
+    padding-left: @i+0px;
+  }
+  .paddingLeft(@i+1);
+}
+.paddingLeft(1);
+
+//循环创建1-20的padding-right
+.paddingRight(@i) when(@i <= 20){
+  .pr-@{i}{
+    padding-right: @i+0px;
+  }
+  .paddingRight(@i+1);
+}
+.paddingRight(1);
+
+//循环创建1-20的padding-top
+.paddingTop(@i) when(@i <= 20){
+  .pt-@{i}{
+    padding-top: @i+0px;
+  }
+  .paddingTop(@i+1);
+}
+.paddingTop(1);
+
+//循环创建1-20的padding-bottom
+.paddingBottom(@i) when(@i <= 20){
+  .pb-@{i}{
+    padding-bottom: @i+0px;
+  }
+  .paddingBottom(@i+1);
+}
+.paddingBottom(1);
+
+//flex布局
+.flex-row {
+  display: flex;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.items-start{
+  align-items: start;
+}
+.items-center{
+  align-items: center;
+}
+.items-end{
+  align-items: end;
+}
+.justify-start{
+  justify-content: flex-start;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-end{
+  justify-content: flex-end;
+}
+
+/*
+  row:开启flex布局，对高度划分为12分
+  row-1/12:占父元素高度的1-12份
+  col:开启flex布局，对宽度划分为12分
+  col-1/12:占父元素宽度的1-12份
+**/
+
+//按列/宽分
+.col {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//创建按列（宽）分
+.createCol(@i) when(@i<=12){
+  .col-@{i}{
+    width: calc((100%/12)*@i);
+  }
+  .createCol(@i+1);
+}
+.createCol(1);
+
+.row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+//按行（高）分
+.createRow(@i) when(@i<=12){
+  .row-@{i}{
+    height: calc((100%/12)*@i);
+  }
+  .createRow(@i+1);
+}
+.createRow(1);
+
+//鼠标经过有下滑线出现，鼠标离开下滑线消失
+.text {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    background-color: yellow;
+    transform: scaleX(0);
+    transition: transform .5s ease-out;
+    transform-origin: right;
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}
