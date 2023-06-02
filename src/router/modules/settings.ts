@@ -12,11 +12,11 @@ const SETTINGS: RouterType = {
   },
   children: [
     {
-      path: '/settings/lange',
+      path: '/lazyshow',
       name: 'lange',
-      component: () => import('@/views/settings/lange.vue'),
+      component: () => import('@/views/settings/lazyShow.vue'),
       meta: {
-        title: '语言',
+        title: '图片懒加载',
         icon: '',
         hideMenu: false,
         hideBreadcrumb: false,
@@ -26,7 +26,7 @@ const SETTINGS: RouterType = {
       children: []
     },
     {
-      path: '/settings/hello',
+      path: '/hello',
       name: 'hello',
       meta: {
         title: '你好',
@@ -38,7 +38,7 @@ const SETTINGS: RouterType = {
       },
       children: [
         {
-          path: '/settings/hello1',
+          path: '/hello1',
           name: 'hello1',
           component: () => import('@/views/settings/holle.vue'),
           meta: {

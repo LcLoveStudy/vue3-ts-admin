@@ -1,9 +1,8 @@
 import error from '@/assets/images/error.png'
-import { type lazyValueInterface } from '@/type/directive.type'
 export const lazy = {
   name: 'lazy',
   method: {
-    mounted(el: HTMLElement, value: lazyValueInterface) {
+    mounted(el: HTMLElement, value: any) {
       el.setAttribute('src', error)
       el.setAttribute('data-src', value.value)
       observe.observe(el)
