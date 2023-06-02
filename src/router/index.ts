@@ -15,6 +15,7 @@ const initRoute = (routeArr: Array<RouterType>) => {
     } else {
       realRoute.push({
         path: item.path,
+        redirect: item?.redirect,
         name: item.name,
         meta: item.meta,
         children: [],
@@ -36,7 +37,7 @@ const router = createRouter({
       name: 'home',
       redirect: '/home',
       component: () => import('@/views/Layout.vue'),
-      children: realRoute
+      children: realRoute as never
     }
   ]
 })

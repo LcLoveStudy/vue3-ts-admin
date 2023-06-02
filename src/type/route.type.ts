@@ -14,16 +14,17 @@
  * children:子路由配置
  */
 export interface RouterType {
-  path: String
-  name: String
+  path: string
+  name: string
+  redirect?: string
   component?: Function
   meta: {
-    hideChildrenInMenu: Boolean
-    icon: String
-    title: String
-    hideMenu: Boolean
-    hideBreadcrumb: Boolean
-    keepChild: Boolean
+    hideChildrenInMenu: boolean
+    icon: string
+    title: string
+    hideMenu: boolean
+    hideBreadcrumb: boolean
+    keepChild: boolean
   }
-  children: Array<RouterType>
+  children: Array<RouterType> | never
 }

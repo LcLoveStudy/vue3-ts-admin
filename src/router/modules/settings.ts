@@ -8,7 +8,7 @@ const SETTINGS: RouterType = {
     title: '设置',
     hideBreadcrumb: false,
     hideMenu: false,
-    keepChild: false,
+    keepChild: false
   },
   children: [
     {
@@ -21,9 +21,9 @@ const SETTINGS: RouterType = {
         hideMenu: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
-        keepChild: false,
+        keepChild: false
       },
-      children: [],
+      children: []
     },
     {
       path: '/settings/hello',
@@ -34,7 +34,7 @@ const SETTINGS: RouterType = {
         hideMenu: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
-        keepChild: false,
+        keepChild: false
       },
       children: [
         {
@@ -47,12 +47,12 @@ const SETTINGS: RouterType = {
             hideMenu: false,
             hideChildrenInMenu: true,
             hideBreadcrumb: false,
-            keepChild: false,
+            keepChild: false
           },
-          children: [],
-        },
-      ],
-    },
-  ],
+          children: []
+        }
+      ]
+    }
+  ]
 }
 export default SETTINGS
