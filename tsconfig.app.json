@@ -9,6 +9,12 @@
     "src/**/__tests__/*"
   ],
   "compilerOptions": {
+    // 若TS版本为5.x，此处值应为"node" 
+    "moduleResolution": "node",
+    // 同时加上这一句
+    "types": [
+      "element-plus/global"
+    ],
     "composite": true,
     "baseUrl": ".",
     "paths": {

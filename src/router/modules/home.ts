@@ -1,5 +1,5 @@
-import type { RouterType } from '@/type/route.type'
-const HOME: RouterType = {
+import type { interRouter } from '@/type/route.type'
+const HOME: interRouter = {
   path: '/home',
   name: 'home',
   meta: {

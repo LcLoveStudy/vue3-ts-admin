@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HOME from './modules/home'
 import SETTINGS from './modules/settings'
-import type { RouterType } from '@/type/route.type'
+import type { interRouter } from '@/type/route.type'
 /**
  * routes为所有菜单栏内的所有路由
  */
 export const routes = [HOME, SETTINGS]
 
-let realRoute: Array<RouterType> = []
-const initRoute = (routeArr: Array<RouterType>) => {
+let realRoute: Array<interRouter> = []
+const initRoute = (routeArr: Array<interRouter>) => {
   routeArr.forEach((item) => {
     if (item.meta.keepChild) {
       realRoute.push(item)
