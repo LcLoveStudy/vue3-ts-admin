@@ -1,0 +1,58 @@
+<template>
+  <div class="my_breadcrumb">
+    <el-breadcrumb :separator-icon="ArrowRight">
+      <el-breadcrumb-item v-for="route in breadCrumbs" :key="route.path">{{ route.title }}</el-breadcrumb-item>
+    </el-breadcrumb>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ArrowRight } from '@element-plus/icons-vue'
+import { useRoute } from 'vue-router'
+import { watch, ref } from 'vue'
+const route = useRoute()
+
+interface breadCrumbsType {
+  title: String
+  path: String
+}
+//用于渲染面包屑导航的数组
+const breadCrumbs = ref(<breadCrumbsType[]>[])
+
+//监听路由变化，当路由改变时，切割路由形成面包屑
+watch(() => route, (newValue) => {
+  const moduleName: String = newValue.path.split('/')[1]
+  breadCrumbs.value = []
+  newValue.matched.forEach(item => {
+    if (item.path.split('/')[1] == moduleName) {
+      if (!item.meta.hideBreadcrumb) {
+        breadCrumbs.value.push({
+          title: item.meta.title as String,
+          path: item.path
+        })
+      }
+    }
+  })
+}, { immediate: true, deep: true })
+
+</script>
+
+<style scoped lang="less">
+.my_breadcrumb {
+  margin-left: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  //面包屑的字体大小
+  span {
+    font-size: 16px;
+
+  }
+
+  :deep(.el-breadcrumb__inner) {
+    color: var(--theme-color);
+  }
+}
+</style>
