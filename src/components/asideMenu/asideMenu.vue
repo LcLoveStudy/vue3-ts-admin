@@ -1,6 +1,7 @@
 <template>
-  <div class="aside_menu">
-    <el-menu :collapse="isCollapse" router text-color="var(--theme-color)" :default-active="currentRoute">
+  <div>
+    <el-menu class="aside_menu" :collapse="isCollapse" router text-color="var(--theme-color)"
+      :default-active="currentRoute">
       <!-- 从这里开始循环菜单 -->
       <template v-for="menu in routes" :key="menu.routePath">
         <!-- 这里开始时只有一级菜单 -->
