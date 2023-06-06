@@ -14,7 +14,7 @@ const HOME: interRouter = {
     {
       path: '/home',
       name: 'home',
-      component: () => import('@/views/Home/Home.vue'),
+      component: () => import('@/views/home/index.vue'),
       meta: {
         title: '首页',
         icon: '',

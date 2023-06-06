@@ -38,6 +38,12 @@ const router = createRouter({
       redirect: '/home',
       component: () => import('@/views/Layout.vue'),
       children: realRoute as never
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/login/index.vue'),
+      children: []
     }
   ]
 })

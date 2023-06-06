@@ -15,8 +15,8 @@
         <!-- 鼠标放在头像上的下拉框部分 -->
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>Action 1</el-dropdown-item>
-            <el-dropdown-item>Action 2</el-dropdown-item>
+            <el-dropdown-item>个人信息</el-dropdown-item>
+            <el-dropdown-item @click="router.push('/login')">退出登陆</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -26,6 +26,8 @@
 
 <script setup lang="ts">
 import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue';
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const props = defineProps({
   //菜单栏的展开和折叠
   isCollapse: {
