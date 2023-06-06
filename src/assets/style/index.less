@@ -15,9 +15,29 @@
 }
 
 // 用于存放公共样式
+
+.scrollbar {
+  &::-webkit-scrollbar{
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #cccccc40;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccccccba;
+    border-radius: 5px;
+  }
+}
+
 //字体水平居中
 .text-center {
   text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-rigjt{
+  text-align: right;
 }
 //单行文本溢出省略号
 .text-ellipsis{
@@ -25,6 +45,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 //鼠标经过变小手
 .hover-pointer{
   cursor: pointer;
@@ -33,6 +54,7 @@
 .hover-not-allow{
   cursor: not-allowed;
 }
+
 //字体加粗
 .font-bold {
   font-weight: bold;
@@ -47,6 +69,15 @@
 }
 .fontSize(12);
 
+//循环创建100-900的字体粗细
+.fontWeight(@i) when(@i <= 900) {
+  .fw-@{i} {
+    font-weight: @i;
+  }
+  .fontWeight((@i + 100));
+}
+.fontWeight(100);
+
 //循环创建1-20的margin-left
 .marginLeft(@i) when(@i <= 20){
   .ml-@{i}{
@@ -55,6 +86,63 @@
   .marginLeft(@i+1);
 }
 .marginLeft(1);
+
+.box-border{
+  box-sizing: border-box;
+}
+
+.flex{
+  display: flex;
+}
+.block{
+  display: block;
+}
+.inline-block{
+  display: inline-block;
+}
+.inline{
+  display: inline;
+}
+.hidden{
+  display: none;
+}
+
+//超出显示[overflow-auto,overflow-hidden,overflow-x-auto,overflow-x-hidden,overflow-y-auto,overflow-y-hidden]
+.overflow-auto{
+  overflow: auto;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.overflow-x-auto{
+  overflow-x: auto;
+}
+.overflow-x-hidden{
+  overflow-x: hidden;
+}
+.overflow-y-auto{
+  overflow-y: auto;
+}
+.overflow-y-hidden{
+  overflow-y: hidden;
+}
+//定位[static,fixed,absolute,relative,sticky]
+.static{
+  position: static;
+}
+.fixed{
+  position: fixed;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.sticky{
+  position: sticky;
+}
+
 
 //循环创建1-20的margin-right
 .marginRigth(@i) when(@i <= 20){
@@ -120,15 +208,20 @@
 .paddingBottom(1);
 
 //flex布局
-.flex-row {
+.flex-row{
   display: flex;
 }
 .flex-col{
-  display: flex;
   flex-direction: column;
+}
+.flex-1{
+  flex: 1;
 }
 .flex-wrap{
   flex-wrap: wrap;
+}
+.flex-nowrap{
+  flex-wrap: nowrap;
 }
 .items-start{
   align-items: start;
