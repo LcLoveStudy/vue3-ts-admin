@@ -6,6 +6,7 @@ import { Percentage } from './page/percentage'
 import { dateFormat } from './dateFormat'
 import http from './http'
 import getCopy from './copy'
+import getType from './getType'
 export {
   Percentage,
   http,
@@ -13,6 +14,7 @@ export {
   arrSort,
   deepFreeze,
   getToken,
+  getType,
   isArray,
   setToken,
   removeToken,

@@ -1,6 +1,7 @@
 <template>
   <div>
     home
+    <progress max="100" value="89" />
   </div>
 </template>
 
