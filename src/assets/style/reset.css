@@ -60,3 +60,19 @@ a {
   background-color: var(--menu-item-active-bgc) !important;
   border-right: 2px solid var(--menu-item-active);
 }
+
+:root {
+  --theme-color: #000;
+  /* 被选中和鼠标经过的侧边菜单的字体颜色 */
+  --menu-item-active: #2089df;
+  /* 当前选中的子菜单背景色 */
+  --menu-item-active-bgc: rgba(73, 166, 242, 0.1);
+  /* 侧边菜单每项的高度 */
+  --menu-item-height: 40px;
+  /* 头部和侧边栏的背景色的颜色 */
+  --container-bgc: #fff;
+  /* 鼠标经过时的颜色 */
+  --hover-backgroundColor: #eee;
+  /* 主体部分的背景颜色 */
+  --container-main-bgc: #eceff4;
+}
