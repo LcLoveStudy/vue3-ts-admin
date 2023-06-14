@@ -21,11 +21,9 @@
 <script setup lang="ts">
 import AsideMenu from '@/components/asideMenu/asideMenu.vue'
 import Header from '@/components/header/Header.vue'
-import { getList } from '@/api'
 import { ref } from 'vue';
 // 控制菜单折叠
 const isCollapse = ref(false)
-getList()
 </script>
 
 <style scoped lang="less">
