@@ -4,8 +4,13 @@ import { http } from '@/utils'
 //默认不传为不显示
 
 export const getList = () => {
-  return http.post('http://localhost:80/list', {
-    size: 10,
-    showMessage: true
-  })
+  return http.get(
+    'http://localhost:80/list',
+    {
+      size: 10
+    },
+    {
+      showMessage: true
+    }
+  )
 }

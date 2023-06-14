@@ -7,14 +7,12 @@ const service: AxiosInstance = axios.create({
 
 // / 添加请求拦截器
 service.interceptors.request.use(
-  (config) => {
-    //处理showMessage
-    if (config.method == 'get') {
-      config.headers.showMessage = config.params.showMessage ? true : false
-      delete config.params?.showMessage
-    } else if (config.method == 'post') {
-      config.headers.showMessage = config.data.data.showMessage ? true : false
-      delete config.data.data?.showMessage
+  (config: any) => {
+    // //处理showMessage
+    if (config.showMessage) {
+      config.headers.showMessage = true
+    } else {
+      config.headers.showMessage = false
     }
     //携带token
     if (getToken()) {
@@ -38,7 +36,7 @@ service.interceptors.response.use(
     if (Boolean(response.config.headers.showMessage)) {
       ElMessage({
         message: response.data?.info?.name,
-        type: response.data?.code == 200 ? 'success' : 'error'
+        type: response.status == 200 ? 'success' : 'error'
       })
     }
     // 2xx 范围内的状态码都会触发该函数。
@@ -61,7 +59,7 @@ const http = {
     return service.get(url, { params, ...config })
   },
   post<T>(url: string, data?: object, config?: any): Promise<T> {
-    return service.post(url, { data, ...config })
+    return service.post(url, { data }, config)
   }
 }
 
