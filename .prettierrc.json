@@ -1,8 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/prettierrc",
-  "semi": false,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "printWidth": 100,
-  "trailingComma": "none"
+  "semi": false, //行尾是否使用分号
+  "tabWidth": 2, //一个tab键缩进多少
+  "htmlWhitespaceSensitivity": "strict", //html空白敏感
+  "singleQuote": true, //字符串是否使用单引号
+  "printWidth": 100, //一行多少个字符，超过就换行
+  "trailingComma": "none", //是否使用尾逗号
+  "bracketSpacing": true //对象大括号是否有空格
 }
