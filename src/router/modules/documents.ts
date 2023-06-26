@@ -70,16 +70,16 @@ const DOCUMENTS: interRouter = {
     },
     {
       path: '/utils',
-      redirect:'/utils/lazyshow',
       name: 'utils',
       meta: {
         title: '工具函数',
         icon: '',
         hideMenu: false,
         hideBreadcrumb: false,
-        hideChildrenInMenu: false,
+        hideChildrenInMenu: true,
         keepChild: true
       },
+      component:() => import('@/views/documents/utils/index.vue'),
       children:[]
     }
   ]
