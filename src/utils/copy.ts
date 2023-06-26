@@ -1,3 +1,4 @@
+import { ElMessage } from 'element-plus'
 /**
  * 复制内容到剪贴板
  * @param {string} content 要复制的内容
@@ -12,6 +13,7 @@ const getCopy = (content: string) => {
   textArea.select() //选择创建的文本域节点
   try {
     document.execCommand('copy') // 把要复制的内容拷贝到剪贴板
+    ElMessage.success('复制成功')
   } catch (ex) {
     return false
   } finally {
