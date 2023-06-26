@@ -52,6 +52,20 @@ const DOCUMENTS: interRouter = {
           },
           children: []
         },
+        {
+          path: '/directiveShow/clickoutside',
+          name: 'clickoutside',
+          component: () => import('@/views/documents/directiveShow/clickoutside.vue'),
+          meta: {
+            title: '点击外部',
+            icon: '',
+            hideMenu: false,
+            hideBreadcrumb: false,
+            hideChildrenInMenu: true,
+            keepChild: false
+          },
+          children: []
+        },
       ]
     }
   ]
