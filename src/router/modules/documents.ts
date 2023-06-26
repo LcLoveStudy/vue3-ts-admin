@@ -1,7 +1,7 @@
 import type { interRouter } from '@/type/route.type'
-const SETTINGS: interRouter = {
-  path: '/settings',
-  name: 'settings',
+const DOCUMENTS: interRouter = {
+  path: '/documents',
+  name: 'documents',
   meta: {
     hideChildrenInMenu: false,
     icon: 'CopyDocument',
@@ -27,7 +27,7 @@ const SETTINGS: interRouter = {
         {
           path: '/directiveShow/lazyshow',
           name: 'lazyshow',
-          component: () => import('@/views/settings/directiveShow/lazyShow.vue'),
+          component: () => import('@/views/documents/directiveShow/lazyShow.vue'),
           meta: {
             title: '图片懒加载',
             icon: '',
@@ -41,7 +41,7 @@ const SETTINGS: interRouter = {
         {
           path: '/directiveShow/focusshow',
           name: 'focusshow',
-          component: () => import('@/views/settings/directiveShow/focusShow.vue'),
+          component: () => import('@/views/documents/directiveShow/focusShow.vue'),
           meta: {
             title: '聚焦',
             icon: '',
@@ -56,4 +56,4 @@ const SETTINGS: interRouter = {
     }
   ]
 }
-export default SETTINGS
+export default DOCUMENTS

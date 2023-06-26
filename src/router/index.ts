@@ -1,11 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HOME from './modules/home'
-import SETTINGS from './modules/settings'
+import DOCUMENTS from './modules/documents'
 import type { interRouter } from '@/type/route.type'
 /**
  * routes为所有菜单栏内的所有路由
  */
-export const routes = [HOME, SETTINGS]
+export const routes = [HOME, DOCUMENTS]
 
 let realRoute: Array<interRouter> = []
 const initRoute = (routeArr: Array<interRouter>) => {
