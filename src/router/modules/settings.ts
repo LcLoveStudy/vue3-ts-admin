@@ -4,53 +4,54 @@ const SETTINGS: interRouter = {
   name: 'settings',
   meta: {
     hideChildrenInMenu: false,
-    icon: 'Setting',
-    title: '设置',
+    icon: 'CopyDocument',
+    title: '使用手册',
     hideBreadcrumb: false,
     hideMenu: false,
     keepChild: false
   },
   children: [
     {
-      path: '/lazyshow',
-      name: 'lange',
-      component: () => import('@/views/settings/lazyShow.vue'),
+      path: '/directiveShow',
+      redirect:'/directiveShow/lazyshow',
+      name: 'directive',
       meta: {
-        title: '图片懒加载',
-        icon: '',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: true,
-        keepChild: false
-      },
-      children: []
-    },
-    {
-      path: '/hello',
-      name: 'hello',
-      meta: {
-        title: '你好',
+        title: '指令',
         icon: '',
         hideMenu: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
-        keepChild: false
+        keepChild: true
       },
       children: [
         {
-          path: '/hello1',
-          name: 'hello1',
-          component: () => import('@/views/settings/holle.vue'),
+          path: '/directiveShow/lazyshow',
+          name: 'lazyshow',
+          component: () => import('@/views/settings/directiveShow/lazyShow.vue'),
           meta: {
-            title: '你好1',
+            title: '图片懒加载',
             icon: '',
             hideMenu: false,
-            hideChildrenInMenu: true,
             hideBreadcrumb: false,
+            hideChildrenInMenu: true,
             keepChild: false
           },
           children: []
-        }
+        }, 
+        {
+          path: '/directiveShow/focusshow',
+          name: 'focusshow',
+          component: () => import('@/views/settings/directiveShow/focusShow.vue'),
+          meta: {
+            title: '聚焦',
+            icon: '',
+            hideMenu: false,
+            hideBreadcrumb: false,
+            hideChildrenInMenu: true,
+            keepChild: false
+          },
+          children: []
+        },
       ]
     }
   ]
