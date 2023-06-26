@@ -8,9 +8,7 @@
 </template>
 
 <script setup lang="ts">
-const clickoutside = () => {
-  console.log(111);
-}
+const clickoutside = () => { }
 </script>
 
 <style scoped></style>

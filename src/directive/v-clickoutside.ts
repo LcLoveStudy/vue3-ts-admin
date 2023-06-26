@@ -2,8 +2,6 @@ export const clickoutside = {
   name: 'clickoutside',
   method: {
     mounted(el: HTMLUnknownElement, value: any) {
-      console.log(el)
-
       window.addEventListener('click', (e) => eventHnader(value.value, el, e))
     },
     unmounted(el: HTMLUnknownElement, value: any) {
