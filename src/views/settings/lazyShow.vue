@@ -6,10 +6,12 @@
     <img v-lazy="'https://img2.bianews.com/image/bianews/news/imgs/1632407012152.jpeg?imageView2/0/format/jpg/q/75'">
     <img v-lazy="'https://img0.baidu.com/it/u=3664273503,2975533171&fm=253&fmt=auto&app=138&f=JPEG?w=650&h=298'">
     <img v-lazy="'https://p6.itc.cn/images01/20200917/7656d7a7ea3f4aeaa97d302b94a5190e.png'">
+    <ScrollBar target=".page_main" />
   </div>
 </template>
 
 <script setup lang="ts">
+import ScrollBar from '@/components/scrollBar/index.vue'
 </script>
 
 <style scoped lang="less">

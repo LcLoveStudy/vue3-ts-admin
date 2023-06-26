@@ -1,6 +1,8 @@
 <template>
   <div class="scrollBar_main shadow" @click="goTop">
-    <i class="el-icon-caret-top top_icon"></i>
+    <el-icon class="top_icon">
+      <CaretTop />
+    </el-icon>
   </div>
 </template>
 
