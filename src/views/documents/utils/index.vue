@@ -6,7 +6,9 @@
     <el-tab-pane label="object">
       <objectUse />
     </el-tab-pane>
-    <el-tab-pane label="array">array</el-tab-pane>
+    <el-tab-pane label="array">
+      <arrayUse />
+    </el-tab-pane>
     <el-tab-pane label="string">string</el-tab-pane>
   </el-tabs>
 </template>
@@ -14,6 +16,7 @@
 <script setup lang="ts">
 import BaseUse from './baseUse.vue'
 import objectUse from './objectUse.vue';
+import arrayUse from './arrayUse.vue'
 </script>
 
 <style scoped lang="less"></style>
