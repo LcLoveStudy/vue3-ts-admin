@@ -1,6 +1,6 @@
 import { arrNoRepeat, arrSort, isArray } from './array'
 import { deepFreeze, objectCopy } from './object'
-import { getToken, setToken, removeToken } from './token'
+import { getItem, setItem, removeItem } from './localstorage'
 import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
 import { dateFormat } from './dateFormat'
@@ -15,11 +15,11 @@ export {
   arrSort,
   deepFreeze,
   getColor,
-  getToken,
+  getItem,
   getType,
   isArray,
-  setToken,
-  removeToken,
+  setItem,
+  removeItem,
   pageScroll,
   getCopy,
   objectCopy,
