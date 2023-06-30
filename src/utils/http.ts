@@ -46,6 +46,7 @@ service.interceptors.response.use(
     return data
   },
   (error: AxiosError) => {
+    endLoading()
     // 超出 2xx 范围的状态码都会触发该函数。
     ElMessage({
       message: error.message,
