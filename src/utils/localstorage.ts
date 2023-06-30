@@ -1,6 +1,3 @@
-//本项目的token在localStorage里的名称
-const tokenName = 'example'
-
 /**
  * 用于在localstorage中存储item的函数
  * @param {*} key   键名
