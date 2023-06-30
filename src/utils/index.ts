@@ -1,14 +1,14 @@
-import { arrNoRepeat, arrSort, isArray } from './array'
-import { deepFreeze, objectCopy } from './object'
 import { getItem, setItem, removeItem } from './localstorage'
 import {startLoading,endLoading }from './page/nprogress'
+import { arrNoRepeat, arrSort, isArray } from './array'
+import { deepFreeze, objectCopy } from './object'
 import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
 import { dateFormat } from './dateFormat'
-import http from './http'
-import getCopy from './copy'
-import getType from './getType'
 import getColor from './getColor'
+import getType from './getType'
+import getCopy from './copy'
+import http from './http'
 export {
   Percentage,
   http,
