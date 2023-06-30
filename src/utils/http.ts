@@ -1,6 +1,6 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
-import { getToken } from '@/utils'
+// import { getToken } from '@/utils'
 const service: AxiosInstance = axios.create({
   baseURL: ''
 })
@@ -15,9 +15,9 @@ service.interceptors.request.use(
       config.headers.showMessage = false
     }
     //携带token
-    if (getToken()) {
-      config.headers.token = getToken()
-    }
+    // if (getToken()) {
+    //   config.headers.token = getToken()
+    // }
     // 在发送请求之前做些什么
     return config
   },
