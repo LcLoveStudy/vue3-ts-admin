@@ -8,19 +8,19 @@ import '@/assets/style/common.css'
 import 'nprogress/nprogress.css'
 import App from './App.vue'
 import router from './router'
-import { directives } from '@/directive'
+import createDirective from '@/directive'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-
 const app = createApp(App)
-// main.ts中批量导入自定义指令
-directives.forEach((item) => {
-  app.directive(item.name, item.method)
-})
+
 // 自动引入图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
+// main.ts中批量导入自定义指令
+createDirective(app)
+
 app.use(createPinia())
 app.use(router)
 app.use(ElementPlus)
 app.mount('#app')
+

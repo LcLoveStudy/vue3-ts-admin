@@ -1,9 +1,11 @@
+import type { App } from 'vue'
 import { focus } from './v-focus'
 import { lazy } from './v-lazy'
 import { clickoutside } from './v-clickoutside'
-export const directives = [focus, lazy, clickoutside]
-
-// main.ts中批量导入自定义指令
-// directives.forEach((item) => {
-//   app.directive(item.name, item.method)
-// })
+const directives = [focus, lazy, clickoutside]
+const createDirective = (app:App<Element>)=>{
+  directives.forEach((item) => {
+    app.directive(item.name, item.method)
+  })
+}
+export default createDirective
