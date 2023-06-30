@@ -1,29 +1,50 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 import { ElMessage } from 'element-plus'
-// import { getToken } from '@/utils'
+import { getItem } from '@/utils'
+//配置进度条
+NProgress.configure({ showSpinner: false, minimum: 0.2, speed: 500 });
+let loadingNum = 0;
+function startLoading() {
+  if (loadingNum == 0) {
+    NProgress.start()
+  }
+  loadingNum++;
+}
+function endLoading() {
+  loadingNum--
+  if (loadingNum <= 0) {
+    NProgress.done()
+  }
+}
+
+//创建axios实例
 const service: AxiosInstance = axios.create({
-  baseURL: ''
+  baseURL: '',
 })
 
-// / 添加请求拦截器
+// 添加请求拦截器
 service.interceptors.request.use(
   (config: any) => {
-    // //处理showMessage
+    //处理showMessage
     if (config.showMessage) {
       config.headers.showMessage = true
     } else {
       config.headers.showMessage = false
     }
+    //处理进度条
+    if(config.showProgress){
+      startLoading()
+    }
     //携带token
-    // if (getToken()) {
-    //   config.headers.token = getToken()
-    // }
-    // 在发送请求之前做些什么
+    if (getItem('userid')) {
+      config.headers.token = getItem('userid')
+    }
     return config
   },
   (error) => {
     ElMessage.error(error.message)
-    // 对请求错误做些什么
     return Promise.reject(error)
   }
 )
@@ -31,6 +52,7 @@ service.interceptors.request.use(
 // 添加响应拦截器
 service.interceptors.response.use(
   (response: AxiosResponse) => {
+    endLoading()
     const { data } = response
     //处理弹框
     if (Boolean(response.config.headers.showMessage)) {
@@ -39,8 +61,6 @@ service.interceptors.response.use(
         type: response.status == 200 ? 'success' : 'error'
       })
     }
-    // 2xx 范围内的状态码都会触发该函数。
-    // 对响应数据做点什么
     return data
   },
   (error: AxiosError) => {
@@ -49,14 +69,13 @@ service.interceptors.response.use(
       message: error.message,
       type: 'error'
     })
-    // 对响应错误做点什么
     return Promise.reject(error)
   }
 )
 
 const http = {
   get<T>(url: string, params?: object, config?: any): Promise<T> {
-    return service.get(url, { params, ...config })
+    return service.get(url, { params, ...config})
   },
   post<T>(url: string, data?: object, config?: any): Promise<T> {
     return service.post(url, { data }, config)

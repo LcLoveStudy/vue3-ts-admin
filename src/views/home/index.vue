@@ -1,14 +1,15 @@
 <template>
   <div>
-    <div v-clickoutside="clickoutside">
+    <div>
       home
     </div>
-    <progress max="100" value="89" />
+    <progress max="100" :value="80" />
   </div>
 </template>
 
 <script setup lang="ts">
-const clickoutside = () => { }
+import { getList } from '@/api/index'
+getList({ page: 1 })
 </script>
 
 <style scoped></style>
