@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -9,11 +8,12 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [vue(), vueJsx()],
   resolve: {
+    //配置别名
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
   server: {
-    host: true // 监听所有地址
+    host: true // 开启局域网
   }
 })
