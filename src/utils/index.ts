@@ -1,6 +1,7 @@
 import { arrNoRepeat, arrSort, isArray } from './array'
 import { deepFreeze, objectCopy } from './object'
 import { getItem, setItem, removeItem } from './localstorage'
+import {startLoading,endLoading }from './page/nprogress'
 import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
 import { dateFormat } from './dateFormat'
@@ -12,6 +13,8 @@ export {
   Percentage,
   http,
   arrNoRepeat,
+  startLoading,
+  endLoading,
   arrSort,
   deepFreeze,
   getColor,

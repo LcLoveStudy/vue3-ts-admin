@@ -1,24 +1,6 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
 import { ElMessage } from 'element-plus'
-import { getItem } from '@/utils'
-//配置进度条
-NProgress.configure({ showSpinner: false, minimum: 0.2, speed: 500 });
-let loadingNum = 0;
-function startLoading() {
-  if (loadingNum == 0) {
-    NProgress.start()
-  }
-  loadingNum++;
-}
-function endLoading() {
-  loadingNum--
-  if (loadingNum <= 0) {
-    NProgress.done()
-  }
-}
-
+import { getItem,startLoading,endLoading } from '@/utils'
 //创建axios实例
 const service: AxiosInstance = axios.create({
   baseURL: '',
