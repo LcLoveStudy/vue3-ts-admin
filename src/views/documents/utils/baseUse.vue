@@ -54,7 +54,7 @@
       </div>
     </el-card>
     <!-- 存储localStorage(setItem) -->
-    <el-card class="width-400 height-full ml-20">
+    <el-card class="width-400 height-full">
       <div class="fs-16 fw-600 tomato">
         存储localStorage(setItem)
         <el-icon class="hover-pointer" @click="copyUtils('setItem')">
@@ -96,11 +96,12 @@
         </el-icon>
       </div>
       <div class="mt-10">
-        删除存储到localStorage的数据
+        删除存储到localStorage的数据,不传参数则删除所有
       </div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div class="mt-5">
-          <span class="orange">removeItem</span><span class="blue">('userid')</span> -> 删除
+          <span class="orange">removeItem</span><span class="blue">('userid')</span> -> 删除userid
+          <span class="orange">removeItem</span><span class="blue">()</span> -> 删除所有存储的内容
         </div>
       </div>
     </el-card>

@@ -22,16 +22,20 @@ export const setItem = (key:string,value: string) => {
  * @email dotb116393@163.com
  */
 export const getItem = (key:string): string => {
-  return JSON.stringify(localStorage.getItem(key) || '')
+  return JSON.parse(JSON.stringify(localStorage.getItem(key) || ''))
 }
 
 /**
  * 从localstorage中删除item
- * @param {*} key 要删除的键名
+ * @param {*} key 不传则删除所有｜｜要删除的键名
  * @example removeItem('userid')
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const removeItem = (key:string) => {
-  localStorage.removeItem(key)
+export const removeItem = (key?:string) => {
+  if(key){
+    localStorage.removeItem(key)
+  }else{
+    localStorage.clear()
+  }
 }
