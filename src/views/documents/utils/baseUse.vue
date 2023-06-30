@@ -35,7 +35,7 @@
       </div>
     </el-card>
     <!-- 获取变量的类型(getColor) -->
-    <el-card class="width-400 height-full ml-20">
+    <el-card class="width-400 height-full ml-20 mb-20">
       <div class="fs-16 fw-600 tomato">
         随机获取一个16进制的颜色(getColor)
         <el-icon class="hover-pointer" @click="copyUtils('getColor')">
@@ -50,6 +50,57 @@
         <div class="mt-5">
           <span class="orange">getColor</span><span class="blue">()</span> -> <i :style="{ color: randomColor }">{{
             randomColor }}</i>
+        </div>
+      </div>
+    </el-card>
+    <!-- 存储localStorage(setItem) -->
+    <el-card class="width-400 height-full ml-20">
+      <div class="fs-16 fw-600 tomato">
+        存储localStorage(setItem)
+        <el-icon class="hover-pointer" @click="copyUtils('setItem')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-10">
+        将数据存储到localstorage中
+      </div>
+      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+        <div class="mt-5">
+          <span class="orange">setItem</span><span class="blue">('userid','12345')</span> -> 存储成功
+        </div>
+      </div>
+    </el-card>
+    <!-- 获取存储到localStorage的数据(getItem) -->
+    <el-card class="width-400 height-full ml-20">
+      <div class="fs-16 fw-600 tomato">
+        获取存储到localStorage的数据(getItem)
+        <el-icon class="hover-pointer" @click="copyUtils('getItem')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-10">
+        获取存储到localStorage的数据
+      </div>
+      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+        <div class="mt-5">
+          <span class="orange">getItem</span><span class="blue">('userid')</span> -> 12345
+        </div>
+      </div>
+    </el-card>
+    <!-- 删除存储到localStorage的数据(removeItem) -->
+    <el-card class="width-400 height-full ml-20">
+      <div class="fs-16 fw-600 tomato">
+        删除存储到localStorage的数据(removeItem)
+        <el-icon class="hover-pointer" @click="copyUtils('removeItem')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-10">
+        删除存储到localStorage的数据
+      </div>
+      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+        <div class="mt-5">
+          <span class="orange">removeItem</span><span class="blue">('userid')</span> -> 删除
         </div>
       </div>
     </el-card>
