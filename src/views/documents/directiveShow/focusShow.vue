@@ -8,14 +8,14 @@
       使用v-focus绑定一个布尔类型的值，true为聚焦，false为失去焦点<br />
       <span class="fs-20 mt-20 inline-block">示例:</span><br />
       <pre class="code mt-20">
-          &lt;el-input <span class="tomato">v-focus="focused"</span>/&gt;
-          &lt;el-button @click="focused=!focused"&gt;点我改变聚焦状态&lt;el-button/&gt;
-          const focused = ref(false)
-        </pre>
+        &lt;el-input <span class="tomato">v-focus="focused"</span>/&gt;
+        &lt;el-button @click="focused=!focused"&gt;点我改变聚焦状态&lt;el-button/&gt;
+        const focused = ref(false)
+      </pre>
     </div>
   </div>
   <el-card class="show_card">
-    <el-input class="mr-20" style="width:200px" v-focus="focused" />
+    <el-input class="mr-20 width-200" v-focus="focused" />
     <el-button @click="focused = !focused" type="primary">点我改变聚焦状态</el-button>
   </el-card>
 </template>
@@ -27,6 +27,8 @@ const focused = ref(false)
 
 <style scoped lang="less">
 .code {
+  width: 800px;
+  font-size: 16px;
   border-radius: 3px;
   padding: 5px 10px;
   background-color: #ccc;
