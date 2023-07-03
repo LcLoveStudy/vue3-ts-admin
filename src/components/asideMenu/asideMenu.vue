@@ -82,6 +82,7 @@ watch(() => route, (newValue) => {
 
   //修改每一个item的高度
   .el-menu-item {
+    font-size: 14px;
     height: var(--menu-item-height);
     background-color: var(--container-bgc);
   }
@@ -115,6 +116,7 @@ watch(() => route, (newValue) => {
 
     // 二级标题
     .el-sub-menu__title {
+      font-size: 14px;
       background-color: var(--container-bgc);
       height: var(--menu-item-height);
     }
@@ -125,6 +127,10 @@ watch(() => route, (newValue) => {
       text-indent: 1rem;
     }
   }
+}
+
+.icon {
+  font-size: 14px;
 }
 
 //折叠起来页不会改变宽度
