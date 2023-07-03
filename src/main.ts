@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import ElementPlus from 'element-plus'
+import '@/utils/page/rem.js' //引入rem解决方案
 import 'element-plus/dist/index.css'
 import '@/assets/style/reset.css'
 import '@/assets/style/common.css'
