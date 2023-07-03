@@ -48,7 +48,6 @@ watch(() => route, (newValue) => {
   //面包屑的字体大小
   span {
     font-size: 16px;
-
   }
 
   :deep(.el-breadcrumb__inner) {
