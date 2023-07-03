@@ -1,4 +1,4 @@
-scrollbar::-webkit-scrollbar {
+.scrollbar::-webkit-scrollbar {
   width: 8px;
 }
 .scrollbar::-webkit-scrollbar-track {
