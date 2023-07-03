@@ -81,6 +81,20 @@ const DOCUMENTS: interRouter = {
       },
       component:() => import('@/views/documents/utils/index.vue'),
       children:[]
+    },
+    {
+      path: '/style',
+      name: 'style',
+      meta: {
+        title: '原子化css',
+        icon: '',
+        hideMenu: false,
+        hideBreadcrumb: false,
+        hideChildrenInMenu: true,
+        keepChild: true
+      },
+      component:() => import('@/views/documents/styleShow/index.vue'),
+      children:[]
     }
   ]
 }
