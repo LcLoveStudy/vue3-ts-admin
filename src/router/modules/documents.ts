@@ -12,7 +12,7 @@ const DOCUMENTS: interRouter = {
   },
   children: [
     {
-      path: '/directive',
+      path: '/documents/directive',
       redirect:'/directive/lazyshow',
       name: 'directive',
       meta: {
@@ -25,7 +25,7 @@ const DOCUMENTS: interRouter = {
       },
       children: [
         {
-          path: '/directive/lazyshow',
+          path: '/documents/directive/lazyshow',
           name: 'lazyshow',
           component: () => import('@/views/documents/directiveShow/lazyShow.vue'),
           meta: {
@@ -39,7 +39,7 @@ const DOCUMENTS: interRouter = {
           children: []
         }, 
         {
-          path: '/directive/focusshow',
+          path: '/documents/directive/focusshow',
           name: 'focusshow',
           component: () => import('@/views/documents/directiveShow/focusShow.vue'),
           meta: {
@@ -53,7 +53,7 @@ const DOCUMENTS: interRouter = {
           children: []
         },
         {
-          path: '/directive/clickoutside',
+          path: '/documents/directive/clickoutside',
           name: 'clickoutside',
           component: () => import('@/views/documents/directiveShow/clickoutside.vue'),
           meta: {
@@ -69,7 +69,7 @@ const DOCUMENTS: interRouter = {
       ]
     },
     {
-      path: '/utils',
+      path: '/documents/utils',
       name: 'utils',
       meta: {
         title: '工具函数',
@@ -83,7 +83,7 @@ const DOCUMENTS: interRouter = {
       children:[]
     },
     {
-      path: '/style',
+      path: '/documents/style',
       name: 'style',
       meta: {
         title: '原子化css',

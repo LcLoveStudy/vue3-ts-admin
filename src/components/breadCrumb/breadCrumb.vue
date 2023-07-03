@@ -10,6 +10,7 @@
 import { ArrowRight } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
 import { watch, ref } from 'vue'
+import { routes } from '@/router/index'
 const route = useRoute()
 
 interface breadCrumbsType {
@@ -21,8 +22,16 @@ const breadCrumbs = ref(<breadCrumbsType[]>[])
 
 //监听路由变化，当路由改变时，切割路由形成面包屑
 watch(() => route, (newValue) => {
-  const moduleName: string = newValue.path.split('/')[1]
   breadCrumbs.value = []
+  const moduleName: string = newValue.path.split('/')[1]
+  routes.forEach(item => {
+    if (item.name == moduleName && !item.meta.hideChildrenInMenu) {
+      breadCrumbs.value.push({
+        title: item.meta.title as string,
+        path: item.path
+      })
+    }
+  })
   newValue.matched.forEach(item => {
     if (item.path.split('/')[1] == moduleName) {
       if (!item.meta.hideBreadcrumb) {
