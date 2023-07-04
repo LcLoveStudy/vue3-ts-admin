@@ -16,6 +16,21 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  build: {
+    rollupOptions: {
+      output: {
+        //js和css分离
+        chunkFileNames: "static/js/[name]-[hash].js",
+        entryFileNames: "static/js/[name]-[hash].js",
+        assetFileNames: "static/[ext]/[name]-[hash].[ext]",
+        //分包
+        manualChunks: {
+          vue: ['vue', 'pinia', 'vue-router'],
+          elementIcons: ['@element-plus/icons-vue'],
+        },
+      },
+    },
+  },
   server: {
     host: true // 开启局域网
   }
