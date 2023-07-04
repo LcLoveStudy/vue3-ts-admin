@@ -5,6 +5,9 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  esbuild: {
+    drop: ['console', 'debugger'] //打包后去掉console，debugger
+  },
   base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [vue(), vueJsx()],
   resolve: {
