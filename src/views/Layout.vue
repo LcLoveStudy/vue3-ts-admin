@@ -40,7 +40,7 @@ const isCollapse = ref(false)
 
   .header {
     padding: 0;
-    height: 6%;
+    height: 7%;
     background-color: var(--container-bgc);
     border-bottom: 1px solid var(--hover-backgroundColor);
   }
