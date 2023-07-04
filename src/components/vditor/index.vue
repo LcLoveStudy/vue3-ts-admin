@@ -1,5 +1,7 @@
 <template>
-  <div id="vditor"></div>
+  <el-skeleton :rows="5" animated :loading="initLoading">
+    <div id="vditor"></div>
+  </el-skeleton>
 </template>
 
 <script setup lang="ts">
@@ -28,11 +30,13 @@ const props = defineProps({
   },
 })
 const emits = defineEmits(['update:value', 'change'])
-
+//是否加载骨架屏
+const initLoading = ref(false)
 //获取dom元素
 const vditor = ref()
 
 onMounted(() => {
+  initLoading.value = true
   vditor.value = new Vditor("vditor", {
     height: props.height,
     width: props.width,
@@ -119,6 +123,7 @@ onMounted(() => {
       linkToImgUrl: "/api/admin/uploadFile",
     }
   })
+  initLoading.value = false
 })
 </script>
 

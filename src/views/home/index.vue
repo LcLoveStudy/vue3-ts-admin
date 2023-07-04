@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div>
-      home
-    </div>
-    <Vditor v-model:value="inputValue" @change="inputChange" />
+  <div class="mb-20">
+    home
   </div>
+  <Vditor v-model:value="inputValue" @change="inputChange" />
 </template>
 
 <script setup lang="ts">
