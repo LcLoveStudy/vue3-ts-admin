@@ -39,7 +39,7 @@ import ScrollBar from '@/components/scrollBar/index.vue'
 }
 
 .page_main {
-  position: fixed;
+  position: absolute;
   top: 100px;
   right: 0;
 

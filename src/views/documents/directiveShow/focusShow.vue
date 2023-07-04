@@ -36,7 +36,7 @@ const focused = ref(false)
 }
 
 .show_card {
-  position: fixed;
+  position: absolute;
   right: 500px;
   top: 200px;
 }
