@@ -12,16 +12,6 @@ const props = defineProps({
       type: String,
       default: ''
     },
-    isHideTools: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    isPin: {
-      type: Boolean,
-      required: false,
-      default: true
-    },
     height: {
       type: String,
       required: false,
@@ -31,12 +21,7 @@ const props = defineProps({
       type: String,
       required: false,
       default: "auto"
-    },
-    mode: {
-      type: String,
-      required: false,
-      default: 'sv'
-    },
+    }
   })
 const vditor = ref()
   onMounted(()=>{
