@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import Vditor from '@/components/vditor/index.vue'
-import { getList } from '@/api/index'
+import { getList } from '@/api'
 import { ref } from 'vue'
 const inputValue = ref('测试一下')
 const inputChange = () => {

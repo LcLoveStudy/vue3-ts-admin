@@ -1,3 +1,4 @@
+import { ElMessage } from "element-plus"
 /**
  * 通过url下载
  * @param {*} url 文件的下载地址
@@ -6,15 +7,28 @@
  * @author 李畅
  * @email dotb116393@163.com
  */
-const downLoad = (url: string, fileName: string) => {
-  let a = document.createElement('a') as unknown as HTMLLinkElement
-  a.href = url
-  a.setAttribute('class', url)
-  a.setAttribute('download', fileName)
-  a.style.display = 'none'
-  document.body.appendChild(a)
-  a.click()
-  document.body.removeChild(a)
+export const downLoad = async (url: string, fileName: string):Promise<void> => {
+  try {
+    const res = await new Promise(() => {
+      let a = document.createElement('a') as unknown as HTMLLinkElement
+      a.href = url
+      a.setAttribute('class', url)
+      a.setAttribute('download', fileName)
+      a.style.display = 'none'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    })
+    ElMessage.success('下载完成')
+  } catch (err) {
+    ElMessage.warning('下载出错啦')
+  }
 }
 
-export default downLoad
+//以blob下载
+export const downloadBlob = (blob:Blob,fileName:string)=>{
+  const href = URL.createObjectURL(blob)
+  downLoad(href,fileName)
+  //释放blob对象
+  URL.revokeObjectURL(href)
+}

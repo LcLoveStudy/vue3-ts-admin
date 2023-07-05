@@ -5,6 +5,7 @@ import { deepFreeze, objectCopy } from './object'
 import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
 import { dateFormat } from './dateFormat'
+import { downLoad, downloadBlob } from './download'
 import getColor from './getColor'
 import getType from './getType'
 import getCopy from './copy'
@@ -12,7 +13,9 @@ import http from './http'
 export {
   Percentage,
   http,
+  downLoad,
   arrNoRepeat,
+  downloadBlob,
   startLoading,
   endLoading,
   arrSort,
