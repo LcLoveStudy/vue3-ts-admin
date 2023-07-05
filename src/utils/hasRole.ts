@@ -7,3 +7,5 @@
 const hasRole = (userRole:string,roleList:Array<string>) :boolean=>{
   return roleList.includes(userRole)
 }
+
+export default hasRole

@@ -8,6 +8,7 @@ import { dateFormat } from './dateFormat'
 import { downLoad, downloadBlob } from './download'
 import getColor from './getColor'
 import getType from './getType'
+import hasRole from './hasRole'
 import getCopy from './copy'
 import http from './http'
 export {
@@ -19,6 +20,7 @@ export {
   startLoading,
   endLoading,
   arrSort,
+  hasRole,
   deepFreeze,
   getColor,
   getItem,
