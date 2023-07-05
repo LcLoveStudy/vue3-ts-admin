@@ -2,11 +2,11 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import ElementPlus from 'element-plus'
-import '@/utils/page/rem.js' //引入rem解决方案
+import '@/utils/page/rem.js'            //引入rem解决方案
 import 'element-plus/dist/index.css'
-import '@/assets/style/reset.css'
-import '@/assets/style/common.css'
-import 'nprogress/nprogress.css'
+import '@/assets/style/reset.css'       //样式重置
+import '@/assets/style/atomization.css' //引入原子化css
+import 'nprogress/nprogress.css'        //引入顶部进度条样式
 import App from './App.vue'
 import router from './router'
 import createDirective from '@/directive'
