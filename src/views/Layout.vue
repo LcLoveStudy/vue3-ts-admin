@@ -1,5 +1,5 @@
 <template>
-  <el-container class="container">
+  <el-container class="container fs-16">
     <!-- 右边头部 -->
     <el-header class="header">
       <Header v-model:isCollapse="isCollapse" />
