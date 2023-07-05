@@ -3,12 +3,13 @@ const HOME: interRouter = {
   path: '/home',
   name: 'home',
   meta: {
-    hideChildrenInMenu: true,
-    icon: 'EditPen',
     title: '首页',
-    hideBreadcrumb: false,
+    icon: 'EditPen',
     hideMenu: false,
-    keepChild: true
+    keepChild: true,
+    hideBreadcrumb: false,
+    hideChildrenInMenu: true,
+    role:['admin','superadmin','user'],
   },
   children: [
     {
@@ -19,9 +20,10 @@ const HOME: interRouter = {
         title: '首页',
         icon: '',
         hideMenu: true,
+        keepChild: false,
         hideBreadcrumb: true,
         hideChildrenInMenu: true,
-        keepChild: false
+        role:['admin','superadmin','user'],
       },
       children: []
     }

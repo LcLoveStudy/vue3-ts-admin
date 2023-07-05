@@ -22,6 +22,7 @@ export interface interRouter {
     hideChildrenInMenu: boolean
     icon: string
     title: string
+    role:Array<string>
     hideMenu: boolean
     hideBreadcrumb: boolean
     keepChild: boolean

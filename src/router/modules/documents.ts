@@ -3,12 +3,13 @@ const DOCUMENTS: interRouter = {
   path: '/documents',
   name: 'documents',
   meta: {
-    hideChildrenInMenu: false,
-    icon: 'CopyDocument',
     title: '使用手册',
-    hideBreadcrumb: false,
+    icon: 'CopyDocument',
     hideMenu: false,
-    keepChild: false
+    keepChild: false,
+    hideBreadcrumb: false,
+    hideChildrenInMenu: false,
+    role:['admin','superadmin','user']
   },
   children: [
     {
@@ -19,9 +20,10 @@ const DOCUMENTS: interRouter = {
         title: '指令',
         icon: '',
         hideMenu: false,
+        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
-        keepChild: true
+        role:['admin','superadmin','user'],
       },
       children: [
         {
@@ -32,9 +34,10 @@ const DOCUMENTS: interRouter = {
             title: '图片懒加载',
             icon: '',
             hideMenu: false,
+            keepChild: false,
             hideBreadcrumb: false,
             hideChildrenInMenu: true,
-            keepChild: false
+            role:['admin','superadmin','user'],
           },
           children: []
         }, 
@@ -46,9 +49,10 @@ const DOCUMENTS: interRouter = {
             title: '聚焦',
             icon: '',
             hideMenu: false,
+            keepChild: false,
             hideBreadcrumb: false,
             hideChildrenInMenu: true,
-            keepChild: false
+            role:['admin','superadmin','user'],
           },
           children: []
         },
@@ -60,9 +64,10 @@ const DOCUMENTS: interRouter = {
             title: '点击外部',
             icon: '',
             hideMenu: false,
+            keepChild: false,
             hideBreadcrumb: false,
-            hideChildrenInMenu: true,
-            keepChild: false
+            hideChildrenInMenu: false,
+            role:['admin','superadmin','user'],
           },
           children: []
         },
@@ -75,9 +80,10 @@ const DOCUMENTS: interRouter = {
         title: '工具函数',
         icon: '',
         hideMenu: false,
+        keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
-        keepChild: true
+        role:['admin','superadmin','user'],
       },
       component:() => import('@/views/documents/utils/index.vue'),
       children:[]
@@ -89,9 +95,10 @@ const DOCUMENTS: interRouter = {
         title: '原子化css',
         icon: '',
         hideMenu: false,
+        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
-        keepChild: true
+        role:['admin','superadmin','user'],
       },
       component:() => import('@/views/documents/styleShow/index.vue'),
       children:[]
