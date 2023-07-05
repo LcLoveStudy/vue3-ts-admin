@@ -5,7 +5,8 @@
       <!-- 从这里开始循环菜单 -->
       <template v-for="menu in routes" :key="menu.routePath">
         <!-- 这里开始时只有一级菜单 -->
-        <el-menu-item v-if="menu.meta.hideChildrenInMenu" :index="menu.path">
+        <el-menu-item v-if="!menu.meta.hideMenu && menu.meta.hideChildrenInMenu && hasRole('admin', menu.meta.role)"
+          :index="menu.path">
           <el-icon class="icon" :icon="menu.meta.icon">
             <!-- 动态渲染icon -->
             <component :is="menu.meta.icon" />
@@ -13,7 +14,7 @@
           <span>{{ menu.meta.title }}</span>
         </el-menu-item>
         <!-- 这里开始是有子菜单的 -->
-        <template v-else>
+        <template v-else-if="!menu.meta.hideMenu && hasRole('admin', menu.meta.role)">
           <el-sub-menu :index="menu.path">
             <template #title>
               <el-icon class="icon">
@@ -23,18 +24,22 @@
             </template>
             <template v-for="twoMenu in menu.children" :key="twoMenu.path">
               <!-- 这里开始是没有三级菜单的二级菜单 -->
-              <el-menu-item v-if="!twoMenu.meta.hideMenu && twoMenu.meta.hideChildrenInMenu" :index="twoMenu.path">
+              <el-menu-item
+                v-if="!twoMenu.meta.hideMenu && twoMenu.meta.hideChildrenInMenu && hasRole('admin', twoMenu.meta.role)"
+                :index="twoMenu.path">
                 {{ twoMenu.meta.title }}
               </el-menu-item>
               <!-- 这里开始是有三级菜单的二级菜单 -->
-              <template v-else-if="!twoMenu.meta.hideMenu && !twoMenu.meta.hideChildrenInMenu">
+              <template
+                v-else-if="!twoMenu.meta.hideMenu && !twoMenu.meta.hideChildrenInMenu && hasRole('admin', twoMenu.meta.role)">
                 <el-sub-menu :key="twoMenu.path" :index="twoMenu.path">
                   <template #title>
                     <span>{{ twoMenu.meta.title }}</span>
                   </template>
                   <!-- 三级菜单 -->
                   <template v-for="treeMenu in twoMenu.children" :key="treeMenu.path">
-                    <el-menu-item v-if="!treeMenu.meta.hideMenu" :index="treeMenu.path">
+                    <el-menu-item v-if="!treeMenu.meta.hideMenu && hasRole('admin', treeMenu.meta.role)"
+                      :index="treeMenu.path">
                       {{ treeMenu.meta.title }}
                     </el-menu-item>
                   </template>
@@ -51,7 +56,9 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { routes } from '@/router/index'
+import { hasRole } from '@/utils'
 import { watch, ref } from 'vue'
+
 defineProps({
   //菜单栏的展开和折叠
   isCollapse: {
