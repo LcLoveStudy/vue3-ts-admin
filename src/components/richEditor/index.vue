@@ -23,6 +23,8 @@ const props = defineProps({
       default: "auto"
     }
   })
+const emits = defineEmits(['update:value','change'])
+
 const vditor = ref()
   onMounted(()=>{
     vditor.value = new Vditor("vditor", {
@@ -90,6 +92,10 @@ const vditor = ref()
       ],
       after: () => {
         vditor.value.setValue(props.value)
+      },
+      input(value:string){
+        emits('update:value',value)
+        emits('change',value)
       },
       mode: 'wysiwyg',
       preview: {
