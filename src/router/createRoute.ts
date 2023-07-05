@@ -1,4 +1,4 @@
-import type { interRouter } from '@/type/route.type'
+import type { interRouter } from '@/type/vue-router'
 let realRoute: Array<interRouter> = []
 const initRoute = (routeArr: Array<interRouter>) => {
   routeArr.forEach((item) => {

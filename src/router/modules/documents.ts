@@ -1,4 +1,4 @@
-import type { interRouter } from '@/type/route.type'
+import type { interRouter } from '@/type/vue-router'
 const DOCUMENTS: interRouter = {
   path: '/documents',
   name: 'documents',
