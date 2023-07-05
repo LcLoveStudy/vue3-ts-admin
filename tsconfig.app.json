@@ -6,9 +6,7 @@
     "src/**/*.vue"
   ],
   "exclude": [
-    "src/**/__tests__/*",
-    //忽略富文本编译器的检查
-    "src/components/vditor"
+    "src/**/__tests__/*"
   ],
   "compilerOptions": {
     // 若TS版本为5.x，此处值应为"node" 
