@@ -26,7 +26,7 @@ service.interceptors.request.use(
     return config
   },
   (error) => {
-    ElMessage.error(error.message)
+    ElMessage.warning('请稍后再试')
     return Promise.reject(error)
   }
 )
@@ -50,7 +50,7 @@ service.interceptors.response.use(
     // 超出 2xx 范围的状态码都会触发该函数。
     ElMessage({
       message: error.message,
-      type: 'error'
+      type: 'warning'
     })
     return Promise.reject(error)
   }

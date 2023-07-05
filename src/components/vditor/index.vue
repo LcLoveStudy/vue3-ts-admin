@@ -1,12 +1,12 @@
 <template>
   <el-skeleton :rows="5" animated :loading="initLoading">
-    <div id="vditor"></div>
+    <div id="vditor" ref="vditor"></div>
   </el-skeleton>
 </template>
 
 <script setup lang="ts">
-import Vditor from "vditor"
-import "vditor/dist/index.css"
+import Vditor from "./src"
+import "./src/assets/index.css"
 import { onMounted, ref } from "vue";
 const props = defineProps({
   value: {
@@ -37,7 +37,7 @@ const vditor = ref()
 
 onMounted(() => {
   initLoading.value = true
-  vditor.value = new Vditor("vditor", {
+  vditor.value = new Vditor(vditor.value, {
     height: props.height,
     width: props.width,
     toolbarConfig: {
@@ -48,8 +48,8 @@ onMounted(() => {
       enable: false
     },
     toolbar: [
-      "emoji",
-      "headings",
+      // "emoji",
+      // "headings",
       "bold",
       "italic",
       "strike",
@@ -84,14 +84,14 @@ onMounted(() => {
       "redo",
       "|",
       // "fullscreen",
-      "edit-mode",
+      // "edit-mode",
       {
         name: "more",
         toolbar: [
           //"both",
-          "code-theme",
-          "content-theme",
-          "export",
+          // "code-theme",
+          // "content-theme",
+          // "export",
           "outline",
           "preview",
           //"devtools",
