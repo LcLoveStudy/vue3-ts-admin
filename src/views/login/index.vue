@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import SsForm from '@/components/ssForm/index.vue'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 //登录表单
 const loginForm = ref({
   username: {
@@ -30,7 +30,7 @@ const router = useRouter()
 //点击登录按钮
 const loginClick = ()=>{
   loginLoading.value = true
-  console.log('用户名:'+loginForm.value.username.value,'密码:'+loginForm.value.password.value);
+  console.log('用户名:'+loginForm.value.username.value,'密码:'+loginForm.value.password.value)
   setTimeout(()=>{
     loginLoading.value =false
     router.push('/')
