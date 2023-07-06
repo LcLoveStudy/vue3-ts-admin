@@ -1,11 +1,58 @@
 <template>
-  <div>
-    login
+  <div class="login_page">
+    <div class="login_box flex items-center justify-center">
+      <SsForm :formData="loginForm" @submit="loginClick" :submitLoading="loginLoading" labelColor="#000"/>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import SsForm from '@/components/ssForm/index.vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+//登录表单
+const loginForm = ref({
+  username: {
+    value: '',
+    label: '用户名',
+    placeholder: '请输入用户名'
+  },
+  password: {
+    value: '',
+    label: '密码',
+    type: 'password',
+    placeholder: '请输入密码',
+  }
+})
+
+const loginLoading = ref(false)
+const router = useRouter()
+//点击登录按钮
+const loginClick = ()=>{
+  loginLoading.value = true
+  console.log('用户名:'+loginForm.value.username.value,'密码:'+loginForm.value.password.value);
+  setTimeout(()=>{
+    loginLoading.value =false
+    router.push('/')
+  },1000)
+}
 
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.login_page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login_box {
+    width: 600px;
+    height: 400px;
+    background-color: pink;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+}
+</style>
