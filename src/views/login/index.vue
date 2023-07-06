@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import SsForm from '@/components/ssForm/index.vue'
+import SsForm from '@/components/autoForm/index.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 //登录表单
