@@ -1,13 +1,13 @@
 <template>
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
-      <SsForm :formData="loginForm" @submit="loginClick" :submitLoading="loginLoading" labelColor="#000"/>
+      <AutoForm :formData="loginForm" @submit="loginClick" :submitLoading="loginLoading" labelColor="#000"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import SsForm from '@/components/autoForm/index.vue'
+import AutoForm from '@/components/autoForm/index.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 //登录表单
