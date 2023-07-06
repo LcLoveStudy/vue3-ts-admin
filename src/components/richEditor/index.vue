@@ -46,7 +46,7 @@ const vditor = ref()
         "link",
         "|",
         "list",
-        "ordered-list",
+        // "ordered-list",
         "check",
         "outdent",
         "indent",
