@@ -6,8 +6,8 @@
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const setItem = (key:string,value: string) => {
-  localStorage.setItem(key, value)
+export const setItem = (key:string,value: any) => {
+  localStorage.setItem(key, JSON.stringify(value))
 }
 
 /**
@@ -19,7 +19,7 @@ export const setItem = (key:string,value: string) => {
  * @email dotb116393@163.com
  */
 export const getItem = (key:string): string => {
-  return JSON.parse(JSON.stringify(localStorage.getItem(key) || ''))
+  return JSON.parse(localStorage.getItem(key) || JSON.stringify(''))
 }
 
 /**

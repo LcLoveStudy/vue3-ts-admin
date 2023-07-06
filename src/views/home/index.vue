@@ -2,18 +2,17 @@
   <div class="mb-20">
     home
   </div>
-  <WangEditor v-model:value="inputValue" @change="inputChange"/>
+  <RichEditor v-model:value="inputValue" @change="inputChange"/>
 </template>
 
 <script setup lang="ts">
 import { getList } from '@/api'
-import WangEditor from '@/components/richEditor/index.vue'
+import RichEditor from '@/components/richEditor/index.vue'
 import {ref} from 'vue'
 const inputValue = ref('')
 const inputChange = ()=>{
   console.log(inputValue.value)
 }
-
 getList({ page: 1 })
 </script>
 

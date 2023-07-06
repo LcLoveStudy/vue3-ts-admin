@@ -16,7 +16,7 @@
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item>个人信息</el-dropdown-item>
-            <el-dropdown-item @click="router.push('/login')">退出登陆</el-dropdown-item>
+            <el-dropdown-item @click="logout">退出登陆</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -41,6 +41,11 @@ const emits = defineEmits(['update:isCollapse'])
  */
 const foldMenu = () => {
   emits('update:isCollapse', !props.isCollapse)
+}
+
+//点击退出登录
+const logout = ()=>{
+  router.push('/login')
 }
 </script>
 
