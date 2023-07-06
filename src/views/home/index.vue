@@ -2,12 +2,12 @@
   <div class="mb-20">
     home
   </div>
-  <RichEditor/>
+  <WangEditor/>
 </template>
 
 <script setup lang="ts">
 import { getList } from '@/api'
-import RichEditor from '@/components/richEditor/index.vue'
+import WangEditor from '@/components/wangEditor/index.vue'
 getList({ page: 1 })
 </script>
 
