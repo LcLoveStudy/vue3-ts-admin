@@ -15,13 +15,17 @@ const loginForm = ref({
   username: {
     value: '',
     label: '用户名',
-    placeholder: '请输入用户名'
+    prop:'username',
+    placeholder: '请输入用户名',
+    rules:[ { required: true, message: '用户名不能为空', trigger: 'blur' }]
   },
   password: {
     value: '',
     label: '密码',
     type: 'password',
+    prop:'password',
     placeholder: '请输入密码',
+    rules:[ { required: true, message: '密码不能为空', trigger: 'blur' }]
   }
 })
 

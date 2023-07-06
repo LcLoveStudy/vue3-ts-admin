@@ -1,12 +1,15 @@
 <template>
   <div class="width-400">
-    <el-form label-position="right" label-width="80px">
-      <el-form-item v-for="item in props.formData" :key="item.label" :label="item.label">
-        <el-input v-model="item.value" :placeholder="item.placeholder" :type="item?.type"
-          :show-password="item.type == 'password'" />
-      </el-form-item>
+    <el-form ref="formRef" label-position="right" label-width="100px" :rules="createRules()" :model="ruleForm">
+      <template v-for="item in props.formData" :key="item.label">
+        <el-form-item :label="item.label" :prop="item.prop">
+          <el-input v-model="item.value" :placeholder="item.placeholder" :type="item?.type" @input="inputChange(item)"
+            :show-password="item.type == 'password'" />
+        </el-form-item>
+      </template>
+      <!-- 表单确认按钮 -->
       <el-form-item>
-        <el-button type="primary" @click="submitClick" class="width-200 mt-20" :loading="submitLoading">
+        <el-button type="primary" @click="submitClick(formRef)" class="width-200 mt-20" :loading="submitLoading">
           {{ props.submitText }}
         </el-button>
       </el-form-item>
@@ -15,6 +18,8 @@
 </template>
 
 <script setup lang="ts">
+import type { FormInstance } from 'element-plus';
+import { reactive, ref } from 'vue'
 const props = defineProps({
   formData: {
     type: Object,
@@ -22,24 +27,28 @@ const props = defineProps({
       username: {
         value: '',
         label: '用户名',
+        prop: 'username',
         type: '',
-        placeholder: '请输入用户名'
+        placeholder: '请输入用户名',
+        rules: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
       },
       password: {
         value: '',
         label: '密码',
+        prop: 'password',
         type: 'password',
-        placeholder: '请输入密码'
+        placeholder: '请输入密码',
+        rules: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
       }
     }
   },
   //提交按钮的文字提示
-  submitText:{
+  submitText: {
     type: String,
     default: '登录'
   },
   // 提交按钮的loading
-  submitLoading:{
+  submitLoading: {
     type: Boolean,
     default: false
   },
@@ -49,12 +58,38 @@ const props = defineProps({
     default: '#000'
   }
 })
-
+//自定义事件
 const emits = defineEmits(['submit'])
 
+//表单实例
+const formRef = ref<FormInstance>()
+//代理表单，只用于参与表单验证
+const ruleForm = reactive<any>({})
+//用于创建表单验证规则
+const createRules = () => {
+  let rules: any = []
+  for (let key in props.formData) {
+    rules[key] = props.formData[key]?.rules
+    ruleForm[key] = ''
+  }
+  return rules
+}
+
+//表单输入框输入时,改变代理对象，用于表单验证
+const inputChange = (item: any) => {
+  ruleForm[item.prop] = item.value
+}
+
 //表单的提交
-const submitClick = () => {
-  emits('submit')
+const submitClick = (formEl: FormInstance | undefined) => {
+  if (!formEl) return
+  formEl.validate((valid)=>{
+    if (valid) {
+      emits('submit')
+    } else {
+      return false
+    }
+  })
 }
 </script>
 
