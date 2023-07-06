@@ -34,7 +34,7 @@ const toolbarConfig = {}
 const editorConfig = { placeholder: '请输入内容...' }
 
 //内容改变时，获取当前的html内容并更新父组件传递来的参数
-const handleChange = (editor)=>{
+const handleChange = (editor: { getHtml: () => string })=>{
   emits('update:value',editor.getHtml())
   emits('change',editor.getHtml())
 }
