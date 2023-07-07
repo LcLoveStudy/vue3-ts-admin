@@ -1,7 +1,7 @@
 <template>
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
-      <AutoForm :formData="loginForm" @submit="loginClick" :submitLoading="loginLoading" labelColor="#000"/>
+      <AutoForm :formData="loginForm" @submit="loginClick" :submitLoading="loginLoading" labelColor="#000" />
     </div>
   </div>
 </template>
@@ -15,30 +15,28 @@ const loginForm = ref({
   username: {
     value: '',
     label: '用户名',
-    prop:'username',
+    prop: 'username',
     placeholder: '请输入用户名',
-    rules:[ { required: true, message: '用户名不能为空', trigger: 'blur' }]
+    rules: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
   },
   password: {
     value: '',
     label: '密码',
     type: 'password',
-    prop:'password',
+    prop: 'password',
     placeholder: '请输入密码',
-    rules:[ { required: true, message: '密码不能为空', trigger: 'blur' }]
+    rules: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
   }
 })
 
 const loginLoading = ref(false)
 const router = useRouter()
 //点击登录按钮
-const loginClick = ()=>{
+const loginClick = () => {
   loginLoading.value = true
-  console.log('用户名:'+loginForm.value.username.value,'密码:'+loginForm.value.password.value)
-  setTimeout(()=>{
-    loginLoading.value =false
-    router.push('/')
-  },1000)
+  console.log('用户名:' + loginForm.value.username.value, '密码:' + loginForm.value.password.value)
+  loginLoading.value = false
+  router.push('/')
 }
 
 </script>
