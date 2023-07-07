@@ -102,6 +102,36 @@ const DOCUMENTS: interRouter = {
       },
       component:() => import('@/views/documents/styleShow/index.vue'),
       children:[]
+    },
+    {
+      path: '/documents/code',
+      name: 'code',
+      meta: {
+        title: '低代码组件',
+        icon: '',
+        hideMenu: false,
+        keepChild: true,
+        hideBreadcrumb: false,
+        hideChildrenInMenu: false,
+        role:['admin','superadmin','user'],
+      },
+      children:[
+        {
+          path: '/documents/code/table',
+          name: 'table',
+          meta: {
+            title: '表格',
+            icon: '',
+            hideMenu: false,
+            keepChild: true,
+            hideBreadcrumb: false,
+            hideChildrenInMenu: false,
+            role:['admin','superadmin','user'],
+          },
+          children:[],
+          component:()=>import('@/views/documents/code/tableCode.vue')
+        }
+      ]
     }
   ]
 }
