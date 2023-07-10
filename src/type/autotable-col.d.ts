@@ -4,6 +4,10 @@ export interface autoColFace {
   width?:string
   order?:Number
   sortable?:boolean
-  filters?:Array<any>
+  editable?:boolean
+  filters?:Array<{
+    text:string
+    value:string
+  }>
   filterMethod?:FilterMethods<any>
 }
