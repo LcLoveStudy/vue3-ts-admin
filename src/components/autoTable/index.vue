@@ -1,7 +1,7 @@
 <template>
-  <el-table ref="singleTableRef" :border="props.border" stripe :data="props.tableData" :height="props.height"
-    style="width: 100%" :element-loading-text="props.loadingText" element-loading-background="rgba(122, 122, 122, 0.8)"
-    v-loading="props.loading">
+  <el-table ref="multipleTableRef" :border="props.border" stripe :data="props.tableData" :height="props.height"
+    @selection-change="handleSelectionChange" style="width: 100%" :element-loading-text="props.loadingText"
+    element-loading-background="rgba(122, 122, 122, 0.8)" v-loading="props.loading">
     <!-- 第一列可选 -->
     <el-table-column v-if="props.selection" type="selection" width="55" />
     <!-- 开始循环渲染 -->
@@ -30,7 +30,8 @@
 
 <script setup lang="ts">
 import { type autoColFace } from '@/type/autotable-col'
-import { ref, useSlots } from 'vue'
+import type { ElTable } from 'element-plus';
+import { nextTick, ref, useSlots, watch } from 'vue'
 const props = defineProps({
   //表格数据
   tableData: {
@@ -44,6 +45,11 @@ const props = defineProps({
   },
   //是否每行可选择
   selection: {
+    type: Boolean,
+    default: false
+  },
+  //是否全选
+  selectAll: {
     type: Boolean,
     default: false
   },
@@ -67,6 +73,7 @@ const props = defineProps({
     default: false
   }
 })
+const emits = defineEmits(['selectChange', 'update:selectAll'])
 //获取所有插槽
 const slots = useSlots()
 //表头数据
@@ -77,6 +84,30 @@ const createColumnData = () => {
 }
 createColumnData()
 
+const multipleTableRef = ref<InstanceType<typeof ElTable>>()
+const multipleSelection = ref([])
+//选中状态改变时
+const handleSelectionChange = (val: any) => {
+  multipleSelection.value = val
+  if (multipleSelection.value.length == props.tableData.length) {
+    emits('update:selectAll', true)
+  } else if (multipleSelection.value.length != props.tableData.length) {
+    emits('update:selectAll', false)
+  }
+  emits('selectChange', val)
+}
+//监听是否全选
+watch(() => props.selectAll, (newValue) => {
+  if (newValue && multipleSelection.value.length != props.tableData.length) {
+    multipleTableRef.value!.toggleAllSelection()
+  } else if (newValue && multipleSelection.value.length == props.tableData.length) {
+    emits('update:selectAll', true)
+  } else {
+    if (multipleSelection.value.length == props.tableData.length) {
+      multipleTableRef.value!.clearSelection()
+    }
+  }
+})
 </script>
 
 <style scoped lang="less"></style>

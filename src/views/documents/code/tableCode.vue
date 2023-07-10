@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <AutoTable :tableData="tableData" :columnData="columnData" :selection="true">
-      <template #age="{ scope }">
-        <span class="blue"> {{ scope.row.age }}</span>
-      </template>
-      <template #option="{ scope }">
-        <el-button @click="console.log(scope.row.name)">打印名字</el-button>
-      </template>
-    </AutoTable>
-  </div>
+  <el-checkbox v-model="selectAll" label="全选" />
+  <AutoTable :tableData="tableData" :columnData="columnData" :selection="true" v-model:selectAll="selectAll"
+    @selectChange="chage">
+    <template #age="{ scope }">
+      <span class="blue"> {{ scope.row.age }}</span>
+    </template>
+    <template #option="{ scope }">
+      <el-button @click="console.log(scope.row.name)">打印名字</el-button>
+    </template>
+  </AutoTable>
 </template>
 
 <script setup lang="ts">
@@ -55,6 +55,11 @@ const tableData = ref([
     sex: '女'
   }
 ])
+
+const selectAll = ref(false)
+const chage = (value: any) => {
+  console.log(selectAll.value)
+}
 </script>
 
 <style scoped></style>
