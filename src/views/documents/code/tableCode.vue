@@ -1,6 +1,13 @@
 <template>
   <div>
-    <AutoTable :tableData="tableData" :columnData="columnData" :selection="true" />
+    <AutoTable :tableData="tableData" :columnData="columnData" :selection="true">
+      <template #age="{ scope }">
+        <span class="blue"> {{ scope.row.age }}</span>
+      </template>
+      <template #option="{ scope }">
+        <el-button @click="console.log(scope.row.name)">打印名字</el-button>
+      </template>
+    </AutoTable>
   </div>
 </template>
 
@@ -11,33 +18,41 @@ const columnData = ref([
   {
     prop: 'name',
     label: '姓名',
-    width: '',
-    sortable: false
+    order: 1,
+    width: '100'
+  },
+  {
+    prop: 'sex',
+    label: '性别',
+    order: 3,
+    filters: [
+      { text: '男', value: '男' },
+      { text: '女', value: '女' }
+    ],
+    filterMethod: (value: string, row: any, column: any) => {
+      const property = column['property']
+      return row[property] == value
+    }
   },
   {
     prop: 'age',
     label: '年龄',
+    order: 2,
     width: '',
-    sortable: true,
-    filters: [
-      { text: '34', value: 34 },
-      { text: '41', value: 41 }
-    ],
-    filterMethod: (value: string, row: any, column: any) => {
-      const property = column['property']
-      return row[property] > value || row[property] == value
-    }
+    sortable: true
   }
 ])
 
 const tableData = ref([
   {
     name: 'lc',
-    age: 34
+    age: 34,
+    sex: '男'
   },
   {
     name: 'ww',
-    age: 41
+    age: 41,
+    sex: '女'
   }
 ])
 </script>

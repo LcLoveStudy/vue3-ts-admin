@@ -6,14 +6,31 @@
     <el-table-column v-if="props.selection" type="selection" width="55" />
     <!-- 开始循环渲染 -->
     <template v-for="item in columnData" :key="item.props">
-      <el-table-column :prop="item.prop" :label="item.label" :width="item?.width" :sortable="item?.sortable"
-        :filters="item.filters" :filter-method="item?.filterMethod" />
+      <template v-if="slots[item.prop]">
+        <el-table-column :prop="item.prop" :label="item.label" :width="item?.width" :sortable="item?.sortable"
+          :filters="item.filters" :filter-method="item?.filterMethod">
+          <template #default="scope">
+            <slot :name="item.prop" :scope="scope"></slot>
+          </template>
+        </el-table-column>
+      </template>
+      <template v-else>
+        <el-table-column :prop="item.prop" :label="item.label" :width="item?.width" :sortable="item?.sortable"
+          :filters="item.filters" :filter-method="item?.filterMethod" />
+      </template>
     </template>
+    <!-- 操作栏 -->
+    <el-table-column v-if="slots.option" label="操作">
+      <template #default="scope">
+        <slot name="option" :scope="scope"></slot>
+      </template>
+    </el-table-column>
   </el-table>
 </template>
 
 <script setup lang="ts">
 import { type autoColFace } from '@/type/autotable-col'
+import { ref, useSlots } from 'vue'
 const props = defineProps({
   //表格数据
   tableData: {
@@ -50,7 +67,16 @@ const props = defineProps({
     default: false
   }
 })
-const columnData: Array<autoColFace> = props.columnData as Array<autoColFace>
+//获取所有插槽
+const slots = useSlots()
+//表头数据
+const columnData = ref<Array<autoColFace>>([])
+const createColumnData = () => {
+  //通过order对显示数据进行排序
+  columnData.value = props.columnData.sort((a: any, b: any) => a?.order - b?.order) as Array<autoColFace>
+}
+createColumnData()
+
 </script>
 
 <style scoped lang="less"></style>
