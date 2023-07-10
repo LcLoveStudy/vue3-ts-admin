@@ -1,28 +1,45 @@
 <template>
   <div>
-    <AutoTable :tableData="[]" :columnData="columnData" :selection="true"/>
+    <AutoTable :tableData="tableData" :columnData="columnData" :selection="true" />
   </div>
 </template>
 
 <script setup lang="ts">
 import AutoTable from '@/components/autoTable/index.vue'
-import {ref} from 'vue'
+import { ref } from 'vue'
 const columnData = ref([
   {
-    props:'name',
-    label:'姓名',
-    width:'300',
-    sortable:false
+    prop: 'name',
+    label: '姓名',
+    width: '',
+    sortable: false
   },
   {
-    props:'age',
-    label:'年龄',
-    width:'100',
-    sortable:true
+    prop: 'age',
+    label: '年龄',
+    width: '',
+    sortable: true,
+    filters: [
+      { text: '34', value: 34 },
+      { text: '41', value: 41 }
+    ],
+    filterMethod: (value: string, row: any, column: any) => {
+      const property = column['property']
+      return row[property] > value || row[property] == value
+    }
+  }
+])
+
+const tableData = ref([
+  {
+    name: 'lc',
+    age: 34
+  },
+  {
+    name: 'ww',
+    age: 41
   }
 ])
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

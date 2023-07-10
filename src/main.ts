@@ -6,6 +6,7 @@ import 'element-plus/dist/index.css'
 import '@/assets/style/reset.css'       //样式重置
 import '@/assets/style/atomization.css' //引入原子化css
 import 'nprogress/nprogress.css'        //引入顶部进度条样式
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import App from './App.vue'
 import router from './router'
 import createDirective from '@/directive'
@@ -21,6 +22,8 @@ createDirective(app)
 
 app.use(createPinia())
 app.use(router)
-app.use(ElementPlus)
+app.use(ElementPlus,{
+  locale: zhCn,
+})
 app.mount('#app')
 
