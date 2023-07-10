@@ -3,8 +3,14 @@
     <el-form ref="formRef" label-position="right" label-width="100px" :rules="createRules()" :model="ruleForm">
       <template v-for="item in props.formData" :key="item.label">
         <el-form-item :label="item.label" :prop="item.prop">
-          <el-input v-model="item.value" :placeholder="item.placeholder" :type="item?.type" @input="inputChange(item)"
-            :show-password="item.type == 'password'" />
+          <el-checkbox-group v-if="item?.type == 'checkbox'" v-model="item.value" @change="inputChange(item)">
+            <el-checkbox v-for="checkoption in item.options" :key="checkoption.value" :label="checkoption.value"
+              :name="item.prop">
+              {{ checkoption.label }}
+            </el-checkbox>
+          </el-checkbox-group>
+          <el-input v-else v-model="item.value" :placeholder="item.placeholder" :type="item?.type"
+            @input="inputChange(item)" :show-password="item.type == 'password'" />
         </el-form-item>
       </template>
       <!-- 表单确认按钮 -->
@@ -72,6 +78,7 @@ const createRules = () => {
     rules[key] = props.formData[key]?.rules
     ruleForm[key] = ''
   }
+  console.log(rules)
   return rules
 }
 
@@ -83,7 +90,7 @@ const inputChange = (item: any) => {
 //表单的提交
 const submitClick = (formEl: FormInstance | undefined) => {
   if (!formEl) return
-  formEl.validate((valid)=>{
+  formEl.validate((valid) => {
     if (valid) {
       emits('submit')
     } else {

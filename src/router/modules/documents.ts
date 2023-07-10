@@ -120,7 +120,7 @@ const DOCUMENTS: interRouter = {
           path: '/documents/code/table',
           name: 'table',
           meta: {
-            title: '表格',
+            title: '表格Table',
             icon: '',
             hideMenu: false,
             keepChild: true,
@@ -130,6 +130,21 @@ const DOCUMENTS: interRouter = {
           },
           children:[],
           component:()=>import('@/views/documents/code/tableCode.vue')
+        },
+        {
+          path: '/documents/code/form',
+          name: 'form',
+          meta: {
+            title: '表单Form',
+            icon: '',
+            hideMenu: false,
+            keepChild: true,
+            hideBreadcrumb: false,
+            hideChildrenInMenu: false,
+            role:['admin','superadmin','user'],
+          },
+          children:[],
+          component:()=>import('@/views/documents/code/formCode.vue')
         }
       ]
     }
