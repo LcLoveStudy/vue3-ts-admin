@@ -21,6 +21,9 @@
             <el-option v-for="selectOption in item.options" :key="selectOption.value" :label="selectOption.label"
               :value="selectOption.value" />
           </el-select>
+          <!-- 日期选择器 -->
+          <el-date-picker v-else-if="item?.type == 'date'" v-model="item.value" type="date"
+            :placeholder="item.placeholder" />
           <el-input v-else v-model="item.value" :placeholder="item.placeholder" :type="item?.type"
             @input="inputChange(item)" :show-password="item.type == 'password'" />
         </el-form-item>

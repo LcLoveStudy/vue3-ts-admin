@@ -51,6 +51,13 @@ const loginForm = ref({
     options: [{ label: '安徽', value: 'anhui' }, { label: '江苏', value: 'jiangsu' }],
     prop: 'place',
     placeholder: '请选择当前所在地区'
+  },
+  birthday: {
+    value: '',
+    label: '生日',
+    type: 'date',
+    prop: 'birthday',
+    placeholder: '请选择日期'
   }
 })
 const loginLoading = ref(false)
