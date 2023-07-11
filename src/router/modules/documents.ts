@@ -145,6 +145,21 @@ const DOCUMENTS: interRouter = {
           },
           children:[],
           component:()=>import('@/views/documents/code/formCode.vue')
+        },
+        {
+          path: '/documents/code/radio',
+          name: 'radio',
+          meta: {
+            title: '单选Radio',
+            icon: '',
+            hideMenu: false,
+            keepChild: true,
+            hideBreadcrumb: false,
+            hideChildrenInMenu: false,
+            role:['admin','superadmin','user'],
+          },
+          children:[],
+          component:()=>import('@/views/documents/code/radioCode.vue')
         }
       ]
     }
