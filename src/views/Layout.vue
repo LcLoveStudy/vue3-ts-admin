@@ -11,7 +11,7 @@
         <AsideMenu :isCollapse="isCollapse" />
       </el-aside>
       <!-- 右边主体 -->
-      <el-main class="main">
+      <el-main class="main scrollbar">
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -47,6 +47,8 @@ const isCollapse = ref(false)
 
   .main {
     background-color: var(--container-main-bgc);
+    height: 100%;
+    overflow: auto;
   }
 }
 </style>
