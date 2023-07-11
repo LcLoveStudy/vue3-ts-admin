@@ -175,6 +175,21 @@ const DOCUMENTS: interRouter = {
           },
           children:[],
           component:()=>import('@/views/documents/code/radioCode.vue')
+        },
+        {
+          path: '/documents/code/pagination',
+          name: 'pagination',
+          meta: {
+            title: '分页Pagination',
+            icon: '',
+            hideMenu: false,
+            keepChild: true,
+            hideBreadcrumb: false,
+            hideChildrenInMenu: false,
+            role:['admin','superadmin','user'],
+          },
+          children:[],
+          component:()=>import('@/views/documents/code/pagination.vue')
         }
       ]
     }
