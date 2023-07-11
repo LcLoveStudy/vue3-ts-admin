@@ -20,7 +20,7 @@ const props = defineProps({
 const emits = defineEmits(['update:value', 'change'])
 
 //初始化默认值
-const value = ref(props.value)
+const value: any = ref(props.value)
 // 单选框改变时
 const radioChange = () => {
   emits('update:value', value.value)
