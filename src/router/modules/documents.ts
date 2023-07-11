@@ -120,7 +120,7 @@ const DOCUMENTS: interRouter = {
           path: '/documents/code/rich',
           name: 'rich',
           meta: {
-            title: '富文本编辑器RichEditor',
+            title: '富文本RichEditor',
             icon: '',
             hideMenu: false,
             keepChild: true,
