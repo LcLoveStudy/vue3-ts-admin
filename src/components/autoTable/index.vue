@@ -1,5 +1,5 @@
 <template>
-  <el-table ref="multipleTableRef" :border="props.border" stripe :data="props.tableData" :height="props.height"
+  <el-table ref="multipleTableRef" stripe :data="props.tableData" :height="props.height"
     @selection-change="handleSelectionChange" style="width: 100%" :element-loading-text="props.loadingText"
     element-loading-background="rgba(122, 122, 122, 0.8)" v-loading="props.loading">
     <!-- 第一列可选 -->
@@ -80,11 +80,6 @@ const props = defineProps({
   loadingText: {
     type: String,
     default: '正在加载中.....'
-  },
-  //是否需要边框
-  border: {
-    type: Boolean,
-    default: false
   }
 })
 const emits = defineEmits(['selectChange', 'update:selectAll', 'tableEdit'])
