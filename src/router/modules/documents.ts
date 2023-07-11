@@ -165,7 +165,7 @@ const DOCUMENTS: interRouter = {
           path: '/documents/code/radio',
           name: 'radio',
           meta: {
-            title: '单选Radio',
+            title: '单选&多选',
             icon: '',
             hideMenu: false,
             keepChild: true,
