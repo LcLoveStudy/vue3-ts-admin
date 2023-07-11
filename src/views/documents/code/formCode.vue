@@ -26,7 +26,7 @@ const loginForm = ref({
       { label: '编程', value: 'code' }
     ],
     prop: 'hobby',
-    rules: [{ type: 'array', required: true, message: '请选择爱好', trigger: 'blur' }]
+    rules: [{ type: 'array', required: true, message: '请选择爱好', trigger: 'change' }]
   },
   password: {
     value: '',
@@ -42,7 +42,15 @@ const loginForm = ref({
     type: 'radio',
     options: [{ label: '男', value: 'man' }, { label: '女', value: 'woman' }],
     prop: 'sex',
-    rules: [{ required: true, message: '请选择性别', trigger: 'blur' }]
+    rules: [{ required: true, message: '请选择性别', trigger: 'change' }]
+  },
+  place: {
+    value: '',
+    label: '所在地',
+    type: 'select',
+    options: [{ label: '安徽', value: 'anhui' }, { label: '江苏', value: 'jiangsu' }],
+    prop: 'place',
+    placeholder: '请选择当前所在地区'
   }
 })
 const loginLoading = ref(false)

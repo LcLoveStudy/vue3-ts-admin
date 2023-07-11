@@ -16,6 +16,11 @@
               {{ raidoOption.label }}
             </el-radio>
           </el-radio-group>
+          <!-- 下拉框 -->
+          <el-select v-else-if="item?.type == 'select'" v-model="item.value" :placeholder="item.placeholder">
+            <el-option v-for="selectOption in item.options" :key="selectOption.value" :label="selectOption.label"
+              :value="selectOption.value" />
+          </el-select>
           <el-input v-else v-model="item.value" :placeholder="item.placeholder" :type="item?.type"
             @input="inputChange(item)" :show-password="item.type == 'password'" />
         </el-form-item>
