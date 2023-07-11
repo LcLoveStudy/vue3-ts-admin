@@ -17,13 +17,14 @@
             </el-radio>
           </el-radio-group>
           <!-- 下拉框 -->
-          <el-select v-else-if="item?.type == 'select'" v-model="item.value" :placeholder="item.placeholder">
+          <el-select v-else-if="item?.type == 'select'" v-model="item.value" :placeholder="item.placeholder"
+            @change="inputChange(item)">
             <el-option v-for="selectOption in item.options" :key="selectOption.value" :label="selectOption.label"
               :value="selectOption.value" />
           </el-select>
           <!-- 日期选择器 -->
           <el-date-picker v-else-if="item?.type == 'date'" v-model="item.value" type="date"
-            :placeholder="item.placeholder" />
+            :placeholder="item.placeholder" @change="inputChange(item)" />
           <el-input v-else v-model="item.value" :placeholder="item.placeholder" :type="item?.type"
             @input="inputChange(item)" :show-password="item.type == 'password'" />
         </el-form-item>
