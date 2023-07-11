@@ -117,6 +117,21 @@ const DOCUMENTS: interRouter = {
       },
       children:[
         {
+          path: '/documents/code/rich',
+          name: 'rich',
+          meta: {
+            title: '富文本编辑器RichEditor',
+            icon: '',
+            hideMenu: false,
+            keepChild: true,
+            hideBreadcrumb: false,
+            hideChildrenInMenu: false,
+            role:['admin','superadmin','user'],
+          },
+          children:[],
+          component:()=>import('@/views/documents/code/richEditor.vue')
+        },
+        {
           path: '/documents/code/table',
           name: 'table',
           meta: {
