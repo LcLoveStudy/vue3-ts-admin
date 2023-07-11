@@ -1,9 +1,14 @@
 <template>
-  <el-radio-group v-model="value" @change="radioChange">
+  <el-radio-group v-if="props.type == 'radio'" v-model="value" @change="radioChange">
     <el-radio v-for="item in radioOtpions" :key="item.value" :disabled="item.disabled" :label="item.value">
       {{ item.label }}
     </el-radio>
   </el-radio-group>
+  <el-checkbox-group v-else-if="props.type == 'checkbox'" v-model="value" @change="radioChange">
+    <el-checkbox v-for="item in radioOtpions" :disabled="item.disabled" :label="item.value" :key="item.value">
+      {{ item.label }}
+    </el-checkbox>
+  </el-checkbox-group>
 </template>
 
 <script setup lang="ts">
@@ -15,6 +20,10 @@ const props = defineProps({
   option: {
     type: Array,
     required: true
+  },
+  type: {
+    type: String,
+    default: 'radio'
   }
 })
 const emits = defineEmits(['update:value', 'change'])
