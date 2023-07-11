@@ -19,7 +19,12 @@ const loginForm = ref({
     value: [],
     label: '爱好',
     type: 'checkbox',
-    options: [{ label: '乒乓球', value: 'pinpang' }, { label: '画画', value: 'draw' }, { label: '打游戏', value: 'game' }, { label: '编程', value: 'code' }],
+    options: [
+      { label: '乒乓球', value: 'pinpang' },
+      { label: '画画', value: 'draw' },
+      { label: '打游戏', value: 'game' },
+      { label: '编程', value: 'code' }
+    ],
     prop: 'hobby',
     rules: [{ type: 'array', required: true, message: '请选择爱好', trigger: 'blur' }]
   },
@@ -30,6 +35,14 @@ const loginForm = ref({
     prop: 'password',
     placeholder: '请输入密码',
     rules: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
+  },
+  sex: {
+    value: '',
+    label: '性别',
+    type: 'radio',
+    options: [{ label: '男', value: 'man' }, { label: '女', value: 'woman' }],
+    prop: 'sex',
+    rules: [{ required: true, message: '请选择性别', trigger: 'blur' }]
   }
 })
 const loginLoading = ref(false)

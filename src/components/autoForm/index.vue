@@ -3,12 +3,19 @@
     <el-form ref="formRef" label-position="right" label-width="100px" :rules="createRules()" :model="ruleForm">
       <template v-for="item in props.formData" :key="item.label">
         <el-form-item :label="item.label" :prop="item.prop">
+          <!-- 多选框 -->
           <el-checkbox-group v-if="item?.type == 'checkbox'" v-model="item.value" @change="inputChange(item)">
             <el-checkbox v-for="checkoption in item.options" :key="checkoption.value" :label="checkoption.value"
               :name="item.prop">
               {{ checkoption.label }}
             </el-checkbox>
           </el-checkbox-group>
+          <!-- 单选框 -->
+          <el-radio-group v-else-if="item?.type == 'radio'" v-model="item.value" @change="inputChange(item)">
+            <el-radio v-for="raidoOption in item.options" :key="raidoOption.value" :label="raidoOption.value">
+              {{ raidoOption.label }}
+            </el-radio>
+          </el-radio-group>
           <el-input v-else v-model="item.value" :placeholder="item.placeholder" :type="item?.type"
             @input="inputChange(item)" :show-password="item.type == 'password'" />
         </el-form-item>
@@ -51,7 +58,7 @@ const props = defineProps({
   //提交按钮的文字提示
   submitText: {
     type: String,
-    default: '登录'
+    default: '确定'
   },
   // 提交按钮的loading
   submitLoading: {
@@ -78,7 +85,6 @@ const createRules = () => {
     rules[key] = props.formData[key]?.rules
     ruleForm[key] = ''
   }
-  console.log(rules)
   return rules
 }
 

@@ -1,7 +1,8 @@
 <template>
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
-      <AutoForm :formData="loginForm" @submit="loginClick" :submitLoading="loginLoading" labelColor="#000" />
+      <AutoForm :formData="loginForm" @submit="loginClick" submitText="登录" :submitLoading="loginLoading"
+        labelColor="#000" />
     </div>
   </div>
 </template>
