@@ -103,12 +103,12 @@ watch(() => route, (newValue) => {
   .el-menu-item.is-active {
     color: var(--menu-item-active) !important;
     background-color: var(--menu-item-active-bgc);
-    // border-right: 2px solid var(--menu-item-active);
   }
 
   // 二级菜单高亮显示
   .el-sub-menu.is-active>.el-sub-menu__title {
     color: var(--menu-item-active) !important;
+    background-color: var(--menu-item-active-bgc);
   }
 
   // 二级菜单
