@@ -36,10 +36,10 @@
 </template>
 
 <script setup lang="ts">
-import { type autoColFace } from '@/type/autotable-col'
+import { type columnType } from '@/type/auto-table'
 import { objectCopy } from '@/utils'
 import type { ElTable } from 'element-plus';
-import { ref, useSlots, watch } from 'vue'
+import { ref, useSlots, watch, type PropType } from 'vue'
 const props = defineProps({
   //表格数据
   tableData: {
@@ -48,7 +48,7 @@ const props = defineProps({
   },
   //表头数据
   columnData: {
-    type: Array,
+    type: Array as PropType<columnType[]>,
     required: true
   },
   //是否每行可选择
@@ -80,10 +80,10 @@ const emits = defineEmits(['selectChange', 'update:selectAll', 'tableEdit'])
 //获取所有插槽
 const slots = useSlots()
 //表头数据
-const columnData = ref<Array<autoColFace>>([])
+const columnData = ref<Array<columnType>>([])
 const createColumnData = () => {
   //通过order对显示数据进行排序
-  columnData.value = props.columnData.sort((a: any, b: any) => a?.order - b?.order) as Array<autoColFace>
+  columnData.value = props.columnData.sort((a: any, b: any) => a?.order - b?.order) as Array<columnType>
 }
 createColumnData()
 
