@@ -2,12 +2,15 @@
   <div class="my_header">
     <div class="header_left">
       <!-- 折叠图标 -->
-      <el-icon class="fold_icon" @click="foldMenu">
-        <Operation />
-      </el-icon>
+      <template v-if="!props.menuOnTop">
+        <el-icon class="fold_icon" @click="foldMenu">
+          <Operation />
+        </el-icon>
+      </template>
       <!-- 面包屑导航 -->
       <BreadCrumb />
     </div>
+    <topMenu v-if="props.menuOnTop" />
     <div class="header_right">
       <!-- 用户头像 -->
       <el-dropdown class="avator">
@@ -25,12 +28,17 @@
 </template>
 
 <script setup lang="ts">
+import topMenu from '@/components/topMenu/index.vue'
 import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue';
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const props = defineProps({
   //菜单栏的展开和折叠
   isCollapse: {
+    default: false,
+    tyle: Boolean
+  },
+  menuOnTop: {
     default: false,
     tyle: Boolean
   }
@@ -44,13 +52,14 @@ const foldMenu = () => {
 }
 
 //点击退出登录
-const logout = ()=>{
+const logout = () => {
   router.push('/login')
 }
 </script>
 
 <style scoped lang="less">
 .my_header {
+  position: relative;
   display: flex;
   height: 100%;
   align-items: center;
