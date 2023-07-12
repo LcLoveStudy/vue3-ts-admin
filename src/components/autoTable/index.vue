@@ -32,12 +32,6 @@
           :filters="item.filters" :filter-method="item?.filterMethod" />
       </template>
     </template>
-    <!-- 操作栏 -->
-    <el-table-column v-if="slots.option" label="操作">
-      <template #default="scope">
-        <slot name="option" :scope="scope"></slot>
-      </template>
-    </el-table-column>
   </el-table>
 </template>
 
