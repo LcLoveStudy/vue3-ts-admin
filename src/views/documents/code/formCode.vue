@@ -60,8 +60,9 @@ const loginForm = ref({
     placeholder: '请选择日期'
   }
 })
+/** 登录表单的加载状态 */
 const loginLoading = ref(false)
-//点击登录按钮
+/** 点击登录按钮后的函数 */
 const loginClick = () => {
   loginLoading.value = true
   console.log('用户名:' + loginForm.value.username.value,

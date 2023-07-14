@@ -16,6 +16,7 @@
 import RichEditor from '@/components/richEditor/index.vue'
 import AutoTable from '@/components/autoTable/index.vue'
 import { ref } from 'vue'
+/** 列数据配置 */
 const columnData = ref([
   {
     prop: 'name',
@@ -52,13 +53,14 @@ const columnData = ref([
     sortable: false
   },
 ])
-
+/** 表格数据的数据结构 */
 interface tableType {
   id: number
   name: string
   age: number
   sex: string
 }
+/** 表单数据 */
 const tableData = ref<Array<tableType>>([
   {
     id: 1,
@@ -71,14 +73,27 @@ const tableData = ref<Array<tableType>>([
     name: 'ww',
     age: 41,
     sex: '女'
+  },
+  {
+    id: 3,
+    name: 'dd',
+    age: 18,
+    sex: '男'
   }
 ])
 
+/** 是否全选 */
 const selectAll = ref(false)
+/** 改变表单的选中状态 */
 const change = (value: Array<tableType>) => {
   console.log(value)
 }
 
+/**
+ * 编辑了表单后的回调函数
+ * @param newValue 新值
+ * @param propName 被修改的参数
+ */
 const editHandle = (newValue: any, propName: string) => {
   tableData.value.map((item: any) => {
     if (item.id == newValue.id) {
