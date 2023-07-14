@@ -79,7 +79,7 @@ const props = defineProps({
 const emits = defineEmits(['selectChange', 'update:selectAll', 'tableEdit'])
 //获取所有插槽
 const slots = useSlots()
-//表头数据
+/** 表头数据 */
 const columnData = ref<Array<columnType>>([])
 const createColumnData = () => {
   //通过order对显示数据进行排序
@@ -89,7 +89,7 @@ createColumnData()
 
 const multipleTableRef = ref<InstanceType<typeof ElTable>>()
 const multipleSelection = ref([])
-//选中状态改变时
+/** 选中状态改变时 */
 const handleSelectionChange = (val: any) => {
   multipleSelection.value = val
   if (multipleSelection.value.length == props.tableData.length) {
@@ -99,7 +99,7 @@ const handleSelectionChange = (val: any) => {
   }
   emits('selectChange', val)
 }
-//监听是否全选
+/** 监听是否全选 */
 watch(() => props.selectAll, (newValue) => {
   if (newValue && multipleSelection.value.length != props.tableData.length) {
     multipleTableRef.value!.toggleAllSelection()
@@ -112,7 +112,7 @@ watch(() => props.selectAll, (newValue) => {
   }
 })
 
-//正在编辑的输入框失去焦点
+/** 正在编辑的输入框失去焦点 */
 const editInputBlur = (scope: any, propName: string) => {
   scope.row.isEdit = false
   //编辑后的结果

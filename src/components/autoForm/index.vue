@@ -83,11 +83,11 @@ const props = defineProps({
 //自定义事件
 const emits = defineEmits(['submit'])
 
-//表单实例
+/** 表单实例 */
 const formRef = ref<FormInstance>()
-//代理表单，只用于参与表单验证
+/** 代理表单，只用于参与表单验证 */
 const ruleForm = reactive<any>({})
-//用于创建表单验证规则
+/** 用于创建表单验证规则 */
 const createRules = () => {
   let rules: any = []
   for (let key in props.formData) {
@@ -97,12 +97,12 @@ const createRules = () => {
   return rules
 }
 
-//表单输入框输入时,改变代理对象，用于表单验证
+/** 表单输入框输入时,改变代理对象，用于表单验证 */
 const inputChange = (item: any) => {
   ruleForm[item.prop] = item.value
 }
 
-//表单的提交
+/** 表单的提交 */
 const submitClick = (formEl: FormInstance | undefined) => {
   if (!formEl) return
   formEl.validate((valid) => {
