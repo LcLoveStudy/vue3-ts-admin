@@ -13,16 +13,17 @@
     <topMenu v-if="props.menuOnTop" />
     <div class="header_right">
       <!-- 用户头像 -->
-      <el-dropdown class="avator">
-        <el-avatar :size="40" fit="cover" />
-        <!-- 鼠标放在头像上的下拉框部分 -->
-        <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>个人信息</el-dropdown-item>
-            <el-dropdown-item @click="logout">退出登陆</el-dropdown-item>
-          </el-dropdown-menu>
-        </template>
-      </el-dropdown>
+      <!-- <el-dropdown class="avator"> -->
+      <!-- <el-avatar :size="40" fit="cover" /> -->
+      <!-- 鼠标放在头像上的下拉框部分 -->
+      <!-- <template #dropdown> -->
+      <!-- <el-dropdown-menu> -->
+      <!-- <el-dropdown-item>个人信息</el-dropdown-item> -->
+      <!-- <el-dropdown-item @click="logout">退出登陆</el-dropdown-item> -->
+      <!-- </el-dropdown-menu> -->
+      <!-- </template> -->
+      <!-- </el-dropdown> -->
+      <el-text type="primary" class="mr-25 hover-pointer" @click="logout">退出登陆</el-text>
     </div>
   </div>
 </template>
@@ -97,7 +98,7 @@ const logout = () => {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 80px;
+      width: 100px;
       cursor: pointer;
     }
 
