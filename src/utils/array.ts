@@ -76,3 +76,14 @@ export const arrSort = (
 export const isArray = (target: unknown): boolean => {
   return target instanceof Array
 }
+
+
+/**
+ * 数组合并（去重）
+ * @param {Array} 数组1
+ * @param {Array} 数组2
+ * @returns 合并后的数组
+ */
+export const arrMerge = (arr1:Array<string|number>,arr2:Array<string|number>):Array<string|number>=>{
+  return [...new Set([...arr1, ...arr2])] 
+} 

@@ -2,12 +2,12 @@
   <el-container class="container fs-16">
     <!-- 右边头部 -->
     <el-header class="header">
-      <Header v-model:isCollapse="isCollapse" :menuOnTop="true" />
+      <Header v-model:isCollapse="isCollapse" :menuOnTop="false" />
     </el-header>
     <!-- 右边主体 -->
     <el-container>
       <!-- 侧边菜单栏 -->
-      <el-aside class="aside" v-if="false">
+      <el-aside class="aside" v-if="true">
         <AsideMenu :isCollapse="isCollapse" />
       </el-aside>
       <!-- 右边主体 -->

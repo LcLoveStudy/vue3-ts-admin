@@ -1,6 +1,6 @@
 import { getItem, setItem, removeItem } from './common/localstorage'
 import {startLoading,endLoading }from './page/nprogress'
-import { arrNoRepeat, arrSort, isArray } from './array'
+import { arrNoRepeat, arrSort, isArray,arrMerge } from './array'
 import { deepFreeze, objectCopy } from './object'
 import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
@@ -22,6 +22,7 @@ export {
   hasRole,
   deepFreeze,
   getColor,
+  arrMerge,
   getItem,
   getType,
   isArray,
