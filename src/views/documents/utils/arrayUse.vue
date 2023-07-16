@@ -73,6 +73,23 @@
         </div>
       </div>
     </el-card>
+    <!-- 数组合并(arrMerge) -->
+    <el-card class="width-500 height-full">
+      <div class="fs-16 fw-600 tomato">
+        数组合并(arrMerge)
+        <el-icon class="hover-pointer" @click="copyUtils('arrMerge')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-10">
+        获取两个数组的并集
+      </div>
+      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+        <div>
+          <span class="orange">arrMerge</span><span class="blue">([1,2,3,4],[2,5,6,5])</span> -> [1,2,3,4,5,6]
+        </div>
+      </div>
+    </el-card>
   </div>
 </template>
 
