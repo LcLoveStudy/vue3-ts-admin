@@ -34,8 +34,9 @@ const loginLoading = ref(false)
 const router = useRouter()
 //点击登录按钮
 const loginClick = () => {
+  let { username, password } = loginForm.value
   loginLoading.value = true
-  console.log('用户名:' + loginForm.value.username.value, '密码:' + loginForm.value.password.value)
+  console.log('用户名:' + username.value, '密码:' + password.value)
   loginLoading.value = false
   router.push('/')
 }
