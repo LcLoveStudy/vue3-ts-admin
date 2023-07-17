@@ -11,7 +11,7 @@
   "compilerOptions": {
     // 若TS版本为5.x，此处值应为"node" 
     "moduleResolution": "node",
-    // 同时加上这一句
+    // 取消以下的检查
     "types": [
       "element-plus/global",
       "node"
