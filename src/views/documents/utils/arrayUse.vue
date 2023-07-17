@@ -44,7 +44,7 @@
       </div>
     </el-card>
     <!-- 对数组排序(arrSort) -->
-    <el-card class="width-400 height-full ml-20">
+    <el-card class="width-600 height-full ml-20">
       <div class="fs-16 fw-600 tomato">
         对数组排序(arrSort)
         <el-icon class="hover-pointer" @click="copyUtils('arrSort')">
