@@ -11,3 +11,4 @@ const showTif = async (url:string):Promise<string>=>{
     return ''
   }
 }
+export default showTif

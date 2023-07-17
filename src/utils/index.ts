@@ -6,6 +6,7 @@ import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
 import { dateFormat } from './dateFormat'
 import { downLoad } from './file/download'
+import showTif from './file/showTif'
 import getColor from './getColor'
 import getType from './getType'
 import hasRole from './auth/hasRole'
@@ -14,6 +15,7 @@ import http from './http'
 export {
   Percentage,
   http,
+  showTif,
   downLoad,
   arrNoRepeat,
   startLoading,
