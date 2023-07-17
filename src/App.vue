@@ -8,4 +8,5 @@ import { RouterView } from 'vue-router'
 
 <style lang="less">
 @import 'nprogress/nprogress.css';
+@import 'element-plus/dist/index.css';
 </style>
