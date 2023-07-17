@@ -13,7 +13,8 @@
     "moduleResolution": "node",
     // 同时加上这一句
     "types": [
-      "element-plus/global"
+      "element-plus/global",
+      "node"
     ],
     "composite": true,
     "baseUrl": ".",
