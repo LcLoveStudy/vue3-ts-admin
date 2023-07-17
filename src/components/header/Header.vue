@@ -19,6 +19,8 @@
 import topMenu from '@/components/topMenu/index.vue'
 import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue';
 import { useRouter } from 'vue-router'
+import { removeItem } from '@/utils';
+import { ElMessage } from 'element-plus';
 const router = useRouter()
 const props = defineProps({
   //菜单栏的展开和折叠
@@ -41,6 +43,8 @@ const foldMenu = () => {
 
 //点击退出登录
 const logout = () => {
+  removeItem()
+  ElMessage.success('退出成功')
   router.push('/login')
 }
 </script>
