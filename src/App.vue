@@ -6,4 +6,6 @@
 import { RouterView } from 'vue-router'
 </script>
 
-<style scoped lang="less"></style>
+<style lang="less">
+@import 'nprogress/nprogress.css';
+</style>
