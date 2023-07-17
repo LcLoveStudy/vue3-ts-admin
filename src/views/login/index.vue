@@ -11,7 +11,8 @@
 import AutoForm from '@/components/autoForm/index.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-//登录表单
+const router = useRouter()
+/** 登录表单 */
 const loginForm = ref({
   username: {
     value: '',
@@ -30,9 +31,9 @@ const loginForm = ref({
   }
 })
 
+/** 表单loading */
 const loginLoading = ref(false)
-const router = useRouter()
-//点击登录按钮
+/** 点击登录按钮 */
 const loginClick = () => {
   let { username, password } = loginForm.value
   loginLoading.value = true
