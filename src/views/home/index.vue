@@ -6,7 +6,9 @@
 
 <script setup lang="ts">
 import { getList } from '@/api'
-getList({ page: 1 })
+getList({ page: 1 }).then(res => {
+  console.log(res.info.name)
+})
 </script>
 
 <style scoped></style>
