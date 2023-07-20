@@ -10,19 +10,11 @@ const service: AxiosInstance = axios.create({
 service.interceptors.request.use(
   (config: any) => {
     //处理showMessage
-    if (config.showMessage) {
-      config.headers.showMessage = true
-    } else {
-      config.headers.showMessage = false
-    }
+    config.showMessage?config.headers.showMessage = true: config.headers.showMessage = false
     //处理进度条
-    if(config.showProgress){
-      startLoading()
-    }
+    config.showProgress?startLoading():true
     //携带token
-    if (getItem('userid')) {
-      config.headers.token = getItem('userid')
-    }
+    getItem('userid')?config.headers.token = getItem('userid'): true
     return config
   },
   (error) => {
