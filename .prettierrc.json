@@ -1,6 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/prettierrc",
-  "tabWidth": 2, //一个tab键缩进多少
   "htmlWhitespaceSensitivity": "strict", //html空白敏感
   "singleQuote": true, //字符串是否使用单引号
   "printWidth": 100, //一行多少个字符，超过就换行

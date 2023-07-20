@@ -40,10 +40,7 @@ service.interceptors.response.use(
   (error: AxiosError) => {
     endLoading()
     // 超出 2xx 范围的状态码都会触发该函数。
-    ElMessage({
-      message: error.message,
-      type: 'warning'
-    })
+    ElMessage.warning(error.message)
     return Promise.reject(error)
   }
 )
