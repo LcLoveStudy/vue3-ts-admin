@@ -1,5 +1,6 @@
 export interface userInterface {
-  userType:string
+  user_type:string
   userid:string
-  username:string
+  id:string
+  name:string
 }

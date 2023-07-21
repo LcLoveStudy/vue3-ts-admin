@@ -29,7 +29,7 @@ const isCollapse = ref(false)
 /** 菜单是否在顶部 */
 const menuOnTop = ref(false)
 /** 用户权限 */
-const userType = ref(userinfo.userType ? userinfo.userType : 'admin')
+const userType = ref(userinfo.user_type ? userinfo.user_type : 'admin')
 
 </script>
 
