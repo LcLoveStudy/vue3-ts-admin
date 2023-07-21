@@ -22,12 +22,14 @@
 import AsideMenu from '@/components/menu/asideMenu.vue'
 import Header from '@/components/header/Header.vue'
 import { ref } from 'vue'
+import { useUserStore } from '@/stores/user'
+const { userinfo } = useUserStore()
 /** 是否折叠侧边菜单 */
 const isCollapse = ref(false)
 /** 菜单是否在顶部 */
 const menuOnTop = ref(false)
 /** 用户权限 */
-const userType = ref('admin')
+const userType = ref(userinfo.userType ? userinfo.userType : 'admin')
 
 </script>
 

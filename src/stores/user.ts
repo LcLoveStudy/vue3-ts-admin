@@ -3,7 +3,7 @@ import {type userInterface} from '@/type/userinfo'
 import { getItem } from '@/utils'
 import { defineStore } from 'pinia'
 
-export const userStore = defineStore('user', () => {
+export const useUserStore = defineStore('user', () => {
   const userinfo = ref<userInterface>(getItem('userinfo'))
   return { userinfo }
 })
