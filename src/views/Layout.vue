@@ -2,12 +2,12 @@
   <el-container class="container fs-16">
     <!-- 右边头部 -->
     <el-header class="header">
-      <Header v-model:isCollapse="isCollapse" :menuOnTop="false" />
+      <Header v-model:isCollapse="isCollapse" :menuOnTop="menuOnTop" />
     </el-header>
     <!-- 右边主体 -->
     <el-container>
       <!-- 侧边菜单栏 -->
-      <el-aside class="aside" v-if="true">
+      <el-aside class="aside" v-if="!menuOnTop">
         <AsideMenu :isCollapse="isCollapse" />
       </el-aside>
       <!-- 右边主体 -->
@@ -24,6 +24,7 @@ import Header from '@/components/header/Header.vue'
 import { ref } from 'vue';
 // 控制菜单折叠
 const isCollapse = ref(false)
+const menuOnTop = ref(false)
 </script>
 
 <style scoped lang="less">
