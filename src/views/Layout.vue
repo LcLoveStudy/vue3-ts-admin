@@ -22,8 +22,9 @@
 import AsideMenu from '@/components/asideMenu/asideMenu.vue'
 import Header from '@/components/header/Header.vue'
 import { ref } from 'vue';
-// 控制菜单折叠
+/** 是否折叠侧边菜单 */
 const isCollapse = ref(false)
+/** 菜单是否在顶部 */
 const menuOnTop = ref(false)
 </script>
 

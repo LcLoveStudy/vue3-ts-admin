@@ -34,16 +34,14 @@ const props = defineProps({
   }
 })
 const emits = defineEmits(['update:isCollapse'])
-/**
- * 点击图标后，通过自定义事件，更新折叠状态
- */
+/** 点击图标后，通过自定义事件，更新折叠状态 */
 const foldMenu = () => {
   emits('update:isCollapse', !props.isCollapse)
 }
 
-//点击退出登录
+/** 点击退出登录 */
 const logout = () => {
-  removeItem()
+  removeItem()    //清空所有localstorage
   ElMessage.success('退出成功')
   router.push('/login')
 }
