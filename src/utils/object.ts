@@ -9,16 +9,13 @@
  * @email dotb116393@163.com
  */
 export const deepFreeze = (obj: NObject): NObject => {
-  if (Object.isFrozen(obj)) {
-    //Object.isFrozen()用来检测对象是否被冻结Object自带方法
-    return obj
-  }
+  if (Object.isFrozen(obj)) return obj
   Object.keys(obj).forEach((key) => {
     //Object.keys(obj)获取所有的键名
     //如果是object类型，递归深度冻结
     typeof obj[key] === 'object' && (obj[key] = deepFreeze(obj[key]))
   })
-  return Object.freeze(obj) //Object自带的冻结方法
+  return Object.freeze(obj)
 }
 
 //键名必须为string ｜ number ｜ symbol
