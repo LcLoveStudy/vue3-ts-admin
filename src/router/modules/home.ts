@@ -1,5 +1,5 @@
-import type { interRouter } from '@/type/vue-router'
-const HOME: interRouter = {
+import type { customRoute } from '@/type/vue-router'
+const HOME: customRoute = {
   path: '/home',
   name: 'home',
   meta: {
@@ -19,6 +19,7 @@ const HOME: interRouter = {
       meta: {
         title: '首页',
         hideMenu: true,
+        icon: '',
         keepChild: false,
         hideBreadcrumb: true,
         hideChildrenInMenu: true,

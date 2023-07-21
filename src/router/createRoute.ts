@@ -1,6 +1,6 @@
-import type { interRouter } from '@/type/vue-router'
-let realRoute: Array<interRouter> = []
-const initRoute = (routeArr: Array<interRouter>) => {
+import type { customRoute } from '@/type/vue-router'
+let realRoute: Array<customRoute> = []
+const initRoute = (routeArr: Array<customRoute>) => {
   routeArr.forEach((item) => {
     if (item.meta.keepChild) {
       realRoute.push(item)
@@ -19,7 +19,7 @@ const initRoute = (routeArr: Array<interRouter>) => {
     }
   })
 }
-const createRoute = (routeArr: Array<interRouter>)=>{
+const createRoute = (routeArr: Array<customRoute>)=>{
   initRoute(routeArr)
   return realRoute
 }

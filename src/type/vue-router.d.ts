@@ -13,14 +13,14 @@
  * }
  * children:子路由配置
  */
-export interface interRouter {
+export interface customRoute {
   path: string
   name: string
   redirect?: string
   component?: Function
   meta: {
     hideChildrenInMenu: boolean
-    icon?: string
+    icon: string
     title: string
     role:Array<string>
     hideMenu: boolean

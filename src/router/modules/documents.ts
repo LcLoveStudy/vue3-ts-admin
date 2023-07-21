@@ -1,5 +1,5 @@
-import type { interRouter } from '@/type/vue-router'
-const DOCUMENTS: interRouter = {
+import type { customRoute } from '@/type/vue-router'
+const DOCUMENTS: customRoute = {
   path: '/documents',
   name: 'documents',
   meta: {
@@ -19,6 +19,7 @@ const DOCUMENTS: interRouter = {
       meta: {
         title: '指令',
         hideMenu: false,
+        icon: '',
         keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
@@ -32,6 +33,7 @@ const DOCUMENTS: interRouter = {
           meta: {
             title: '图片懒加载',
             hideMenu: false,
+            icon: '',
             keepChild: false,
             hideBreadcrumb: false,
             hideChildrenInMenu: true,
@@ -47,6 +49,7 @@ const DOCUMENTS: interRouter = {
             title: '聚焦',
             hideMenu: false,
             keepChild: false,
+            icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: true,
             role:['admin','superadmin','user'],
@@ -61,6 +64,7 @@ const DOCUMENTS: interRouter = {
             title: '点击外部',
             hideMenu: false,
             keepChild: false,
+            icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
             role:['admin','superadmin','user'],
@@ -75,6 +79,7 @@ const DOCUMENTS: interRouter = {
       meta: {
         title: '工具函数',
         hideMenu: false,
+        icon: '',
         keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
@@ -90,6 +95,7 @@ const DOCUMENTS: interRouter = {
         title: '原子化css',
         hideMenu: false,
         keepChild: true,
+        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role:['admin','superadmin','user'],
@@ -104,6 +110,7 @@ const DOCUMENTS: interRouter = {
         title: '低代码组件',
         hideMenu: false,
         keepChild: true,
+        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role:['admin','superadmin','user'],
@@ -116,6 +123,7 @@ const DOCUMENTS: interRouter = {
             title: '富文本RichEditor',
             hideMenu: false,
             keepChild: true,
+            icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
             role:['admin','superadmin','user'],
@@ -129,6 +137,7 @@ const DOCUMENTS: interRouter = {
           meta: {
             title: '表格Table',
             hideMenu: false,
+            icon: '',
             keepChild: true,
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
@@ -145,6 +154,7 @@ const DOCUMENTS: interRouter = {
             hideMenu: false,
             keepChild: true,
             hideBreadcrumb: false,
+            icon: '',
             hideChildrenInMenu: false,
             role:['admin','superadmin','user'],
           },
@@ -157,6 +167,7 @@ const DOCUMENTS: interRouter = {
           meta: {
             title: '单选&多选',
             hideMenu: false,
+            icon: '',
             keepChild: true,
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
@@ -172,6 +183,7 @@ const DOCUMENTS: interRouter = {
             title: '分页Pagination',
             hideMenu: false,
             keepChild: true,
+            icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
             role:['admin','superadmin','user'],
