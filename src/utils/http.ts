@@ -9,12 +9,9 @@ const service: AxiosInstance = axios.create({
 // 添加请求拦截器
 service.interceptors.request.use(
   (config: any) => {
-    //处理showMessage
-    config.showMessage?config.headers.showMessage = true: config.headers.showMessage = false
-    //处理进度条
-    config.showProgress?startLoading():true
-    //携带token
-    getItem('userid')?config.headers.userid = getItem('userid'): true
+    config.showMessage?config.headers.showMessage = true: config.headers.showMessage = false //处理showMessage
+    config.showProgress?startLoading():true     //处理进度条
+    getItem('userid')?config.headers.userid = getItem('userid'): true  //携带token
     return config
   },
   (error) => {
@@ -26,10 +23,9 @@ service.interceptors.request.use(
 // 添加响应拦截器
 service.interceptors.response.use(
   (response: AxiosResponse) => {
-    endLoading()
     const { data } = response
-    //处理弹框
-    if (Boolean(response.config.headers.showMessage)) {
+    endLoading()  //结束进度条
+    if (Boolean(response.config.headers.showMessage)) {  //处理弹框
       ElMessage({
         message: response.data?.info?.name,
         type: response.status == 200 ? 'success' : 'error'
@@ -38,9 +34,8 @@ service.interceptors.response.use(
     return data
   },
   (error: AxiosError) => {
-    endLoading()
     // 超出 2xx 范围的状态码都会触发该函数。
-    // ElMessage.warning(error.message)
+    endLoading()
     return Promise.reject(error)
   }
 )
