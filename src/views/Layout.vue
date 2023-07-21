@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import AsideMenu from '@/components/asideMenu/index.vue'
+import AsideMenu from '@/components/menu/asideMenu.vue'
 import Header from '@/components/header/Header.vue'
 import { ref } from 'vue'
 /** 是否折叠侧边菜单 */

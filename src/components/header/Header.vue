@@ -16,11 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import topMenu from '@/components/topMenu/index.vue'
+import topMenu from '@/components/menu/topMenu.vue'
 import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue'
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { getItem, removeItem } from '@/utils';
+import { removeItem } from '@/utils';
 import { ElMessage } from 'element-plus';
 const router = useRouter()
 const props = defineProps({
