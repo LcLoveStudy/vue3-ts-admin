@@ -14,7 +14,7 @@ service.interceptors.request.use(
     //处理进度条
     config.showProgress?startLoading():true
     //携带token
-    getItem('userid')?config.headers.token = getItem('userid'): true
+    getItem('userid')?config.headers.userid = getItem('userid'): true
     return config
   },
   (error) => {
