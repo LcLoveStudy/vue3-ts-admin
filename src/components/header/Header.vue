@@ -10,16 +10,17 @@
       <!-- 面包屑导航 -->
       <BreadCrumb />
     </div>
-    <topMenu v-if="props.menuOnTop" />
+    <topMenu v-if="props.menuOnTop" :user-type="props.userType" />
     <el-text type="primary" class="logout_btn" @click="logout">退出登陆</el-text>
   </div>
 </template>
 
 <script setup lang="ts">
 import topMenu from '@/components/topMenu/index.vue'
-import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue';
+import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { removeItem } from '@/utils';
+import { getItem, removeItem } from '@/utils';
 import { ElMessage } from 'element-plus';
 const router = useRouter()
 const props = defineProps({
@@ -31,9 +32,14 @@ const props = defineProps({
   menuOnTop: {
     default: false,
     tyle: Boolean
+  },
+  userType: {
+    default: 'admin',
+    type: String
   }
 })
 const emits = defineEmits(['update:isCollapse'])
+
 /** 点击图标后，通过自定义事件，更新折叠状态 */
 const foldMenu = () => {
   emits('update:isCollapse', !props.isCollapse)
