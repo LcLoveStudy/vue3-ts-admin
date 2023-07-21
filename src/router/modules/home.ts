@@ -18,7 +18,6 @@ const HOME: interRouter = {
       component: () => import('@/views/home/index.vue'),
       meta: {
         title: '首页',
-        icon: '',
         hideMenu: true,
         keepChild: false,
         hideBreadcrumb: true,

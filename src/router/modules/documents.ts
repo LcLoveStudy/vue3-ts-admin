@@ -18,7 +18,6 @@ const DOCUMENTS: interRouter = {
       name: 'directive',
       meta: {
         title: '指令',
-        icon: '',
         hideMenu: false,
         keepChild: true,
         hideBreadcrumb: false,
@@ -32,7 +31,6 @@ const DOCUMENTS: interRouter = {
           component: () => import('@/views/documents/directiveShow/lazyShow.vue'),
           meta: {
             title: '图片懒加载',
-            icon: '',
             hideMenu: false,
             keepChild: false,
             hideBreadcrumb: false,
@@ -47,7 +45,6 @@ const DOCUMENTS: interRouter = {
           component: () => import('@/views/documents/directiveShow/focusShow.vue'),
           meta: {
             title: '聚焦',
-            icon: '',
             hideMenu: false,
             keepChild: false,
             hideBreadcrumb: false,
@@ -62,7 +59,6 @@ const DOCUMENTS: interRouter = {
           component: () => import('@/views/documents/directiveShow/clickoutside.vue'),
           meta: {
             title: '点击外部',
-            icon: '',
             hideMenu: false,
             keepChild: false,
             hideBreadcrumb: false,
@@ -78,7 +74,6 @@ const DOCUMENTS: interRouter = {
       name: 'utils',
       meta: {
         title: '工具函数',
-        icon: '',
         hideMenu: false,
         keepChild: false,
         hideBreadcrumb: false,
@@ -93,7 +88,6 @@ const DOCUMENTS: interRouter = {
       name: 'style',
       meta: {
         title: '原子化css',
-        icon: '',
         hideMenu: false,
         keepChild: true,
         hideBreadcrumb: false,
@@ -108,7 +102,6 @@ const DOCUMENTS: interRouter = {
       name: 'code',
       meta: {
         title: '低代码组件',
-        icon: '',
         hideMenu: false,
         keepChild: true,
         hideBreadcrumb: false,
@@ -121,7 +114,6 @@ const DOCUMENTS: interRouter = {
           name: 'rich',
           meta: {
             title: '富文本RichEditor',
-            icon: '',
             hideMenu: false,
             keepChild: true,
             hideBreadcrumb: false,
@@ -136,7 +128,6 @@ const DOCUMENTS: interRouter = {
           name: 'table',
           meta: {
             title: '表格Table',
-            icon: '',
             hideMenu: false,
             keepChild: true,
             hideBreadcrumb: false,
@@ -151,7 +142,6 @@ const DOCUMENTS: interRouter = {
           name: 'form',
           meta: {
             title: '表单Form',
-            icon: '',
             hideMenu: false,
             keepChild: true,
             hideBreadcrumb: false,
@@ -166,7 +156,6 @@ const DOCUMENTS: interRouter = {
           name: 'radio',
           meta: {
             title: '单选&多选',
-            icon: '',
             hideMenu: false,
             keepChild: true,
             hideBreadcrumb: false,
@@ -181,7 +170,6 @@ const DOCUMENTS: interRouter = {
           name: 'pagination',
           meta: {
             title: '分页Pagination',
-            icon: '',
             hideMenu: false,
             keepChild: true,
             hideBreadcrumb: false,

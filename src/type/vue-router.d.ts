@@ -20,7 +20,7 @@ export interface interRouter {
   component?: Function
   meta: {
     hideChildrenInMenu: boolean
-    icon: string
+    icon?: string
     title: string
     role:Array<string>
     hideMenu: boolean
