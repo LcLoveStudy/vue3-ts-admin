@@ -22,7 +22,7 @@ const tableData = ref([
     descript: 'display:flex;'
   },
   {
-    name: '.flex-row',
+    name: '.flex-col',
     descript: 'flex-direction: column;'
   },
   {
