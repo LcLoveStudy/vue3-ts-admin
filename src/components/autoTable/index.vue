@@ -76,7 +76,11 @@ const props = defineProps({
     default: '正在加载中.....'
   }
 })
-const emits = defineEmits(['selectChange', 'update:selectAll', 'tableEdit'])
+const emits = defineEmits<{
+  (evt: 'update:selectAll', value: boolean): void
+  (evt: 'selectChange', value: any): void
+  (evt: 'tableEdit', newValue: any, propName: string): void
+}>()
 //获取所有插槽
 const slots = useSlots()
 /** 表头数据 */
