@@ -8,6 +8,7 @@ import { dateFormat } from './dateFormat'
 import { downLoad } from './file/download'
 import showTif from './file/showTif'
 import getColor from './getColor'
+import {hourFormat} from './hourFormat'
 import getType from './getType'
 import hasRole from './auth/hasRole'
 import getCopy from './common/copy'
@@ -17,6 +18,7 @@ export {
   http,
   showTif,
   downLoad,
+  hourFormat,
   arrNoRepeat,
   startLoading,
   endLoading,
