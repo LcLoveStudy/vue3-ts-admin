@@ -27,5 +27,5 @@ export interface customRoute {
     hideBreadcrumb: boolean
     keepChild: boolean
   }
-  children: Array<interRouter> | never
+  children: Array<customRoute> | never
 }
