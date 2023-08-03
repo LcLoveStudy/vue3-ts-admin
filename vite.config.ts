@@ -30,6 +30,7 @@ export default defineConfig({
         },
       },
     },
+    sourcemap: false,
   },
   server: {
     host: true // 开启局域网
