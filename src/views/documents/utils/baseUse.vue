@@ -123,7 +123,7 @@
   import { ref } from 'vue'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
-    getCopy(FunName)
+    getCopyc(FunName)
   }
 
   // 获取随机颜色
