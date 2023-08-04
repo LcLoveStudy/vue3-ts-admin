@@ -9,7 +9,7 @@
  */
 export const dateFormat = (date: Date, format: String) => {
   const newDate = new Date(date)
-  let result = format
+  const result = format
     .replace('YYYY', newDate.getFullYear().toString())
     .replace(
       'MM',

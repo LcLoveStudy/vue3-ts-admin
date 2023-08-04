@@ -25,7 +25,7 @@ service.interceptors.response.use(
   (response: AxiosResponse) => {
     const { data } = response
     endLoading() //结束进度条
-    if (Boolean(response.config.headers.showMessage)) {
+    if (response.config.headers.showMessage) {
       //处理弹框
       ElMessage({
         message: response.data?.info?.name,

@@ -1,5 +1,5 @@
 import type { customRoute } from '#/vue-router'
-let realRoute: Array<customRoute> = []
+const realRoute: Array<customRoute> = []
 const initRoute = (routeArr: Array<customRoute>) => {
   routeArr.forEach((item) => {
     if (item.meta.keepChild) {
