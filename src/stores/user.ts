@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import {type userInterface} from '@/type/userinfo'
+import {type userInterface} from '#/userinfo'
 import { getItem } from '@/utils'
 import { defineStore } from 'pinia'
 

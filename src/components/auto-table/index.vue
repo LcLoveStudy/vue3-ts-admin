@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { type columnType } from '@/type/auto-table'
+import { type columnType } from '#/auto-table'
 import { objectCopy } from '@/utils'
 import type { ElTable } from 'element-plus';
 import { ref, useSlots, watch, type PropType } from 'vue'

@@ -1,4 +1,4 @@
-import type { customRoute } from '@/type/vue-router'
+import type { customRoute } from '#/vue-router'
 const HOME: customRoute = {
   path: '/home',
   name: 'home',

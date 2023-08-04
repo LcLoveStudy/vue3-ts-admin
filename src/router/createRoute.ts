@@ -1,4 +1,4 @@
-import type { customRoute } from '@/type/vue-router'
+import type { customRoute } from '#/vue-router'
 let realRoute: Array<customRoute> = []
 const initRoute = (routeArr: Array<customRoute>) => {
   routeArr.forEach((item) => {

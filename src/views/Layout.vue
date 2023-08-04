@@ -19,8 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import AsideMenu from '@/components/menu/asideMenu.vue'
-import Header from '@/components/header/Header.vue'
+import AsideMenu from '@/components/menu/AsideMenu.vue'
+import Header from '@/components/header/index.vue'
 import { ref } from 'vue'
 import { useUserStore } from '@/stores/user'
 const { userinfo } = useUserStore()
