@@ -23,7 +23,7 @@
   import { ElMessage } from 'element-plus'
   const router = useRouter()
   const props = defineProps({
-    //菜单栏的展开和折叠
+    // 菜单栏的展开和折叠
     isCollapse: {
       default: false,
       tyle: Boolean
@@ -46,7 +46,7 @@
 
   /** 点击退出登录 */
   const logout = () => {
-    removeItem() //清空所有localstorage
+    removeItem() // 清空所有localstorage
     ElMessage.success('退出成功')
     router.push('/login')
   }

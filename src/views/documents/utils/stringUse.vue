@@ -56,7 +56,7 @@
 
 <script setup lang="ts">
   import { getCopy } from '@/utils'
-  //点击复制图表
+  // 点击复制图表
   const copyUtils = (FunName: string) => {
     getCopy(FunName)
   }

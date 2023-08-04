@@ -15,7 +15,7 @@ export const downLoad = async (url: string | Blob, fileName: string): Promise<vo
     .then(() => {
       ElMessage.success('下载成功')
     })
-    .catch((err) => {
+    .catch(() => {
       ElMessage.warning('下载出错了')
     })
 }

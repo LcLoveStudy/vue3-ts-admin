@@ -31,6 +31,7 @@ export class Percentage {
   constructor() {
     this.startTime = 0
   }
+
   begin() {
     if (this.Pertimer) {
       clearInterval(this.Pertimer)
@@ -48,11 +49,13 @@ export class Percentage {
       }
     }, 100)
   }
+
   stop() {
     if (this.Pertimer) {
       clearInterval(this.Pertimer)
     }
   }
+
   end() {
     if (this.Pertimer) {
       clearInterval(this.Pertimer)

@@ -121,12 +121,12 @@
 <script setup lang="ts">
   import { getCopy, getColor } from '@/utils'
   import { ref } from 'vue'
-  //点击复制图表
+  // 点击复制图表
   const copyUtils = (FunName: string) => {
     getCopy(FunName)
   }
 
-  //获取随机颜色
+  // 获取随机颜色
   const randomColor = ref('')
   const getRandomColor = () => {
     randomColor.value = getColor()

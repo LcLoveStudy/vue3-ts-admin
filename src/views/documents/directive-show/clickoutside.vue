@@ -16,12 +16,12 @@
         &lt;div <span class="tomato">v-clickoutside="clickoutside"</span>&gt;
             点我外面的任何地方都会+1
             num
-        &lt;/div&gt
+        &lt;/div&gt;
         const num = ref(0)
         const clickoutside = () => {
           num.value += 1
         }
-      </pre>
+    </pre>
   </div>
   <div class="testbox" v-clickoutside="clickoutside">
     <div>点我外面的任何地方都会+1</div>

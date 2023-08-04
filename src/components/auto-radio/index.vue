@@ -38,7 +38,7 @@
   })
   const emits = defineEmits(['update:value', 'change'])
 
-  //初始化默认值
+  // 初始化默认值
   const value: any = ref(props.value)
   // 单选框改变时
   const radioChange = () => {
@@ -46,13 +46,13 @@
     emits('change', value.value)
   }
 
-  //规定必须包含value和label
+  // 规定必须包含value和label
   interface optionType {
     value: string | number
     label: string
     disabled?: boolean
   }
-  let radioOtpions = props.option as Array<optionType>
+  const radioOtpions = props.option as Array<optionType>
 </script>
 
 <style scoped></style>

@@ -33,9 +33,9 @@ export const arrSort = (
   if (flag == undefined) {
     flag = true
   }
-  //判断是否是数组
+  // 判断是否是数组
   if (isArray(arr)) {
-    //判断数组长度是否为0
+    // 判断数组长度是否为0
     if (arr.length !== 0) {
       let newArr = []
       newArr = JSON.parse(JSON.stringify(arr))

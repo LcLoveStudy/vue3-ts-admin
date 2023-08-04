@@ -19,10 +19,10 @@
     title: string
     path: string
   }
-  //用于渲染面包屑导航的数组
-  const breadCrumbs = ref(<breadCrumbsType[]>[])
+  // 用于渲染面包屑导航的数组
+  const breadCrumbs = ref<Array<breadCrumbsType>>([])
 
-  //监听路由变化，当路由改变时，切割路由形成面包屑
+  // 监听路由变化，当路由改变时，切割路由形成面包屑
   watch(
     () => route,
     (newValue) => {

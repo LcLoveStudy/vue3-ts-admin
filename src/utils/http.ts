@@ -1,7 +1,7 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 import { getItem, startLoading, endLoading } from '@/utils'
-//创建axios实例
+// 创建axios实例
 const service: AxiosInstance = axios.create({
   baseURL: ''
 })
@@ -9,9 +9,13 @@ const service: AxiosInstance = axios.create({
 // 添加请求拦截器
 service.interceptors.request.use(
   (config: any) => {
-    config.showMessage ? (config.headers.showMessage = true) : (config.headers.showMessage = false) //处理showMessage
-    config.showProgress ? startLoading() : true //处理进度条
-    getItem('userid') ? (config.headers.userid = getItem('userid')) : true //携带token
+    config.showMessage ? (config.headers.showMessage = true) : (config.headers.showMessage = false) // 处理showMessage
+    if (config.showProgress) {
+      startLoading()
+    }
+    if (getItem('userid')) {
+      config.headers.userid = getItem('userid')
+    }
     return config
   },
   (error) => {
@@ -24,9 +28,9 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     const { data } = response
-    endLoading() //结束进度条
+    endLoading() // 结束进度条
     if (response.config.headers.showMessage) {
-      //处理弹框
+      // 处理弹框
       ElMessage({
         message: response.data?.info?.name,
         type: response.status == 200 ? 'success' : 'error'

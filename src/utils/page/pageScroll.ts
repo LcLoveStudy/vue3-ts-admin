@@ -22,18 +22,18 @@ export const pageScroll = (endDom: HTMLElement, delay?: number) => {
     const endDistance = endDom.offsetTop
     // 计算真正滚动的距离
     const realDistance = startDistance - endDistance
-    //计算需要多少步
+    // 计算需要多少步
     let step = 0
     if (delay == undefined || delay < 10) {
       delay = 10
     }
     step = delay / 10
-    //每次滚动的距离
+    // 每次滚动的距离
     const everyDistance = realDistance / step
     // console.log(everyDistance)
-    //创建定时器
+    // 创建定时器
     let timer: any = null
-    //当可视区域到页面顶部距离减去下一次滚动的距离<目标元素到页面顶部距离时，清空定时器，并直接跳到目标元素位置
+    // 当可视区域到页面顶部距离减去下一次滚动的距离<目标元素到页面顶部距离时，清空定时器，并直接跳到目标元素位置
     timer = setInterval(() => {
       if (everyDistance > 0) {
         if (document.documentElement.scrollTop - everyDistance < endDistance) {

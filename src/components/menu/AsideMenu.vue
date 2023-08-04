@@ -83,7 +83,7 @@
   import { watch, ref } from 'vue'
 
   const props = defineProps({
-    //菜单栏的展开和折叠
+    // 菜单栏的展开和折叠
     isCollapse: {
       default: false,
       type: Boolean
@@ -95,9 +95,9 @@
   })
   const route = useRoute()
 
-  //当前路由，绑定菜单的default-active属性
+  // 当前路由，绑定菜单的default-active属性
   const currentRoute = ref('')
-  //监听路由变化，当路由改变时，改变默认选项，防止页面刷新丢失菜单高亮
+  // 监听路由变化，当路由改变时，改变默认选项，防止页面刷新丢失菜单高亮
   watch(
     () => route,
     (newValue) => {

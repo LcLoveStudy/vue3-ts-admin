@@ -1,3 +1,7 @@
+// 键名必须为string ｜ number ｜ symbol
+interface NObject {
+  [key: string | number | symbol]: NObject
+}
 /**
  * 深度对象冻结，阻止vue劫持对象，提升性能。
  * 当数据只是用于展示不需要修改时，使用该函数
@@ -11,16 +15,11 @@
 export const deepFreeze = (obj: NObject): NObject => {
   if (Object.isFrozen(obj)) return obj
   Object.keys(obj).forEach((key) => {
-    //Object.keys(obj)获取所有的键名
-    //如果是object类型，递归深度冻结
+    // Object.keys(obj)获取所有的键名
+    // 如果是object类型，递归深度冻结
     typeof obj[key] === 'object' && (obj[key] = deepFreeze(obj[key]))
   })
   return Object.freeze(obj)
-}
-
-//键名必须为string ｜ number ｜ symbol
-interface NObject {
-  [key: string | number | symbol]: NObject
 }
 
 /**

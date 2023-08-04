@@ -40,7 +40,7 @@
   const loginLoading = ref(false)
   /** 点击登录按钮 */
   const loginClick = () => {
-    let { username, password } = loginForm.value
+    const { username, password } = loginForm.value
     loginLoading.value = true
     console.log('用户名:' + username.value, '密码:' + password.value)
     loginLoading.value = false
