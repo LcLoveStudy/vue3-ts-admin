@@ -13,15 +13,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint format"
     }
-  },
-  "lint-staged": {
-    "src/**": [
-      "prettier --config .prettierrc --write",
-      "eslint --fix",
-      "git add"
-    ]
   },
   "dependencies": {
     "@wangeditor/editor": "^5.1.23",
