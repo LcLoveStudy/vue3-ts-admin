@@ -19,42 +19,42 @@
 </template>
 
 <script setup lang="ts">
-import AsideMenu from '@/components/menu/AsideMenu.vue';
-import Header from '@/components/header/index.vue';
-import { ref } from 'vue';
-import { useUserStore } from '@/stores/user';
-const { userinfo } = useUserStore();
-/** 是否折叠侧边菜单 */
-const isCollapse = ref(false);
-/** 菜单是否在顶部 */
-const menuOnTop = ref(false);
-/** 用户权限 */
-const userType = ref(userinfo.user_type ? userinfo.user_type : 'admin');
+  import AsideMenu from '@/components/menu/AsideMenu.vue'
+  import Header from '@/components/header/index.vue'
+  import { ref } from 'vue'
+  import { useUserStore } from '@/stores/user'
+  const { userinfo } = useUserStore()
+  /** 是否折叠侧边菜单 */
+  const isCollapse = ref(false)
+  /** 菜单是否在顶部 */
+  const menuOnTop = ref(false)
+  /** 用户权限 */
+  const userType = ref(userinfo.user_type ? userinfo.user_type : 'admin')
 </script>
 
 <style scoped lang="less">
-.container {
-  width: 100%;
-  height: 100%;
-  font-size: 16px;
-
-  .aside {
+  .container {
+    width: 100%;
     height: 100%;
-    width: auto;
-    overflow: hidden;
-  }
+    font-size: 16px;
 
-  .header {
-    padding: 0;
-    height: 7%;
-    background-color: var(--container-bgc);
-    border-bottom: 1px solid var(--hover-backgroundColor);
-  }
+    .aside {
+      height: 100%;
+      width: auto;
+      overflow: hidden;
+    }
 
-  .main {
-    background-color: var(--container-main-bgc);
-    height: 100%;
-    overflow: auto;
+    .header {
+      padding: 0;
+      height: 7%;
+      background-color: var(--container-bgc);
+      border-bottom: 1px solid var(--hover-backgroundColor);
+    }
+
+    .main {
+      background-color: var(--container-main-bgc);
+      height: 100%;
+      overflow: auto;
+    }
   }
-}
 </style>

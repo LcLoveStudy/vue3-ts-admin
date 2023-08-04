@@ -14,18 +14,18 @@
  * children:子路由配置
  */
 export interface customRoute {
-  path: string
-  name: string
-  redirect?: string
-  component?: Function
+  path: string;
+  name: string;
+  redirect?: string;
+  component?: Function;
   meta: {
-    hideChildrenInMenu: boolean
-    icon: string
-    title: string
-    role:Array<string>
-    hideMenu: boolean
-    hideBreadcrumb: boolean
-    keepChild: boolean
-  }
-  children: Array<customRoute> | never
+    hideChildrenInMenu: boolean;
+    icon: string;
+    title: string;
+    role: Array<string>;
+    hideMenu: boolean;
+    hideBreadcrumb: boolean;
+    keepChild: boolean;
+  };
+  children: Array<customRoute> | never;
 }

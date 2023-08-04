@@ -24,76 +24,76 @@
 </template>
 
 <script setup lang="ts">
-import { getCopy } from '@/utils';
-import { ref } from 'vue';
-const tableData = ref([
-  {
-    name: '.bg-repeat',
-    descript: 'background-repeat: repeat;'
-  },
-  {
-    name: '.bg-norepeat',
-    descript: 'background-repeat: no-repeat;'
-  },
-  {
-    name: '.bg-repeat-x',
-    descript: 'background-repeat: repeat-x;'
-  },
-  {
-    name: '.bg-repeat-y',
-    descript: 'background-repeat: repeat-y;'
-  },
-  {
-    name: '.bgc-white',
-    descript: 'background-color: #fff;'
-  },
-  {
-    name: '.bgc-black',
-    descript: 'background-color: #000;'
-  },
-  {
-    name: '.bgc-tomato',
-    descript: 'background-color:tomato;'
-  },
-  {
-    name: '.bgc-orange',
-    descript: 'background-color:orange;'
-  },
-  {
-    name: '.bgc-blue',
-    descript: 'background-color:dodgerblue;'
-  },
-  {
-    name: '.bgc-green',
-    descript: 'background-color:MediumSeaGreen;'
-  },
-  {
-    name: '.bgc-gray',
-    descript: 'background-color:gray;'
-  },
-  {
-    name: '.bgc-lightgray',
-    descript: 'background-color: LightGray;'
-  },
-  {
-    name: '.bgc-purple',
-    descript: 'background-color: SlateBlue;'
-  },
-  {
-    name: '.bgc-pink',
-    descript: 'background-color:Violet;'
+  import { getCopy } from '@/utils'
+  import { ref } from 'vue'
+  const tableData = ref([
+    {
+      name: '.bg-repeat',
+      descript: 'background-repeat: repeat;'
+    },
+    {
+      name: '.bg-norepeat',
+      descript: 'background-repeat: no-repeat;'
+    },
+    {
+      name: '.bg-repeat-x',
+      descript: 'background-repeat: repeat-x;'
+    },
+    {
+      name: '.bg-repeat-y',
+      descript: 'background-repeat: repeat-y;'
+    },
+    {
+      name: '.bgc-white',
+      descript: 'background-color: #fff;'
+    },
+    {
+      name: '.bgc-black',
+      descript: 'background-color: #000;'
+    },
+    {
+      name: '.bgc-tomato',
+      descript: 'background-color:tomato;'
+    },
+    {
+      name: '.bgc-orange',
+      descript: 'background-color:orange;'
+    },
+    {
+      name: '.bgc-blue',
+      descript: 'background-color:dodgerblue;'
+    },
+    {
+      name: '.bgc-green',
+      descript: 'background-color:MediumSeaGreen;'
+    },
+    {
+      name: '.bgc-gray',
+      descript: 'background-color:gray;'
+    },
+    {
+      name: '.bgc-lightgray',
+      descript: 'background-color: LightGray;'
+    },
+    {
+      name: '.bgc-purple',
+      descript: 'background-color: SlateBlue;'
+    },
+    {
+      name: '.bgc-pink',
+      descript: 'background-color:Violet;'
+    }
+  ])
+  const copyClass = (className: string) => {
+    getCopy(className.split('.')[1])
   }
-]);
-const copyClass = (className: string) => {
-  getCopy(className.split('.')[1]);
-};
 </script>
 
 <style scoped lang="less">
-.example {
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin-left: 20px;
-}
+  .example {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+  }
 </style>

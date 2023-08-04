@@ -8,11 +8,11 @@
  */
 export const arrNoRepeat = (arr: Array<any>): Array<any> | boolean => {
   if (arr instanceof Array) {
-    return [...new Set(arr)];
+    return [...new Set(arr)]
   } else {
-    return false;
+    return false
   }
-};
+}
 
 /**
  * 对数组排序，不改变原数组
@@ -31,36 +31,36 @@ export const arrSort = (
   valueName: string
 ): Array<any> | boolean => {
   if (flag == undefined) {
-    flag = true;
+    flag = true
   }
   //判断是否是数组
   if (isArray(arr)) {
     //判断数组长度是否为0
     if (arr.length !== 0) {
-      let newArr = [];
-      newArr = JSON.parse(JSON.stringify(arr));
+      let newArr = []
+      newArr = JSON.parse(JSON.stringify(arr))
       // 对属性排序
       if (valueName) {
         if (flag) {
-          newArr.sort((a: any, b: any) => Date.parse(a[valueName]) - Date.parse(b[valueName]));
+          newArr.sort((a: any, b: any) => Date.parse(a[valueName]) - Date.parse(b[valueName]))
         } else {
-          newArr.sort((a: any, b: any) => Date.parse(b[valueName]) - Date.parse(a[valueName]));
+          newArr.sort((a: any, b: any) => Date.parse(b[valueName]) - Date.parse(a[valueName]))
         }
       } else {
         if (flag) {
-          newArr.sort((a: any, b: any) => a - b);
+          newArr.sort((a: any, b: any) => a - b)
         } else {
-          newArr.sort((a: any, b: any) => b - a);
+          newArr.sort((a: any, b: any) => b - a)
         }
       }
-      return newArr;
+      return newArr
     } else {
-      return false;
+      return false
     }
   } else {
-    return false;
+    return false
   }
-};
+}
 
 /**
  * 是否是数组
@@ -68,8 +68,8 @@ export const arrSort = (
  * @returns true||false
  */
 export const isArray = (target: unknown): boolean => {
-  return target instanceof Array;
-};
+  return target instanceof Array
+}
 
 /**
  * 数组合并（去重）
@@ -81,5 +81,5 @@ export const arrMerge = (
   arr1: Array<string | number>,
   arr2: Array<string | number>
 ): Array<string | number> => {
-  return [...new Set([...arr1, ...arr2])];
-};
+  return [...new Set([...arr1, ...arr2])]
+}

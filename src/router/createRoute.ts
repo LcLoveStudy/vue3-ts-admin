@@ -1,9 +1,9 @@
-import type { customRoute } from '#/vue-router';
-let realRoute: Array<customRoute> = [];
+import type { customRoute } from '#/vue-router'
+let realRoute: Array<customRoute> = []
 const initRoute = (routeArr: Array<customRoute>) => {
   routeArr.forEach((item) => {
     if (item.meta.keepChild) {
-      realRoute.push(item);
+      realRoute.push(item)
     } else {
       realRoute.push({
         path: item.path,
@@ -12,16 +12,16 @@ const initRoute = (routeArr: Array<customRoute>) => {
         meta: item.meta,
         children: [],
         component: item.component ? item.component : () => {}
-      });
+      })
       if (item.children.length !== 0) {
-        initRoute(item.children);
+        initRoute(item.children)
       }
     }
-  });
-};
+  })
+}
 const createRoute = (routeArr: Array<customRoute>) => {
-  initRoute(routeArr);
-  return realRoute;
-};
+  initRoute(routeArr)
+  return realRoute
+}
 
-export default createRoute;
+export default createRoute

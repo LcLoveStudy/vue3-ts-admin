@@ -5,7 +5,7 @@
  * @returns 是否有权限
  */
 const hasRole = (userRole: string, roleList: Array<string>): boolean => {
-  return roleList.includes(userRole);
-};
+  return roleList.includes(userRole)
+}
 
-export default hasRole;
+export default hasRole

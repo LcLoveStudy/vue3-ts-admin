@@ -1,4 +1,4 @@
-import type { customRoute } from '#/vue-router';
+import type { customRoute } from '#/vue-router'
 const HOME: customRoute = {
   path: '/home',
   name: 'home',
@@ -28,5 +28,5 @@ const HOME: customRoute = {
       children: []
     }
   ]
-};
-export default HOME;
+}
+export default HOME

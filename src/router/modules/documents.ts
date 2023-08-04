@@ -1,4 +1,4 @@
-import type { customRoute } from '#/vue-router';
+import type { customRoute } from '#/vue-router'
 const DOCUMENTS: customRoute = {
   path: '/documents',
   name: 'documents',
@@ -194,5 +194,5 @@ const DOCUMENTS: customRoute = {
       ]
     }
   ]
-};
-export default DOCUMENTS;
+}
+export default DOCUMENTS

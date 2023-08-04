@@ -8,7 +8,7 @@
  * @email dotb116393@163.com
  */
 export const dateFormat = (date: Date, format: String) => {
-  const newDate = new Date(date);
+  const newDate = new Date(date)
   let result = format
     .replace('YYYY', newDate.getFullYear().toString())
     .replace(
@@ -40,6 +40,6 @@ export const dateFormat = (date: Date, format: String) => {
       newDate.getSeconds().toString().length == 1
         ? 0 + newDate.getSeconds().toString()
         : newDate.getSeconds().toString()
-    );
-  return result;
-};
+    )
+  return result
+}

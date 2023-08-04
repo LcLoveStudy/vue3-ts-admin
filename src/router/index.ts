@@ -1,11 +1,11 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import HOME from './modules/home';
-import DOCUMENTS from './modules/documents';
-import createRoute from './createRoute';
+import { createRouter, createWebHashHistory } from 'vue-router'
+import HOME from './modules/home'
+import DOCUMENTS from './modules/documents'
+import createRoute from './createRoute'
 /**
  * routes为所有菜单栏内的所有路由
  */
-export const routes = [HOME, DOCUMENTS];
+export const routes = [HOME, DOCUMENTS]
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -24,6 +24,6 @@ const router = createRouter({
       children: []
     }
   ]
-});
+})
 
-export default router;
+export default router

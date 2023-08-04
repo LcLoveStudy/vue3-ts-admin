@@ -32,10 +32,11 @@
               @blur="editInputBlur(scope, item.prop)"
             ></el-input>
             <span
-              @dblclick="(scope.row.isEdit = true), (scope.row.copyValue = scope.row[item.prop])"
+              @dblclick=";(scope.row.isEdit = true), (scope.row.copyValue = scope.row[item.prop])"
               v-else
-              >{{ scope.row[item.prop] }}</span
             >
+              {{ scope.row[item.prop] }}
+            </span>
           </template>
         </el-table-column>
       </template>
@@ -70,103 +71,103 @@
 </template>
 
 <script setup lang="ts">
-import { type columnType } from '#/auto-table';
-import { objectCopy } from '@/utils';
-import type { ElTable } from 'element-plus';
-import { ref, useSlots, watch, type PropType } from 'vue';
-const props = defineProps({
-  //表格数据
-  tableData: {
-    type: Array,
-    required: true
-  },
-  //表头数据
-  columnData: {
-    type: Array as PropType<columnType[]>,
-    required: true
-  },
-  //是否每行可选择
-  selection: {
-    type: Boolean,
-    default: false
-  },
-  //是否全选
-  selectAll: {
-    type: Boolean,
-    default: false
-  },
-  //表格高度
-  height: {
-    type: String,
-    default: '40vh'
-  },
-  //是否加载特效
-  loading: {
-    type: Boolean,
-    default: false
-  },
-  loadingText: {
-    type: String,
-    default: '正在加载中.....'
+  import { type columnType } from '#/auto-table'
+  import { objectCopy } from '@/utils'
+  import type { ElTable } from 'element-plus'
+  import { ref, useSlots, watch, type PropType } from 'vue'
+  const props = defineProps({
+    //表格数据
+    tableData: {
+      type: Array,
+      required: true
+    },
+    //表头数据
+    columnData: {
+      type: Array as PropType<columnType[]>,
+      required: true
+    },
+    //是否每行可选择
+    selection: {
+      type: Boolean,
+      default: false
+    },
+    //是否全选
+    selectAll: {
+      type: Boolean,
+      default: false
+    },
+    //表格高度
+    height: {
+      type: String,
+      default: '40vh'
+    },
+    //是否加载特效
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    loadingText: {
+      type: String,
+      default: '正在加载中.....'
+    }
+  })
+  const emits = defineEmits<{
+    (evt: 'update:selectAll', value: boolean): void
+    (evt: 'selectChange', value: any): void
+    (evt: 'tableEdit', newValue: any, propName: string): void
+  }>()
+  //获取所有插槽
+  const slots = useSlots()
+  /** 表头数据 */
+  const columnData = ref<Array<columnType>>([])
+  const createColumnData = () => {
+    //通过order对显示数据进行排序
+    columnData.value = props.columnData.sort(
+      (a: any, b: any) => a?.order - b?.order
+    ) as Array<columnType>
   }
-});
-const emits = defineEmits<{
-  (evt: 'update:selectAll', value: boolean): void;
-  (evt: 'selectChange', value: any): void;
-  (evt: 'tableEdit', newValue: any, propName: string): void;
-}>();
-//获取所有插槽
-const slots = useSlots();
-/** 表头数据 */
-const columnData = ref<Array<columnType>>([]);
-const createColumnData = () => {
-  //通过order对显示数据进行排序
-  columnData.value = props.columnData.sort(
-    (a: any, b: any) => a?.order - b?.order
-  ) as Array<columnType>;
-};
-createColumnData();
+  createColumnData()
 
-const multipleTableRef = ref<InstanceType<typeof ElTable>>();
-const multipleSelection = ref([]);
-/** 选中状态改变时 */
-const handleSelectionChange = (val: any) => {
-  multipleSelection.value = val;
-  if (multipleSelection.value.length == props.tableData.length) {
-    emits('update:selectAll', true);
-  } else if (multipleSelection.value.length != props.tableData.length) {
-    emits('update:selectAll', false);
+  const multipleTableRef = ref<InstanceType<typeof ElTable>>()
+  const multipleSelection = ref([])
+  /** 选中状态改变时 */
+  const handleSelectionChange = (val: any) => {
+    multipleSelection.value = val
+    if (multipleSelection.value.length == props.tableData.length) {
+      emits('update:selectAll', true)
+    } else if (multipleSelection.value.length != props.tableData.length) {
+      emits('update:selectAll', false)
+    }
+    emits('selectChange', val)
   }
-  emits('selectChange', val);
-};
-/** 监听是否全选 */
-watch(
-  () => props.selectAll,
-  (newValue) => {
-    if (newValue && multipleSelection.value.length != props.tableData.length) {
-      multipleTableRef.value!.toggleAllSelection();
-    } else if (newValue && multipleSelection.value.length == props.tableData.length) {
-      emits('update:selectAll', true);
-    } else {
-      if (multipleSelection.value.length == props.tableData.length) {
-        multipleTableRef.value!.clearSelection();
+  /** 监听是否全选 */
+  watch(
+    () => props.selectAll,
+    (newValue) => {
+      if (newValue && multipleSelection.value.length != props.tableData.length) {
+        multipleTableRef.value!.toggleAllSelection()
+      } else if (newValue && multipleSelection.value.length == props.tableData.length) {
+        emits('update:selectAll', true)
+      } else {
+        if (multipleSelection.value.length == props.tableData.length) {
+          multipleTableRef.value!.clearSelection()
+        }
       }
     }
-  }
-);
+  )
 
-/** 正在编辑的输入框失去焦点 */
-const editInputBlur = (scope: any, propName: string) => {
-  scope.row.isEdit = false;
-  //编辑后的结果
-  const editResult = scope.row.copyValue;
-  delete scope.row.copyValue;
-  delete scope.row.isEdit;
-  //新结果传给父组件
-  const newValue: any = objectCopy(scope.row);
-  newValue[propName] = editResult;
-  emits('tableEdit', newValue, propName);
-};
+  /** 正在编辑的输入框失去焦点 */
+  const editInputBlur = (scope: any, propName: string) => {
+    scope.row.isEdit = false
+    //编辑后的结果
+    const editResult = scope.row.copyValue
+    delete scope.row.copyValue
+    delete scope.row.isEdit
+    //新结果传给父组件
+    const newValue: any = objectCopy(scope.row)
+    newValue[propName] = editResult
+    emits('tableEdit', newValue, propName)
+  }
 </script>
 
 <style scoped lang="less"></style>

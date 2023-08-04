@@ -1,5 +1,5 @@
-import { ElMessage } from 'element-plus';
-import { saveAs } from 'file-saver';
+import { ElMessage } from 'element-plus'
+import { saveAs } from 'file-saver'
 /**
  * 通过url下载
  * @param {*} url 文件的下载地址
@@ -10,12 +10,12 @@ import { saveAs } from 'file-saver';
  */
 export const downLoad = async (url: string | Blob, fileName: string): Promise<void> => {
   return new Promise(() => {
-    saveAs(url, fileName);
+    saveAs(url, fileName)
   })
     .then(() => {
-      ElMessage.success('下载成功');
+      ElMessage.success('下载成功')
     })
     .catch((err) => {
-      ElMessage.warning('下载出错了');
-    });
-};
+      ElMessage.warning('下载出错了')
+    })
+}

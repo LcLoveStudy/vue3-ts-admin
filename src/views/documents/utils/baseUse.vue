@@ -10,7 +10,9 @@
       </div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
-          <span class="orange">getCopy</span><span class="blue">('测试字符串')</span> -> 即可粘贴
+          <span class="orange">getCopy</span>
+          <span class="blue">('测试字符串')</span>
+          -> 即可粘贴
         </div>
       </div>
     </el-card>
@@ -24,10 +26,20 @@
       </div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
-          <span class="orange">getType</span><span class="blue">('测试字符串')</span> -> string
+          <span class="orange">getType</span>
+          <span class="blue">('测试字符串')</span>
+          -> string
         </div>
-        <div><span class="orange">getType</span><span class="blue">(123)</span> -> number</div>
-        <div><span class="orange">getType</span><span class="blue">([1,2,5])</span> -> array</div>
+        <div>
+          <span class="orange">getType</span>
+          <span class="blue">(123)</span>
+          -> number
+        </div>
+        <div>
+          <span class="orange">getType</span>
+          <span class="blue">([1,2,5])</span>
+          -> array
+        </div>
       </div>
     </el-card>
     <!-- 获取变量的类型(getColor) -->
@@ -42,7 +54,9 @@
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <el-button type="primary" size="small" @click="getRandomColor">点我获取随机颜色</el-button>
         <div class="mt-5">
-          <span class="orange">getColor</span><span class="blue">()</span> ->
+          <span class="orange">getColor</span>
+          <span class="blue">()</span>
+          ->
           <i :style="{ color: randomColor }">{{ randomColor }}</i>
         </div>
       </div>
@@ -58,8 +72,9 @@
       <div class="mt-10">将数据存储到localstorage中</div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div class="mt-5">
-          <span class="orange">setItem</span><span class="blue">('userid','12345')</span> ->
-          存储成功
+          <span class="orange">setItem</span>
+          <span class="blue">('userid','12345')</span>
+          -> 存储成功
         </div>
       </div>
     </el-card>
@@ -74,7 +89,9 @@
       <div class="mt-10">获取存储到localStorage的数据</div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div class="mt-5">
-          <span class="orange">getItem</span><span class="blue">('userid')</span> -> 12345
+          <span class="orange">getItem</span>
+          <span class="blue">('userid')</span>
+          -> 12345
         </div>
       </div>
     </el-card>
@@ -89,8 +106,12 @@
       <div class="mt-10">删除存储到localStorage的数据,不传参数则删除所有</div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div class="mt-5">
-          <span class="orange">removeItem</span><span class="blue">('userid')</span> -> 删除userid
-          <span class="orange">removeItem</span><span class="blue">()</span> -> 删除所有存储的内容
+          <span class="orange">removeItem</span>
+          <span class="blue">('userid')</span>
+          -> 删除userid
+          <span class="orange">removeItem</span>
+          <span class="blue">()</span>
+          -> 删除所有存储的内容
         </div>
       </div>
     </el-card>
@@ -98,18 +119,18 @@
 </template>
 
 <script setup lang="ts">
-import { getCopy, getColor } from '@/utils';
-import { ref } from 'vue';
-//点击复制图表
-const copyUtils = (FunName: string) => {
-  getCopy(FunName);
-};
+  import { getCopy, getColor } from '@/utils'
+  import { ref } from 'vue'
+  //点击复制图表
+  const copyUtils = (FunName: string) => {
+    getCopy(FunName)
+  }
 
-//获取随机颜色
-const randomColor = ref('');
-const getRandomColor = () => {
-  randomColor.value = getColor();
-};
+  //获取随机颜色
+  const randomColor = ref('')
+  const getRandomColor = () => {
+    randomColor.value = getColor()
+  }
 </script>
 
 <style scoped lang="less"></style>

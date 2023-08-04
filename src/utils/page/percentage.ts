@@ -26,37 +26,37 @@
  * }
  */
 export class Percentage {
-  startTime: number;
-  Pertimer: any;
+  startTime: number
+  Pertimer: any
   constructor() {
-    this.startTime = 0;
+    this.startTime = 0
   }
   begin() {
     if (this.Pertimer) {
-      clearInterval(this.Pertimer);
+      clearInterval(this.Pertimer)
     }
-    this.startTime = 0;
+    this.startTime = 0
     this.Pertimer = setInterval(() => {
       if (this.startTime < 50) {
-        this.startTime += 0.5;
+        this.startTime += 0.5
       } else if (this.startTime >= 50 && this.startTime < 80) {
-        this.startTime += 0.1;
+        this.startTime += 0.1
       } else if (this.startTime >= 80 && this.startTime < 90) {
-        this.startTime += 0.01;
+        this.startTime += 0.01
       } else {
-        clearInterval(this.Pertimer);
+        clearInterval(this.Pertimer)
       }
-    }, 100);
+    }, 100)
   }
   stop() {
     if (this.Pertimer) {
-      clearInterval(this.Pertimer);
+      clearInterval(this.Pertimer)
     }
   }
   end() {
     if (this.Pertimer) {
-      clearInterval(this.Pertimer);
+      clearInterval(this.Pertimer)
     }
-    this.startTime = 100;
+    this.startTime = 100
   }
 }

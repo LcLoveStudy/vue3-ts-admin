@@ -9,18 +9,18 @@
  * @email dotb116393@163.com
  */
 export const deepFreeze = (obj: NObject): NObject => {
-  if (Object.isFrozen(obj)) return obj;
+  if (Object.isFrozen(obj)) return obj
   Object.keys(obj).forEach((key) => {
     //Object.keys(obj)获取所有的键名
     //如果是object类型，递归深度冻结
-    typeof obj[key] === 'object' && (obj[key] = deepFreeze(obj[key]));
-  });
-  return Object.freeze(obj);
-};
+    typeof obj[key] === 'object' && (obj[key] = deepFreeze(obj[key]))
+  })
+  return Object.freeze(obj)
+}
 
 //键名必须为string ｜ number ｜ symbol
 interface NObject {
-  [key: string | number | symbol]: NObject;
+  [key: string | number | symbol]: NObject
 }
 
 /**
@@ -32,5 +32,5 @@ interface NObject {
  * @email dotb116393@163.com
  */
 export const objectCopy = (oldObj: object): object => {
-  return JSON.parse(JSON.stringify(oldObj));
-};
+  return JSON.parse(JSON.stringify(oldObj))
+}

@@ -86,84 +86,84 @@
 </template>
 
 <script setup lang="ts">
-import type { FormInstance } from 'element-plus';
-import { reactive, ref } from 'vue';
-const props = defineProps({
-  formData: {
-    type: Object,
-    default: {
-      username: {
-        value: '',
-        label: '用户名',
-        prop: 'username',
-        type: '',
-        placeholder: '请输入用户名',
-        rules: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
-      },
-      password: {
-        value: '',
-        label: '密码',
-        prop: 'password',
-        type: 'password',
-        placeholder: '请输入密码',
-        rules: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
+  import type { FormInstance } from 'element-plus'
+  import { reactive, ref } from 'vue'
+  const props = defineProps({
+    formData: {
+      type: Object,
+      default: {
+        username: {
+          value: '',
+          label: '用户名',
+          prop: 'username',
+          type: '',
+          placeholder: '请输入用户名',
+          rules: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
+        },
+        password: {
+          value: '',
+          label: '密码',
+          prop: 'password',
+          type: 'password',
+          placeholder: '请输入密码',
+          rules: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
+        }
       }
+    },
+    //提交按钮的文字提示
+    submitText: {
+      type: String,
+      default: '确定'
+    },
+    // 提交按钮的loading
+    submitLoading: {
+      type: Boolean,
+      default: false
+    },
+    //标签的字体颜色
+    labelColor: {
+      type: String,
+      default: '#000'
     }
-  },
-  //提交按钮的文字提示
-  submitText: {
-    type: String,
-    default: '确定'
-  },
-  // 提交按钮的loading
-  submitLoading: {
-    type: Boolean,
-    default: false
-  },
-  //标签的字体颜色
-  labelColor: {
-    type: String,
-    default: '#000'
-  }
-});
-//自定义事件
-const emits = defineEmits(['submit']);
+  })
+  //自定义事件
+  const emits = defineEmits(['submit'])
 
-/** 表单实例 */
-const formRef = ref<FormInstance>();
-/** 代理表单，只用于参与表单验证 */
-const ruleForm = reactive<any>({});
-/** 用于创建表单验证规则 */
-const createRules = () => {
-  let rules: any = [];
-  for (let key in props.formData) {
-    rules[key] = props.formData[key]?.rules;
-    ruleForm[key] = '';
-  }
-  return rules;
-};
-
-/** 表单输入框输入时,改变代理对象，用于表单验证 */
-const inputChange = (item: any) => {
-  ruleForm[item.prop] = item.value;
-};
-
-/** 表单的提交 */
-const submitClick = (formEl: FormInstance | undefined) => {
-  if (!formEl) return;
-  formEl.validate((valid) => {
-    if (valid) {
-      emits('submit');
-    } else {
-      return false;
+  /** 表单实例 */
+  const formRef = ref<FormInstance>()
+  /** 代理表单，只用于参与表单验证 */
+  const ruleForm = reactive<any>({})
+  /** 用于创建表单验证规则 */
+  const createRules = () => {
+    let rules: any = []
+    for (let key in props.formData) {
+      rules[key] = props.formData[key]?.rules
+      ruleForm[key] = ''
     }
-  });
-};
+    return rules
+  }
+
+  /** 表单输入框输入时,改变代理对象，用于表单验证 */
+  const inputChange = (item: any) => {
+    ruleForm[item.prop] = item.value
+  }
+
+  /** 表单的提交 */
+  const submitClick = (formEl: FormInstance | undefined) => {
+    if (!formEl) return
+    formEl.validate((valid) => {
+      if (valid) {
+        emits('submit')
+      } else {
+        return false
+      }
+    })
+  }
 </script>
 
 <style scoped lang="less">
-:deep(.el-form-item__label) {
-  font-size: 16px;
-  color: v-bind(labelColor);
-}
+  :deep(.el-form-item__label) {
+    font-size: 16px;
+    color: v-bind(labelColor);
+  }
 </style>

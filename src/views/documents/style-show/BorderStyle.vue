@@ -28,48 +28,48 @@
 </template>
 
 <script setup lang="ts">
-import { getCopy } from '@/utils';
-import { ref } from 'vue';
-const tableData = ref([
-  {
-    name: '.border-dotted',
-    descript: 'border-style: dotted;'
-  },
-  {
-    name: '.border-dashed',
-    descript: 'border-style: dashed;'
-  },
-  {
-    name: '.border-solid',
-    descript: 'border-style: solid;'
-  },
-  {
-    name: '.border-none',
-    descript: 'border-style: none;'
-  },
-  {
-    name: '.border-radius1/10',
-    descript: 'border-radius: 1px/10px;'
-  },
-  {
-    name: '.border-1/5',
-    descript: 'border-width: 1px/5px;'
-  },
-  {
-    name: '.circle',
-    descript: ' border-radius: 50%;'
+  import { getCopy } from '@/utils'
+  import { ref } from 'vue'
+  const tableData = ref([
+    {
+      name: '.border-dotted',
+      descript: 'border-style: dotted;'
+    },
+    {
+      name: '.border-dashed',
+      descript: 'border-style: dashed;'
+    },
+    {
+      name: '.border-solid',
+      descript: 'border-style: solid;'
+    },
+    {
+      name: '.border-none',
+      descript: 'border-style: none;'
+    },
+    {
+      name: '.border-radius1/10',
+      descript: 'border-radius: 1px/10px;'
+    },
+    {
+      name: '.border-1/5',
+      descript: 'border-width: 1px/5px;'
+    },
+    {
+      name: '.circle',
+      descript: ' border-radius: 50%;'
+    }
+  ])
+  const copyClass = (className: string) => {
+    getCopy(className.split('.')[1])
   }
-]);
-const copyClass = (className: string) => {
-  getCopy(className.split('.')[1]);
-};
 </script>
 
 <style scoped lang="less">
-.example {
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin-left: 20px;
-}
+  .example {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+  }
 </style>

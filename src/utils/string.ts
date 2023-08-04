@@ -9,8 +9,8 @@
  * @author lichang
  */
 export const stringSplit = (target: any, flat: string, index: number): string => {
-  return isString(target) ? target.split(flat)[index] : '目标不是字符串';
-};
+  return isString(target) ? target.split(flat)[index] : '目标不是字符串'
+}
 
 /**
  * 判断是否是字符串
@@ -18,5 +18,5 @@ export const stringSplit = (target: any, flat: string, index: number): string =>
  * @returns true||false
  */
 export const isString = (targetString: unknown): boolean => {
-  return typeof targetString == 'string';
-};
+  return typeof targetString == 'string'
+}

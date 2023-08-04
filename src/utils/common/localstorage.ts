@@ -7,8 +7,8 @@
  * @email dotb116393@163.com
  */
 export const setItem = (key: string, value: any) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
+  localStorage.setItem(key, JSON.stringify(value))
+}
 
 /**
  * 用于获取当前项目存储在localstorage中的item，当item不存在时返回空字符串''
@@ -19,8 +19,8 @@ export const setItem = (key: string, value: any) => {
  * @email dotb116393@163.com
  */
 export const getItem = (key: string): any => {
-  return JSON.parse(localStorage.getItem(key) || JSON.stringify(''));
-};
+  return JSON.parse(localStorage.getItem(key) || JSON.stringify(''))
+}
 
 /**
  * 从localstorage中删除item
@@ -31,8 +31,8 @@ export const getItem = (key: string): any => {
  */
 export const removeItem = (key?: string) => {
   if (key) {
-    localStorage.removeItem(key);
+    localStorage.removeItem(key)
   } else {
-    localStorage.clear();
+    localStorage.clear()
   }
-};
+}
