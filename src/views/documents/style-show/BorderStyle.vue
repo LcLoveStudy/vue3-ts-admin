@@ -12,9 +12,15 @@
       <template #default="scope">
         <div class="flex items-center">
           <span>{{ scope.row.descript }}</span>
-          <span class="ml-20 example border-1" v-if="scope.row.descript.split(':')[0].split('-')[1] == 'style'"
-            :style="`border-style:${scope.row.descript.split(':')[1]}`"></span>
-          <span class="ml-20 example border-3" v-if="scope.row.descript.split(':')[0].split('-')[1] == 'width'"></span>
+          <span
+            class="ml-20 example border-1"
+            v-if="scope.row.descript.split(':')[0].split('-')[1] == 'style'"
+            :style="`border-style:${scope.row.descript.split(':')[1]}`"
+          ></span>
+          <span
+            class="ml-20 example border-3"
+            v-if="scope.row.descript.split(':')[0].split('-')[1] == 'width'"
+          ></span>
         </div>
       </template>
     </el-table-column>
@@ -22,8 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import { getCopy } from '@/utils'
-import { ref } from 'vue'
+import { getCopy } from '@/utils';
+import { ref } from 'vue';
 const tableData = ref([
   {
     name: '.border-dotted',
@@ -53,10 +59,10 @@ const tableData = ref([
     name: '.circle',
     descript: ' border-radius: 50%;'
   }
-])
+]);
 const copyClass = (className: string) => {
-  getCopy(className.split('.')[1])
-}
+  getCopy(className.split('.')[1]);
+};
 </script>
 
 <style scoped lang="less">

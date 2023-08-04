@@ -1,7 +1,7 @@
 <template>
   <div class="width-700">
     <div class="fs-25 fw-600">聚焦(v-focus)</div>
-    <div class=" mt-25">
+    <div class="mt-25">
       <span class="fs-20 inline-block">应用场景：</span><br />
       手动控制元素的聚焦状态，支持所有的html标签<br />
       <span class="fs-20 mt-20 inline-block">用法说明:</span><br />
@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-const focused = ref(false)
+import { ref } from 'vue';
+const focused = ref(false);
 </script>
 
 <style scoped lang="less">

@@ -30,10 +30,12 @@
       </div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
-          <span class="orange">stringSplit</span><span class="blue">('2023-6-13','-','1')</span> -> 6
+          <span class="orange">stringSplit</span><span class="blue">('2023-6-13','-','1')</span> ->
+          6
         </div>
         <div class="mt-10">
-          <span class="orange">stringSplit</span><span class="blue">('3.1415926','.','0')</span> -> 3
+          <span class="orange">stringSplit</span><span class="blue">('3.1415926','.','0')</span> ->
+          3
         </div>
       </div>
     </el-card>
@@ -44,8 +46,8 @@
 import { getCopy } from '@/utils';
 //点击复制图表
 const copyUtils = (FunName: string) => {
-  getCopy(FunName)
-}
+  getCopy(FunName);
+};
 </script>
 
 <style scoped lang="less"></style>

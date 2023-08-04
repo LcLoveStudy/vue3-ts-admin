@@ -8,8 +8,7 @@
         </el-icon>
       </template>
     </el-table-column>
-    <el-table-column prop="descript" label="说明">
-    </el-table-column>
+    <el-table-column prop="descript" label="说明"> </el-table-column>
   </el-table>
   <span>父盒子类名: .col</span>
   <div class="example col">
@@ -18,7 +17,7 @@
     <div class="col-4 item">.col-4</div>
     <div class="col-3 item">.col-3</div>
   </div>
-  <div class="mt-20 mb-20 ">
+  <div class="mt-20 mb-20">
     <span>父盒子类名: .row</span>
     <div class="example row">
       <div class="row-2 item">.row-2</div>
@@ -30,8 +29,8 @@
 </template>
 
 <script setup lang="ts">
-import { getCopy } from '@/utils'
-import { ref } from 'vue'
+import { getCopy } from '@/utils';
+import { ref } from 'vue';
 const tableData = ref([
   {
     name: '.col',
@@ -39,7 +38,8 @@ const tableData = ref([
   },
   {
     name: '.col-1/12',
-    descript: '父元素使用.col后，子元素使用.col-1代表占父元素宽度的1份,最大为.col-12，当所有子元素的总和大于12时，会换行显示'
+    descript:
+      '父元素使用.col后，子元素使用.col-1代表占父元素宽度的1份,最大为.col-12，当所有子元素的总和大于12时，会换行显示'
   },
   {
     name: '.row',
@@ -47,12 +47,13 @@ const tableData = ref([
   },
   {
     name: '.row-1/12',
-    descript: '父元素使用.row后，子元素使用.row-1代表占父元素高度的1份,最大为.row-12，当所有子元素的总和大于12时，会换行显示'
-  },
-])
+    descript:
+      '父元素使用.row后，子元素使用.row-1代表占父元素高度的1份,最大为.row-12，当所有子元素的总和大于12时，会换行显示'
+  }
+]);
 const copyClass = (className: string) => {
-  getCopy(className.split('.')[1])
-}
+  getCopy(className.split('.')[1]);
+};
 </script>
 
 <style scoped lang="less">

@@ -1,12 +1,23 @@
 <template>
   <div class="absolute menu_main">
-    <el-menu class="aside_menu" mode="horizontal" router text-color="var(--theme-color)" :default-active="currentRoute">
+    <el-menu
+      class="aside_menu"
+      mode="horizontal"
+      router
+      text-color="var(--theme-color)"
+      :default-active="currentRoute"
+    >
       <!-- 从这里开始循环菜单 -->
       <template v-for="menu in routes" :key="menu.routePath">
         <!-- 这里开始时只有一级菜单 -->
         <el-menu-item
-          v-if="!menu.meta.hideMenu && menu.meta.hideChildrenInMenu && hasRole(props.userType, menu.meta.role)"
-          :index="menu.path">
+          v-if="
+            !menu.meta.hideMenu &&
+            menu.meta.hideChildrenInMenu &&
+            hasRole(props.userType, menu.meta.role)
+          "
+          :index="menu.path"
+        >
           <el-icon class="icon" :icon="menu.meta.icon">
             <!-- 动态渲染icon -->
             <component :is="menu.meta.icon" />
@@ -25,21 +36,33 @@
             <template v-for="twoMenu in menu.children" :key="twoMenu.path">
               <!-- 这里开始是没有三级菜单的二级菜单 -->
               <el-menu-item
-                v-if="!twoMenu.meta.hideMenu && twoMenu.meta.hideChildrenInMenu && hasRole(props.userType, twoMenu.meta.role)"
-                :index="twoMenu.path">
+                v-if="
+                  !twoMenu.meta.hideMenu &&
+                  twoMenu.meta.hideChildrenInMenu &&
+                  hasRole(props.userType, twoMenu.meta.role)
+                "
+                :index="twoMenu.path"
+              >
                 {{ twoMenu.meta.title }}
               </el-menu-item>
               <!-- 这里开始是有三级菜单的二级菜单 -->
               <template
-                v-else-if="!twoMenu.meta.hideMenu && !twoMenu.meta.hideChildrenInMenu && hasRole(props.userType, twoMenu.meta.role)">
+                v-else-if="
+                  !twoMenu.meta.hideMenu &&
+                  !twoMenu.meta.hideChildrenInMenu &&
+                  hasRole(props.userType, twoMenu.meta.role)
+                "
+              >
                 <el-sub-menu :key="twoMenu.path" :index="twoMenu.path">
                   <template #title>
                     <span>{{ twoMenu.meta.title }}</span>
                   </template>
                   <!-- 三级菜单 -->
                   <template v-for="treeMenu in twoMenu.children" :key="treeMenu.path">
-                    <el-menu-item v-if="!treeMenu.meta.hideMenu && hasRole(props.userType, treeMenu.meta.role)"
-                      :index="treeMenu.path">
+                    <el-menu-item
+                      v-if="!treeMenu.meta.hideMenu && hasRole(props.userType, treeMenu.meta.role)"
+                      :index="treeMenu.path"
+                    >
                       {{ treeMenu.meta.title }}
                     </el-menu-item>
                   </template>
@@ -55,22 +78,26 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { routes } from '@/router/index'
-import { hasRole } from '@/utils'
-import { watch, ref } from 'vue'
-const route = useRoute()
+import { routes } from '@/router/index';
+import { hasRole } from '@/utils';
+import { watch, ref } from 'vue';
+const route = useRoute();
 const props = defineProps({
   userType: {
     type: String,
     default: 'admin'
   }
-})
+});
 //当前路由，绑定菜单的default-active属性
-const currentRoute = ref('')
+const currentRoute = ref('');
 //监听路由变化，当路由改变时，改变默认选项，防止页面刷新丢失菜单高亮
-watch(() => route, (newValue) => {
-  currentRoute.value = newValue.path
-}, { immediate: true, deep: true })
+watch(
+  () => route,
+  (newValue) => {
+    currentRoute.value = newValue.path;
+  },
+  { immediate: true, deep: true }
+);
 </script>
 
 <style scoped lang="less">
@@ -111,7 +138,7 @@ watch(() => route, (newValue) => {
   }
 
   // 二级菜单高亮显示
-  .el-sub-menu.is-active>.el-sub-menu__title {
+  .el-sub-menu.is-active > .el-sub-menu__title {
     color: var(--menu-item-active) !important;
     background-color: var(--menu-item-active-bgc);
   }

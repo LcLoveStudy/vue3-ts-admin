@@ -8,9 +8,7 @@
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">
-        判断是否为数组，目标变量是否为数组
-      </div>
+      <div class="mt-10">判断是否为数组，目标变量是否为数组</div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
           <span class="orange">isArray</span><span class="blue">('测试字符串')</span> -> false
@@ -28,18 +26,18 @@
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">
-        对简单数据类型数据去重，对象数组无效
-      </div>
+      <div class="mt-10">对简单数据类型数据去重，对象数组无效</div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
           <span class="orange">noRepeat</span><span class="blue">('测试字符串')</span> -> false
         </div>
         <div class="mt-10">
-          <span class="orange">noRepeat</span><span class="blue">([1 , 2 , 3 , 2 , 5 , 3 ]) </span> -> [ 1 , 2 , 3 , 5 ]
+          <span class="orange">noRepeat</span
+          ><span class="blue">([1 , 2 , 3 , 2 , 5 , 3 ]) </span> -> [ 1 , 2 , 3 , 5 ]
         </div>
         <div class="mt-10">
-          <span class="orange">noRepeat</span><span class="blue">([{ a:1 , b:2 },{ a:1 , b:2 }]) </span> -> 无效
+          <span class="orange">noRepeat</span
+          ><span class="blue">([{ a:1 , b:2 },{ a:1 , b:2 }]) </span> -> 无效
         </div>
       </div>
     </el-card>
@@ -59,17 +57,17 @@
       </div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
-          <span class="orange">arrSort</span><span class="blue">([0,4,2,3,6])</span> ->
-          [0,2,3,4,6]
+          <span class="orange">arrSort</span><span class="blue">([0,4,2,3,6])</span> -> [0,2,3,4,6]
         </div>
         <div class="mt-10">
-          <span class="orange">arrSort</span><span class="blue">([0,4,2,3,6])</span> ->
-          [6,4,3,2,0]
+          <span class="orange">arrSort</span><span class="blue">([0,4,2,3,6])</span> -> [6,4,3,2,0]
         </div>
         <div class="mt-10">
-          <span class="orange">arrSort</span><span class="blue">([{ time:2 , age:5 },{ time:5 , age:1 },{ time:1 , age:3
-            }, false , 'age' ])</span> ->
-          [{ time:2 , age:5 },{ time:1 , age:3},{ time:5 , age:1 }]
+          <span class="orange">arrSort</span
+          ><span class="blue"
+            >([{ time:2 , age:5 },{ time:5 , age:1 },{ time:1 , age:3 }, false , 'age' ])</span
+          >
+          -> [{ time:2 , age:5 },{ time:1 , age:3},{ time:5 , age:1 }]
         </div>
       </div>
     </el-card>
@@ -81,12 +79,11 @@
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">
-        获取两个数组的并集
-      </div>
+      <div class="mt-10">获取两个数组的并集</div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
-          <span class="orange">arrMerge</span><span class="blue">([1,2,3,4],[2,5,6,5])</span> -> [1,2,3,4,5,6]
+          <span class="orange">arrMerge</span><span class="blue">([1,2,3,4],[2,5,6,5])</span> ->
+          [1,2,3,4,5,6]
         </div>
       </div>
     </el-card>
@@ -97,8 +94,8 @@
 import { getCopy } from '@/utils';
 //点击复制图表
 const copyUtils = (FunName: string) => {
-  getCopy(FunName)
-}
+  getCopy(FunName);
+};
 </script>
 
 <style scoped lang="less"></style>

@@ -1,4 +1,4 @@
-import type { customRoute } from '#/vue-router'
+import type { customRoute } from '#/vue-router';
 const HOME: customRoute = {
   path: '/home',
   name: 'home',
@@ -9,7 +9,7 @@ const HOME: customRoute = {
     keepChild: true,
     hideBreadcrumb: false,
     hideChildrenInMenu: true,
-    role:['admin','superadmin','user'],
+    role: ['admin', 'superadmin', 'user']
   },
   children: [
     {
@@ -23,10 +23,10 @@ const HOME: customRoute = {
         keepChild: false,
         hideBreadcrumb: true,
         hideChildrenInMenu: true,
-        role:['admin','superadmin','user'],
+        role: ['admin', 'superadmin', 'user']
       },
       children: []
     }
   ]
-}
-export default HOME
+};
+export default HOME;

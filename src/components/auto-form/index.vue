@@ -1,37 +1,83 @@
 <template>
   <div class="width-400">
-    <el-form ref="formRef" label-position="right" label-width="100px" :rules="createRules()" :model="ruleForm">
+    <el-form
+      ref="formRef"
+      label-position="right"
+      label-width="100px"
+      :rules="createRules()"
+      :model="ruleForm"
+    >
       <template v-for="item in props.formData" :key="item.label">
         <el-form-item :label="item.label" :prop="item.prop">
           <!-- 多选框 -->
-          <el-checkbox-group v-if="item?.type == 'checkbox'" v-model="item.value" @change="inputChange(item)">
-            <el-checkbox v-for="checkoption in item.options" :key="checkoption.value" :label="checkoption.value"
-              :name="item.prop">
+          <el-checkbox-group
+            v-if="item?.type == 'checkbox'"
+            v-model="item.value"
+            @change="inputChange(item)"
+          >
+            <el-checkbox
+              v-for="checkoption in item.options"
+              :key="checkoption.value"
+              :label="checkoption.value"
+              :name="item.prop"
+            >
               {{ checkoption.label }}
             </el-checkbox>
           </el-checkbox-group>
           <!-- 单选框 -->
-          <el-radio-group v-else-if="item?.type == 'radio'" v-model="item.value" @change="inputChange(item)">
-            <el-radio v-for="raidoOption in item.options" :key="raidoOption.value" :label="raidoOption.value">
+          <el-radio-group
+            v-else-if="item?.type == 'radio'"
+            v-model="item.value"
+            @change="inputChange(item)"
+          >
+            <el-radio
+              v-for="raidoOption in item.options"
+              :key="raidoOption.value"
+              :label="raidoOption.value"
+            >
               {{ raidoOption.label }}
             </el-radio>
           </el-radio-group>
           <!-- 下拉框 -->
-          <el-select v-else-if="item?.type == 'select'" v-model="item.value" :placeholder="item.placeholder"
-            @change="inputChange(item)">
-            <el-option v-for="selectOption in item.options" :key="selectOption.value" :label="selectOption.label"
-              :value="selectOption.value" />
+          <el-select
+            v-else-if="item?.type == 'select'"
+            v-model="item.value"
+            :placeholder="item.placeholder"
+            @change="inputChange(item)"
+          >
+            <el-option
+              v-for="selectOption in item.options"
+              :key="selectOption.value"
+              :label="selectOption.label"
+              :value="selectOption.value"
+            />
           </el-select>
           <!-- 日期选择器 -->
-          <el-date-picker v-else-if="item?.type == 'date'" v-model="item.value" type="date"
-            :placeholder="item.placeholder" @change="inputChange(item)" />
-          <el-input v-else v-model="item.value" :placeholder="item.placeholder" :type="item?.type"
-            @input="inputChange(item)" :show-password="item.type == 'password'" />
+          <el-date-picker
+            v-else-if="item?.type == 'date'"
+            v-model="item.value"
+            type="date"
+            :placeholder="item.placeholder"
+            @change="inputChange(item)"
+          />
+          <el-input
+            v-else
+            v-model="item.value"
+            :placeholder="item.placeholder"
+            :type="item?.type"
+            @input="inputChange(item)"
+            :show-password="item.type == 'password'"
+          />
         </el-form-item>
       </template>
       <!-- 表单确认按钮 -->
       <el-form-item>
-        <el-button type="primary" @click="submitClick(formRef)" class="width-200 mt-20" :loading="submitLoading">
+        <el-button
+          type="primary"
+          @click="submitClick(formRef)"
+          class="width-200 mt-20"
+          :loading="submitLoading"
+        >
           {{ props.submitText }}
         </el-button>
       </el-form-item>
@@ -41,7 +87,7 @@
 
 <script setup lang="ts">
 import type { FormInstance } from 'element-plus';
-import { reactive, ref } from 'vue'
+import { reactive, ref } from 'vue';
 const props = defineProps({
   formData: {
     type: Object,
@@ -79,40 +125,40 @@ const props = defineProps({
     type: String,
     default: '#000'
   }
-})
+});
 //自定义事件
-const emits = defineEmits(['submit'])
+const emits = defineEmits(['submit']);
 
 /** 表单实例 */
-const formRef = ref<FormInstance>()
+const formRef = ref<FormInstance>();
 /** 代理表单，只用于参与表单验证 */
-const ruleForm = reactive<any>({})
+const ruleForm = reactive<any>({});
 /** 用于创建表单验证规则 */
 const createRules = () => {
-  let rules: any = []
+  let rules: any = [];
   for (let key in props.formData) {
-    rules[key] = props.formData[key]?.rules
-    ruleForm[key] = ''
+    rules[key] = props.formData[key]?.rules;
+    ruleForm[key] = '';
   }
-  return rules
-}
+  return rules;
+};
 
 /** 表单输入框输入时,改变代理对象，用于表单验证 */
 const inputChange = (item: any) => {
-  ruleForm[item.prop] = item.value
-}
+  ruleForm[item.prop] = item.value;
+};
 
 /** 表单的提交 */
 const submitClick = (formEl: FormInstance | undefined) => {
-  if (!formEl) return
+  if (!formEl) return;
   formEl.validate((valid) => {
     if (valid) {
-      emits('submit')
+      emits('submit');
     } else {
-      return false
+      return false;
     }
-  })
-}
+  });
+};
 </script>
 
 <style scoped lang="less">

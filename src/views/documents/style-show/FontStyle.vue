@@ -12,8 +12,11 @@
       <template #default="scope">
         <div class="flex">
           <span>{{ scope.row.descript }}</span>
-          <span class="example" v-if="scope.row.descript.split(':')[0] == 'color'"
-            :style="`background:${scope.row.descript.split(':')[1]}`"></span>
+          <span
+            class="example"
+            v-if="scope.row.descript.split(':')[0] == 'color'"
+            :style="`background:${scope.row.descript.split(':')[1]}`"
+          ></span>
         </div>
       </template>
     </el-table-column>
@@ -21,8 +24,8 @@
 </template>
 
 <script setup lang="ts">
-import { getCopy } from '@/utils'
-import { ref } from 'vue'
+import { getCopy } from '@/utils';
+import { ref } from 'vue';
 const tableData = ref([
   {
     name: '.line-height-1/50',
@@ -95,11 +98,11 @@ const tableData = ref([
   {
     name: '.pink ',
     descript: 'color: pink;'
-  },
-])
+  }
+]);
 const copyClass = (className: string) => {
-  getCopy(className.split('.')[1])
-}
+  getCopy(className.split('.')[1]);
+};
 </script>
 
 <style scoped lang="less">

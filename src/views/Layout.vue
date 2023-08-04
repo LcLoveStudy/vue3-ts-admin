@@ -19,18 +19,17 @@
 </template>
 
 <script setup lang="ts">
-import AsideMenu from '@/components/menu/AsideMenu.vue'
-import Header from '@/components/header/index.vue'
-import { ref } from 'vue'
-import { useUserStore } from '@/stores/user'
-const { userinfo } = useUserStore()
+import AsideMenu from '@/components/menu/AsideMenu.vue';
+import Header from '@/components/header/index.vue';
+import { ref } from 'vue';
+import { useUserStore } from '@/stores/user';
+const { userinfo } = useUserStore();
 /** 是否折叠侧边菜单 */
-const isCollapse = ref(false)
+const isCollapse = ref(false);
 /** 菜单是否在顶部 */
-const menuOnTop = ref(false)
+const menuOnTop = ref(false);
 /** 用户权限 */
-const userType = ref(userinfo.user_type ? userinfo.user_type : 'admin')
-
+const userType = ref(userinfo.user_type ? userinfo.user_type : 'admin');
 </script>
 
 <style scoped lang="less">

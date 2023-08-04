@@ -8,14 +8,13 @@
         </el-icon>
       </template>
     </el-table-column>
-    <el-table-column prop="descript" label="说明">
-    </el-table-column>
+    <el-table-column prop="descript" label="说明"> </el-table-column>
   </el-table>
 </template>
 
 <script setup lang="ts">
-import { getCopy } from '@/utils'
-import { ref } from 'vue'
+import { getCopy } from '@/utils';
+import { ref } from 'vue';
 const tableData = ref([
   {
     name: '.flex',
@@ -68,11 +67,11 @@ const tableData = ref([
   {
     name: '.justify-end',
     descript: 'justify-content: flex-end;'
-  },
-])
+  }
+]);
 const copyClass = (className: string) => {
-  getCopy(className.split('.')[1])
-}
+  getCopy(className.split('.')[1]);
+};
 </script>
 
 <style scoped lang="less"></style>

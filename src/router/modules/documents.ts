@@ -1,4 +1,4 @@
-import type { customRoute } from '#/vue-router'
+import type { customRoute } from '#/vue-router';
 const DOCUMENTS: customRoute = {
   path: '/documents',
   name: 'documents',
@@ -9,12 +9,12 @@ const DOCUMENTS: customRoute = {
     keepChild: false,
     hideBreadcrumb: false,
     hideChildrenInMenu: false,
-    role:['admin','superadmin','user']
+    role: ['admin', 'superadmin', 'user']
   },
   children: [
     {
       path: '/documents/directive',
-      redirect:'/directive/lazyshow',
+      redirect: '/directive/lazyshow',
       name: 'directive',
       meta: {
         title: '指令',
@@ -23,7 +23,7 @@ const DOCUMENTS: customRoute = {
         keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
-        role:['admin','superadmin','user'],
+        role: ['admin', 'superadmin', 'user']
       },
       children: [
         {
@@ -37,10 +37,10 @@ const DOCUMENTS: customRoute = {
             keepChild: false,
             hideBreadcrumb: false,
             hideChildrenInMenu: true,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
           children: []
-        }, 
+        },
         {
           path: '/documents/directive/focusshow',
           name: 'focusshow',
@@ -52,7 +52,7 @@ const DOCUMENTS: customRoute = {
             icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: true,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
           children: []
         },
@@ -67,10 +67,10 @@ const DOCUMENTS: customRoute = {
             icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
           children: []
-        },
+        }
       ]
     },
     {
@@ -83,10 +83,10 @@ const DOCUMENTS: customRoute = {
         keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
-        role:['admin','superadmin','user'],
+        role: ['admin', 'superadmin', 'user']
       },
-      component:() => import('@/views/documents/utils/index.vue'),
-      children:[]
+      component: () => import('@/views/documents/utils/index.vue'),
+      children: []
     },
     {
       path: '/documents/style',
@@ -98,10 +98,10 @@ const DOCUMENTS: customRoute = {
         icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
-        role:['admin','superadmin','user'],
+        role: ['admin', 'superadmin', 'user']
       },
-      component:() => import('@/views/documents/style-show/index.vue'),
-      children:[]
+      component: () => import('@/views/documents/style-show/index.vue'),
+      children: []
     },
     {
       path: '/documents/code',
@@ -113,9 +113,9 @@ const DOCUMENTS: customRoute = {
         icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
-        role:['admin','superadmin','user'],
+        role: ['admin', 'superadmin', 'user']
       },
-      children:[
+      children: [
         {
           path: '/documents/code/rich',
           name: 'rich',
@@ -126,10 +126,10 @@ const DOCUMENTS: customRoute = {
             icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
-          children:[],
-          component:()=>import('@/views/documents/code/richEditor.vue')
+          children: [],
+          component: () => import('@/views/documents/code/richEditor.vue')
         },
         {
           path: '/documents/code/table',
@@ -141,10 +141,10 @@ const DOCUMENTS: customRoute = {
             keepChild: true,
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
-          children:[],
-          component:()=>import('@/views/documents/code/tableCode.vue')
+          children: [],
+          component: () => import('@/views/documents/code/tableCode.vue')
         },
         {
           path: '/documents/code/form',
@@ -156,10 +156,10 @@ const DOCUMENTS: customRoute = {
             hideBreadcrumb: false,
             icon: '',
             hideChildrenInMenu: false,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
-          children:[],
-          component:()=>import('@/views/documents/code/formCode.vue')
+          children: [],
+          component: () => import('@/views/documents/code/formCode.vue')
         },
         {
           path: '/documents/code/radio',
@@ -171,10 +171,10 @@ const DOCUMENTS: customRoute = {
             keepChild: true,
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
-          children:[],
-          component:()=>import('@/views/documents/code/radioCode.vue')
+          children: [],
+          component: () => import('@/views/documents/code/radioCode.vue')
         },
         {
           path: '/documents/code/pagination',
@@ -186,13 +186,13 @@ const DOCUMENTS: customRoute = {
             icon: '',
             hideBreadcrumb: false,
             hideChildrenInMenu: false,
-            role:['admin','superadmin','user'],
+            role: ['admin', 'superadmin', 'user']
           },
-          children:[],
-          component:()=>import('@/views/documents/code/pagination.vue')
+          children: [],
+          component: () => import('@/views/documents/code/pagination.vue')
         }
       ]
     }
   ]
-}
-export default DOCUMENTS
+};
+export default DOCUMENTS;

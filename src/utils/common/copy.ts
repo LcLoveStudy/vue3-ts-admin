@@ -1,4 +1,4 @@
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'element-plus';
 /**
  * 复制内容到剪贴板
  * @param {string} content 要复制的内容
@@ -7,11 +7,11 @@ import { ElMessage } from 'element-plus'
  */
 const getCopy = (content: string) => {
   try {
-    navigator.clipboard.writeText(content)// 把要复制的内容拷贝到剪贴板
-    ElMessage.success('复制成功')
+    navigator.clipboard.writeText(content); // 把要复制的内容拷贝到剪贴板
+    ElMessage.success('复制成功');
   } catch (ex) {
-    return false
-  } 
-}
+    return false;
+  }
+};
 
-export default getCopy
+export default getCopy;
