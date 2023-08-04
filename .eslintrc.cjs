@@ -1,6 +1,6 @@
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution')
-
+// 官网:https://www.tkcnn.com/eslint/
 module.exports = {
   root: true,
   extends: [
