@@ -29,7 +29,7 @@ const DOCUMENTS: customRoute = {
         {
           path: '/documents/directive/lazyshow',
           name: 'lazyshow',
-          component: () => import('@/views/documents/directiveShow/lazyShow.vue'),
+          component: () => import('@/views/documents/directive-show/lazyShow.vue'),
           meta: {
             title: '图片懒加载',
             hideMenu: false,
@@ -44,7 +44,7 @@ const DOCUMENTS: customRoute = {
         {
           path: '/documents/directive/focusshow',
           name: 'focusshow',
-          component: () => import('@/views/documents/directiveShow/focusShow.vue'),
+          component: () => import('@/views/documents/directive-show/focusShow.vue'),
           meta: {
             title: '聚焦',
             hideMenu: false,
@@ -59,7 +59,7 @@ const DOCUMENTS: customRoute = {
         {
           path: '/documents/directive/clickoutside',
           name: 'clickoutside',
-          component: () => import('@/views/documents/directiveShow/clickoutside.vue'),
+          component: () => import('@/views/documents/directive-show/clickoutside.vue'),
           meta: {
             title: '点击外部',
             hideMenu: false,
@@ -100,7 +100,7 @@ const DOCUMENTS: customRoute = {
         hideChildrenInMenu: true,
         role:['admin','superadmin','user'],
       },
-      component:() => import('@/views/documents/styleShow/index.vue'),
+      component:() => import('@/views/documents/style-show/index.vue'),
       children:[]
     },
     {

@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import AutoForm from '@/components/autoForm/index.vue'
+import AutoForm from '@/components/auto-form/index.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()

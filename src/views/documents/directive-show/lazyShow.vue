@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import ScrollBar from '@/components/scrollBar/index.vue'
+import ScrollBar from '@/components/scroll-bar/index.vue'
 </script>
 
 <style scoped lang="less">

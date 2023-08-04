@@ -13,8 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import RichEditor from '@/components/richEditor/index.vue'
-import AutoTable from '@/components/autoTable/index.vue'
+import RichEditor from '@/components/rich-editor/index.vue'
+import AutoTable from '@/components/auto-table/index.vue'
 import { ref } from 'vue'
 /** 列数据配置 */
 const columnData = ref([

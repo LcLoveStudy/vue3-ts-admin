@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import topMenu from '@/components/menu/topMenu.vue'
-import BreadCrumb from '@/components/breadCrumb/breadCrumb.vue'
+import BreadCrumb from '@/components/bread-crumb/breadCrumb.vue'
 import { useRouter } from 'vue-router'
 import { removeItem } from '@/utils';
 import { ElMessage } from 'element-plus';
