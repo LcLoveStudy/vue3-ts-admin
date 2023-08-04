@@ -11,7 +11,7 @@
   import autoPagination from '@/components/auto-pagination/index.vue'
   import { ref } from 'vue'
   const current = ref(1)
-  const size1 = ref(10)
+  const size = ref(10)
   const change = () => {
     console.log(current.value, size.value)
   }
