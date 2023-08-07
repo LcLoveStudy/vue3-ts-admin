@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 package-lock.json
 yarn.lock
+.eslintcache
 
 node_modules
 .DS_Store
@@ -15,7 +16,7 @@ dist
 dist-ssr
 coverage
 *.local
-.eslintcache
+
 
 /cypress/videos/
 /cypress/screenshots/
