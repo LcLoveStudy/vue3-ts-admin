@@ -29,7 +29,7 @@
       breadCrumbs.value = []
       const moduleName: string = newValue.path.split('/')[1]
       routes.forEach((item) => {
-        if (item.name == moduleName && !item.meta.hideChildrenInMenu) {
+        if (item.name === moduleName && !item.meta.hideChildrenInMenu) {
           breadCrumbs.value.push({
             title: item.meta.title as string,
             path: item.path
@@ -37,7 +37,7 @@
         }
       })
       newValue.matched.forEach((item) => {
-        if (item.path.split('/')[1] == moduleName) {
+        if (item.path.split('/')[1] === moduleName) {
           if (!item.meta.hideBreadcrumb) {
             breadCrumbs.value.push({
               title: item.meta.title as string,

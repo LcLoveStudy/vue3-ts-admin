@@ -13,31 +13,31 @@ export const dateFormat = (date: Date, format: String) => {
     .replace('YYYY', newDate.getFullYear().toString())
     .replace(
       'MM',
-      (newDate.getMonth() + 1).toString().length == 1
+      (newDate.getMonth() + 1).toString().length === 1
         ? 0 + (newDate.getMonth() + 1).toString()
         : (newDate.getMonth() + 1).toString()
     )
     .replace(
       'DD',
-      newDate.getDate().toString().length == 1
+      newDate.getDate().toString().length === 1
         ? 0 + newDate.getDate().toString()
         : newDate.getDate().toString()
     )
     .replace(
       'h',
-      newDate.getHours().toString().length == 1
+      newDate.getHours().toString().length === 1
         ? 0 + newDate.getHours().toString()
         : newDate.getHours().toString()
     )
     .replace(
       'm',
-      newDate.getMinutes().toString().length == 1
+      newDate.getMinutes().toString().length === 1
         ? 0 + newDate.getMinutes().toString()
         : newDate.getMinutes().toString()
     )
     .replace(
       's',
-      newDate.getSeconds().toString().length == 1
+      newDate.getSeconds().toString().length === 1
         ? 0 + newDate.getSeconds().toString()
         : newDate.getSeconds().toString()
     )

@@ -13,7 +13,7 @@
  * @email dotb116393@163.com
  */
 export const pageScroll = (endDom: HTMLElement, delay?: number) => {
-  if (endDom.offsetTop == undefined) {
+  if (endDom.offsetTop === undefined) {
     return '元素不存在'
   } else {
     // 获取起始位置到页面顶部的距离
@@ -24,7 +24,7 @@ export const pageScroll = (endDom: HTMLElement, delay?: number) => {
     const realDistance = startDistance - endDistance
     // 计算需要多少步
     let step = 0
-    if (delay == undefined || delay < 10) {
+    if (delay === undefined || delay < 10) {
       delay = 10
     }
     step = delay / 10

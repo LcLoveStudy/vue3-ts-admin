@@ -42,7 +42,7 @@
       ],
       filterMethod: (value: string, row: any, column: any) => {
         const property = column.property
-        return row[property] == value
+        return row[property] === value
       }
     },
     {
@@ -103,7 +103,7 @@
    */
   const editHandle = (newValue: any, propName: string) => {
     tableData.value.forEach((item: any) => {
-      if (item.id == newValue.id) {
+      if (item.id === newValue.id) {
         item[propName] = newValue[propName]
       }
     })

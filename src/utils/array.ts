@@ -30,7 +30,7 @@ export const arrSort = (
   flag: boolean,
   valueName: string
 ): Array<any> | boolean => {
-  if (flag == undefined) {
+  if (flag === undefined) {
     flag = true
   }
   // 判断是否是数组

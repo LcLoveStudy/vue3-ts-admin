@@ -16,7 +16,7 @@ module.exports = {
   },
   rules: {
     'vue/multi-word-component-names': 0, // 关闭对组件名称的检查
-    eqeqeq: 'off', // 严格区分==和===
+    eqeqeq: 'error', // 严格区分==和===
     'max-lines': ['error', { max: 500, skipComments: false, skipBlankLines: false }],
     'no-alert': 'error', // 禁止使用alert
     'no-empty': 'error', // 禁止使用空块语句

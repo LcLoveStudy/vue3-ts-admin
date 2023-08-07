@@ -33,7 +33,7 @@ service.interceptors.response.use(
       // 处理弹框
       ElMessage({
         message: response.data?.info?.name,
-        type: response.status == 200 ? 'success' : 'error'
+        type: response.status === 200 ? 'success' : 'error'
       })
     }
     return data

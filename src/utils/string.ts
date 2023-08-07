@@ -18,5 +18,5 @@ export const stringSplit = (target: any, flat: string, index: number): string =>
  * @returns true||false
  */
 export const isString = (targetString: unknown): boolean => {
-  return typeof targetString == 'string'
+  return typeof targetString === 'string'
 }

@@ -133,9 +133,9 @@
   /** 选中状态改变时 */
   const handleSelectionChange = (val: any) => {
     multipleSelection.value = val
-    if (multipleSelection.value.length == props.tableData.length) {
+    if (multipleSelection.value.length === props.tableData.length) {
       emits('update:selectAll', true)
-    } else if (multipleSelection.value.length != props.tableData.length) {
+    } else if (multipleSelection.value.length !== props.tableData.length) {
       emits('update:selectAll', false)
     }
     emits('selectChange', val)
@@ -144,12 +144,12 @@
   watch(
     () => props.selectAll,
     (newValue) => {
-      if (newValue && multipleSelection.value.length != props.tableData.length) {
+      if (newValue && multipleSelection.value.length !== props.tableData.length) {
         multipleTableRef.value!.toggleAllSelection()
-      } else if (newValue && multipleSelection.value.length == props.tableData.length) {
+      } else if (newValue && multipleSelection.value.length === props.tableData.length) {
         emits('update:selectAll', true)
       } else {
-        if (multipleSelection.value.length == props.tableData.length) {
+        if (multipleSelection.value.length === props.tableData.length) {
           multipleTableRef.value!.clearSelection()
         }
       }
