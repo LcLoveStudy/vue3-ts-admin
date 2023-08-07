@@ -1,6 +1,6 @@
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution')
-// 官网:https://www.tkcnn.com/eslint/
+
 module.exports = {
   root: true,
   extends: [
@@ -22,6 +22,9 @@ module.exports = {
     'no-empty': 'error', // 禁止使用空块语句
     'no-empty-function': ['error', { allow: ['arrowFunctions'] }], // 禁止使用空函数(允许箭头函数)
     'no-multi-assign': ['error', { ignoreNonDeclaration: true }], // 禁止使用链式赋值表达式
+    'no-duplicate-imports': 'error', // 禁止重复的模块导入
+    'no-use-before-define': 'error', // 定义之前不可以使用变量
+    'no-multiple-empty-lines': 'error', // 禁止多个空行
     'no-redeclare': 'error', // 禁止变量重新声明
     'no-shadow': 'error', // 禁止在外部作用域中声明的隐藏变量中的变量声明
     'no-undef-init': 'error', // 不允许将变量初始化为 undefined
