@@ -73,13 +73,33 @@ export const isArray = (target: unknown): boolean => {
 
 /**
  * 数组合并（去重）
- * @param {Array} 数组1
- * @param {Array} 数组2
+ * @param {Array} arr1 数组1
+ * @param {Array} arr2 数组2
  * @returns 合并后的数组
  */
-export const arrMerge = (
+export const union = (
   arr1: Array<string | number>,
   arr2: Array<string | number>
 ): Array<string | number> => {
   return [...new Set([...arr1, ...arr2])]
+}
+
+/**
+ * 数组的交集
+ * @param {Array} arr1 数组1
+ * @param {Array} arr2 数组2
+ * @returns 交集
+ */
+export const intersection = <T>(arr1: T[], arr2: T[]): T[] => {
+  return arr1.filter((value) => arr2.includes(value))
+}
+
+/**
+ * 获取两个数组的差集
+ * @param {Array} arr1 数组1
+ * @param {Array} arr2 数组2
+ * @returns 差集
+ */
+export const difference = <T>(arr1: T[], arr2: T[]): T[] => {
+  return arr1.filter((value) => !arr2.includes(value))
 }
