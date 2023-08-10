@@ -113,6 +113,11 @@
       type: Boolean,
       default: false
     },
+    // 是否需要分页
+    needPage: {
+      type: Boolean,
+      default: true
+    },
     // 分页
     page: {
       type: Object as PropType<pageType>,
