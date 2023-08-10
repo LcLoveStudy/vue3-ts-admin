@@ -1,6 +1,6 @@
 <template>
   <el-checkbox v-model="selectAll" label="全选" size="large" />
-  <AutoTable
+  <AutoPageTable
     :tableData="tableData"
     :columnData="columnData"
     :selection="true"
@@ -8,6 +8,8 @@
     @selectChange="change"
     @tableEdit="editHandle"
     height="30vh"
+    v-model:page="page"
+    @currentChange="currentChange"
   >
     <template #age="{ scope }">
       <span class="blue">{{ scope.row.age }}</span>
@@ -15,13 +17,14 @@
     <template #option="{}">
       <el-text type="primary">做点什么</el-text>
     </template>
-  </AutoTable>
+  </AutoPageTable>
   <RichEditor v-model:value="code" heigth="40vh" class="mt-20" />
 </template>
 
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor/index.vue'
   import AutoTable from '@/components/auto-table/index.vue'
+  import AutoPageTable from '@/components/auto-page-table/index.vue'
   import { ref } from 'vue'
   /** 列数据配置 */
   const columnData = ref([
@@ -94,6 +97,15 @@
   /** 改变表单的选中状态 */
   const change = (value: Array<tableType>) => {
     console.log(value)
+  }
+
+  const page = ref({
+    current: 1,
+    total: 200,
+    size: 20
+  })
+  const currentChange = () => {
+    console.log(page.value)
   }
 
   /**
