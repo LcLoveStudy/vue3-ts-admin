@@ -7,7 +7,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   esbuild: {
-    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [] // 打包后去掉console，debugger
+    // 打包后去掉console，debugger
+    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : []
   },
   base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [
@@ -44,6 +45,7 @@ export default defineConfig({
     sourcemap: false
   },
   server: {
-    host: true // 开启局域网
+    // 开启局域网
+    host: true
   }
 })
