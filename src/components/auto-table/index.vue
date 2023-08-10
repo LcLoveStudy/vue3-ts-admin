@@ -68,6 +68,17 @@
       </template>
     </template>
   </el-table>
+  <div class="width-full flex justify-end mt-20">
+    <el-pagination
+      v-model:current-page="pageinfo.current"
+      v-model:page-size="pageinfo.size"
+      background
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="pageinfo.total"
+      @size-change="currentChange"
+      @current-change="currentChange"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -75,6 +86,12 @@
   import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
   import { ref, useSlots, watch, type PropType } from 'vue'
+  interface pageType {
+    current: number
+    size: number
+    total: number
+  }
+
   const props = defineProps({
     // 表格数据
     tableData: {
@@ -96,6 +113,22 @@
       type: Boolean,
       default: false
     },
+    // 是否需要分页
+    needPage: {
+      type: Boolean,
+      default: true
+    },
+    // 分页
+    page: {
+      type: Object as PropType<pageType>,
+      default: () => {
+        return {
+          current: 1,
+          size: 10,
+          total: 100
+        }
+      }
+    },
     // 表格高度
     height: {
       type: String,
@@ -115,7 +148,16 @@
     (evt: 'update:selectAll', value: boolean): void
     (evt: 'selectChange', value: any): void
     (evt: 'tableEdit', newValue: any, propName: string): void
+    (evt: 'update:page', value: object): void
+    (evt: 'currentChange'): void
   }>()
+  // 页码信息
+  const pageinfo = ref(props.page)
+  // 当前页码发生改变
+  const currentChange = () => {
+    emits('update:page', pageinfo.value)
+    emits('currentChange')
+  }
   // 获取所有插槽
   const slots = useSlots()
   /** 表头数据 */

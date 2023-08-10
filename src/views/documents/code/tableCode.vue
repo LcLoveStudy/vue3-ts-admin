@@ -1,6 +1,6 @@
 <template>
   <el-checkbox v-model="selectAll" label="全选" size="large" />
-  <auto-page-table
+  <auto-table
     :tableData="tableData"
     :columnData="columnData"
     :selection="true"
@@ -17,13 +17,13 @@
     <template #option="{}">
       <el-text type="primary">做点什么</el-text>
     </template>
-  </auto-page-table>
+  </auto-table>
   <RichEditor v-model:value="code" heigth="40vh" class="mt-20" />
 </template>
 
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor/index.vue'
-  import AutoPageTable from '@/components/auto-page-table/index.vue'
+  import AutoTable from '@/components/auto-table/index.vue'
   /** 列数据配置 */
   const columnData = ref([
     {
