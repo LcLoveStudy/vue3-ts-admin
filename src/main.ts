@@ -7,6 +7,7 @@ import useElPlus from '@/components/useElPlus'
 import createDirective from '@/directive'
 import App from '@/App.vue'
 import router from '@/router'
+import '@/utils'
 const app = createApp(App) // 实例化
 createDirective(app) // main.ts中批量导入自定义指令
 useElPlus(app) // 注册elementPlus
