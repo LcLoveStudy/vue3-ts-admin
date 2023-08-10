@@ -4,7 +4,7 @@ import { type commonApi } from '#/api-return'
 // 默认不传为不显示
 
 export const getList = (params: object) => {
-  return http.get<commonApi>('http://localhost:80/list', params, {
+  return http.get<commonApi<any>>('http://localhost:80/list', params, {
     showMessage: true,
     showProgress: true
   })

@@ -1,5 +1,5 @@
-export interface commonApi {
-  data: any
+export interface commonApi<T> {
+  data: T
   info: {
     name: string
     status: string
