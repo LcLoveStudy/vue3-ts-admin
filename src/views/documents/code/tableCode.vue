@@ -24,7 +24,6 @@
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor/index.vue'
   import AutoPageTable from '@/components/auto-page-table/index.vue'
-  import { ref } from 'vue'
   /** 列数据配置 */
   const columnData = ref([
     {

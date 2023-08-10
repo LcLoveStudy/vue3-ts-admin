@@ -22,7 +22,6 @@
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor/index.vue'
   import autoRadio from '@/components/auto-radio/index.vue'
-  import { ref } from 'vue'
   const value = ref([])
   const change = () => {
     console.log(value.value)

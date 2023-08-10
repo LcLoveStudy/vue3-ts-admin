@@ -21,7 +21,6 @@
 <script setup lang="ts">
   import AsideMenu from '@/components/menu/AsideMenu.vue'
   import Header from '@/components/header/index.vue'
-  import { ref } from 'vue'
   import { useUserStore } from '@/stores/user'
   const { userinfo } = useUserStore()
   /** 是否折叠侧边菜单 */

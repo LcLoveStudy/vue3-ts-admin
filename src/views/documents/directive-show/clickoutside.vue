@@ -30,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
   const num = ref(0)
   const clickoutside = () => {
     num.value += 1

@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor/index.vue'
-  import { ref } from 'vue'
   import AutoForm from '@/components/auto-form/index.vue'
   // 登录表单
   const loginForm = ref({

@@ -120,7 +120,6 @@
 
 <script setup lang="ts">
   import { getCopy, getColor } from '@/utils'
-  import { ref } from 'vue'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
     getCopy(FunName)

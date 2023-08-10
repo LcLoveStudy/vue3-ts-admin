@@ -14,8 +14,6 @@
 
 <script setup lang="ts">
   import AutoForm from '@/components/auto-form/index.vue'
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
   const router = useRouter()
   /** 登录表单 */
   const loginForm = ref({

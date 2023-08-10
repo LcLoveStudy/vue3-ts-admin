@@ -29,7 +29,6 @@
 
 <script setup lang="ts">
   import { getCopy } from '@/utils'
-  import { ref } from 'vue'
   const tableData = ref([
     {
       name: '.border-dotted',
