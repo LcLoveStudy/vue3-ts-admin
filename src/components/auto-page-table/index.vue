@@ -86,6 +86,12 @@
   import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
   import { ref, useSlots, watch, type PropType } from 'vue'
+  interface pageType {
+    current: number
+    size: number
+    total: number
+  }
+
   const props = defineProps({
     // 表格数据
     tableData: {
@@ -109,7 +115,7 @@
     },
     // 分页
     page: {
-      type: Object,
+      type: Object as PropType<pageType>,
       default: () => {
         return {
           current: 1,
@@ -140,7 +146,7 @@
     (evt: 'update:page', value: object): void
     (evt: 'currentChange'): void
   }>()
-
+  // 页码信息
   const pageinfo = ref(props.page)
   // 当前页码发生改变
   const currentChange = () => {

@@ -1,6 +1,6 @@
 <template>
   <el-checkbox v-model="selectAll" label="全选" size="large" />
-  <AutoPageTable
+  <auto-page-table
     :tableData="tableData"
     :columnData="columnData"
     :selection="true"
@@ -17,7 +17,7 @@
     <template #option="{}">
       <el-text type="primary">做点什么</el-text>
     </template>
-  </AutoPageTable>
+  </auto-page-table>
   <RichEditor v-model:value="code" heigth="40vh" class="mt-20" />
 </template>
 
