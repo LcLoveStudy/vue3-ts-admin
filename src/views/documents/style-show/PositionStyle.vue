@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-  import { getCopy } from '@/utils'
+  import { useCopy } from '@/utils'
   const tableData = ref([
     {
       name: '.static',
@@ -37,7 +37,7 @@
     }
   ])
   const copyClass = (className: string) => {
-    getCopy(className.split('.')[1])
+    useCopy(className.split('.')[1])
   }
 </script>
 

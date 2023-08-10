@@ -8,7 +8,7 @@ import { saveAs } from 'file-saver'
  * @author 李畅
  * @email dotb116393@163.com
  */
-const downLoad = async (url: string | Blob, fileName: string): Promise<void> => {
+const useDownload = async (url: string | Blob, fileName: string): Promise<void> => {
   await new Promise(() => {
     saveAs(url, fileName)
   })
@@ -20,4 +20,4 @@ const downLoad = async (url: string | Blob, fileName: string): Promise<void> => 
     })
 }
 
-export default downLoad
+export default useDownload

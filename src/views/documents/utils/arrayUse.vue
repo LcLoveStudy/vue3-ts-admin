@@ -108,10 +108,10 @@
 </template>
 
 <script setup lang="ts">
-  import { getCopy } from '@/utils'
+  import { useCopy } from '@/utils'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
-    getCopy(FunName)
+    useCopy(FunName)
   }
 </script>
 

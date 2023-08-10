@@ -5,19 +5,19 @@ import { deepFreeze, objectCopy } from './object'
 import { pageScroll } from './page/pageScroll'
 import { Percentage } from './page/percentage'
 import { dateFormat } from './dateFormat'
-import downLoad from './file/download'
+import useDownload from './file/useDownload'
 import showTif from './file/showTif'
-import getColor from './getColor'
+import useColor from './useColor'
 import { hourFormat } from './hourFormat'
 import getType from './getType'
 import hasRole from './auth/hasRole'
-import getCopy from './common/copy'
+import useCopy from './common/useCopy'
 import http from './http'
 export {
   Percentage,
   http,
   showTif,
-  downLoad,
+  useDownload,
   hourFormat,
   arrNoRepeat,
   startLoading,
@@ -25,7 +25,7 @@ export {
   arrSort,
   hasRole,
   deepFreeze,
-  getColor,
+  useColor,
   union,
   intersection,
   difference,
@@ -35,7 +35,7 @@ export {
   setItem,
   removeItem,
   pageScroll,
-  getCopy,
+  useCopy,
   objectCopy,
   dateFormat
 }

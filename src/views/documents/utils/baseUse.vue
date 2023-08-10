@@ -3,14 +3,14 @@
     <!-- 复制内容到剪贴板(getCopy) -->
     <el-card class="width-400 height-full">
       <div class="fs-16 fw-600 tomato">
-        复制内容到剪贴板(getCopy)
-        <el-icon class="hover-pointer" @click="copyUtils('getCopy')">
+        复制内容到剪贴板(useCopy)
+        <el-icon class="hover-pointer" @click="copyUtils('useCopy')">
           <DocumentCopy />
         </el-icon>
       </div>
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <div>
-          <span class="orange">getCopy</span>
+          <span class="orange">useCopy</span>
           <span class="blue">('测试字符串')</span>
           -> 即可粘贴
         </div>
@@ -45,8 +45,8 @@
     <!-- 获取变量的类型(getColor) -->
     <el-card class="width-400 height-full ml-20 mb-20">
       <div class="fs-16 fw-600 tomato">
-        随机获取一个16进制的颜色(getColor)
-        <el-icon class="hover-pointer" @click="copyUtils('getColor')">
+        随机获取一个16进制的颜色(useColor)
+        <el-icon class="hover-pointer" @click="copyUtils('useColor')">
           <DocumentCopy />
         </el-icon>
       </div>
@@ -54,7 +54,7 @@
       <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
         <el-button type="primary" size="small" @click="getRandomColor">点我获取随机颜色</el-button>
         <div class="mt-5">
-          <span class="orange">getColor</span>
+          <span class="orange">useColor</span>
           <span class="blue">()</span>
           ->
           <i :style="{ color: randomColor }">{{ randomColor }}</i>
@@ -119,16 +119,16 @@
 </template>
 
 <script setup lang="ts">
-  import { getCopy, getColor } from '@/utils'
+  import { useCopy, useColor } from '@/utils'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
-    getCopy(FunName)
+    useCopy(FunName)
   }
 
   // 获取随机颜色
   const randomColor = ref('')
   const getRandomColor = () => {
-    randomColor.value = getColor()
+    randomColor.value = useColor()
   }
 </script>
 
