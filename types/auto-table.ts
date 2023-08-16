@@ -10,7 +10,7 @@ import type { FilterMethods } from 'element-plus/es/components/table/src/table-c
  * filters:是否可以过滤，具体写法查看element-plus的table组件
  * filterMethod:对filters的回调
  */
-export interface columnType {
+export interface TableColType {
   prop: string
   label: string
   order?: number
@@ -19,4 +19,9 @@ export interface columnType {
   width?: string | number
   filters?: Array<{ text: any; value: any }>
   filterMethod?: FilterMethods<any>
+}
+export interface PageType {
+  current: number
+  size: number
+  total: number
 }

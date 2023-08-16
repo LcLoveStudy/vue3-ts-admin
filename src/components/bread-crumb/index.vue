@@ -13,12 +13,12 @@
   import { routes } from '@/router/index'
   const route = useRoute()
 
-  interface breadCrumbsType {
+  interface BreadCrumbsType {
     title: string
     path: string
   }
   // 用于渲染面包屑导航的数组
-  const breadCrumbs = ref<Array<breadCrumbsType>>([])
+  const breadCrumbs = ref<Array<BreadCrumbsType>>([])
 
   // 监听路由变化，当路由改变时，切割路由形成面包屑
   watch(

@@ -62,14 +62,14 @@
     }
   ])
   /** 表格数据的数据结构 */
-  interface tableType {
+  interface TableType {
     id: number
     name: string
     age: number
     sex: string
   }
   /** 表单数据 */
-  const tableData = ref<Array<tableType>>([
+  const tableData = ref<Array<TableType>>([
     {
       id: 1,
       name: 'lc',
@@ -93,7 +93,7 @@
   /** 是否全选 */
   const selectAll = ref(false)
   /** 改变表单的选中状态 */
-  const change = (value: Array<tableType>) => {
+  const change = (value: Array<TableType>) => {
     console.log(value)
   }
 

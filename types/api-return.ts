@@ -1,4 +1,4 @@
-export interface commonApi<T> {
+export interface ApiType<T> {
   data: T
   info: {
     name: string

@@ -47,12 +47,12 @@
   }
 
   // 规定必须包含value和label
-  interface optionType {
+  interface RadioOptionType {
     value: string | number
     label: string
     disabled?: boolean
   }
-  const radioOtpions = props.option as Array<optionType>
+  const radioOtpions = props.option as Array<RadioOptionType>
 </script>
 
 <style scoped></style>

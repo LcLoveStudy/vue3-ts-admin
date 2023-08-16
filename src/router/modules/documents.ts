@@ -1,5 +1,5 @@
-import type { customRoute } from '#/vue-router'
-const DOCUMENTS: customRoute = {
+import type { RouterType } from '#/vue-router'
+const DOCUMENTS: RouterType = {
   path: '/documents',
   name: 'documents',
   meta: {

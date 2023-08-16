@@ -82,14 +82,9 @@
 </template>
 
 <script setup lang="ts">
-  import { type columnType } from '#/auto-table'
+  import { type TableColType, type PageType } from '#/auto-table'
   import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
-  interface pageType {
-    current: number
-    size: number
-    total: number
-  }
 
   const props = defineProps({
     // 表格数据
@@ -99,7 +94,7 @@
     },
     // 表头数据
     columnData: {
-      type: Array as PropType<columnType[]>,
+      type: Array as PropType<TableColType[]>,
       required: true
     },
     // 是否每行可选择
@@ -119,7 +114,7 @@
     },
     // 分页
     page: {
-      type: Object as PropType<pageType>,
+      type: Object as PropType<PageType>,
       default: () => {
         return {
           current: 1,
@@ -160,12 +155,12 @@
   // 获取所有插槽
   const slots = useSlots()
   /** 表头数据 */
-  const colData = ref<Array<columnType>>([])
+  const colData = ref<Array<TableColType>>([])
   const createColumnData = () => {
     // 通过order对显示数据进行排序
     colData.value = props.columnData
       .slice()
-      .sort((a: any, b: any) => a?.order - b?.order) as Array<columnType>
+      .sort((a: any, b: any) => a?.order - b?.order) as Array<TableColType>
   }
   createColumnData()
 

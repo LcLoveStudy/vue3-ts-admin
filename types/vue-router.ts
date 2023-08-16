@@ -13,7 +13,7 @@
  * }
  * children:子路由配置
  */
-export interface customRoute {
+export interface RouterType {
   path: string
   name: string
   redirect?: string
@@ -27,5 +27,5 @@ export interface customRoute {
     hideBreadcrumb: boolean
     keepChild: boolean
   }
-  children: Array<customRoute> | never
+  children: Array<RouterType> | never
 }
