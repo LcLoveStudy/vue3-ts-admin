@@ -77,10 +77,8 @@
 </template>
 
 <script setup lang="ts">
-  import { useRoute } from 'vue-router'
   import { routes } from '@/router/index'
   import { hasRole } from '@/utils'
-  import { watch, ref } from 'vue'
   const route = useRoute()
   const props = defineProps({
     userType: {

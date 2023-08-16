@@ -77,10 +77,8 @@
 </template>
 
 <script setup lang="ts">
-  import { useRoute } from 'vue-router'
   import { routes } from '@/router/index'
   import { hasRole } from '@/utils'
-  import { watch, ref } from 'vue'
 
   const props = defineProps({
     // 菜单栏的展开和折叠

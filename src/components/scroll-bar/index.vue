@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-  import { onMounted } from 'vue'
   const props = defineProps({
     // 目标元素的id或者class
     target: {

@@ -10,8 +10,6 @@
 
 <script setup lang="ts">
   import { ArrowRight } from '@element-plus/icons-vue'
-  import { useRoute } from 'vue-router'
-  import { watch, ref } from 'vue'
   import { routes } from '@/router/index'
   const route = useRoute()
 

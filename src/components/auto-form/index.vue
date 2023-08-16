@@ -87,7 +87,6 @@
 
 <script setup lang="ts">
   import type { FormInstance } from 'element-plus'
-  import { reactive, ref } from 'vue'
   const props = defineProps({
     formData: {
       type: Object,
@@ -129,7 +128,9 @@
     }
   })
   // 自定义事件
-  const emits = defineEmits(['submit'])
+  const emits = defineEmits<{
+    (evt: 'submit'): void
+  }>()
 
   /** 表单实例 */
   const formRef = ref<FormInstance>()

@@ -85,7 +85,6 @@
   import { type columnType } from '#/auto-table'
   import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
-  import { ref, useSlots, watch, type PropType } from 'vue'
   interface pageType {
     current: number
     size: number
