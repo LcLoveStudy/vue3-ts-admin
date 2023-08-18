@@ -15,13 +15,27 @@ const router = createRouter({
       name: 'home',
       redirect: '/home',
       component: () => import('@/views/Layout.vue'),
-      children: createRoute(routes) as never
+      children: [
+        ...(createRoute(routes) as never),
+        {
+          path: '/404',
+          name: '404',
+          meta: {
+            title: '404'
+          },
+          component: () => import('@/views/error-page/404.vue')
+        }
+      ]
     },
     {
       path: '/login',
       name: 'login',
       component: () => import('@/views/login/index.vue'),
       children: []
+    },
+    {
+      path: '/:pathMatch(.*)',
+      redirect: '/404'
     }
   ]
 })
