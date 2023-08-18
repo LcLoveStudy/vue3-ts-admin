@@ -9,6 +9,7 @@ lerna-debug.log*
 package-lock.json
 yarn.lock
 .eslintcache
+.vscode
 
 node_modules
 .DS_Store
