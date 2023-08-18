@@ -12,7 +12,7 @@ service.interceptors.request.use(
   (config: any) => {
     const showMessage = config.showMessage
     const message = config.message
-    const token = getItem('token')
+    const token = getItem('userinfo')
     // 是否展示弹框提示，自定义提示信息
     if (showMessage) {
       config.headers.showMessage = true
