@@ -1,4 +1,4 @@
-export interface ApiType<T> {
+export interface ApiResponseType<T> {
   data: T
   info: {
     name: string

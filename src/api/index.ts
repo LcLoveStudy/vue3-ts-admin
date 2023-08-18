@@ -1,10 +1,10 @@
 import { http } from '@/utils'
-import { type ApiType } from '#/api-return'
+import { type ApiResponseType } from '#/api-return'
 // 在第二个参数中添加showMessage: true即可展示提示信息；showProgress:true展示头部进度条
 // 默认不传为不显示
 
 export const getList = (params: object) => {
-  return http.get<ApiType<any>>({
+  return http.get<ApiResponseType<any>>({
     url: 'http://localhost:80/list',
     params,
     config: {

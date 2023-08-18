@@ -1,12 +1,12 @@
-interface HttpType {
+interface HttpRequestType {
   url: string
   config?: any
 }
 
-export interface HttpGetType extends HttpType {
+export interface HttpGetRequestType extends HttpRequestType {
   params?: object
 }
 
-export interface HttpPostType extends HttpType {
+export interface HttpPostRequestType extends HttpRequestType {
   data?: object
 }

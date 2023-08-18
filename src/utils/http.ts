@@ -1,7 +1,7 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 import { getItem, startLoading, endLoading } from '@/utils'
-import { type HttpGetType, type HttpPostType } from '#/http'
+import * as HttpType from '#/http'
 // 创建axios实例
 const service: AxiosInstance = axios.create({
   baseURL: ''
@@ -71,11 +71,11 @@ service.interceptors.response.use(
 
 const http = {
   // get请求
-  get<T>(arg: HttpGetType): Promise<T> {
+  get<T>(arg: HttpType.HttpGetRequestType): Promise<T> {
     return service.get(arg.url, { params: arg.params, ...arg.config })
   },
   // post请求
-  post<T>(arg: HttpPostType): Promise<T> {
+  post<T>(arg: HttpType.HttpPostRequestType): Promise<T> {
     return service.post(arg.url, { data: arg.data }, ...arg.config)
   }
 }
