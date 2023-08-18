@@ -20,4 +20,6 @@ createDirective(app)
 useElPlus(app)
 
 app.use(createPinia()).use(router)
-app.mount('#app')
+router.isReady().then(() => {
+  app.mount('#app')
+})
