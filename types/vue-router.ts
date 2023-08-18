@@ -13,7 +13,7 @@
  * }
  * children:子路由配置
  */
-export interface RouterType {
+interface RouterType {
   path: string
   name: string
   redirect?: string

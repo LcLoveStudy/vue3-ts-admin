@@ -1,32 +1,17 @@
 {
   "extends": "./node_modules/@vue/tsconfig/tsconfig.dom.json",
-  "include": [
-    "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
-    "types/**/*.d.ts",
-    "types/**/*.ts"
-  ],
-  "exclude": [
-    "src/**/__tests__/*"
-  ],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "types/**/*.d.ts", "types/**/*.ts"],
+  "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
-    // 若TS版本为5.x，此处值应为"node" 
+    // 若TS版本为5.x，此处值应为"node"
     "moduleResolution": "node",
     // 取消以下的检查
-    "types": [
-      "element-plus/global",
-      "node"
-    ],
+    "types": ["element-plus/global", "node"],
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "#/*": [
-        "./types/*"
-      ]
+      "@/*": ["./src/*"],
+      "#/*": ["./types/*"]
     }
   }
 }

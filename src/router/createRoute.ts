@@ -1,4 +1,3 @@
-import type { RouterType } from '#/vue-router'
 const realRoute: Array<RouterType> = []
 const initRoute = (routeArr: Array<RouterType>) => {
   routeArr.forEach((item) => {

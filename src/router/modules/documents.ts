@@ -1,4 +1,3 @@
-import type { RouterType } from '#/vue-router'
 const DOCUMENTS: RouterType = {
   path: '/documents',
   name: 'documents',
