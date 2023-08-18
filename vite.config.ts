@@ -6,10 +6,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  esbuild: {
-    // 打包后去掉console，debugger
-    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : []
-  },
   base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [
     vue(),
@@ -29,6 +25,20 @@ export default defineConfig({
     }
   },
   build: {
+    /** Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效 */
+    minify: 'terser',
+    /** 在打包代码时移除 console.log、debugger 和 注释 */
+    terserOptions: {
+      compress: {
+        drop_console: false,
+        drop_debugger: true,
+        pure_funcs: ['console.log']
+      },
+      format: {
+        /** 删除注释 */
+        comments: false
+      }
+    },
     rollupOptions: {
       output: {
         // js和css分离
@@ -46,6 +56,8 @@ export default defineConfig({
   },
   server: {
     // 开启局域网
-    host: true
+    host: true,
+    port: 1024,
+    open: true
   }
 })
