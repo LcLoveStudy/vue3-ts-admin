@@ -41,6 +41,7 @@ const router = createRouter({
   ]
 })
 
+// 路由导航守卫，暂时工具用户名判断，请根据业务场景修改
 router.beforeEach((to, from, next) => {
   const userinfo = getItem('userinfo')
   if (to.path === '/login') {
