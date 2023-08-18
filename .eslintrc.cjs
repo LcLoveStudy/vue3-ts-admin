@@ -26,7 +26,7 @@ module.exports = {
     'no-use-before-define': 'error', // 定义之前不可以使用变量
     'no-multiple-empty-lines': 'error', // 禁止多个空行
     'no-redeclare': 'error', // 禁止变量重新声明
-    'no-shadow': 'error', // 禁止在外部作用域中声明的隐藏变量中的变量声明
+    'no-shadow': 'off', // 禁止在外部作用域中声明的隐藏变量中的变量声明
     'no-undef-init': 'error', // 不允许将变量初始化为 undefined
     'no-useless-return': 'error', // 不允许多余的返回语句
     'no-var': 'error', // 需要 let 或 const 而不是 var

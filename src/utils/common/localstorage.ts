@@ -1,3 +1,4 @@
+import { LocalStorageKeys } from '#/localstorage'
 /**
  * 用于在localstorage中存储item的函数
  * @param {*} key   键名
@@ -6,7 +7,7 @@
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const setItem = (key: string, value: any) => {
+export const setItem = (key: LocalStorageKeys, value: any) => {
   localStorage.setItem(key, JSON.stringify(value))
 }
 
@@ -18,7 +19,7 @@ export const setItem = (key: string, value: any) => {
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const getItem = (key: string): any => {
+export const getItem = (key: LocalStorageKeys): any => {
   return JSON.parse(localStorage.getItem(key) || JSON.stringify(''))
 }
 
@@ -29,7 +30,7 @@ export const getItem = (key: string): any => {
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const removeItem = (key?: string) => {
+export const removeItem = (key?: LocalStorageKeys) => {
   if (key) {
     localStorage.removeItem(key)
   } else {

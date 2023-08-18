@@ -1,6 +1,7 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 import { getItem, startLoading, endLoading } from '@/utils'
+import { LocalStorageKeys } from '#/localstorage'
 import * as HttpType from '@/utils/serve/types'
 // 创建axios实例
 const service: AxiosInstance = axios.create({
@@ -12,7 +13,7 @@ service.interceptors.request.use(
   (config: any) => {
     const showMessage = config.showMessage
     const message = config.message
-    const token = getItem('userinfo')
+    const token = getItem(LocalStorageKeys.USERINFO)
     // 是否展示弹框提示，自定义提示信息
     if (showMessage) {
       config.headers.showMessage = true

@@ -15,6 +15,7 @@
 <script setup lang="ts">
   import AutoForm from '@/components/auto-form/index.vue'
   import { setItem } from '@/utils'
+  import { LocalStorageKeys } from '#/localstorage'
   const router = useRouter()
   /** 登录表单 */
   const loginForm = ref({
@@ -42,7 +43,7 @@
     const { username, password } = loginForm.value
     loginLoading.value = true
     console.log('用户名:' + username.value, '密码:' + password.value)
-    setItem('userinfo', { username: username.value, password: password.value })
+    setItem(LocalStorageKeys.USERINFO, { username: username.value, password: password.value })
     loginLoading.value = false
     router.push('/')
   }
