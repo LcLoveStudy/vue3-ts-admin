@@ -1,3 +1,4 @@
 export enum LocalStorageKeys {
-  USERINFO = 'userinfo'
+  USERINFO = 'userinfo',
+  MENUPOSITION = 'menuPosition'
 }

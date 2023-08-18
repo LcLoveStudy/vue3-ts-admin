@@ -2,12 +2,12 @@
   <el-container class="container fs-16">
     <!-- 右边头部 -->
     <el-header class="header">
-      <Header v-model:isCollapse="isCollapse" v-model:menuOnTop="menuOnTop" />
+      <Header v-model:isCollapse="isCollapse" />
     </el-header>
     <!-- 右边主体 -->
     <el-container>
       <!-- 侧边菜单栏 -->
-      <el-aside class="aside" v-if="!menuOnTop">
+      <el-aside class="aside" v-if="menuPosition == 'aside'">
         <AsideMenu :isCollapse="isCollapse" />
       </el-aside>
       <!-- 右边主体 -->
@@ -21,10 +21,12 @@
 <script setup lang="ts">
   import AsideMenu from '@/components/menu/AsideMenu.vue'
   import Header from '@/components/header/index.vue'
+  import { useLayoutStore } from '@/stores/modules/layout'
+  import { storeToRefs } from 'pinia'
+  const { menuPosition } = storeToRefs(useLayoutStore())
+
   /** 是否折叠侧边菜单 */
   const isCollapse = ref(false)
-  /** 菜单是否在顶部 */
-  const menuOnTop = ref(false)
 </script>
 
 <style scoped lang="less">

@@ -2,7 +2,7 @@
   <div class="my_header">
     <div class="header_left">
       <!-- 折叠图标 -->
-      <template v-if="!props.menuOnTop">
+      <template v-if="!changeMenu">
         <el-icon class="fold_icon" @click="foldMenu">
           <Operation />
         </el-icon>
@@ -10,7 +10,7 @@
       <!-- 面包屑导航 -->
       <BreadCrumb />
     </div>
-    <topMenu v-if="props.menuOnTop" />
+    <topMenu v-if="changeMenu" />
     <div>
       <el-switch
         class="mr-25"
@@ -29,27 +29,25 @@
   import topMenu from '@/components/menu/TopMenu.vue'
   import BreadCrumb from '@/components/bread-crumb'
   import { useUserStore } from '@/stores/modules/user'
+  import { useLayoutStore } from '@/stores/modules/layout'
   import { ElMessage } from 'element-plus'
   const { logout } = useUserStore()
+  const { getMenuPosition, setMenuPosition } = useLayoutStore()
   const router = useRouter()
   const props = defineProps({
     // 菜单栏的展开和折叠
     isCollapse: {
       default: false,
       tyle: Boolean
-    },
-    menuOnTop: {
-      default: false,
-      tyle: Boolean
     }
   })
-  const emits = defineEmits(['update:isCollapse', 'update:menuOnTop'])
+  const emits = defineEmits(['update:isCollapse'])
 
   // 是否改变菜单位置
-  const changeMenu = ref(false)
+  const changeMenu = ref(getMenuPosition())
   // 改变菜单位置
   const menuChange = () => {
-    emits('update:menuOnTop', changeMenu.value)
+    setMenuPosition(changeMenu.value ? 'top' : 'aside')
   }
 
   /** 点击图标后，通过自定义事件，更新折叠状态 */
