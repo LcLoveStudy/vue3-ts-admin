@@ -10,11 +10,14 @@ const service: AxiosInstance = axios.create({
 // 添加请求拦截器
 service.interceptors.request.use(
   (config: any) => {
+    const showMessage = config.showMessage
+    const message = config.message
+    const token = getItem('token')
     // 是否展示弹框提示，自定义提示信息
-    if (config.showMessage) {
+    if (showMessage) {
       config.headers.showMessage = true
-      if (config.message) {
-        config.headers.message = encodeURIComponent(config.message)
+      if (message) {
+        config.headers.message = encodeURIComponent(message)
       }
     }
     // 是否展示头部进度条
@@ -22,8 +25,8 @@ service.interceptors.request.use(
       startLoading()
     }
     // 设置token
-    if (getItem('token')) {
-      config.headers.token = getItem('token')
+    if (token) {
+      config.headers.token = token
     }
     return config
   },
@@ -37,13 +40,13 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     const { data } = response
+    const { showMessage, message } = response.config.headers
     endLoading()
     // 判断是否展示接口信息
-    if (response.config.headers.showMessage) {
-      const messageInfo = decodeURIComponent(response.config.headers.message)
-      // 处理弹框
+    if (showMessage) {
+      const messageInfo = decodeURIComponent(message)
       ElMessage({
-        message: messageInfo !== 'undefined' ? messageInfo : response.data?.info?.name,
+        message: messageInfo !== 'undefined' ? messageInfo : data?.info?.name,
         type: response.status === 200 ? 'success' : 'error'
       })
     }
