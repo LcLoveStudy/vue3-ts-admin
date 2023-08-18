@@ -24,7 +24,7 @@
     </div>
   </div>
   <!-- 图片列表 -->
-  <el-card class="page_main width-800 height-800 overflow-y-auto">
+  <el-card class="page_main width-800 height-800">
     <img
       v-lazy="
         'https://img2.baidu.com/it/u=2098302066,1207295454&fm=253&fmt=auto&app=138&f=JPEG?w=562&h=343'
@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-  import ScrollBar from '@/components/scroll-bar/index.vue'
+  import ScrollBar from '@/components/scroll-bar'
 </script>
 
 <style scoped lang="less">
@@ -68,6 +68,7 @@
     position: absolute;
     top: 100px;
     right: 0;
+    overflow-y: auto;
 
     img {
       width: 100%;

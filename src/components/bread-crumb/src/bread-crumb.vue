@@ -49,21 +49,4 @@
   )
 </script>
 
-<style scoped lang="less">
-  .my_breadcrumb {
-    margin-left: 10px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    //面包屑的字体大小
-    span {
-      font-size: 16px;
-    }
-
-    :deep(.el-breadcrumb__inner) {
-      color: var(--theme-color);
-    }
-  }
-</style>
+<style scoped lang="less"></style>

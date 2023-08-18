@@ -40,29 +40,3 @@
     })
   })
 </script>
-
-<style scoped lang="less">
-  .scrollBar_main {
-    opacity: 0;
-    position: fixed;
-    bottom: 100px;
-    right: 50px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #eee;
-    color: dodgerblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-
-    .top_icon {
-      font-size: 30px;
-    }
-
-    &:hover {
-      background-color: #ccc;
-    }
-  }
-</style>

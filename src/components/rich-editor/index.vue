@@ -60,5 +60,3 @@
     editorRef.value = editor
   }
 </script>
-
-<style scoped lang="less"></style>
