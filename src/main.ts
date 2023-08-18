@@ -1,8 +1,8 @@
 // vue core
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import App from '@/App.vue'
 import router from '@/router'
+import store from '@/stores'
 // init
 import useElPlus from '@/components/useElPlus'
 import createDirective from '@/directive'
@@ -19,7 +19,7 @@ createDirective(app)
 /** 挂载element-plus */
 useElPlus(app)
 
-app.use(createPinia()).use(router)
+app.use(store).use(router)
 router.isReady().then(() => {
   app.mount('#app')
 })
