@@ -20,7 +20,7 @@
         inactive-text="侧边菜单"
         @change="menuChange"
       />
-      <el-text type="primary" class="logout_btn" @click="logout">退出登陆</el-text>
+      <el-text type="primary" class="logout_btn" @click="logoutHandle">退出登陆</el-text>
     </div>
   </div>
 </template>
@@ -28,8 +28,9 @@
 <script setup lang="ts">
   import topMenu from '@/components/menu/TopMenu.vue'
   import BreadCrumb from '@/components/bread-crumb'
-  import { removeItem } from '@/utils'
+  import { useUserStore } from '@/stores/modules/user'
   import { ElMessage } from 'element-plus'
+  const { logout } = useUserStore()
   const router = useRouter()
   const props = defineProps({
     // 菜单栏的展开和折叠
@@ -61,10 +62,11 @@
   }
 
   /** 点击退出登录 */
-  const logout = () => {
-    removeItem() // 清空所有localstorage
-    ElMessage.success('退出成功')
-    router.push('/login')
+  const logoutHandle = () => {
+    logout().then(() => {
+      ElMessage.success('退出成功')
+      router.push('/login')
+    })
   }
 </script>
 

@@ -16,6 +16,9 @@
   import AutoForm from '@/components/auto-form/index.vue'
   import { setItem } from '@/utils'
   import { LocalStorageKeys } from '#/localstorage'
+  import { useUserStore } from '@/stores/modules/user'
+  import { ElMessage } from 'element-plus'
+  const { login } = useUserStore()
   const router = useRouter()
   /** 登录表单 */
   const loginForm = ref({
@@ -42,10 +45,16 @@
   const loginClick = () => {
     const { username, password } = loginForm.value
     loginLoading.value = true
-    console.log('用户名:' + username.value, '密码:' + password.value)
-    setItem(LocalStorageKeys.USERINFO, { username: username.value, password: password.value })
-    loginLoading.value = false
-    router.push('/')
+    login({ username: username.value, password: password.value })
+      .then(() => {
+        router.push('/')
+      })
+      .catch(() => {
+        ElMessage.error('用户名或密码错误')
+      })
+      .finally(() => {
+        loginLoading.value = false
+      })
   }
 </script>
 
