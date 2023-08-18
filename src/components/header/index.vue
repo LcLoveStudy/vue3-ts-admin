@@ -10,7 +10,7 @@
       <!-- 面包屑导航 -->
       <BreadCrumb />
     </div>
-    <topMenu v-if="props.menuOnTop" :user-type="props.userType" />
+    <topMenu v-if="props.menuOnTop" />
     <div>
       <el-switch
         class="mr-25"
@@ -41,10 +41,6 @@
     menuOnTop: {
       default: false,
       tyle: Boolean
-    },
-    userType: {
-      default: 'admin',
-      type: String
     }
   })
   const emits = defineEmits(['update:isCollapse', 'update:menuOnTop'])

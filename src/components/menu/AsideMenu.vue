@@ -12,9 +12,7 @@
         <!-- 这里开始时只有一级菜单 -->
         <el-menu-item
           v-if="
-            !menu.meta.hideMenu &&
-            menu.meta.hideChildrenInMenu &&
-            hasRole(props.userType, menu.meta.role)
+            !menu.meta.hideMenu && menu.meta.hideChildrenInMenu && hasRole(userType, menu.meta.role)
           "
           :index="menu.path"
         >
@@ -25,7 +23,7 @@
           <span>{{ menu.meta.title }}</span>
         </el-menu-item>
         <!-- 这里开始是有子菜单的 -->
-        <template v-else-if="!menu.meta.hideMenu && hasRole(props.userType, menu.meta.role)">
+        <template v-else-if="!menu.meta.hideMenu && hasRole(userType, menu.meta.role)">
           <el-sub-menu :index="menu.path">
             <template #title>
               <el-icon class="icon">
@@ -39,7 +37,7 @@
                 v-if="
                   !twoMenu.meta.hideMenu &&
                   twoMenu.meta.hideChildrenInMenu &&
-                  hasRole(props.userType, twoMenu.meta.role)
+                  hasRole(userType, twoMenu.meta.role)
                 "
                 :index="twoMenu.path"
               >
@@ -50,7 +48,7 @@
                 v-else-if="
                   !twoMenu.meta.hideMenu &&
                   !twoMenu.meta.hideChildrenInMenu &&
-                  hasRole(props.userType, twoMenu.meta.role)
+                  hasRole(userType, twoMenu.meta.role)
                 "
               >
                 <el-sub-menu :key="twoMenu.path" :index="twoMenu.path">
@@ -60,7 +58,7 @@
                   <!-- 三级菜单 -->
                   <template v-for="treeMenu in twoMenu.children" :key="treeMenu.path">
                     <el-menu-item
-                      v-if="!treeMenu.meta.hideMenu && hasRole(props.userType, treeMenu.meta.role)"
+                      v-if="!treeMenu.meta.hideMenu && hasRole(userType, treeMenu.meta.role)"
                       :index="treeMenu.path"
                     >
                       {{ treeMenu.meta.title }}
@@ -79,16 +77,15 @@
 <script setup lang="ts">
   import { routes } from '@/router/index'
   import { hasRole } from '@/utils'
+  import { useUserStore } from '@/stores/modules/user'
+  const { userinfo } = useUserStore()
+  const userType = userinfo?.user_type ? userinfo.user_type : 'admin'
 
   const props = defineProps({
     // 菜单栏的展开和折叠
     isCollapse: {
       default: false,
       type: Boolean
-    },
-    userType: {
-      type: String,
-      default: 'admin'
     }
   })
   const route = useRoute()

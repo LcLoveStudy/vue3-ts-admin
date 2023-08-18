@@ -2,13 +2,13 @@
   <el-container class="container fs-16">
     <!-- 右边头部 -->
     <el-header class="header">
-      <Header v-model:isCollapse="isCollapse" v-model:menuOnTop="menuOnTop" :user-type="userType" />
+      <Header v-model:isCollapse="isCollapse" v-model:menuOnTop="menuOnTop" />
     </el-header>
     <!-- 右边主体 -->
     <el-container>
       <!-- 侧边菜单栏 -->
       <el-aside class="aside" v-if="!menuOnTop">
-        <AsideMenu :isCollapse="isCollapse" :userType="userType" />
+        <AsideMenu :isCollapse="isCollapse" />
       </el-aside>
       <!-- 右边主体 -->
       <el-main class="main scrollbar">
@@ -21,14 +21,10 @@
 <script setup lang="ts">
   import AsideMenu from '@/components/menu/AsideMenu.vue'
   import Header from '@/components/header/index.vue'
-  import { useUserStore } from '@/stores/modules/user'
-  const { userinfo } = useUserStore()
   /** 是否折叠侧边菜单 */
   const isCollapse = ref(false)
   /** 菜单是否在顶部 */
   const menuOnTop = ref(false)
-  /** 用户权限 */
-  const userType = ref(userinfo?.user_type ? userinfo.user_type : 'admin')
 </script>
 
 <style scoped lang="less">

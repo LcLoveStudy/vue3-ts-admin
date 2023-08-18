@@ -45,6 +45,8 @@
     loginLoading.value = true
     login({ username: username.value, password: password.value })
       .then(() => {
+        console.log(111)
+
         router.push('/')
       })
       .catch(() => {
