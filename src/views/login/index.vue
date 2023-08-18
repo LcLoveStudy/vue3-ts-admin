@@ -14,8 +14,6 @@
 
 <script setup lang="ts">
   import AutoForm from '@/components/auto-form/index.vue'
-  import { setItem } from '@/utils'
-  import { LocalStorageKeys } from '#/localstorage'
   import { useUserStore } from '@/stores/modules/user'
   import { ElMessage } from 'element-plus'
   const { login } = useUserStore()

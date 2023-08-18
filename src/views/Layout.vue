@@ -28,7 +28,7 @@
   /** 菜单是否在顶部 */
   const menuOnTop = ref(false)
   /** 用户权限 */
-  const userType = ref(userinfo.user_type ? userinfo.user_type : 'admin')
+  const userType = ref(userinfo?.user_type ? userinfo.user_type : 'admin')
 </script>
 
 <style scoped lang="less">
