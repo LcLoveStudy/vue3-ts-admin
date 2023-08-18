@@ -4,8 +4,12 @@ import { type ApiType } from '#/api-return'
 // 默认不传为不显示
 
 export const getList = (params: object) => {
-  return http.get<ApiType<any>>('http://localhost:80/list', params, {
-    showMessage: true,
-    showProgress: true
+  return http.get<ApiType<any>>({
+    url: 'http://localhost:80/list',
+    params,
+    config: {
+      showMessage: true,
+      showProgress: true
+    }
   })
 }

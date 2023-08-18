@@ -1,6 +1,7 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 import { getItem, startLoading, endLoading } from '@/utils'
+import { type HttpType } from '#/http'
 // 创建axios实例
 const service: AxiosInstance = axios.create({
   baseURL: ''
@@ -41,16 +42,20 @@ service.interceptors.response.use(
   (error: AxiosError) => {
     // 超出 2xx 范围的状态码都会触发该函数。
     endLoading()
+    ElMessage({
+      message: '网络错误',
+      type: 'error'
+    })
     return Promise.reject(error)
   }
 )
 
 const http = {
-  get<T>(url: string, params?: object, config?: any): Promise<T> {
-    return service.get(url, { params, ...config })
+  get<T>(arg: HttpType): Promise<T> {
+    return service.get(arg.url, { params: arg.params, ...arg.config })
   },
-  post<T>(url: string, data?: object, config?: any): Promise<T> {
-    return service.post(url, { data }, config)
+  post<T>(arg: HttpType): Promise<T> {
+    return service.post(arg.url, { data: arg.data }, ...arg.config)
   }
 }
 
