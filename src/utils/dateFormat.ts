@@ -1,15 +1,14 @@
 /**
  * 时间格式化
  * @param {*} date 初始时间(Fri Apr 07 2023 13:50:24 GMT+0800 (中国标准时间))
- * @param {*} format 目标格式（大小写严格区分） 年份YYYY,月份MM，日期DD，时h，分m，秒s
- * @returns 转换为目标格式的时间字符串
- * @example dateFormat(new Date(), 'YYYY年MM月DD h:m:s')
+ * @returns 转换为YYYY年MM月DD h:m:s格式的时间字符串
+ * @example dateFormat(new Date())
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const dateFormat = (date: Date, format: String) => {
+export const dateFormat = (date: Date) => {
   const newDate = new Date(date)
-  const result = format
+  const result = 'YYYY年MM月DD h:m:s'
     .replace('YYYY', newDate.getFullYear().toString())
     .replace(
       'MM',
