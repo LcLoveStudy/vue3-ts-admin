@@ -1,7 +1,7 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 import { getItem, startLoading, endLoading } from '@/utils'
-import * as HttpType from '#/http'
+import * as HttpType from '@/utils/serve/types'
 // 创建axios实例
 const service: AxiosInstance = axios.create({
   baseURL: ''
