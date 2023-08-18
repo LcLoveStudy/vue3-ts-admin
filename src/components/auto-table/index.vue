@@ -205,5 +205,3 @@
     emits('tableEdit', newValue, propName)
   }
 </script>
-
-<style scoped lang="less"></style>

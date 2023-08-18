@@ -54,5 +54,3 @@
   }
   const radioOtpions = props.option as Array<RadioOptionType>
 </script>
-
-<style scoped></style>

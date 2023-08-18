@@ -39,5 +39,3 @@
     emits('currentChange')
   }
 </script>
-
-<style scoped></style>
