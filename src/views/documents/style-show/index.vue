@@ -28,14 +28,14 @@
 </template>
 
 <script setup lang="ts">
-  import BaseStyle from '@/views/documents/style-show/BaseStyle.vue'
-  import FlexStyle from '@/views/documents/style-show/FlexStyle.vue'
-  import GrilStyle from '@/views/documents/style-show/GrilStyle.vue'
-  import FontStyle from '@/views/documents/style-show/FontStyle.vue'
-  import OverflowStyle from '@/views/documents/style-show/OverflowStyle.vue'
-  import PositionStyle from '@/views/documents/style-show/PositionStyle.vue'
-  import BackgroundStyle from '@/views/documents/style-show/BackgroundStyle.vue'
-  import BorderStyle from '@/views/documents/style-show/BorderStyle.vue'
+  import BaseStyle from './components/BaseStyle.vue'
+  import FlexStyle from './components/FlexStyle.vue'
+  import GrilStyle from './components/GrilStyle.vue'
+  import FontStyle from './components/FontStyle.vue'
+  import OverflowStyle from './components/OverflowStyle.vue'
+  import PositionStyle from './components/PositionStyle.vue'
+  import BackgroundStyle from './components/BackgroundStyle.vue'
+  import BorderStyle from './components/BorderStyle.vue'
 </script>
 
 <style scoped lang="less"></style>

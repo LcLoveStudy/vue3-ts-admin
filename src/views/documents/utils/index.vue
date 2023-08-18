@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-  import BaseUse from './baseUse.vue'
-  import objectUse from './objectUse.vue'
-  import arrayUse from './arrayUse.vue'
-  import stringUse from './stringUse.vue'
+  import BaseUse from './components/baseUse.vue'
+  import objectUse from './components/objectUse.vue'
+  import arrayUse from './components/arrayUse.vue'
+  import stringUse from './components/stringUse.vue'
 </script>
 
 <style scoped lang="less"></style>

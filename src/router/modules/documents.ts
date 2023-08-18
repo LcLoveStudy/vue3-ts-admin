@@ -29,7 +29,7 @@ const DOCUMENTS: RouterType = {
         {
           path: '/documents/directive/lazyshow',
           name: 'lazyshow',
-          component: () => import('@/views/documents/directive-show/lazyShow.vue'),
+          component: () => import('@/views/documents/directive-show/lazy-show.vue'),
           meta: {
             title: '图片懒加载',
             hideMenu: false,
@@ -44,7 +44,7 @@ const DOCUMENTS: RouterType = {
         {
           path: '/documents/directive/focusshow',
           name: 'focusshow',
-          component: () => import('@/views/documents/directive-show/focusShow.vue'),
+          component: () => import('@/views/documents/directive-show/focus-show.vue'),
           meta: {
             title: '聚焦',
             hideMenu: false,
@@ -144,7 +144,7 @@ const DOCUMENTS: RouterType = {
             role: ['admin', 'superadmin', 'user']
           },
           children: [],
-          component: () => import('@/views/documents/code/tableCode.vue')
+          component: () => import('@/views/documents/code/table-code.vue')
         },
         {
           path: '/documents/code/form',
@@ -159,7 +159,7 @@ const DOCUMENTS: RouterType = {
             role: ['admin', 'superadmin', 'user']
           },
           children: [],
-          component: () => import('@/views/documents/code/formCode.vue')
+          component: () => import('@/views/documents/code/form-code.vue')
         },
         {
           path: '/documents/code/radio',
@@ -174,7 +174,7 @@ const DOCUMENTS: RouterType = {
             role: ['admin', 'superadmin', 'user']
           },
           children: [],
-          component: () => import('@/views/documents/code/radioCode.vue')
+          component: () => import('@/views/documents/code/radio-code.vue')
         },
         {
           path: '/documents/code/pagination',
