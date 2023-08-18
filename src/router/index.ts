@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HOME from './modules/home'
 import DOCUMENTS from './modules/documents'
 import createRoute from './createRoute'
+import { getItem } from '@/utils'
 /**
  * routes为所有菜单栏内的所有路由
  */
@@ -38,6 +39,19 @@ const router = createRouter({
       redirect: '/404'
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const userinfo = getItem('userinfo')
+  if (to.path === '/login') {
+    next()
+  } else {
+    if (userinfo && userinfo.username) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
 })
 
 export default router
