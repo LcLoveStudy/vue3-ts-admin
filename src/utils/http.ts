@@ -10,7 +10,10 @@ const service: AxiosInstance = axios.create({
 // 添加请求拦截器
 service.interceptors.request.use(
   (config: any) => {
-    config.showMessage ? (config.headers.showMessage = true) : (config.headers.showMessage = false) // 处理showMessage
+    if (config.message) {
+      config.headers.message = encodeURIComponent(config.message)
+    }
+    config.showMessage ? (config.headers.showMessage = true) : (config.headers.showMessage = false)
     if (config.showProgress) {
       startLoading()
     }
@@ -31,9 +34,10 @@ service.interceptors.response.use(
     const { data } = response
     endLoading() // 结束进度条
     if (response.config.headers.showMessage) {
+      const messageInfo = decodeURIComponent(response.config.headers.message)
       // 处理弹框
       ElMessage({
-        message: response.data?.info?.name,
+        message: messageInfo !== 'undefined' ? messageInfo : response.data?.info?.name,
         type: response.status === 200 ? 'success' : 'error'
       })
     }
@@ -41,11 +45,18 @@ service.interceptors.response.use(
   },
   (error: AxiosError) => {
     // 超出 2xx 范围的状态码都会触发该函数。
+    switch (error.response?.status) {
+      case 404:
+        error.message = '请求地址不存在'
+        break
+      case 500:
+        error.message = '服务器内部错误'
+        break
+      default:
+        break
+    }
     endLoading()
-    ElMessage({
-      message: '网络错误',
-      type: 'error'
-    })
+    ElMessage.error(error.message)
     return Promise.reject(error)
   }
 )

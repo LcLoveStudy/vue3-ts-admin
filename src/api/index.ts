@@ -8,6 +8,7 @@ export const getList = (params: object) => {
     url: 'http://localhost:80/list',
     params,
     config: {
+      message: '获取列表成功',
       showMessage: true,
       showProgress: true
     }
