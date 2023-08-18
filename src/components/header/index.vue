@@ -11,7 +11,17 @@
       <BreadCrumb />
     </div>
     <topMenu v-if="props.menuOnTop" :user-type="props.userType" />
-    <el-text type="primary" class="logout_btn" @click="logout">退出登陆</el-text>
+    <div>
+      <el-switch
+        class="mr-25"
+        v-model="changeMenu"
+        inline-prompt
+        active-text="头部菜单"
+        inactive-text="侧边菜单"
+        @change="menuChange"
+      />
+      <el-text type="primary" class="logout_btn" @click="logout">退出登陆</el-text>
+    </div>
   </div>
 </template>
 
@@ -36,7 +46,14 @@
       type: String
     }
   })
-  const emits = defineEmits(['update:isCollapse'])
+  const emits = defineEmits(['update:isCollapse', 'update:menuOnTop'])
+
+  // 是否改变菜单位置
+  const changeMenu = ref(false)
+  // 改变菜单位置
+  const menuChange = () => {
+    emits('update:menuOnTop', changeMenu.value)
+  }
 
   /** 点击图标后，通过自定义事件，更新折叠状态 */
   const foldMenu = () => {

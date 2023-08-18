@@ -2,7 +2,7 @@
   <el-container class="container fs-16">
     <!-- 右边头部 -->
     <el-header class="header">
-      <Header v-model:isCollapse="isCollapse" :menuOnTop="menuOnTop" :user-type="userType" />
+      <Header v-model:isCollapse="isCollapse" v-model:menuOnTop="menuOnTop" :user-type="userType" />
     </el-header>
     <!-- 右边主体 -->
     <el-container>
