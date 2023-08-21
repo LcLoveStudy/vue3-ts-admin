@@ -9,7 +9,7 @@
   />
   <autoRadio
     type="checkbox"
-    v-model:value="value"
+    v-model:value="value2"
     :option="[
       { label: '你好', value: 'good' },
       { label: '不好', value: 'bad' }
@@ -22,9 +22,10 @@
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor/index.vue'
   import autoRadio from '@/components/auto-radio/index.vue'
-  const value = ref([])
+  const value = ref('good')
+  const value2 = ref([])
   const change = () => {
-    console.log(value.value)
+    console.log(value.value, value2.value)
   }
 
   // 源码

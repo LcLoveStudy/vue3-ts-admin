@@ -27,7 +27,7 @@
   })
   const props = defineProps({
     value: {
-      type: Array || String,
+      type: [Array, String, Boolean, Number],
       required: true
     },
     option: {
@@ -42,7 +42,9 @@
   const emits = defineEmits(['update:value', 'change'])
 
   // 初始化默认值
-  const value: any = ref(props.value)
+  const value: any = ref(
+    props.value as Array<String | Boolean | Number> | String | Boolean | Number
+  )
   // 单选框改变时
   const radioChange = () => {
     emits('update:value', value.value)
