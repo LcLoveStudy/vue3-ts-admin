@@ -5,7 +5,7 @@
       <Header v-model:isCollapse="isCollapse" />
     </el-header>
     <!-- 右边主体 -->
-    <el-container>
+    <el-container class="main_container">
       <!-- 侧边菜单栏 -->
       <el-aside class="aside" v-if="menuPosition == 'aside'">
         <AsideMenu :isCollapse="isCollapse" />
@@ -34,7 +34,7 @@
     width: 100%;
     height: 100%;
     font-size: 16px;
-    overflow: hidden;
+    // overflow: hidden;
     .aside {
       height: 100%;
       width: auto;
@@ -47,11 +47,13 @@
       background-color: var(--container-bgc);
       border-bottom: 1px solid var(--hover-backgroundColor);
     }
-
-    .main {
-      background-color: var(--container-main-bgc);
+    .main_container {
       height: 96%;
       overflow-y: auto;
+      .main {
+        background-color: var(--container-main-bgc);
+        padding-bottom: 20px;
+      }
     }
   }
 </style>
