@@ -85,6 +85,9 @@
   import { type TableColType, type PageType } from './src/auto-table'
   import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
+  defineOptions({
+    name: 'AutoTable'
+  })
 
   const props = defineProps({
     // 表格数据

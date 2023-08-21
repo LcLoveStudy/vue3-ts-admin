@@ -12,6 +12,9 @@
   import { ArrowRight } from '@element-plus/icons-vue'
   import { routes } from '@/router/index'
   const route = useRoute()
+  defineOptions({
+    name: 'BreadCrumb'
+  })
 
   interface BreadCrumbsType {
     title: string
