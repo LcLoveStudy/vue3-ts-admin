@@ -34,7 +34,7 @@
     width: 100%;
     height: 100%;
     font-size: 16px;
-
+    overflow: hidden;
     .aside {
       height: 100%;
       width: auto;
@@ -50,8 +50,8 @@
 
     .main {
       background-color: var(--container-main-bgc);
-      height: 100%;
-      overflow: auto;
+      height: 96%;
+      overflow-y: auto;
     }
   }
 </style>
