@@ -4,6 +4,7 @@
     filterable
     :options="options"
     multiple
+    width="300px"
     @change="selectChange"
   />
 </template>

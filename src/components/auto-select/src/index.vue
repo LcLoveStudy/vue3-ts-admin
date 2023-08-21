@@ -5,7 +5,10 @@
     :disabled="disabled"
     :multiple="multiple"
     collapse-tags
+    collapse-tags-tooltip
+    :max-collapse-tags="props.maxCollapseTags"
     @change="selectChange"
+    :style="{ width: props.width }"
   >
     <el-option
       v-for="item in selectOptions"
@@ -45,9 +48,18 @@
       type: Boolean,
       default: false
     },
+    // 多选时超过多少个就不显示了
+    maxCollapseTags: {
+      type: Number,
+      default: 4
+    },
     disabled: {
       type: Boolean,
       default: false
+    },
+    width: {
+      type: String,
+      default: '200px'
     }
   })
   const emits = defineEmits<{
