@@ -8,7 +8,7 @@
   <h3 class="mt-25">示例</h3>
   <!-- 示例代码 -->
   <pre>
-    <code class="language-html">
+    <code class="language-html fs-14">
     &lt;auto-pagination
       v-model:current="current"
       v-model:size="size"

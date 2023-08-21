@@ -143,7 +143,7 @@ const DOCUMENTS: RouterType = {
             role: ['admin', 'superadmin', 'user']
           },
           children: [],
-          component: () => import('@/views/documents/code/table-code.vue')
+          component: () => import('@/views/documents/code/table/index.vue')
         },
         {
           path: '/documents/code/form',

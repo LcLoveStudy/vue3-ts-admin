@@ -19,7 +19,7 @@
   <!-- 案例 -->
   <!-- 示例代码 -->
   <pre>
-    <code class="language-html">
+    <code class="language-html fs-14">
     &lt;autoRadio
       v-model:value="value"
       :option="[
