@@ -189,6 +189,21 @@ const DOCUMENTS: RouterType = {
           },
           children: [],
           component: () => import('@/views/documents/code/pagination.vue')
+        },
+        {
+          path: '/documents/code/select',
+          name: 'select',
+          meta: {
+            title: '下拉框Select',
+            hideMenu: false,
+            keepChild: true,
+            icon: '',
+            hideBreadcrumb: false,
+            hideChildrenInMenu: false,
+            role: ['admin', 'superadmin', 'user']
+          },
+          children: [],
+          component: () => import('@/views/documents/code/select-code.vue')
         }
       ]
     }
