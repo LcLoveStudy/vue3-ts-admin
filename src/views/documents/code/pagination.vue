@@ -26,16 +26,12 @@
     </code>
   </pre>
 
-  <el-table :data="howToUse" style="width: 100%">
-    <el-table-column prop="propName" label="参数名" />
-    <el-table-column prop="mean" label="说明" width="400" />
-    <el-table-column prop="type" label="类型" />
-    <el-table-column prop="default" label="默认值" />
-  </el-table>
+  <HowToUseTable :how-to-use="howToUse" />
 </template>
 
 <script setup lang="ts">
   import autoPagination from '@/components/auto-pagination/index.vue'
+  import HowToUseTable from './components/how-to-use-table.vue'
   const current = ref(1)
   const size = ref(10)
   const change = () => {

@@ -54,7 +54,7 @@
   // 规定必须包含value和label
   interface RadioOptionType {
     value: string | number
-    label: string
+    label: string | number
     disabled?: boolean
   }
   const radioOtpions = props.option as Array<RadioOptionType>
