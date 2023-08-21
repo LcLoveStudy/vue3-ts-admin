@@ -73,7 +73,7 @@ service.interceptors.response.use(
   }
 )
 
-const http = {
+export const http = {
   // get请求
   get<T>(arg: HttpType.HttpGetRequestType): Promise<T> {
     return service.get(arg.url, { params: arg.params, ...arg.config })
@@ -83,5 +83,3 @@ const http = {
     return service.post(arg.url, { data: arg.data }, ...arg.config)
   }
 }
-
-export default http

@@ -1,40 +1,14 @@
-import { getItem, setItem, removeItem } from './common/localstorage'
-import { startLoading, endLoading } from './page/nprogress'
-import { arrNoRepeat, arrSort, isArray, union, intersection, difference } from './array'
-import { deepFreeze, objectCopy } from './object'
-import { pageScroll } from './page/pageScroll'
-import { Percentage } from './page/percentage'
-import { dateFormat, hourFormat } from './time'
-import useDownload from './file/useDownload'
-import showTif from './file/showTif'
-import useColor from './useColor'
-import getType from './getType'
-import hasRole from './auth/hasRole'
-import useCopy from './common/useCopy'
-import http from './serve/http'
-export {
-  Percentage,
-  http,
-  showTif,
-  useDownload,
-  hourFormat,
-  arrNoRepeat,
-  startLoading,
-  endLoading,
-  arrSort,
-  hasRole,
-  deepFreeze,
-  useColor,
-  union,
-  intersection,
-  difference,
-  getItem,
-  getType,
-  isArray,
-  setItem,
-  removeItem,
-  pageScroll,
-  useCopy,
-  objectCopy,
-  dateFormat
-}
+export * from './common/localstorage'
+export * from './page/nprogress'
+export * from './array'
+export * from './object'
+export * from './page/pageScroll'
+export * from './page/percentage'
+export * from './time'
+export * from './file/useDownload'
+export * from './file/showTif'
+export * from './useColor'
+export * from './getType'
+export * from './auth/hasRole'
+export * from './common/useCopy'
+export * from './serve/http'

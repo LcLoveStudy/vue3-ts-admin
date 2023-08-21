@@ -1,4 +1,4 @@
-const showTif = async (url: string): Promise<string> => {
+export const showTif = async (url: string): Promise<string> => {
   const suffix = url.split('/')[url.split('/').length - 1]
   if (suffix.indexOf('tif')) {
     const response = await fetch(url)
@@ -11,4 +11,3 @@ const showTif = async (url: string): Promise<string> => {
     return ''
   }
 }
-export default showTif
