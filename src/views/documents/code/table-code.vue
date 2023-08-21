@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor/index.vue'
-  import AutoTable from '@/components/auto-table/index.vue'
+  import AutoTable from '@/components/auto-table'
   /** 列数据配置 */
   const columnData = ref([
     {

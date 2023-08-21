@@ -11,6 +11,9 @@
 </template>
 
 <script setup lang="ts">
+  defineOptions({
+    name: 'AutoPagination'
+  })
   const props = defineProps({
     current: {
       type: Number,

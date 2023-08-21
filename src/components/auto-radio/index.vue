@@ -22,6 +22,9 @@
 </template>
 
 <script setup lang="ts">
+  defineOptions({
+    name: 'AutoRadio'
+  })
   const props = defineProps({
     value: {
       type: Array || String,
