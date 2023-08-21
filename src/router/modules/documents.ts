@@ -26,7 +26,7 @@ const DOCUMENTS: RouterType = {
       },
       children: [
         {
-          path: '/documents/directive/lazyshow',
+          path: '/documents/directive/lazy-show',
           name: 'lazyshow',
           component: () => import('@/views/documents/directive-show/lazy-show.vue'),
           meta: {
@@ -41,7 +41,7 @@ const DOCUMENTS: RouterType = {
           children: []
         },
         {
-          path: '/documents/directive/focusshow',
+          path: '/documents/directive/focus-show',
           name: 'focusshow',
           component: () => import('@/views/documents/directive-show/focus-show.vue'),
           meta: {

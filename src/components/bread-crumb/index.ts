@@ -1,4 +1,4 @@
-import BreadCrumb from './src/BreadCrumb.vue'
-import './style/bread-crumb.less'
+import BreadCrumb from './src/index.vue'
+import './style/index.less'
 
 export default BreadCrumb
