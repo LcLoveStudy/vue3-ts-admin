@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-  import autoRadio from '@/components/auto-radio/index.vue'
+  import autoRadio from '@/components/auto-radio'
   import HowToUseTable from './components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const value = ref('good')

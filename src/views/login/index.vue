@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-  import AutoForm from '@/components/auto-form/index.vue'
+  import AutoForm from '@/components/auto-form'
   import { useUserStore } from '@/stores/modules/user'
   import { ElMessage } from 'element-plus'
   const { login } = useUserStore()

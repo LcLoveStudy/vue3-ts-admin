@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-  import autoPagination from '@/components/auto-pagination/index.vue'
+  import autoPagination from '@/components/auto-pagination'
   import HowToUseTable from './components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const current = ref(1)
