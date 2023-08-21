@@ -8,7 +8,7 @@
   <h3 class="mt-25">示例</h3>
   <!-- 示例代码 -->
   <pre>
-    <code>
+    <code class="language-html">
     &lt;autoPagination
       v-model:current="current"
       v-model:size="size"
@@ -16,28 +16,30 @@
       @current-change="change"
     /&gt;
 
-    script:
-
-    const current = ref(1)
-    const size = ref(10)
-    const change = () => {
-      console.log(current.value, size.value)
-    }
+    &lt;script setup lang="ts"&gt;
+      const current = ref(1)
+      const size = ref(10)
+      const change = () => {
+        console.log(current.value, size.value)
+      }
+    &lt;/script&gt;
     </code>
   </pre>
-
   <HowToUseTable :how-to-use="howToUse" />
 </template>
 
 <script setup lang="ts">
   import autoPagination from '@/components/auto-pagination/index.vue'
   import HowToUseTable from './components/how-to-use-table.vue'
+  import highlight from 'highlight.js'
   const current = ref(1)
   const size = ref(10)
   const change = () => {
     console.log(current.value, size.value)
   }
-
+  onMounted(() => {
+    highlight.highlightAll()
+  })
   const howToUse = ref([
     {
       propName: 'v-model:current',

@@ -12,6 +12,7 @@ import '@/assets/style/reset.css'
 import '@/assets/style/atomization.css'
 import 'nprogress/nprogress.css'
 import 'element-plus/dist/index.css'
+import 'highlight.js/styles/atom-one-dark.css'
 
 const app = createApp(App)
 /** 自定义指令 */

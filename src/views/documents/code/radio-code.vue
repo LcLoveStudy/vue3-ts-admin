@@ -19,7 +19,7 @@
   <!-- 案例 -->
   <!-- 示例代码 -->
   <pre>
-    <code>
+    <code class="language-html">
     &lt;autoRadio
       v-model:value="value"
       :option="[
@@ -39,13 +39,13 @@
       @change="change"
     /&gt;
 
-    script:
-
-    const value = ref('good')
-    const value2 = ref([])
-    const change = () => {
-      console.log(value.value, value2.value)
-    }
+    &lt;script setup lang="ts"&gt;
+      const value = ref('good')
+      const value2 = ref([])
+      const change = () => {
+        console.log(value.value, value2.value)
+      }
+    &lt;/script&gt;
     </code>
   </pre>
   <HowToUseTable :how-to-use="howToUse" />
@@ -54,13 +54,15 @@
 <script setup lang="ts">
   import autoRadio from '@/components/auto-radio/index.vue'
   import HowToUseTable from './components/how-to-use-table.vue'
-
+  import highlight from 'highlight.js'
   const value = ref('good')
   const value2 = ref([])
   const change = () => {
     console.log(value.value, value2.value)
   }
-
+  onMounted(() => {
+    highlight.highlightAll()
+  })
   const howToUse = ref([
     {
       propName: 'v-model:value',
