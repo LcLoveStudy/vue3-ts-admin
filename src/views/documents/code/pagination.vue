@@ -1,5 +1,5 @@
 <template>
-  <autoPagination
+  <auto-pagination
     v-model:current="current"
     v-model:size="size"
     :total="130"
@@ -9,7 +9,7 @@
   <!-- 示例代码 -->
   <pre>
     <code class="language-html">
-    &lt;autoPagination
+    &lt;auto-pagination
       v-model:current="current"
       v-model:size="size"
       :total="130"
