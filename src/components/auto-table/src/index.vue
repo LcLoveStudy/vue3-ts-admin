@@ -82,7 +82,7 @@
 </template>
 
 <script setup lang="ts">
-  import { type TableColType, type PageType } from './src/auto-table'
+  import { type TableColType, type PageType } from './auto-table'
   import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
   defineOptions({
