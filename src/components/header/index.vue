@@ -8,7 +8,7 @@
         </el-icon>
       </template>
       <!-- 面包屑导航 -->
-      <BreadCrumb />
+      <ss-breadcrumb />
     </div>
     <topMenu v-if="changeMenu" />
     <div>
@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
   import topMenu from '@/components/menu/TopMenu.vue'
-  import BreadCrumb from '@/components/bread-crumb'
+  import SsBreadcrumb from '@/components/ss-breadcrumb'
   import { useUserStore } from '@/stores/modules/user'
   import { useLayoutStore } from '@/stores/modules/layout'
   import { ElMessage } from 'element-plus'
