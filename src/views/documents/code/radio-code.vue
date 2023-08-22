@@ -1,5 +1,5 @@
 <template>
-  <autoRadio
+  <ss-radio
     v-model:value="value"
     :option="[
       { label: '你好', value: 'good' },
@@ -7,7 +7,7 @@
     ]"
     @change="change"
   />
-  <autoRadio
+  <ss-radio
     type="checkbox"
     v-model:value="value2"
     :option="[
@@ -20,7 +20,7 @@
   <!-- 示例代码 -->
   <pre>
     <code class="language-html fs-14">
-    &lt;autoRadio
+    &lt;ss-radio
       v-model:value="value"
       :option="[
         { label: '你好', value: 'good' },
@@ -29,7 +29,7 @@
       @change="change"
     /&gt;
 
-    &lt;autoRadio
+    &lt;ss-radio
       type="checkbox"
       v-model:value="value2"
       :option="[
@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-  import autoRadio from '@/components/auto-radio'
+  import SsRadio from '@/components/ss-radio'
   import HowToUseTable from './components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const value = ref('good')

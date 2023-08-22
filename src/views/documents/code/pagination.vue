@@ -1,5 +1,5 @@
 <template>
-  <auto-pagination
+  <ss-pagination
     v-model:current="current"
     v-model:size="size"
     :total="130"
@@ -9,7 +9,7 @@
   <!-- 示例代码 -->
   <pre>
     <code class="language-html fs-14">
-    &lt;auto-pagination
+    &lt;ss-pagination
       v-model:current="current"
       v-model:size="size"
       :total="130"
@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-  import autoPagination from '@/components/auto-pagination'
+  import SsPagination from '@/components/ss-pagination'
   import HowToUseTable from './components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const current = ref(1)

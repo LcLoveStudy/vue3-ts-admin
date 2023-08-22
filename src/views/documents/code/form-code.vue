@@ -1,5 +1,5 @@
 <template>
-  <AutoForm
+  <ss-form
     :formData="loginForm"
     @submit="loginClick"
     submitText="确定"
@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
   import RichEditor from '@/components/rich-editor'
-  import AutoForm from '@/components/auto-form'
+  import SsForm from '@/components/ss-form'
   // 登录表单
   const loginForm = ref({
     username: {

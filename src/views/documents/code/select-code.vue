@@ -1,5 +1,5 @@
 <template>
-  <auto-select
+  <ss-select
     v-model:value="selectValue"
     filterable
     :options="options"
@@ -10,7 +10,7 @@
   <!-- 示例代码 -->
   <pre>
     <code class="language-html fs-14">
-    &lt;auto-select
+    &lt;ss-select
       v-model:value="selectValue"
       filterable
       :options="options"
@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-  import AutoSelect from '@/components/select'
+  import SsSelect from '@/components/ss-select'
   import highlight from 'highlight.js'
   import HowToUseTable from './components/how-to-use-table.vue'
   const selectValue = ref(1)

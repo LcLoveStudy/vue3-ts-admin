@@ -1,6 +1,6 @@
 <template>
   <el-checkbox v-model="selectAll" label="全选" size="large" />
-  <auto-table
+  <ss-table
     :tableData="tableData"
     :columnData="columnData"
     :selection="true"
@@ -17,7 +17,7 @@
     <template #option="{}">
       <el-text type="primary">做点什么</el-text>
     </template>
-  </auto-table>
+  </ss-table>
   <!-- 代码 -->
   <TableCode />
   <h2 class="mb-20">表格参数说明</h2>
@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-  import AutoTable from '@/components/auto-table'
+  import SsTable from '@/components/ss-table'
   import howToUseTable from '../components/how-to-use-table.vue'
   import TableCode from './code.vue'
   /** 列数据配置 */

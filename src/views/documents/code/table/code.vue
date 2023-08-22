@@ -2,7 +2,7 @@
   <pre>
     <code class="language-html fs-14">
     &lt;el-checkbox v-model="selectAll" label="全选" size="large" /&gt;
-    &lt;auto-table
+    &lt;ss-table
       :tableData="tableData"
       :columnData="columnData"
       :selection="true"
@@ -19,7 +19,7 @@
       &lt;template #option="{}"&gt;
         &lt;el-text type="primary" &gt;做点什么&lt;/el-text&gt;
       &lt;/template&gt;
-    &lt;/auto-table&gt;
+    &lt;/ss-table&gt;
 
     &lt;script setup lang="ts"&gt;
       /** 列数据配置 */

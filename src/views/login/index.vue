@@ -1,7 +1,7 @@
 <template>
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
-      <AutoForm
+      <ss-form
         :formData="loginForm"
         @submit="loginClick"
         submitText="登录"
@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-  import AutoForm from '@/components/auto-form'
+  import SsForm from '@/components/ss-form'
   import { useUserStore } from '@/stores/modules/user'
   import { ElMessage } from 'element-plus'
   const { login } = useUserStore()
