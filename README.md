@@ -46,3 +46,9 @@ yarn build
 ├── package.json    项目依赖和指令
 
 ```
+
+### 推荐删除
+
+为了展示，添加了很多于业务无关的依赖，在上线打包前将无关依赖删除确保体积最小
+highlight.js 代码高亮
+tiff.js 显示 tiff 图片
