@@ -17,7 +17,6 @@ export default defineConfig({
     // 自动引入依赖
     AutoImport({
       imports: ['vue', 'vue-router'],
-      dirs: ['.src/components'],
       dts: './src/auto-imports.d.ts'
     })
   ],
