@@ -7,11 +7,16 @@
     labelColor="#000"
   />
   <FromCode />
+  <h2 class="mb-20">组件参数说明</h2>
+  <HowToUseTable :howToUse="howUse" />
+  <h2 class="mb-20">FormData参数说明</h2>
+  <HowToUseTable :howToUse="formDataUse" />
 </template>
 
 <script setup lang="ts">
   import SsForm from '@/components/ss-form'
   import FromCode from './code.vue'
+  import HowToUseTable from '../components/how-to-use-table.vue'
   // 登录表单
   const loginForm = ref({
     username: {
@@ -85,6 +90,84 @@
     )
     loginLoading.value = false
   }
+
+  const howUse = [
+    {
+      propName: 'formData',
+      mean: '表单内容',
+      type: 'object,具体配置查看下表',
+      default: '-'
+    },
+    {
+      propName: 'submitText',
+      mean: '提交文本的文字',
+      type: 'String',
+      default: '确定'
+    },
+    {
+      propName: 'submitLoading',
+      mean: '提交按钮的loading',
+      type: 'Boolean',
+      default: 'false'
+    },
+    {
+      propName: 'labelColor',
+      mean: '标签的字体颜色',
+      type: 'String',
+      default: '#000'
+    },
+    {
+      propName: '@submit',
+      mean: '点击确认按钮的回调',
+      type: 'Function',
+      default: '-'
+    }
+  ]
+
+  const formDataUse = [
+    {
+      propName: 'value',
+      mean: '此项绑定的值(必填)',
+      type: 'any',
+      default: '-'
+    },
+    {
+      propName: 'label(必填)',
+      mean: 'label的文字',
+      type: 'string',
+      default: '-'
+    },
+    {
+      propName: 'prop(必填)',
+      mean: '此项对应在对象中的key值',
+      type: 'string',
+      default: '-'
+    },
+    {
+      propName: 'type',
+      mean: '此项是什么类型',
+      type: 'checkbox|radio|select|date|password|text(默认为text)',
+      default: '-'
+    },
+    {
+      propName: 'placeholder(type为checkbox|radio无效)',
+      mean: '占位符',
+      type: 'string',
+      default: '-'
+    },
+    {
+      propName: 'options(type为password|text|date无效)',
+      mean: '选项',
+      type: 'array',
+      default: '-'
+    },
+    {
+      propName: 'rules',
+      mean: '校验规则',
+      type: 'array(具体写法查看element-plus)',
+      default: '-'
+    }
+  ]
 </script>
 
 <style scoped lang="less"></style>
