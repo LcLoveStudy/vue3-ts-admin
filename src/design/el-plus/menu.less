@@ -42,41 +42,98 @@
 }
 /** 上面是侧边栏收起来后的弹出框样式 */
 
-/** 下面是没折叠时的侧边菜单 */
-.el-menu.el-menu--vertical {
+.el-menu {
   border: none !important;
-  .el-menu-item {
-    font-size: 14px;
-    height: var(--menu-item-height);
-    background: var(--container-bgc);
-    &:hover {
-      color: var(--menu-item-active) !important;
+  /** 下面是没折叠时的侧边菜单 */
+  &.el-menu--vertical {
+    .el-menu-item {
+      font-size: 14px;
+      height: var(--menu-item-height);
       background: var(--container-bgc);
+      &:hover {
+        color: var(--menu-item-active) !important;
+        background: var(--container-bgc);
+      }
+      &.is-active {
+        color: var(--menu-item-active) !important;
+        background: var(--menu-item-active-bgc);
+        border-right: 2px solid var(--menu-item-active);
+      }
     }
-    &.is-active {
-      color: var(--menu-item-active) !important;
-      background: var(--menu-item-active-bgc);
-      border-right: 2px solid var(--menu-item-active);
+    .el-sub-menu {
+      &.is-active > .el-sub-menu__title {
+        color: var(--menu-item-active) !important;
+      }
+      .el-sub-menu__title {
+        font-size: 14px;
+        background: var(--container-bgc);
+        height: var(--menu-item-height);
+        &:hover {
+          color: var(--menu-item-active) !important;
+          background: var(--container-bgc) !important;
+        }
+      }
+      .el-sub-menu .el-sub-menu__title,
+      .el-menu-item {
+        height: var(--menu-item-height);
+        text-indent: 1rem;
+      }
     }
   }
-  .el-sub-menu {
-    &.is-active > .el-sub-menu__title {
-      color: var(--menu-item-active) !important;
-    }
-    .el-sub-menu__title {
-      font-size: 14px;
-      background: var(--container-bgc);
+  /** 上面是没折叠时的侧边菜单 */
+
+  /** 下面是头部菜单 */
+  &.el-menu--horizontal {
+    .el-menu-item {
+      margin-left: 20px;
       height: var(--menu-item-height);
+      &.is-active {
+        border-right: none;
+        color: var(--menu-item-active) !important;
+        background: var(--menu-item-active-bgc);
+      }
       &:hover {
         color: var(--menu-item-active) !important;
         background: var(--container-bgc) !important;
       }
     }
-    .el-sub-menu .el-sub-menu__title,
-    .el-menu-item {
-      height: var(--menu-item-height);
-      text-indent: 1rem;
+    .el-sub-menu {
+      margin-left: 20px;
+      .el-sub-menu__title {
+        font-size: 14px;
+        background: var(--container-bgc);
+        height: var(--menu-item-height);
+        &:hover {
+          color: var(--menu-item-active) !important;
+          background: var(--container-bgc) !important;
+        }
+      }
+      &.is-active > .el-sub-menu__title {
+        color: var(--menu-item-active) !important;
+        background: var(--menu-item-active-bgc);
+      }
+    }
+  }
+  /** 上面是头部菜单 */
+}
+
+/** 下面是头部导航弹框样式 */
+.el-menu--horizontal.el-menu--popup-container .el-menu--popup {
+  padding: 0 !important;
+  .el-menu-item {
+    &:hover {
+      color: var(--menu-item-active) !important;
+      background: var(--container-bgc);
+    }
+    &.is-active {
+      border-right: none;
+      color: var(--menu-item-active) !important;
+      background: var(--menu-item-active-bgc);
+    }
+  }
+  .el-sub-menu {
+    .el-sub-menu__title:hover {
+      color: var(--menu-item-active) !important;
     }
   }
 }
-/** 上面是没折叠时的侧边菜单 */
