@@ -15,6 +15,7 @@
         :value="[120, 200, 150, 80, 70, 110, 130]"
         :reverse="true"
       />
+      <!-- 代码展示 -->
       <pre class="width-800">
         <h1>示例代码</h1>
         <code class="language-html fs-14">
