@@ -158,7 +158,7 @@ const DOCUMENTS: RouterType = {
             role: ['admin', 'superadmin', 'user']
           },
           children: [],
-          component: () => import('@/views/documents/code/form-code.vue')
+          component: () => import('@/views/documents/code/form/index.vue')
         },
         {
           path: '/documents/code/radio',
