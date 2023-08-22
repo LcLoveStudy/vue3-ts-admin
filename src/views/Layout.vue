@@ -8,7 +8,7 @@
     <el-container class="main_container">
       <!-- 侧边菜单栏 -->
       <el-aside class="aside" v-if="menuPosition == 'aside'">
-        <AsideMenu :isCollapse="isCollapse" />
+        <aside-menu :isCollapse="isCollapse" />
       </el-aside>
       <!-- 右边主体 -->
       <el-main class="main scrollbar">
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-  import AsideMenu from '@/components/menu/AsideMenu.vue'
+  import AsideMenu from '@/components/menu/aside-menu.vue'
   import Header from '@/components/header/index.vue'
   import { useLayoutStore } from '@/stores/modules/layout'
   import { storeToRefs } from 'pinia'

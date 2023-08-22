@@ -10,7 +10,7 @@
       <!-- 面包屑导航 -->
       <ss-breadcrumb />
     </div>
-    <topMenu v-if="changeMenu" />
+    <top-menu v-if="changeMenu" />
     <div>
       <el-switch
         class="mr-25"
@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-  import topMenu from '@/components/menu/TopMenu.vue'
+  import topMenu from '@/components/menu/top-menu.vue'
   import SsBreadcrumb from '@/components/ss-breadcrumb'
   import { useUserStore } from '@/stores/modules/user'
   import { useLayoutStore } from '@/stores/modules/layout'
