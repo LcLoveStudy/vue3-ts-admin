@@ -4,11 +4,12 @@
     :placeholder="placeholder"
     :disabled="disabled"
     :multiple="multiple"
+    :filterable="filterable"
     collapse-tags
     collapse-tags-tooltip
-    :max-collapse-tags="props.maxCollapseTags"
+    :max-collapse-tags="maxCollapseTags"
     @change="selectChange"
-    :style="{ width: props.width }"
+    :style="{ width: width }"
   >
     <el-option
       v-for="item in selectOptions"
@@ -42,6 +43,11 @@
     placeholder: {
       type: String,
       default: '请选择'
+    },
+    // 是否允许过滤
+    filterable: {
+      type: Boolean,
+      default: true
     },
     // 是否允许多选
     multiple: {
