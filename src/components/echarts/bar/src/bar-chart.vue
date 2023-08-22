@@ -1,12 +1,25 @@
 <template>
-  <div :id="chartId" class="chart_dom"></div>
+  <div
+    :id="chartId"
+    :style="{
+      width: props.width,
+      height: props.height
+    }"
+  ></div>
 </template>
 
 <script setup lang="ts">
   import { useColor } from '@/utils'
   import { type RuleType } from './rules'
   import * as echarts from 'echarts'
+  // 获取随机id，防止一个页面多个echarts时，id重复
+  const chartId = Math.random().toString()
   const props = defineProps({
+    type: {
+      default: 'bar',
+      type: String,
+      validator: (value: string) => ['bar', 'bars'].includes(value)
+    },
     // x轴的坐标
     xData: {
       type: Array,
@@ -56,6 +69,9 @@
     }
   })
 
+  const colorList = ref<string[]>([])
+
+  // 当type为bar时用于显示series
   const chartValue = ref<
     {
       itemStyle: {
@@ -65,8 +81,14 @@
     }[]
   >([])
 
-  // 获取随机id，防止一个页面多个echarts时，id重复
-  const chartId = Math.random().toString()
+  interface SeriesType {
+    name: string
+    color?: string
+    data: number[]
+  }
+
+  // 当type为bars时用于显示series
+  const series = ref<Array<{ type: string } & SeriesType>>([])
 
   /** 初始化chart */
   const initChart = () => {
@@ -78,6 +100,8 @@
           type: 'shadow'
         }
       },
+      color: colorList.value,
+      legend: {},
       xAxis: {
         type: props.reverse ? 'value' : 'category',
         data: props.reverse ? [] : props.xData,
@@ -93,6 +117,11 @@
           }
         },
         z: props.reverse ? 0 : 3
+      },
+      grid: {
+        left: '3%',
+        bottom: '3%',
+        containLabel: true
       },
       yAxis: {
         type: props.reverse ? 'category' : 'value',
@@ -112,40 +141,59 @@
         },
         z: props.reverse ? 3 : 0
       },
-      series: [
-        {
-          data: chartValue.value,
-          type: 'bar'
-        }
-      ]
+      series:
+        props.type === 'bars'
+          ? series.value
+          : [
+              {
+                data: chartValue.value,
+                type: 'bar'
+              }
+            ]
     })
   }
-  onMounted(() => {
-    // 处理每个柱子的颜色
-    props.value.forEach((item) => {
-      chartValue.value.push({
-        itemStyle: {
-          color: props.barColor ? props.barColor : useColor()
-        },
-        value: item as number
-      })
-    })
-    if (props?.rules) {
-      props.rules.forEach((rule) => {
-        chartValue.value.forEach((item) => {
-          if (item.value >= rule.min && item.value <= rule.max) {
-            item.itemStyle.color = rule.color
-          }
+
+  /** 处理柱子的颜色 */
+  const barColorHandler = () => {
+    if (props.type === 'bar') {
+      // 处理每个柱子的颜色
+      props.value.forEach((item) => {
+        chartValue.value.push({
+          itemStyle: {
+            color: props.barColor ? props.barColor : useColor()
+          },
+          value: item as number
         })
       })
+      // 通过规则设置柱子颜色
+      if (props?.rules) {
+        props.rules.forEach((rule) => {
+          chartValue.value.forEach((item) => {
+            if (item.value >= rule.min && item.value <= rule.max) {
+              item.itemStyle.color = rule.color
+            }
+          })
+        })
+      }
+    } else if (props.type === 'bars') {
+      ;(props.value as SeriesType[]).forEach((item) => {
+        series.value.push({
+          type: 'bar',
+          name: item.name,
+          data: item.data
+        })
+        if (item.color) {
+          colorList.value.push(item.color)
+        }
+      })
+      for (let i = 0; i <= 5; i++) {
+        colorList.value.push(useColor())
+      }
     }
+  }
+
+  onMounted(() => {
+    barColorHandler()
     initChart()
   })
 </script>
-
-<style scoped lang="less">
-  .chart_dom {
-    width: v-bind(width);
-    height: v-bind(height);
-  }
-</style>

@@ -1,0 +1,36 @@
+<template>
+  <div class="main">
+    <div class="flex justify-around">
+      <bar-chart
+        type="bars"
+        :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
+        x-axis-name="国家"
+        y-axis-name="人数"
+        width="400px"
+        height="400px"
+        :value="[
+          {
+            name: '2011',
+            data: [18203, 23489, 29034, 104970],
+            color: 'red'
+          },
+          {
+            name: '2012',
+            data: [18203, 23489, 29034, 104970],
+            color: 'skyblue'
+          }
+        ]"
+      />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+  import { BarChart } from '@/components/echarts'
+</script>
+
+<style scoped lang="less">
+  .main {
+    padding: 0 0 0 100px;
+  }
+</style>
