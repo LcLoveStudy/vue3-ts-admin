@@ -44,21 +44,21 @@ a {
   background-color: var(--container-bgc) !important;
 }
 
+.el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu .el-sub-menu__title,
+.el-menu.el-menu--popup.el-menu--popup-right-start .el-menu-item {
+  height: var(--menu-item-height);
+}
+
 /* 折叠侧边栏中选中的二级菜单 */
 .el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu.is-active .el-sub-menu__title {
-  background-color: var(--container-bgc) !important;
+  height: var(--menu-item-height);
+  background-color: var(--menu-item-active-bgc) !important;
   color: var(--menu-item-active) !important;
 }
 .el-menu.el-menu--popup.el-menu--popup-right-start .el-menu-item.is-active,
 .el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu__title:hover {
   background-color: var(--container-bgc) !important;
   color: var(--menu-item-active) !important;
-}
-
-/* 折叠状态被选中的一级菜单的样式 */
-.el-menu--collapse .el-sub-menu.is-active .el-sub-menu__title {
-  background-color: var(--menu-item-active-bgc) !important;
-  border-right: 2px solid var(--menu-item-active);
 }
 
 :root {
