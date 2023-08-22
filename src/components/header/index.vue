@@ -11,7 +11,7 @@
       <ss-breadcrumb />
     </div>
     <top-menu v-if="changeMenu" />
-    <div>
+    <div class="flex items-center">
       <el-switch
         class="mr-25"
         v-model="changeMenu"
@@ -20,6 +20,7 @@
         inactive-text="侧边菜单"
         @change="menuChange"
       />
+      <el-icon class="mr-25 hover-pointer" @click="fullScreen"><FullScreen /></el-icon>
       <el-text type="primary" class="logout_btn" @click="logoutHandle">退出登陆</el-text>
     </div>
   </div>
@@ -53,6 +54,19 @@
   /** 点击图标后，通过自定义事件，更新折叠状态 */
   const foldMenu = () => {
     emits('update:isCollapse', !props.isCollapse)
+  }
+
+  const isFullScreen = ref(false)
+  // 控制全屏显示
+  const fullScreen = () => {
+    const element = document.documentElement
+    if (isFullScreen.value) {
+      document.exitFullscreen()
+      isFullScreen.value = false
+    } else {
+      isFullScreen.value = true
+      element.requestFullscreen()
+    }
   }
 
   /** 点击退出登录 */
