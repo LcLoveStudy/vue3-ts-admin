@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
   import { useColor } from '@/utils'
+  import { type RuleType } from './rules'
   import * as echarts from 'echarts'
   const props = defineProps({
     // x轴的坐标
@@ -35,6 +36,10 @@
     barColor: {
       type: String,
       default: ''
+    },
+    // 柱子颜色规则
+    rules: {
+      type: Array as PropType<RuleType[]>
     },
     // 所有的字体颜色
     textColor: {
@@ -125,6 +130,15 @@
         value: item as number
       })
     })
+    if (props?.rules) {
+      props.rules.forEach((rule) => {
+        chartValue.value.forEach((item) => {
+          if (item.value >= rule.min && item.value <= rule.max) {
+            item.itemStyle.color = rule.color
+          }
+        })
+      })
+    }
     initChart()
   })
 </script>

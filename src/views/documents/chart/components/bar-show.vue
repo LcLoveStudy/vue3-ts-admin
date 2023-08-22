@@ -7,6 +7,11 @@
         y-axis-name="次数"
         width="400px"
         height="400px"
+        bar-color="#000"
+        :rules="[
+          { min: 100, max: 199, color: 'red' },
+          { min: 200, max: 299, color: 'yellow' }
+        ]"
         :value="[120, 200, 150, 80, 70, 110, 130]"
         :reverse="true"
       />
@@ -19,6 +24,11 @@
             y-axis-name="次数"
             width="400px"
             height="400px"
+            bar-color="#000"
+            :rules="[
+              { min: 100, max: 199, color: 'red' },
+              { min: 200, max: 299, color: 'yellow' }
+            ]"
             :value="[120, 200, 150, 80, 70, 110, 130]"
             :reverse="true"
         />
@@ -30,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-  import BarChart from '@/components/ss-echarts/bar-chart.vue'
+  import { BarChart } from '@/components/echarts'
   import HowToUseTable from '../../components/how-to-use-table.vue'
   const howToUse = [
     {
@@ -67,6 +77,12 @@
       propName: 'barColor',
       mean: '柱子颜色，未设置则随机显示',
       type: 'string',
+      default: '-'
+    },
+    {
+      propName: 'rules',
+      mean: '柱子颜色显示的规则,每一项包含min,max,color,值在min~max之间的柱子会显示color颜色',
+      type: 'array',
       default: '-'
     },
     {
