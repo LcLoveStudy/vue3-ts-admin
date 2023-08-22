@@ -24,7 +24,7 @@
 <script setup lang="ts">
   import { type SelectOptionType, type SelectValue } from './auto-select'
   defineOptions({
-    name: 'AutoSelect'
+    name: 'SsSelect'
   })
   const props = defineProps({
     // 当前值

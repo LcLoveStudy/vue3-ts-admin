@@ -86,7 +86,7 @@
   import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
   defineOptions({
-    name: 'AutoTable'
+    name: 'SsTable'
   })
 
   const props = defineProps({

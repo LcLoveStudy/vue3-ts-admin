@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
   defineOptions({
-    name: 'AutoPagination'
+    name: 'SsPagination'
   })
   const props = defineProps({
     current: {

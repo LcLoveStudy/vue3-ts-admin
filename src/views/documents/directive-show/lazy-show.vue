@@ -52,11 +52,11 @@
     />
     <img v-lazy="'https://p6.itc.cn/images01/20200917/7656d7a7ea3f4aeaa97d302b94a5190e.png'" />
   </el-card>
-  <ScrollBar target=".page_main" />
+  <ss-scrollbar target=".page_main" />
 </template>
 
 <script setup lang="ts">
-  import ScrollBar from '@/components/scroll-bar'
+  import SsScrollbar from '@/components/ss-scrollbar'
 </script>
 
 <style scoped lang="less">

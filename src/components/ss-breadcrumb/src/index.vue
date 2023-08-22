@@ -13,7 +13,7 @@
   import { routes } from '@/router/index'
   const route = useRoute()
   defineOptions({
-    name: 'BreadCrumb'
+    name: 'SsBreadcrumb'
   })
 
   interface BreadCrumbsType {

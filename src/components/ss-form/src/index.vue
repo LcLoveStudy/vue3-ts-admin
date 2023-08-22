@@ -88,7 +88,7 @@
 <script setup lang="ts">
   import type { FormInstance } from 'element-plus'
   defineOptions({
-    name: 'AutoForm'
+    name: 'SsForm'
   })
   const props = defineProps({
     formData: {

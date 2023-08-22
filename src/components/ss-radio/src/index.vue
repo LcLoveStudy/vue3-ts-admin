@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
   defineOptions({
-    name: 'AutoRadio'
+    name: 'SsRadio'
   })
   const props = defineProps({
     value: {
