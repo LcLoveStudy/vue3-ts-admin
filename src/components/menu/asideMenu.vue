@@ -108,58 +108,6 @@
     font-weight: 700;
     background-color: var(--container-bgc);
   }
-
-  // 消除el-menu自带边框
-  :deep(.el-menu) {
-    border: none !important;
-    //修改每一个item的高度
-    .el-menu-item {
-      font-size: 14px;
-      height: var(--menu-item-height);
-      background-color: var(--container-bgc);
-    }
-
-    // 鼠标经过每一个item
-    .el-menu-item:hover {
-      color: var(--menu-item-active) !important;
-      background-color: var(--container-bgc);
-    }
-
-    //当前项的样式
-    .el-menu-item.is-active {
-      color: var(--menu-item-active) !important;
-      background-color: var(--menu-item-active-bgc);
-      border-right: 2px solid var(--menu-item-active);
-    }
-
-    // 二级菜单高亮显示
-    .el-sub-menu.is-active > .el-sub-menu__title {
-      color: var(--menu-item-active) !important;
-    }
-
-    // 二级菜单
-    .el-sub-menu {
-      //鼠标经过有子菜单的二级菜单时的样式
-      .el-sub-menu__title:hover {
-        color: var(--menu-item-active) !important;
-        background-color: var(--container-bgc) !important;
-      }
-
-      // 二级标题
-      .el-sub-menu__title {
-        font-size: 14px;
-        background-color: var(--container-bgc);
-        height: var(--menu-item-height);
-      }
-
-      //二级菜单标题缩进
-      .el-sub-menu .el-sub-menu__title,
-      .el-menu-item {
-        text-indent: 1rem;
-      }
-    }
-  }
-
   .icon {
     font-size: 14px;
   }
