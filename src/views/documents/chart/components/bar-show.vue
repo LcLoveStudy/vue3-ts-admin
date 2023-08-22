@@ -8,7 +8,7 @@
         width="400px"
         height="400px"
         :value="[120, 200, 150, 80, 70, 110, 130]"
-        :reverse="false"
+        :reverse="true"
       />
       <pre class="width-800">
         <h1>示例代码</h1>
@@ -20,7 +20,7 @@
             width="400px"
             height="400px"
             :value="[120, 200, 150, 80, 70, 110, 130]"
-            :reverse="false"
+            :reverse="true"
         />
         </code>
       </pre>
