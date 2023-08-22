@@ -8,6 +8,7 @@ import useElPlus from '@/components/useElPlus'
 import createDirective from '@/directive'
 // css
 import '@/utils/page/rem.js'
+import '@/design/index.less'
 import '@/assets/style/reset.css'
 import '@/assets/style/atomization.css'
 import 'nprogress/nprogress.css'

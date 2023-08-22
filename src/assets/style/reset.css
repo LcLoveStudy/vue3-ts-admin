@@ -23,44 +23,6 @@ a {
   text-decoration: none;
 }
 
-/* 折叠侧边栏中选中的三级菜单 */
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu.is-active .el-menu-item.is-active {
-  background-color: var(--menu-item-active-bgc) !important;
-  border-right: 2px solid var(--menu-item-active);
-}
-/* 侧边菜单收起后弹出框菜单 */
-.el-menu.el-menu--popup.el-menu--popup-right-start {
-  padding: 0 !important;
-}
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-menu-item {
-  background-color: var(--container-bgc) !important;
-  color: var(--theme-color);
-}
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-menu-item:hover {
-  background-color: var(--container-bgc) !important;
-  color: var(--menu-item-active) !important;
-}
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu {
-  background-color: var(--container-bgc) !important;
-}
-
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu .el-sub-menu__title,
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-menu-item {
-  height: var(--menu-item-height);
-}
-
-/* 折叠侧边栏中选中的二级菜单 */
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu.is-active .el-sub-menu__title {
-  height: var(--menu-item-height);
-  background-color: var(--menu-item-active-bgc) !important;
-  color: var(--menu-item-active) !important;
-}
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-menu-item.is-active,
-.el-menu.el-menu--popup.el-menu--popup-right-start .el-sub-menu__title:hover {
-  background-color: var(--container-bgc) !important;
-  color: var(--menu-item-active) !important;
-}
-
 :root {
   --theme-color: #000;
   /* 被选中和鼠标经过的侧边菜单的字体颜色 */

@@ -112,7 +112,6 @@
   // 消除el-menu自带边框
   :deep(.el-menu) {
     border: none !important;
-
     //修改每一个item的高度
     .el-menu-item {
       font-size: 14px;
