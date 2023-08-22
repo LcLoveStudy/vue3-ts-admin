@@ -47,7 +47,7 @@
 <script setup lang="ts">
   import SsSelect from '@/components/ss-select'
   import highlight from 'highlight.js'
-  import HowToUseTable from './components/how-to-use-table.vue'
+  import HowToUseTable from '../components/how-to-use-table.vue'
   const selectValue = ref(1)
   const options = [
     {

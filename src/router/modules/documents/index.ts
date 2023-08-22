@@ -56,7 +56,7 @@ const DOCUMENTS: RouterType = {
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
       },
-      component: () => import('@/views/documents/style-show/index.vue'),
+      component: () => import('@/views/documents/chart/index.vue'),
       children: []
     },
     directives

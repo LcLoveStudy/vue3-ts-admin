@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
   import SsPagination from '@/components/ss-pagination'
-  import HowToUseTable from './components/how-to-use-table.vue'
+  import HowToUseTable from '../components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const current = ref(1)
   const size = ref(10)

@@ -16,7 +16,7 @@
 <script setup lang="ts">
   import SsForm from '@/components/ss-form'
   import FromCode from './code.vue'
-  import HowToUseTable from '../components/how-to-use-table.vue'
+  import HowToUseTable from '../../components/how-to-use-table.vue'
   // 登录表单
   const loginForm = ref({
     username: {

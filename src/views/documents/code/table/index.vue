@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
   import SsTable from '@/components/ss-table'
-  import howToUseTable from '../components/how-to-use-table.vue'
+  import howToUseTable from '../../components/how-to-use-table.vue'
   import TableCode from './code.vue'
   /** 列数据配置 */
   const columnData = ref([

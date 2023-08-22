@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
   import SsRadio from '@/components/ss-radio'
-  import HowToUseTable from './components/how-to-use-table.vue'
+  import HowToUseTable from '../components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const value = ref('good')
   const value2 = ref([])
