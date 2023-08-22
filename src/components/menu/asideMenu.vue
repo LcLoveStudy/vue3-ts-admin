@@ -16,7 +16,7 @@
           "
           :index="menu.path"
         >
-          <el-icon class="icon" :icon="menu.meta.icon">
+          <el-icon :icon="menu.meta.icon">
             <!-- 动态渲染icon -->
             <component :is="menu.meta.icon" />
           </el-icon>
@@ -107,9 +107,6 @@
     height: 100%;
     font-weight: 700;
     background-color: var(--container-bgc);
-  }
-  .icon {
-    font-size: 14px;
   }
 
   //折叠起来页不会改变宽度
