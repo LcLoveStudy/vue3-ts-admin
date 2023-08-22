@@ -61,11 +61,19 @@
   const fullScreen = () => {
     const element = document.documentElement
     if (isFullScreen.value) {
-      document.exitFullscreen()
-      isFullScreen.value = false
+      try {
+        document.exitFullscreen()
+        isFullScreen.value = false
+      } catch (e) {
+        ElMessage.error('浏览器不支持全屏')
+      }
     } else {
-      isFullScreen.value = true
-      element.requestFullscreen()
+      try {
+        isFullScreen.value = true
+        element.requestFullscreen()
+      } catch (e) {
+        ElMessage.error('浏览器不支持全屏')
+      }
     }
   }
 
