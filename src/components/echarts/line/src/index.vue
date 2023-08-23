@@ -62,6 +62,14 @@
 
   // 判断是多条还是一条
   let type = 'line'
+  // 用于显示多折线的legend
+  const legend = {
+    data: [] as string[]
+  }
+  // 用于显示多折线的series
+  const series = [] as Array<
+    { type: string; stack: string; smooth: boolean; areaStyle: object | null } & LineSeriesType
+  >
 
   /** 初始化chart */
   const initChart = () => {
@@ -73,7 +81,7 @@
           type: 'shadow'
         }
       },
-      legend: {},
+      legend: type === 'lines' ? legend : {},
       xAxis: {
         type: 'category',
         data: props.xData,
@@ -113,16 +121,37 @@
         },
         z: 0
       },
-      series: [
-        {
-          data: props.value,
-          type: 'line',
-          smooth: props.smooth,
-          areaStyle: props.area ? {} : null
-        }
-      ]
+      series:
+        type === 'lines'
+          ? series
+          : [
+              {
+                data: props.value,
+                type: 'line',
+                smooth: props.smooth,
+                areaStyle: props.area ? {} : null
+              }
+            ]
     })
   }
+
+  /** 处理折线的颜色 */
+  const lineColorHandler = () => {
+    if (type === 'lines') {
+      ;(props.value as LineSeriesType[]).forEach((item) => {
+        legend.data.push(item.name)
+        series.push({
+          name: item.name,
+          type: 'line',
+          stack: 'Total',
+          data: item.data,
+          smooth: props.smooth,
+          areaStyle: props.area ? {} : null
+        })
+      })
+    }
+  }
+
   onMounted(() => {
     getType(props.value[0]) === 'number' ? (type = 'line') : (type = 'lines')
     if (type === 'lines') {
@@ -132,6 +161,7 @@
         }
       })
     }
+    lineColorHandler()
     initChart()
   })
 </script>
