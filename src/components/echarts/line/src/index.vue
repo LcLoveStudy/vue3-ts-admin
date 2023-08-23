@@ -45,6 +45,10 @@
       type: Boolean,
       default: false
     },
+    lineColor: {
+      type: String,
+      default: ''
+    },
     // 所有的字体颜色
     textColor: {
       type: String,
@@ -155,6 +159,8 @@
           colorList.push(item.color)
         }
       })
+    } else if (type === 'line' && props.lineColor) {
+      colorList.push(props.lineColor)
     }
     for (let i = 0; i <= props.value.length - 1; i++) {
       colorList.push(useColor())

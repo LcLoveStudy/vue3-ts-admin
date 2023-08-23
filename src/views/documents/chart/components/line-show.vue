@@ -69,6 +69,12 @@
       default: 'false'
     },
     {
+      propName: 'lineColor',
+      mean: '折线的颜色',
+      type: 'string',
+      default: '随机'
+    },
+    {
       propName: 'textColor',
       mean: '所有字体和轴线的颜色',
       type: 'string',
