@@ -2,7 +2,28 @@
   <div class="my_breadcrumb">
     <el-breadcrumb :separator-icon="ArrowRight">
       <el-breadcrumb-item v-for="route in breadCrumbs" :key="route.path">
-        {{ route.title }}
+        <template v-if="route.children.length === 0">
+          {{ route.title }}
+        </template>
+        <template v-else>
+          <el-dropdown>
+            {{ route.title }}
+            <el-icon color="rgb(53, 100, 208)">
+              <arrow-down />
+            </el-icon>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item
+                  v-for="item in route.children"
+                  :key="item.name"
+                  @click="router.push(item.path)"
+                >
+                  {{ item.meta.title }}
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+        </template>
       </el-breadcrumb-item>
     </el-breadcrumb>
   </div>
@@ -12,6 +33,7 @@
   import { ArrowRight } from '@element-plus/icons-vue'
   import { routes } from '@/router/index'
   const route = useRoute()
+  const router = useRouter()
   defineOptions({
     name: 'SsBreadcrumb'
   })
@@ -19,6 +41,7 @@
   interface BreadCrumbsType {
     title: string
     path: string
+    children: RouterType[]
   }
   // 用于渲染面包屑导航的数组
   const breadCrumbs = ref<Array<BreadCrumbsType>>([])
@@ -33,7 +56,8 @@
         if (item.name === moduleName && !item.meta.hideChildrenInMenu) {
           breadCrumbs.value.push({
             title: item.meta.title as string,
-            path: item.path
+            path: item.path,
+            children: item.children
           })
         }
       })
@@ -42,11 +66,13 @@
           if (!item.meta.hideBreadcrumb) {
             breadCrumbs.value.push({
               title: item.meta.title as string,
-              path: item.path
+              path: item.path,
+              children: item.children as RouterType[]
             })
           }
         }
       })
+      console.log(breadCrumbs.value)
     },
     { immediate: true, deep: true }
   )
