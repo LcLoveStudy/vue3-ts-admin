@@ -1,5 +1,6 @@
 export default {
   path: '/documents/code',
+  redirect: '/documents/code/table',
   name: 'code',
   meta: {
     title: '低代码组件',

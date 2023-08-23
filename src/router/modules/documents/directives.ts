@@ -1,6 +1,6 @@
 export default {
   path: '/documents/directive',
-  redirect: '/directive/lazyshow',
+  redirect: '/documents/directive/lazy-show',
   name: 'directive',
   meta: {
     title: '指令',
