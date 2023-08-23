@@ -179,7 +179,7 @@
           colorList.value.push(item.color)
         }
       })
-      for (let i = 0; i <= 5; i++) {
+      for (let i = 0; i <= props.value.length - 1; i++) {
         colorList.value.push(useColor())
       }
     }

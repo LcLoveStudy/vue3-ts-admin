@@ -121,5 +121,3 @@
     initChart()
   })
 </script>
-
-<style scoped></style>

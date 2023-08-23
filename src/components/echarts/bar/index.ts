@@ -1,1 +1,1 @@
-export { default as BarChart } from './src/bar-chart.vue'
+export { default as BarChart } from './src/index.vue'
