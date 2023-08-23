@@ -3,7 +3,7 @@
     <div class="login_box flex items-center justify-center">
       <ss-form
         :formData="loginForm"
-        @submit="loginClick"
+        @submit="loginHandler"
         submitText="登录"
         :submitLoading="loginLoading"
         labelColor="#000"
@@ -40,7 +40,7 @@
   /** 表单loading */
   const loginLoading = ref(false)
   /** 点击登录按钮 */
-  const loginClick = () => {
+  const loginHandler = () => {
     const { username, password } = loginForm.value
     loginLoading.value = true
     login({ username: username.value, password: password.value })
@@ -54,6 +54,16 @@
         loginLoading.value = false
       })
   }
+  // 回车登录
+  window.onkeydown = (e: KeyboardEvent) => {
+    if (e.code === 'Enter') {
+      loginHandler()
+    }
+  }
+  // 离开该页面取消回车登录功能
+  onBeforeUnmount(() => {
+    window.onkeydown = () => {}
+  })
 </script>
 
 <style scoped lang="less">
