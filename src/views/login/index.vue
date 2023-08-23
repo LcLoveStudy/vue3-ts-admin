@@ -37,7 +37,6 @@
     }
   })
 
-  /** 表单loading */
   const loginLoading = ref(false)
   /** 点击登录按钮 */
   const loginHandler = () => {
