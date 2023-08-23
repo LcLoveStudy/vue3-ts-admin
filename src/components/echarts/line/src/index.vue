@@ -147,10 +147,8 @@
                 label: {
                   show: true,
                   position: 'top',
-                  textStyle: {
-                    color: props.textColor,
-                    fontSize: 12
-                  }
+                  color: props.textColor,
+                  fontSize: 12
                 }
               }
             ]
@@ -175,10 +173,8 @@
           label: {
             show: true,
             position: 'top',
-            textStyle: {
-              color: props.textColor,
-              fontSize: 12
-            }
+            color: props.textColor,
+            fontSize: 12
           }
         })
         if (item.color) {
