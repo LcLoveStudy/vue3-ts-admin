@@ -94,7 +94,9 @@
         }
       },
       color: colorList.value,
-      legend: {},
+      legend: {
+        type: 'scroll'
+      },
       xAxis: {
         type: props.reverse ? 'value' : 'category',
         data: props.reverse ? [] : props.xData,

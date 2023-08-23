@@ -68,6 +68,7 @@
   let type = 'line'
   // 用于显示多折线的legend
   const legend = {
+    type: 'scroll',
     data: [] as string[]
   }
   // 用于显示多折线的series
