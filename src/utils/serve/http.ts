@@ -1,6 +1,6 @@
 import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
-import { getItem, startLoading, endLoading } from '@/utils'
+import { getItem, startProcess, endProcess } from '@/utils'
 import { LocalStorageKeys } from '@/enums/localstorage'
 import * as HttpType from '@/utils/serve/types'
 // 创建axios实例
@@ -23,7 +23,7 @@ service.interceptors.request.use(
     }
     // 是否展示头部进度条
     if (config.showProgress) {
-      startLoading()
+      startProcess()
     }
     // 设置token
     if (token) {
@@ -42,7 +42,7 @@ service.interceptors.response.use(
   (response: AxiosResponse) => {
     const { data } = response
     const { showMessage, message } = response.config.headers
-    endLoading()
+    endProcess()
     // 判断是否展示接口信息
     if (showMessage) {
       const messageInfo = decodeURIComponent(message)
@@ -67,7 +67,7 @@ service.interceptors.response.use(
         error.message = '网络异常'
         break
     }
-    endLoading()
+    endProcess()
     ElMessage.error(error.message)
     return Promise.reject(error)
   }
