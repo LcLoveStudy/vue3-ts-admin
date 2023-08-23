@@ -71,6 +71,9 @@
   /** 处理data数据 */
   const dataHandler = () => {
     ;(props.data as PieDataType[]).forEach((item, index) => {
+      if (item.color) {
+        colorList[index] = item.color
+      }
       chartData.push({
         value: item.value,
         name: item.name,
@@ -78,9 +81,6 @@
           color: colorList[index]
         }
       })
-      if (item.color) {
-        colorList[index] = item.color
-      }
     })
   }
 
