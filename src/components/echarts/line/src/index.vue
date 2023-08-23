@@ -143,7 +143,19 @@
                 data: props.value,
                 type: 'line',
                 smooth: props.smooth,
-                areaStyle: props.area ? {} : null
+                areaStyle: props.area ? {} : null,
+                itemStyle: {
+                  normal: {
+                    label: {
+                      show: true,
+                      position: 'top',
+                      textStyle: {
+                        color: props.textColor,
+                        fontSize: 12
+                      }
+                    }
+                  }
+                }
               }
             ]
     })
@@ -163,6 +175,18 @@
           areaStyle: props.area ? {} : null,
           emphasis: {
             focus: 'series'
+          },
+          itemStyle: {
+            normal: {
+              label: {
+                show: true,
+                position: 'top',
+                textStyle: {
+                  color: props.textColor,
+                  fontSize: 12
+                }
+              }
+            }
           }
         })
         if (item.color) {
