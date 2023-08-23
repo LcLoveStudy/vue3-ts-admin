@@ -1,4 +1,12 @@
 <template>
+  <h2 class="mb-20 fs-25">
+    <span class="tomato">wangEditor:一款非常好用简洁的富文本编辑器</span>
+    <br />
+    <div class="flex items-center mt-25 fs-16">
+      更多配置查看
+      <el-link type="primary" @click="goWangEditor"><span class="fs-16">官网</span></el-link>
+    </div>
+  </h2>
   <RichEditor v-model:value="inputValue" @change="inputChange" />
 </template>
 
@@ -9,6 +17,11 @@
   )
   const inputChange = () => {
     console.log(inputValue.value)
+  }
+
+  /** 去富文本编辑器官网 */
+  const goWangEditor = () => {
+    window.open('https://www.wangeditor.com/v5/for-frame.html#vue3')
   }
 </script>
 
