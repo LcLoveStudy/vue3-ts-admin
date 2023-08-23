@@ -72,7 +72,13 @@
   }
   // 用于显示多折线的series
   const series: Array<
-    { type: string; stack: string; smooth: boolean; areaStyle: object | null } & LineSeriesType
+    {
+      type: string
+      stack: string
+      smooth: boolean
+      areaStyle: object | null
+      emphasis: { focus: string }
+    } & LineSeriesType
   > = []
   // 用于显示多折线的颜色
   const colorList: string[] = []
@@ -153,7 +159,10 @@
           stack: 'Total',
           data: item.data,
           smooth: props.smooth,
-          areaStyle: props.area ? {} : null
+          areaStyle: props.area ? {} : null,
+          emphasis: {
+            focus: 'series'
+          }
         })
         if (item.color) {
           colorList.push(item.color)
