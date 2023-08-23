@@ -75,7 +75,7 @@
 </template>
 
 <script setup lang="ts">
-  import { routes } from '@/router/index'
+  import { routes } from '@/router'
   import { hasRole } from '@/utils'
   import { useUserStore } from '@/stores/modules/user'
   const route = useRoute()

@@ -20,6 +20,7 @@ interface RouterType {
   component?: Function
   meta: {
     hideChildrenInMenu: boolean
+    order?: number
     icon: string
     title: string
     role: Array<string>
