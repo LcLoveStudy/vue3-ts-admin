@@ -143,16 +143,12 @@
               {
                 data: chartValue.value,
                 type: 'bar',
-                itemStyle: {
-                  normal: {
-                    label: {
-                      show: true,
-                      position: props.reverse ? 'right' : 'top',
-                      textStyle: {
-                        color: props.textColor,
-                        fontSize: 12
-                      }
-                    }
+                label: {
+                  show: true,
+                  position: props.reverse ? 'right' : 'top',
+                  textStyle: {
+                    color: props.textColor,
+                    fontSize: 12
                   }
                 }
               }
@@ -188,16 +184,12 @@
           type: 'bar',
           name: item.name,
           data: item.data,
-          itemStyle: {
-            normal: {
-              label: {
-                show: true,
-                position: props.reverse ? 'right' : 'top',
-                textStyle: {
-                  color: props.textColor,
-                  fontSize: 12
-                }
-              }
+          label: {
+            show: true,
+            position: props.reverse ? 'right' : 'top',
+            textStyle: {
+              color: props.textColor,
+              fontSize: 12
             }
           }
         })

@@ -144,16 +144,12 @@
                 type: 'line',
                 smooth: props.smooth,
                 areaStyle: props.area ? {} : null,
-                itemStyle: {
-                  normal: {
-                    label: {
-                      show: true,
-                      position: 'top',
-                      textStyle: {
-                        color: props.textColor,
-                        fontSize: 12
-                      }
-                    }
+                label: {
+                  show: true,
+                  position: 'top',
+                  textStyle: {
+                    color: props.textColor,
+                    fontSize: 12
                   }
                 }
               }
@@ -176,16 +172,12 @@
           emphasis: {
             focus: 'series'
           },
-          itemStyle: {
-            normal: {
-              label: {
-                show: true,
-                position: 'top',
-                textStyle: {
-                  color: props.textColor,
-                  fontSize: 12
-                }
-              }
+          label: {
+            show: true,
+            position: 'top',
+            textStyle: {
+              color: props.textColor,
+              fontSize: 12
             }
           }
         })
