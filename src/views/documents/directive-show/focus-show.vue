@@ -12,10 +12,16 @@
       <br />
       <span class="fs-20 mt-20 inline-block">示例:</span>
       <br />
-      <pre class="code mt-20">
+      <pre>
+        <code class="language-html fs-14">
         &lt;el-input <span class="tomato">v-focus="focused"</span>/&gt;
         &lt;el-button @click="focused=!focused"&gt;点我改变聚焦状态&lt;el-button/&gt;
-        const focused = ref(false)
+        
+        &lt;script setup lang="ts"&gt;
+          const focused = ref(false)
+        &lt;/script&gt;
+        
+        </code>
       </pre>
     </div>
   </div>
@@ -26,7 +32,11 @@
 </template>
 
 <script setup lang="ts">
+  import highlight from 'highlight.js'
   const focused = ref(false)
+  onMounted(() => {
+    highlight.highlightAll()
+  })
 </script>
 
 <style scoped lang="less">

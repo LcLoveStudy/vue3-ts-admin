@@ -12,15 +12,20 @@
     <br />
     <span class="fs-20 mt-20 inline-block">示例:</span>
     <br />
-    <pre class="code mt-20">
+    <pre class="width-600">
+      <code>
         &lt;div <span class="tomato">v-clickoutside="clickoutside"</span>&gt;
             点我外面的任何地方都会+1
-            num
+            { {num} }
         &lt;/div&gt;
-        const num = ref(0)
-        const clickoutside = () => {
-          num.value += 1
-        }
+
+        &lt;script setup lang="ts"&gt;
+          const num = ref(0)
+          const clickoutside = () => {
+            num.value += 1
+          }
+        &lt;/script&gt;
+      </code>
     </pre>
   </div>
   <div class="testbox" v-clickoutside="clickoutside">
@@ -30,10 +35,14 @@
 </template>
 
 <script setup lang="ts">
+  import highlight from 'highlight.js'
   const num = ref(0)
   const clickoutside = () => {
     num.value += 1
   }
+  onMounted(() => {
+    highlight.highlightAll()
+  })
 </script>
 
 <style scoped lang="less">
