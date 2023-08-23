@@ -1,7 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import setupRouter from './setupRouter'
-import { getItem } from '@/utils'
-import { LocalStorageKeys } from '@/enums/localstorage'
+import { setupRouterGuards } from './guards'
 
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能
 const modules = import.meta.glob('./modules/**/index.ts', { eager: true })
@@ -50,18 +49,7 @@ const router = createRouter({
   ]
 })
 
-// 路由导航守卫，暂时工具用户名判断，请根据业务场景修改
-router.beforeEach((to, from, next) => {
-  const userinfo = getItem(LocalStorageKeys.USERINFO)
-  if (to.path === '/login') {
-    next()
-  } else {
-    if (userinfo && userinfo.username) {
-      next()
-    } else {
-      next('/login')
-    }
-  }
-})
+// 初始化路由导航守卫
+setupRouterGuards(router)
 
 export default router
