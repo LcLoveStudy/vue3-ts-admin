@@ -56,11 +56,11 @@
     },
     width: {
       type: String,
-      default: '300px'
+      default: '400px'
     },
     height: {
       type: String,
-      default: '300px'
+      default: '400px'
     }
   })
 

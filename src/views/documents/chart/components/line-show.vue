@@ -8,8 +8,6 @@
         :value="[120, 200, 150, 80, 70, 110, 130]"
         :smooth="true"
         :area="true"
-        width="400px"
-        height="400px"
       />
       <!-- 代码展示 -->
       <pre class="width-800">
@@ -22,8 +20,6 @@
             :value="[120, 200, 150, 80, 70, 110, 130]"
             :smooth="true"
             :area="true"
-            width="400px"
-            height="400px"
         />
         </code>
       </pre>
@@ -82,13 +78,13 @@
       propName: 'width',
       mean: '整个图标的宽度',
       type: 'string',
-      default: '300px'
+      default: '400px'
     },
     {
       propName: 'height',
       mean: '整个图标的高度',
       type: 'string',
-      default: '300px'
+      default: '400px'
     }
   ]
 </script>

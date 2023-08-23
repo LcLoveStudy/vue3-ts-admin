@@ -9,6 +9,9 @@
     <el-tab-pane label="折线图">
       <line-show />
     </el-tab-pane>
+    <el-tab-pane label="多折线图">
+      <lines-show />
+    </el-tab-pane>
   </el-tabs>
 </template>
 
@@ -16,6 +19,7 @@
   import BarChart from './components/bar-show.vue'
   import BarsChart from './components/bars-show.vue'
   import LineShow from './components/line-show.vue'
+  import LinesShow from './components/lines-show.vue'
   import highlight from 'highlight.js'
   onMounted(() => {
     highlight.highlightAll()

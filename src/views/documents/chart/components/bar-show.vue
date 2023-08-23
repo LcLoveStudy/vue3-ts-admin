@@ -5,8 +5,6 @@
         :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
         x-axis-name="星期"
         y-axis-name="次数"
-        width="400px"
-        height="400px"
         bar-color="#000"
         :rules="[
           { min: 100, max: 199, color: 'pink' },
@@ -23,8 +21,6 @@
             :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
             x-axis-name="星期"
             y-axis-name="次数"
-            width="400px"
-            height="400px"
             bar-color="#000"
             :rules="[
               { min: 100, max: 199, color: 'pink' },
@@ -96,13 +92,13 @@
       propName: 'width',
       mean: '整个图标的宽度',
       type: 'string',
-      default: '300px'
+      default: '400px'
     },
     {
       propName: 'height',
       mean: '整个图标的高度',
       type: 'string',
-      default: '300px'
+      default: '400px'
     }
   ]
 </script>

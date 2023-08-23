@@ -5,8 +5,6 @@
         :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
         x-axis-name="国家"
         y-axis-name="人数"
-        width="400px"
-        height="400px"
         :value="[
           {
             name: '2011',
@@ -29,8 +27,6 @@
             :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
             x-axis-name="国家"
             y-axis-name="人数"
-            width="400px"
-            height="400px"
             :value="[
                 {
                     name: '2011',
@@ -95,13 +91,13 @@
       propName: 'width',
       mean: '整个图标的宽度',
       type: 'string',
-      default: '300px'
+      default: '400px'
     },
     {
       propName: 'height',
       mean: '整个图标的高度',
       type: 'string',
-      default: '300px'
+      default: '400px'
     }
   ]
 </script>
