@@ -187,6 +187,13 @@
 
   onMounted(() => {
     getType(props.value[0]) === 'number' ? (type = 'bar') : (type = 'bars')
+    if (type === 'bars') {
+      ;(props.value as SeriesType[]).forEach((item) => {
+        if (!item.name || item.data.length === 0) {
+          console.error('多柱子柱状图的value每项应该至少包含name和data属性')
+        }
+      })
+    }
     barColorHandler()
     initChart()
   })
