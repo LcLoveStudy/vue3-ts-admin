@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
   import { useColor } from '@/utils'
-  import { type RuleType } from './rules'
+  import { type RuleType, type SeriesType } from './bar-chart'
   import * as echarts from 'echarts'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = Math.random().toString()
@@ -80,12 +80,6 @@
       value: number
     }[]
   >([])
-
-  interface SeriesType {
-    name: string
-    color?: string
-    data: number[]
-  }
 
   // 当type为bars时用于显示series
   const series = ref<Array<{ type: string } & SeriesType>>([])
