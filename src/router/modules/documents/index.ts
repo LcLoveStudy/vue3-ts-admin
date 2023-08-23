@@ -1,5 +1,6 @@
 import directives from './directives'
 import components from './components'
+import echarts from './echarts'
 const DOCUMENTS: RouterType = {
   path: '/documents',
   name: 'documents',
@@ -44,21 +45,7 @@ const DOCUMENTS: RouterType = {
       children: []
     },
     components,
-    {
-      path: '/documents/code/chart',
-      name: 'chart',
-      meta: {
-        title: '图表',
-        hideMenu: false,
-        keepChild: true,
-        icon: '',
-        hideBreadcrumb: false,
-        hideChildrenInMenu: true,
-        role: ['admin', 'superadmin', 'user']
-      },
-      component: () => import('@/views/documents/chart/index.vue'),
-      children: []
-    },
+    echarts,
     directives
   ]
 }

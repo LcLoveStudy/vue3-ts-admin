@@ -52,7 +52,11 @@
 
 <script setup lang="ts">
   import { LineChart } from '@/components/echarts'
-  import HowToUseTable from '../../components/how-to-use-table.vue'
+  import HowToUseTable from '../components/how-to-use-table.vue'
+  import highlight from 'highlight.js'
+  onMounted(() => {
+    highlight.highlightAll()
+  })
   const howToUse = [
     {
       propName: 'xData(必填)',

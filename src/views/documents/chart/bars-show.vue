@@ -2,32 +2,43 @@
   <div class="main">
     <div class="flex justify-around items-center">
       <bar-chart
-        :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-        x-axis-name="星期"
-        y-axis-name="次数"
-        bar-color="#000"
-        :rules="[
-          { min: 100, max: 199, color: 'pink' },
-          { min: 200, max: 299, color: 'skyblue' }
+        :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
+        x-axis-name="国家"
+        y-axis-name="人数"
+        :value="[
+          {
+            name: '2011',
+            data: [18203, 23489, 29034, 104970],
+            color: 'red'
+          },
+          {
+            name: '2012',
+            data: [18224, 23600, 30000, 124970],
+            color: 'skyblue'
+          }
         ]"
-        :value="[120, 200, 150, 80, 70, 110, 130]"
-        :reverse="true"
       />
       <!-- 代码展示 -->
       <pre class="width-800">
         <h1>示例代码</h1>
         <code class="language-html fs-14">
         &lt;bar-chart
-            :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-            x-axis-name="星期"
-            y-axis-name="次数"
-            bar-color="#000"
-            :rules="[
-              { min: 100, max: 199, color: 'pink' },
-              { min: 200, max: 299, color: 'skyblue' }
+            type="bars"
+            :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
+            x-axis-name="国家"
+            y-axis-name="人数"
+            :value="[
+                {
+                    name: '2011',
+                    data: [18203, 23489, 29034, 104970],
+                    color: 'red'
+                },
+                {
+                    name: '2012',
+                    data: [18224, 23600, 30000, 124970],
+                    color: 'skyblue'
+                }
             ]"
-            :value="[120, 200, 150, 80, 70, 110, 130]"
-            :reverse="true"
         />
         </code>
       </pre>
@@ -38,18 +49,22 @@
 
 <script setup lang="ts">
   import { BarChart } from '@/components/echarts'
-  import HowToUseTable from '../../components/how-to-use-table.vue'
+  import HowToUseTable from '../components/how-to-use-table.vue'
+  import highlight from 'highlight.js'
+  onMounted(() => {
+    highlight.highlightAll()
+  })
   const howToUse = [
     {
-      propName: 'xData',
-      mean: 'x轴上的刻度(必填)',
+      propName: 'xData(必填)',
+      mean: 'x轴上的刻度',
       type: 'Array<string>',
       default: '-'
     },
     {
-      propName: 'value',
-      mean: '显示的值,与xData的长度和下标保持一致(必填)',
-      type: 'Array<number>',
+      propName: 'value(必填)',
+      mean: '显示的值,与xData的长度和下标保持一致',
+      type: 'Array<{name:string,data:number[],color?:string}>',
       default: '-'
     },
     {
@@ -69,18 +84,6 @@
       mean: 'x轴和y轴是否反转',
       type: 'boolean',
       default: 'false'
-    },
-    {
-      propName: 'barColor',
-      mean: '柱子颜色，未设置则随机显示',
-      type: 'string',
-      default: '-'
-    },
-    {
-      propName: 'rules',
-      mean: '柱子颜色显示的规则,每一项包含min,max,color,值在min~max之间的柱子会显示color颜色',
-      type: 'array',
-      default: '-'
     },
     {
       propName: 'textColor',

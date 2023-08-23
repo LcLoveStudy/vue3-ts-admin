@@ -16,6 +16,10 @@
 
 <script setup lang="ts">
   import { PieChart } from '@/components/echarts'
+  import highlight from 'highlight.js'
+  onMounted(() => {
+    highlight.highlightAll()
+  })
 </script>
 
 <style scoped lang="less">

@@ -1,25 +1,33 @@
 <template>
   <div class="main">
     <div class="flex justify-around items-center">
-      <line-chart
+      <bar-chart
         :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
         x-axis-name="星期"
         y-axis-name="次数"
+        bar-color="#000"
+        :rules="[
+          { min: 100, max: 199, color: 'pink' },
+          { min: 200, max: 299, color: 'skyblue' }
+        ]"
         :value="[120, 200, 150, 80, 70, 110, 130]"
-        :smooth="true"
-        :area="true"
+        :reverse="true"
       />
       <!-- 代码展示 -->
       <pre class="width-800">
         <h1>示例代码</h1>
         <code class="language-html fs-14">
-        &lt;line-chart
+        &lt;bar-chart
             :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
             x-axis-name="星期"
             y-axis-name="次数"
+            bar-color="#000"
+            :rules="[
+              { min: 100, max: 199, color: 'pink' },
+              { min: 200, max: 299, color: 'skyblue' }
+            ]"
             :value="[120, 200, 150, 80, 70, 110, 130]"
-            :smooth="true"
-            :area="true"
+            :reverse="true"
         />
         </code>
       </pre>
@@ -29,18 +37,19 @@
 </template>
 
 <script setup lang="ts">
-  import HowToUseTable from '../../components/how-to-use-table.vue'
-  import { LineChart } from '@/components/echarts'
+  import { BarChart } from '@/components/echarts'
+  import HowToUseTable from '../components/how-to-use-table.vue'
+  import highlight from 'highlight.js'
   const howToUse = [
     {
-      propName: 'xData(必填)',
-      mean: 'x轴上的刻度',
+      propName: 'xData',
+      mean: 'x轴上的刻度(必填)',
       type: 'Array<string>',
       default: '-'
     },
     {
-      propName: 'value(必填)',
-      mean: '显示的值,与xData的长度和下标保持一致',
+      propName: 'value',
+      mean: '显示的值,与xData的长度和下标保持一致(必填)',
       type: 'Array<number>',
       default: '-'
     },
@@ -57,22 +66,22 @@
       default: '-'
     },
     {
-      propName: 'smooth',
-      mean: '是否平滑',
+      propName: 'reverse',
+      mean: 'x轴和y轴是否反转',
       type: 'boolean',
       default: 'false'
     },
     {
-      propName: 'area',
-      mean: '是否显示阴影',
-      type: 'boolean',
-      default: 'false'
-    },
-    {
-      propName: 'lineColor',
-      mean: '折线的颜色',
+      propName: 'barColor',
+      mean: '柱子颜色，未设置则随机显示',
       type: 'string',
-      default: '随机'
+      default: '-'
+    },
+    {
+      propName: 'rules',
+      mean: '柱子颜色显示的规则,每一项包含min,max,color,值在min~max之间的柱子会显示color颜色',
+      type: 'array',
+      default: '-'
     },
     {
       propName: 'textColor',
@@ -93,6 +102,9 @@
       default: '400px'
     }
   ]
+  onMounted(() => {
+    highlight.highlightAll()
+  })
 </script>
 
 <style scoped lang="less">

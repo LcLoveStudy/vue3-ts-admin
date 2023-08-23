@@ -1,44 +1,25 @@
 <template>
   <div class="main">
     <div class="flex justify-around items-center">
-      <bar-chart
-        :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
-        x-axis-name="国家"
-        y-axis-name="人数"
-        :value="[
-          {
-            name: '2011',
-            data: [18203, 23489, 29034, 104970],
-            color: 'red'
-          },
-          {
-            name: '2012',
-            data: [18224, 23600, 30000, 124970],
-            color: 'skyblue'
-          }
-        ]"
+      <line-chart
+        :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+        x-axis-name="星期"
+        y-axis-name="次数"
+        :value="[120, 200, 150, 80, 70, 110, 130]"
+        :smooth="true"
+        :area="true"
       />
       <!-- 代码展示 -->
       <pre class="width-800">
         <h1>示例代码</h1>
         <code class="language-html fs-14">
-        &lt;bar-chart
-            type="bars"
-            :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
-            x-axis-name="国家"
-            y-axis-name="人数"
-            :value="[
-                {
-                    name: '2011',
-                    data: [18203, 23489, 29034, 104970],
-                    color: 'red'
-                },
-                {
-                    name: '2012',
-                    data: [18224, 23600, 30000, 124970],
-                    color: 'skyblue'
-                }
-            ]"
+        &lt;line-chart
+            :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+            x-axis-name="星期"
+            y-axis-name="次数"
+            :value="[120, 200, 150, 80, 70, 110, 130]"
+            :smooth="true"
+            :area="true"
         />
         </code>
       </pre>
@@ -48,8 +29,12 @@
 </template>
 
 <script setup lang="ts">
-  import { BarChart } from '@/components/echarts'
-  import HowToUseTable from '../../components/how-to-use-table.vue'
+  import HowToUseTable from '../components/how-to-use-table.vue'
+  import { LineChart } from '@/components/echarts'
+  import highlight from 'highlight.js'
+  onMounted(() => {
+    highlight.highlightAll()
+  })
   const howToUse = [
     {
       propName: 'xData(必填)',
@@ -60,7 +45,7 @@
     {
       propName: 'value(必填)',
       mean: '显示的值,与xData的长度和下标保持一致',
-      type: 'Array<{name:string,data:number[],color?:string}>',
+      type: 'Array<number>',
       default: '-'
     },
     {
@@ -76,10 +61,22 @@
       default: '-'
     },
     {
-      propName: 'reverse',
-      mean: 'x轴和y轴是否反转',
+      propName: 'smooth',
+      mean: '是否平滑',
       type: 'boolean',
       default: 'false'
+    },
+    {
+      propName: 'area',
+      mean: '是否显示阴影',
+      type: 'boolean',
+      default: 'false'
+    },
+    {
+      propName: 'lineColor',
+      mean: '折线的颜色',
+      type: 'string',
+      default: '随机'
     },
     {
       propName: 'textColor',
