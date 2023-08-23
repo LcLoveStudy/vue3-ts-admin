@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="flex justify-around">
+    <div class="flex justify-around items-center">
       <line-chart
         :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
         x-axis-name="人数"

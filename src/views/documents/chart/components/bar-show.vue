@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="flex justify-around">
+    <div class="flex justify-around items-center">
       <bar-chart
         :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
         x-axis-name="星期"
