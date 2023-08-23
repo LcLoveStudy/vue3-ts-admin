@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { type UserType } from '#/userinfo'
-import { LocalStorageKeys } from '#/localstorage'
+import { LocalStorageKeys } from '@/enums/localstorage'
 import { getItem, setItem, removeItem } from '@/utils'
 import { defineStore } from 'pinia'
 

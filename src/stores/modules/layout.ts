@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { LocalStorageKeys } from '#/localstorage'
+import { LocalStorageKeys } from '@/enums/localstorage'
 import { getItem, setItem } from '@/utils'
 import { defineStore } from 'pinia'
 

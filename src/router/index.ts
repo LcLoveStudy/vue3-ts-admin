@@ -3,7 +3,7 @@ import HOME from './modules/home'
 import DOCUMENTS from './modules/documents'
 import createRoute from './createRoute'
 import { getItem } from '@/utils'
-import { LocalStorageKeys } from '#/localstorage'
+import { LocalStorageKeys } from '@/enums/localstorage'
 /**
  * routes为所有菜单栏内的所有路由
  */

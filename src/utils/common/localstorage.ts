@@ -1,4 +1,4 @@
-import { LocalStorageKeys } from '#/localstorage'
+import { LocalStorageKeys } from '@/enums/localstorage'
 /**
  * 用于在localstorage中存储item的函数
  * @param {*} key   键名
