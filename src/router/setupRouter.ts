@@ -18,9 +18,9 @@ const initRoute = (routeArr: Array<RouterType>) => {
     }
   })
 }
-const createRoute = (routeArr: Array<RouterType>) => {
+const setupRouter = (routeArr: Array<RouterType>) => {
   initRoute(routeArr)
   return realRoute
 }
 
-export default createRoute
+export default setupRouter

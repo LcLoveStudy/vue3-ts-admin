@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HOME from './modules/home'
 import DOCUMENTS from './modules/documents'
-import createRoute from './createRoute'
+import setupRouter from './setupRouter'
 import { getItem } from '@/utils'
 import { LocalStorageKeys } from '@/enums/localstorage'
 /**
@@ -18,7 +18,7 @@ const router = createRouter({
       redirect: '/home',
       component: () => import('@/views/Layout.vue'),
       children: [
-        ...(createRoute(routes) as never),
+        ...(setupRouter(routes) as never),
         {
           path: '/404',
           name: '404',
