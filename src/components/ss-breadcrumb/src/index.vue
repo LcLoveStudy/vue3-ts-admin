@@ -1,16 +1,18 @@
 <template>
   <div class="my_breadcrumb">
-    <el-breadcrumb :separator-icon="ArrowRight">
+    <el-breadcrumb>
       <el-breadcrumb-item v-for="route in breadCrumbs" :key="route.path">
         <template v-if="route.children.length === 0">
           {{ route.title }}
         </template>
         <template v-else>
           <el-dropdown>
-            {{ route.title }}
-            <el-icon color="rgb(53, 100, 208)">
-              <arrow-down />
-            </el-icon>
+            <div class="hover-pointer">
+              {{ route.title }}
+              <el-icon>
+                <arrow-down />
+              </el-icon>
+            </div>
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item
