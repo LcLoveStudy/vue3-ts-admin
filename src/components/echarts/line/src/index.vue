@@ -9,6 +9,8 @@
 </template>
 
 <script setup lang="ts">
+  import { getType } from '@/utils'
+  import { type LineSeriesType } from './line-chart'
   import * as echarts from 'echarts'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = Math.random().toString()
@@ -57,6 +59,10 @@
       default: '400px'
     }
   })
+
+  // 判断是多条还是一条
+  let type = 'line'
+
   /** 初始化chart */
   const initChart = () => {
     const chartDom = document.getElementById(chartId) as HTMLDivElement
@@ -118,6 +124,14 @@
     })
   }
   onMounted(() => {
+    getType(props.value[0]) === 'number' ? (type = 'line') : (type = 'lines')
+    if (type === 'lines') {
+      ;(props.value as LineSeriesType[]).forEach((item) => {
+        if (!item.data || !item.name) {
+          console.error('多折线图的value每项应该至少包含name和data属性')
+        }
+      })
+    }
     initChart()
   })
 </script>
