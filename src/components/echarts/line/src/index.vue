@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-  import { getType } from '@/utils'
+  import { getType, useColor } from '@/utils'
   import { type LineSeriesType } from './line-chart'
   import * as echarts from 'echarts'
   // 获取随机id，防止一个页面多个echarts时，id重复
@@ -67,9 +67,11 @@
     data: [] as string[]
   }
   // 用于显示多折线的series
-  const series = [] as Array<
+  const series: Array<
     { type: string; stack: string; smooth: boolean; areaStyle: object | null } & LineSeriesType
-  >
+  > = []
+  // 用于显示多折线的颜色
+  const colorList: string[] = []
 
   /** 初始化chart */
   const initChart = () => {
@@ -98,6 +100,7 @@
         },
         z: 3
       },
+      color: colorList,
       grid: {
         left: '3%',
         bottom: '3%',
@@ -148,7 +151,13 @@
           smooth: props.smooth,
           areaStyle: props.area ? {} : null
         })
+        if (item.color) {
+          colorList.push(item.color)
+        }
       })
+    }
+    for (let i = 0; i <= props.value.length - 1; i++) {
+      colorList.push(useColor())
     }
   }
 
