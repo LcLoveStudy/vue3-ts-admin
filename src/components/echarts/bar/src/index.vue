@@ -150,7 +150,7 @@
                       position: props.reverse ? 'right' : 'top',
                       textStyle: {
                         color: props.textColor,
-                        fontSize: 16
+                        fontSize: 12
                       }
                     }
                   }
