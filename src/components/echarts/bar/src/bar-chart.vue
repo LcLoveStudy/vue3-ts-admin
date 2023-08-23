@@ -9,17 +9,12 @@
 </template>
 
 <script setup lang="ts">
-  import { useColor } from '@/utils'
+  import { getType, useColor } from '@/utils'
   import { type RuleType, type SeriesType } from './bar-chart'
   import * as echarts from 'echarts'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = Math.random().toString()
   const props = defineProps({
-    type: {
-      default: 'bar',
-      type: String,
-      validator: (value: string) => ['bar', 'bars'].includes(value)
-    },
     // x轴的坐标
     xData: {
       type: Array,
@@ -69,6 +64,10 @@
     }
   })
 
+  // 判断类型
+  let type = 'bar'
+
+  // 颜色列表
   const colorList = ref<string[]>([])
 
   // 当type为bar时用于显示series
@@ -136,7 +135,7 @@
         z: props.reverse ? 3 : 0
       },
       series:
-        props.type === 'bars'
+        type === 'bars'
           ? series.value
           : [
               {
@@ -149,7 +148,7 @@
 
   /** 处理柱子的颜色 */
   const barColorHandler = () => {
-    if (props.type === 'bar') {
+    if (type === 'bar') {
       // 处理每个柱子的颜色
       props.value.forEach((item) => {
         chartValue.value.push({
@@ -169,7 +168,7 @@
           })
         })
       }
-    } else if (props.type === 'bars') {
+    } else if (type === 'bars') {
       ;(props.value as SeriesType[]).forEach((item) => {
         series.value.push({
           type: 'bar',
@@ -187,6 +186,7 @@
   }
 
   onMounted(() => {
+    getType(props.value[0]) === 'number' ? (type = 'bar') : (type = 'bars')
     barColorHandler()
     initChart()
   })

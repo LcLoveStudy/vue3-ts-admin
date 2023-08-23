@@ -2,7 +2,6 @@
   <div class="main">
     <div class="flex justify-around">
       <bar-chart
-        type="bars"
         :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
         x-axis-name="国家"
         y-axis-name="人数"
@@ -56,12 +55,6 @@
   import { BarChart } from '@/components/echarts'
   import HowToUseTable from '../../components/how-to-use-table.vue'
   const howToUse = [
-    {
-      propName: 'type(必填)',
-      mean: '柱状图类型(只有bar和bars)，当为bars时说明有多个柱子',
-      type: 'string',
-      default: 'bar'
-    },
     {
       propName: 'xData(必填)',
       mean: 'x轴上的刻度',
