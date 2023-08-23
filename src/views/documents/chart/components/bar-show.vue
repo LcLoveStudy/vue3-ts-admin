@@ -9,8 +9,8 @@
         height="400px"
         bar-color="#000"
         :rules="[
-          { min: 100, max: 199, color: 'red' },
-          { min: 200, max: 299, color: 'yellow' }
+          { min: 100, max: 199, color: 'pink' },
+          { min: 200, max: 299, color: 'skyblue' }
         ]"
         :value="[120, 200, 150, 80, 70, 110, 130]"
         :reverse="true"
@@ -27,8 +27,8 @@
             height="400px"
             bar-color="#000"
             :rules="[
-              { min: 100, max: 199, color: 'red' },
-              { min: 200, max: 299, color: 'yellow' }
+              { min: 100, max: 199, color: 'pink' },
+              { min: 200, max: 299, color: 'skyblue' }
             ]"
             :value="[120, 200, 150, 80, 70, 110, 130]"
             :reverse="true"
