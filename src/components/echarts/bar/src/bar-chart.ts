@@ -10,4 +10,5 @@ export type SeriesType = {
   name: string
   color?: string
   data: number[]
+  itemStyle: {}
 }

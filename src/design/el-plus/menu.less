@@ -92,7 +92,7 @@
       &.is-active {
         border-right: none;
         color: var(--menu-item-active) !important;
-        background: var(--menu-item-active-bgc);
+        background: var(--container-bgc);
       }
       &:hover {
         color: var(--menu-item-active) !important;
@@ -110,9 +110,9 @@
           background: var(--container-bgc) !important;
         }
       }
-      &.is-active > .el-sub-menu__title {
+      &.is-active .el-sub-menu__title.el-tooltip__trigger.el-tooltip__trigger {
         color: var(--menu-item-active) !important;
-        background: var(--menu-item-active-bgc);
+        background: var(--container-bgc) !important;
       }
     }
   }

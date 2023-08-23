@@ -142,7 +142,19 @@
           : [
               {
                 data: chartValue.value,
-                type: 'bar'
+                type: 'bar',
+                itemStyle: {
+                  normal: {
+                    label: {
+                      show: true,
+                      position: props.reverse ? 'right' : 'top',
+                      textStyle: {
+                        color: props.textColor,
+                        fontSize: 16
+                      }
+                    }
+                  }
+                }
               }
             ]
     })
@@ -175,7 +187,19 @@
         series.value.push({
           type: 'bar',
           name: item.name,
-          data: item.data
+          data: item.data,
+          itemStyle: {
+            normal: {
+              label: {
+                show: true,
+                position: props.reverse ? 'right' : 'top',
+                textStyle: {
+                  color: props.textColor,
+                  fontSize: 12
+                }
+              }
+            }
+          }
         })
         if (item.color) {
           colorList.value.push(item.color)
