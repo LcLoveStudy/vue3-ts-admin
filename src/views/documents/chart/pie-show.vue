@@ -9,6 +9,7 @@
           { value: 484, name: 'Union Ads' },
           { value: 300, name: 'Video Ads', color: 'blue' }
         ]"
+        :rose="true"
       />
       <!-- 代码展示 -->
       <pre class="width-800">
@@ -22,6 +23,7 @@
             { value: 484, name: 'Union Ads' },
             { value: 300, name: 'Video Ads', color: 'blue' }
           ]"
+          :rose="true"
         />
         </code>
       </pre>
@@ -43,6 +45,18 @@
       mean: '展示的值',
       type: 'Array<{name:string,value:number[],color?:string}>',
       default: '-'
+    },
+    {
+      propName: 'ring',
+      mean: '是否环状',
+      type: 'boolean',
+      default: 'false'
+    },
+    {
+      propName: 'rose',
+      mean: '是否开启南丁格尔玫瑰图',
+      type: 'boolean',
+      default: 'false'
     },
     {
       propName: 'textColor',

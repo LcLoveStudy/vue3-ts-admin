@@ -19,6 +19,16 @@
       type: Array,
       required: true
     },
+    // 是否环状
+    ring: {
+      type: Boolean,
+      default: false
+    },
+    // 是否开启南丁格尔玫瑰图
+    rose: {
+      type: Boolean,
+      default: false
+    },
     textColor: {
       type: String,
       default: '#000'
@@ -56,6 +66,8 @@
         {
           data: chartData,
           type: 'pie',
+          radius: props.ring || props.rose ? ['30%', '60%'] : ['0%', '70%'],
+          roseType: props.rose ? 'area' : null,
           emphasis: {
             itemStyle: {
               shadowBlur: 10,
