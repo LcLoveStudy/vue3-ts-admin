@@ -5,6 +5,7 @@
  * component:要渲染的组件
  * meta:{
  *  hideChildrenInMenu:是否在菜单中隐藏子项
+ *  orderNo:在菜单中的第几项
  *  icon：图标
  *  title：菜单上显示的名称
  *  hideMenu:是否在菜单上隐藏
@@ -20,7 +21,7 @@ interface RouterType {
   component?: Function
   meta: {
     hideChildrenInMenu: boolean
-    order?: number
+    orderNo?: number
     icon: string
     title: string
     role: Array<string>

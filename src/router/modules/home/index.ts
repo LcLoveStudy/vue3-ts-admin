@@ -2,7 +2,7 @@ const HOME: RouterType = {
   path: '/home',
   name: 'home',
   meta: {
-    order: 1,
+    orderNo: 1,
     title: '首页',
     icon: 'EditPen',
     hideMenu: false,

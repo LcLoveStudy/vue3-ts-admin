@@ -12,8 +12,8 @@ Object.keys(modules).forEach((key) => {
   const mod = (modules as any)[key].default || {}
   const modList = Array.isArray(mod) ? [...mod] : [mod]
   const routeItem = modList[0] as RouterType
-  if (routeItem.meta.order) {
-    routes[routeItem.meta.order - 1] = routeItem
+  if (routeItem.meta.orderNo) {
+    routes[routeItem.meta.orderNo - 1] = routeItem
   }
 })
 
