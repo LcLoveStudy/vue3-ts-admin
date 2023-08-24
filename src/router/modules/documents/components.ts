@@ -17,7 +17,6 @@ export default {
       meta: {
         title: '富文本RichEditor',
         hideMenu: false,
-        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -31,7 +30,6 @@ export default {
       meta: {
         title: '表格Table',
         hideMenu: false,
-        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -45,7 +43,6 @@ export default {
       meta: {
         title: '表单Form',
         hideMenu: false,
-        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -59,7 +56,6 @@ export default {
       meta: {
         title: '单选&多选',
         hideMenu: false,
-        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -73,7 +69,6 @@ export default {
       meta: {
         title: '分页Pagination',
         hideMenu: false,
-        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -87,7 +82,6 @@ export default {
       meta: {
         title: '下拉框Select',
         hideMenu: false,
-        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']

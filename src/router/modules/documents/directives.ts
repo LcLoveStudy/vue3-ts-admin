@@ -18,7 +18,6 @@ export default {
       meta: {
         title: '图片懒加载',
         hideMenu: false,
-        keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
@@ -32,7 +31,6 @@ export default {
       meta: {
         title: '聚焦',
         hideMenu: false,
-        keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
@@ -46,7 +44,6 @@ export default {
       meta: {
         title: '点击外部',
         hideMenu: false,
-        keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']

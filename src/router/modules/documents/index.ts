@@ -9,7 +9,6 @@ const DOCUMENTS: RouterType = {
     title: '使用手册',
     icon: 'CopyDocument',
     hideMenu: false,
-    keepChild: false,
     hideBreadcrumb: false,
     hideChildrenInMenu: false,
     role: ['admin', 'superadmin', 'user']
@@ -21,7 +20,6 @@ const DOCUMENTS: RouterType = {
       meta: {
         title: '工具函数',
         hideMenu: false,
-        keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
@@ -35,7 +33,6 @@ const DOCUMENTS: RouterType = {
       meta: {
         title: '原子化css',
         hideMenu: false,
-        keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']

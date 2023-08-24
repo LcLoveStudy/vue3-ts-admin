@@ -27,7 +27,7 @@ interface RouterType {
     role: Array<string>
     hideMenu: boolean
     hideBreadcrumb: boolean
-    keepChild: boolean
+    keepChild?: boolean
   }
   children: Array<RouterType> | never
 }
