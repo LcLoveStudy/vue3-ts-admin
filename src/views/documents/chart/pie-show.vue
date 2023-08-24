@@ -1,18 +1,17 @@
 <template>
-  <div class="main">
-    <div class="flex justify-around items-center">
-      <PieChart
-        :data="[
-          { value: 1048, name: 'Search Engine' },
-          { value: 735, name: 'Direct' },
-          { value: 580, name: 'Email', color: 'red' },
-          { value: 484, name: 'Union Ads' },
-          { value: 300, name: 'Video Ads', color: 'blue' }
-        ]"
-        :rose="true"
-      />
-      <!-- 代码展示 -->
-      <pre class="width-800">
+  <div class="flex justify-around items-center">
+    <PieChart
+      :data="[
+        { value: 1048, name: 'Search Engine' },
+        { value: 735, name: 'Direct' },
+        { value: 580, name: 'Email', color: 'red' },
+        { value: 484, name: 'Union Ads' },
+        { value: 300, name: 'Video Ads', color: 'blue' }
+      ]"
+      :rose="true"
+    />
+    <!-- 代码展示 -->
+    <pre class="width-800">
         <h1>示例代码</h1>
         <code class="language-html fs-14">
         &lt;PieChart
@@ -27,9 +26,8 @@
         />
         </code>
       </pre>
-    </div>
-    <HowToUseTable :how-to-use="howToUse" />
   </div>
+  <HowToUseTable :how-to-use="howToUse" />
 </template>
 
 <script setup lang="ts">
@@ -78,9 +76,3 @@
     }
   ]
 </script>
-
-<style scoped lang="less">
-  .main {
-    padding: 0 0 0 100px;
-  }
-</style>

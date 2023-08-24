@@ -1,20 +1,19 @@
 <template>
-  <div class="main">
-    <div class="flex justify-around items-center">
-      <bar-chart
-        :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-        x-axis-name="星期"
-        y-axis-name="次数"
-        bar-color="#000"
-        :rules="[
-          { min: 100, max: 199, color: 'pink' },
-          { min: 200, max: 299, color: 'skyblue' }
-        ]"
-        :value="[120, 200, 150, 80, 70, 110, 130]"
-        :reverse="true"
-      />
-      <!-- 代码展示 -->
-      <pre class="width-800">
+  <div class="flex justify-around items-center">
+    <bar-chart
+      :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+      x-axis-name="星期"
+      y-axis-name="次数"
+      bar-color="#000"
+      :rules="[
+        { min: 100, max: 199, color: 'pink' },
+        { min: 200, max: 299, color: 'skyblue' }
+      ]"
+      :value="[120, 200, 150, 80, 70, 110, 130]"
+      :reverse="true"
+    />
+    <!-- 代码展示 -->
+    <pre class="width-800">
         <h1>示例代码</h1>
         <code class="language-html fs-14">
         &lt;bar-chart
@@ -31,9 +30,8 @@
         />
         </code>
       </pre>
-    </div>
-    <HowToUseTable :how-to-use="howToUse" />
   </div>
+  <HowToUseTable :how-to-use="howToUse" />
 </template>
 
 <script setup lang="ts">
@@ -106,9 +104,3 @@
     highlight.highlightAll()
   })
 </script>
-
-<style scoped lang="less">
-  .main {
-    padding: 0 0 0 100px;
-  }
-</style>

@@ -10,6 +10,7 @@ export default {
     hideChildrenInMenu: false,
     role: ['admin', 'superadmin', 'user']
   },
+  component: () => import('@/views/documents/chart/index.vue'),
   children: [
     {
       path: '/documents/echarts/bar',

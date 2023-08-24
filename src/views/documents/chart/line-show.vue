@@ -1,16 +1,15 @@
 <template>
-  <div class="main">
-    <div class="flex justify-around items-center">
-      <line-chart
-        :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
-        x-axis-name="星期"
-        y-axis-name="次数"
-        :value="[120, 200, 150, 80, 70, 110, 130]"
-        :smooth="true"
-        :area="true"
-      />
-      <!-- 代码展示 -->
-      <pre class="width-800">
+  <div class="flex justify-around items-center">
+    <line-chart
+      :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+      x-axis-name="星期"
+      y-axis-name="次数"
+      :value="[120, 200, 150, 80, 70, 110, 130]"
+      :smooth="true"
+      :area="true"
+    />
+    <!-- 代码展示 -->
+    <pre class="width-800">
         <h1>示例代码</h1>
         <code class="language-html fs-14">
         &lt;line-chart
@@ -23,9 +22,8 @@
         />
         </code>
       </pre>
-    </div>
-    <HowToUseTable :how-to-use="howToUse" />
   </div>
+  <HowToUseTable :how-to-use="howToUse" />
 </template>
 
 <script setup lang="ts">
@@ -98,9 +96,3 @@
     }
   ]
 </script>
-
-<style scoped lang="less">
-  .main {
-    padding: 0 0 0 100px;
-  }
-</style>
