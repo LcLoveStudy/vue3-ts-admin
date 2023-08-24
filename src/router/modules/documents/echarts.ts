@@ -5,7 +5,6 @@ export default {
   meta: {
     title: '图表',
     hideMenu: false,
-    icon: '',
     keepChild: true,
     hideBreadcrumb: false,
     hideChildrenInMenu: false,
@@ -19,7 +18,6 @@ export default {
       meta: {
         title: '柱状图Bar',
         hideMenu: false,
-        icon: '',
         keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
@@ -35,7 +33,6 @@ export default {
         title: '多柱状图Bars',
         hideMenu: false,
         keepChild: false,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
@@ -50,7 +47,6 @@ export default {
         title: '折线图Line',
         hideMenu: false,
         keepChild: false,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -65,7 +61,6 @@ export default {
         title: '多折线图Lines',
         hideMenu: false,
         keepChild: false,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -80,7 +75,6 @@ export default {
         title: '饼状图Pie',
         hideMenu: false,
         keepChild: false,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']

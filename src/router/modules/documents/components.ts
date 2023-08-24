@@ -6,7 +6,6 @@ export default {
     title: '低代码组件',
     hideMenu: false,
     keepChild: true,
-    icon: '',
     hideBreadcrumb: false,
     hideChildrenInMenu: false,
     role: ['admin', 'superadmin', 'user']
@@ -19,7 +18,6 @@ export default {
         title: '富文本RichEditor',
         hideMenu: false,
         keepChild: true,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -33,7 +31,6 @@ export default {
       meta: {
         title: '表格Table',
         hideMenu: false,
-        icon: '',
         keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
@@ -50,7 +47,6 @@ export default {
         hideMenu: false,
         keepChild: true,
         hideBreadcrumb: false,
-        icon: '',
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
       },
@@ -63,7 +59,6 @@ export default {
       meta: {
         title: '单选&多选',
         hideMenu: false,
-        icon: '',
         keepChild: true,
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
@@ -79,7 +74,6 @@ export default {
         title: '分页Pagination',
         hideMenu: false,
         keepChild: true,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']
@@ -94,7 +88,6 @@ export default {
         title: '下拉框Select',
         hideMenu: false,
         keepChild: true,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']

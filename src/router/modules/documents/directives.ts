@@ -5,7 +5,6 @@ export default {
   meta: {
     title: '指令',
     hideMenu: false,
-    icon: '',
     keepChild: true,
     hideBreadcrumb: false,
     hideChildrenInMenu: false,
@@ -19,7 +18,6 @@ export default {
       meta: {
         title: '图片懒加载',
         hideMenu: false,
-        icon: '',
         keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
@@ -35,7 +33,6 @@ export default {
         title: '聚焦',
         hideMenu: false,
         keepChild: false,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
@@ -50,7 +47,6 @@ export default {
         title: '点击外部',
         hideMenu: false,
         keepChild: false,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: false,
         role: ['admin', 'superadmin', 'user']

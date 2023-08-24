@@ -22,7 +22,7 @@ interface RouterType {
   meta: {
     hideChildrenInMenu: boolean
     orderNo?: number
-    icon: string
+    icon?: string
     title: string
     role: Array<string>
     hideMenu: boolean

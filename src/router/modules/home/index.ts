@@ -19,7 +19,6 @@ const HOME: RouterType = {
       meta: {
         title: '首页',
         hideMenu: true,
-        icon: '',
         keepChild: false,
         hideBreadcrumb: true,
         hideChildrenInMenu: true,

@@ -21,7 +21,6 @@ const DOCUMENTS: RouterType = {
       meta: {
         title: '工具函数',
         hideMenu: false,
-        icon: '',
         keepChild: false,
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
@@ -37,7 +36,6 @@ const DOCUMENTS: RouterType = {
         title: '原子化css',
         hideMenu: false,
         keepChild: true,
-        icon: '',
         hideBreadcrumb: false,
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
