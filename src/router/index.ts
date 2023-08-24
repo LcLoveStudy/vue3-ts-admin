@@ -39,6 +39,9 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
+      meta: {
+        title: '登录'
+      },
       component: () => import('@/views/login/index.vue'),
       children: []
     },
