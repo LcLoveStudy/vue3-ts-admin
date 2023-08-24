@@ -53,6 +53,7 @@
     (newValue) => {
       breadCrumbs.value = []
       const moduleName: string = newValue.path.split('/')[1]
+      // 最外层面包屑
       routes.forEach((item) => {
         if (item.name === moduleName && !item.meta.hideChildrenInMenu) {
           breadCrumbs.value.push({
@@ -62,6 +63,7 @@
           })
         }
       })
+      // 二级面包屑和之后的
       newValue.matched.forEach((item) => {
         if (item.path.split('/')[1] === moduleName) {
           if (!item.meta.hideBreadcrumb) {
