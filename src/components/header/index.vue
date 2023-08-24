@@ -38,8 +38,6 @@
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-      <!-- 设置 -->
-      <el-icon class="settings_icon" @click="openDrawer"><Tools /></el-icon>
     </div>
   </div>
 </template>
@@ -51,7 +49,7 @@
   import { useLayoutStore } from '@/stores/modules/layout'
   import { ElMessage } from 'element-plus'
   const { logout, userinfo } = useUserStore()
-  const { openDrawer, getMenuPosition, setMenuPosition } = useLayoutStore()
+  const { getMenuPosition, setMenuPosition } = useLayoutStore()
   const router = useRouter()
   const props = defineProps({
     // 菜单栏的展开和折叠
