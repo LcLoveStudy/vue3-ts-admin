@@ -80,6 +80,6 @@ export const http = {
   },
   // post请求
   post<T>(arg: HttpType.HttpPostRequestType): Promise<T> {
-    return service.post(arg.url, { data: arg.data, ...arg.config })
+    return service.post(arg.url, { ...arg.data }, arg.config)
   }
 }
