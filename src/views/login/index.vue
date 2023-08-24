@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+  import { useEventListener } from '@vueuse/core'
   import SsForm from '@/components/ss-form'
   import { useUserStore } from '@/stores/modules/user'
   import { ElMessage } from 'element-plus'
@@ -54,14 +55,13 @@
       })
   }
   // 回车登录
-  window.onkeydown = (e: KeyboardEvent) => {
+  const cleanup = useEventListener(document, 'keydown', (e) => {
     if (e.code === 'Enter') {
       loginHandler()
     }
-  }
-  // 离开该页面取消回车登录功能
-  onBeforeUnmount(() => {
-    window.onkeydown = () => {}
+  })
+  onUnmounted(() => {
+    cleanup()
   })
 </script>
 
