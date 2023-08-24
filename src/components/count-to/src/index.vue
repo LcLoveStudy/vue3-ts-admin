@@ -1,5 +1,5 @@
 <template>
-  <span :style="{ color }">
+  <span :style="{ color, fontSize: fontSize + 'px', fontWeight }">
     {{ value }}
   </span>
 </template>
@@ -10,9 +10,11 @@
 
   const props = defineProps({
     startVal: { type: Number, default: 0 },
-    endVal: { type: Number, default: 2021 },
+    endVal: { type: Number, default: 2023 },
     duration: { type: Number, default: 1500 },
     autoplay: { type: Boolean, default: true },
+    fontSize: { type: Number, default: 16 },
+    fontWeight: { type: Number, default: 400 },
     decimals: {
       type: Number,
       default: 0,
