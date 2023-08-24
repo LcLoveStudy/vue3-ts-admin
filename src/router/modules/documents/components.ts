@@ -88,6 +88,19 @@ export default {
       },
       children: [],
       component: () => import('@/views/documents/code/select-code.vue')
+    },
+    {
+      path: '/documents/code/count-to',
+      name: 'count-to',
+      meta: {
+        title: '数字动画CountTo',
+        hideMenu: false,
+        hideBreadcrumb: false,
+        hideChildrenInMenu: false,
+        role: ['admin', 'superadmin', 'user']
+      },
+      children: [],
+      component: () => import('@/views/documents/code/count-to-code.vue')
     }
   ]
 }
