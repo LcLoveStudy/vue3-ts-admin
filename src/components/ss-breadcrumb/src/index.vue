@@ -75,7 +75,6 @@
           }
         }
       })
-      console.log(breadCrumbs.value)
     },
     { immediate: true, deep: true }
   )
