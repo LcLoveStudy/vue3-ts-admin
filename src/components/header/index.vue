@@ -11,7 +11,7 @@
       <ss-breadcrumb />
     </div>
     <top-menu v-if="changeMenu" />
-    <div class="flex items-center">
+    <div class="width-250 flex items-center mr-25">
       <!-- 切换菜单位置 -->
       <el-switch
         class="mr-25"
@@ -38,6 +38,8 @@
           </el-dropdown-menu>
         </template>
       </el-dropdown>
+      <!-- 设置 -->
+      <el-icon class="settings_icon" @click="openDrawer"><Tools /></el-icon>
     </div>
   </div>
 </template>
@@ -49,7 +51,7 @@
   import { useLayoutStore } from '@/stores/modules/layout'
   import { ElMessage } from 'element-plus'
   const { logout, userinfo } = useUserStore()
-  const { getMenuPosition, setMenuPosition } = useLayoutStore()
+  const { openDrawer, getMenuPosition, setMenuPosition } = useLayoutStore()
   const router = useRouter()
   const props = defineProps({
     // 菜单栏的展开和折叠
@@ -142,8 +144,14 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin-right: 50px;
       cursor: pointer;
+    }
+    .settings_icon {
+      margin: 0 10px 0 20px;
+      cursor: pointer;
+      :hover {
+        background-color: var(--hover-backgroundColor);
+      }
     }
   }
 </style>

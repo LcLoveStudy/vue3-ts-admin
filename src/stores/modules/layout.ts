@@ -4,6 +4,12 @@ import { getItem, setItem } from '@/utils'
 import { defineStore } from 'pinia'
 
 export const useLayoutStore = defineStore('layout', () => {
+  // 是否展示抽屉
+  const showDrawer = ref(false)
+  const openDrawer = () => {
+    showDrawer.value = true
+  }
+
   const menuPosition = ref<'aside' | 'top'>(getItem(LocalStorageKeys.MENUPOSITION) || 'aside')
   /** 设置菜单位置 */
   const setMenuPosition = (position: 'aside' | 'top') => {
@@ -15,5 +21,5 @@ export const useLayoutStore = defineStore('layout', () => {
     menuPosition.value = getItem(LocalStorageKeys.MENUPOSITION) || 'aside'
     return getItem(LocalStorageKeys.MENUPOSITION) === 'top'
   }
-  return { menuPosition, setMenuPosition, getMenuPosition }
+  return { showDrawer, openDrawer, menuPosition, setMenuPosition, getMenuPosition }
 })

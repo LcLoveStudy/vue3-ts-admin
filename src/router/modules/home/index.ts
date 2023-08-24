@@ -15,7 +15,7 @@ const HOME: RouterType = {
     {
       path: '/home',
       name: 'home',
-      component: () => import('@/views/home/index.vue'),
+      component: () => import('@/views/sys/home/index.vue'),
       meta: {
         title: '首页',
         hideMenu: true,

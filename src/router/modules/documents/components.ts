@@ -22,7 +22,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/documents/code/richEditor.vue')
+      component: () => import('@/views/sys/documents/code/richEditor.vue')
     },
     {
       path: '/documents/code/table',
@@ -35,7 +35,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/documents/code/table/index.vue')
+      component: () => import('@/views/sys/documents/code/table/index.vue')
     },
     {
       path: '/documents/code/form',
@@ -48,7 +48,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/documents/code/form/index.vue')
+      component: () => import('@/views/sys/documents/code/form/index.vue')
     },
     {
       path: '/documents/code/radio',
@@ -61,7 +61,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/documents/code/radio-code.vue')
+      component: () => import('@/views/sys/documents/code/radio-code.vue')
     },
     {
       path: '/documents/code/pagination',
@@ -74,7 +74,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/documents/code/pagination.vue')
+      component: () => import('@/views/sys/documents/code/pagination.vue')
     },
     {
       path: '/documents/code/select',
@@ -87,7 +87,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/documents/code/select-code.vue')
+      component: () => import('@/views/sys/documents/code/select-code.vue')
     },
     {
       path: '/documents/code/count-to',
@@ -100,7 +100,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/documents/code/count-to-code.vue')
+      component: () => import('@/views/sys/documents/code/count-to-code.vue')
     }
   ]
 }

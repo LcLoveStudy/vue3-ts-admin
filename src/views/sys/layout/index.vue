@@ -15,6 +15,12 @@
         <router-view></router-view>
       </el-main>
     </el-container>
+    <!-- 设置布局的抽屉 -->
+    <el-drawer v-model="showDrawer">
+      <template #header="{ titleId }">
+        <h4 :id="titleId" class="fs-25 black">系统配置</h4>
+      </template>
+    </el-drawer>
   </el-container>
 </template>
 
@@ -23,7 +29,7 @@
   import Header from '@/components/header/index.vue'
   import { useLayoutStore } from '@/stores/modules/layout'
   import { storeToRefs } from 'pinia'
-  const { menuPosition } = storeToRefs(useLayoutStore())
+  const { showDrawer, menuPosition } = storeToRefs(useLayoutStore())
 
   /** 是否折叠侧边菜单 */
   const isCollapse = ref(false)

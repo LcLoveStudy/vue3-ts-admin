@@ -14,7 +14,7 @@ export default {
     {
       path: '/documents/directive/lazy-show',
       name: 'lazyshow',
-      component: () => import('@/views/documents/directive-show/lazy-show.vue'),
+      component: () => import('@/views/sys/documents/directive-show/lazy-show.vue'),
       meta: {
         title: '图片懒加载',
         hideMenu: false,
@@ -27,7 +27,7 @@ export default {
     {
       path: '/documents/directive/focus-show',
       name: 'focusshow',
-      component: () => import('@/views/documents/directive-show/focus-show.vue'),
+      component: () => import('@/views/sys/documents/directive-show/focus-show.vue'),
       meta: {
         title: '聚焦',
         hideMenu: false,
@@ -40,7 +40,7 @@ export default {
     {
       path: '/documents/directive/clickoutside',
       name: 'clickoutside',
-      component: () => import('@/views/documents/directive-show/clickoutside.vue'),
+      component: () => import('@/views/sys/documents/directive-show/clickoutside.vue'),
       meta: {
         title: '点击外部',
         hideMenu: false,

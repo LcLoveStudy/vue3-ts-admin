@@ -23,7 +23,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       redirect: '/home',
-      component: () => import('@/views/Layout.vue'),
+      component: () => import('@/views/sys/layout/index.vue'),
       children: [
         ...(setupRouter(routes) as never),
         {
@@ -32,7 +32,7 @@ const router = createRouter({
           meta: {
             title: '404'
           },
-          component: () => import('@/views/error-page/404.vue')
+          component: () => import('@/views/sys/error-page/404.vue')
         }
       ]
     },

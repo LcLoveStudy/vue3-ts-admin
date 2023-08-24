@@ -24,7 +24,7 @@ const DOCUMENTS: RouterType = {
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
       },
-      component: () => import('@/views/documents/utils/index.vue'),
+      component: () => import('@/views/sys/documents/utils/index.vue'),
       children: []
     },
     {
@@ -37,7 +37,7 @@ const DOCUMENTS: RouterType = {
         hideChildrenInMenu: true,
         role: ['admin', 'superadmin', 'user']
       },
-      component: () => import('@/views/documents/style-show/index.vue'),
+      component: () => import('@/views/sys/documents/style-show/index.vue'),
       children: []
     },
     components,
