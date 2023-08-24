@@ -17,8 +17,10 @@
           :index="menu.path"
         >
           <el-icon :icon="menu.meta.icon">
+            <template v-if="menu.meta.icon">
+              <component :is="menu.meta.icon" />
+            </template>
             <!-- 动态渲染icon -->
-            <component :is="menu.meta.icon" />
           </el-icon>
           <span>{{ menu.meta.title }}</span>
         </el-menu-item>
@@ -27,7 +29,9 @@
           <el-sub-menu :index="menu.path">
             <template #title>
               <el-icon class="icon">
-                <component :is="menu.meta.icon" />
+                <template v-if="menu.meta.icon">
+                  <component :is="menu.meta.icon" />
+                </template>
               </el-icon>
               <span>{{ menu.meta.title }}</span>
             </template>
