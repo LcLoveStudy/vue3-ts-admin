@@ -32,7 +32,6 @@
 </template>
 
 <script setup lang="ts">
-  import { ArrowRight } from '@element-plus/icons-vue'
   import { routes } from '@/router/index'
   const route = useRoute()
   const router = useRouter()
