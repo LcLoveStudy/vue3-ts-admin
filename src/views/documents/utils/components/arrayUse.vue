@@ -22,33 +22,6 @@
         </div>
       </div>
     </el-card>
-    <!-- 数组去重(noRepeat) -->
-    <el-card class="width-400 height-full ml-20">
-      <div class="fs-16 fw-600 tomato">
-        数组去重(noRepeat)
-        <el-icon class="hover-pointer" @click="copyUtils('noRepeat')">
-          <DocumentCopy />
-        </el-icon>
-      </div>
-      <div class="mt-10">对简单数据类型数据去重，对象数组无效</div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
-        <div>
-          <span class="orange">noRepeat</span>
-          <span class="blue">('测试字符串')</span>
-          -> false
-        </div>
-        <div class="mt-10">
-          <span class="orange">noRepeat</span>
-          <span class="blue">([1 , 2 , 3 , 2 , 5 , 3 ])</span>
-          -> [ 1 , 2 , 3 , 5 ]
-        </div>
-        <div class="mt-10">
-          <span class="orange">noRepeat</span>
-          <span class="blue">([{ a:1 , b:2 },{ a:1 , b:2 }])</span>
-          -> 无效
-        </div>
-      </div>
-    </el-card>
     <!-- 对数组排序(arrSort) -->
     <el-card class="width-600 height-full ml-20">
       <div class="fs-16 fw-600 tomato">

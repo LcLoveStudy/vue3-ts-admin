@@ -1,20 +1,4 @@
 /**
- * 数组去除重复项
- * @param {Array} arr  目标数组
- * @return 去重后的数组;false:参数为非数组数据结构
- * @example const newArr = arrNoRepeat(myArr)
- * @author 李畅
- * @emial dotb116393@163.com
- */
-export const arrNoRepeat = (arr: Array<any>): Array<any> | boolean => {
-  if (arr instanceof Array) {
-    return [...new Set(arr)]
-  } else {
-    return false
-  }
-}
-
-/**
  * 对数组排序，不改变原数组
  * @param {Array} arr 目标数组
  * @param {boolean} flag 不填或者true是从升序；false为降序;
@@ -92,14 +76,4 @@ export const union = (
  */
 export const intersection = <T>(arr1: T[], arr2: T[]): T[] => {
   return arr1.filter((value) => arr2.includes(value))
-}
-
-/**
- * 获取两个数组的差集
- * @param {Array} arr1 数组1
- * @param {Array} arr2 数组2
- * @returns 差集
- */
-export const difference = <T>(arr1: T[], arr2: T[]): T[] => {
-  return arr1.filter((value) => !arr2.includes(value))
 }
