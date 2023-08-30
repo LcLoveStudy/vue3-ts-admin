@@ -38,19 +38,6 @@ export default {
       component: () => import('@/views/sys/documents/code/table/index.vue')
     },
     {
-      path: '/documents/code/form',
-      name: 'form',
-      meta: {
-        title: '表单Form',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: false,
-        role: ['admin', 'superadmin', 'user']
-      },
-      children: [],
-      component: () => import('@/views/sys/documents/code/form/index.vue')
-    },
-    {
       path: '/documents/code/radio',
       name: 'radio',
       meta: {
