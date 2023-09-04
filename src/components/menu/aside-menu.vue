@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="menu_container height-full overflow-y-auto">
     <el-menu
       class="aside_menu"
       :collapse="props.isCollapse"
@@ -112,7 +112,11 @@
     font-weight: 700;
     background-color: var(--container-bgc);
   }
-
+  .menu_container {
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
   //折叠起来页不会改变宽度
   .aside_menu:not(.el-menu--collapse) {
     width: 200px;

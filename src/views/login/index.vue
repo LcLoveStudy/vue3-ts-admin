@@ -1,63 +1,78 @@
 <template>
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
-      <ss-form
-        :formData="loginForm"
-        @submit="loginHandler"
-        submitText="登录"
-        :submitLoading="loginLoading"
-        labelColor="#000"
-      />
+      <div class="login_box">
+        <span class="login_title">束水智能科技有限公司</span>
+        <div class="login_content">
+          <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="100px">
+            <el-form-item label="用户名" prop="username">
+              <el-input v-model="form.username" />
+            </el-form-item>
+            <el-form-item label="密码" prop="password">
+              <el-input v-model="form.password" type="password" />
+            </el-form-item>
+            <el-form-item>
+              <el-button
+                type="primary"
+                :loading="loginLoading"
+                style="width: 80%"
+                @click="loginHandler(ruleFormRef)"
+              >
+                登录
+              </el-button>
+            </el-form-item>
+          </el-form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
   import { useEventListener } from '@vueuse/core'
-  import SsForm from '@/components/ss-form'
   import { useUserStore } from '@/stores/modules/user'
-  import { ElMessage } from 'element-plus'
+  import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
   const { login } = useUserStore()
   const router = useRouter()
   /** 登录表单 */
-  const loginForm = ref({
-    username: {
-      value: '',
-      label: '用户名',
-      prop: 'username',
-      placeholder: '请输入用户名',
-      rules: [{ required: true, message: '用户名不能为空', trigger: 'blur' }]
-    },
-    password: {
-      value: '',
-      label: '密码',
-      type: 'password',
-      prop: 'password',
-      placeholder: '请输入密码',
-      rules: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
-    }
+  const ruleFormRef = ref<FormInstance>()
+  const form = ref({
+    username: '',
+    password: ''
+  })
+  const rules = reactive<FormRules<{ username: string; password: string }>>({
+    username: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
+    password: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
   })
 
   const loginLoading = ref(false)
   /** 点击登录按钮 */
-  const loginHandler = () => {
-    const { username, password } = loginForm.value
-    loginLoading.value = true
-    login({ username: username.value, password: password.value })
-      .then(() => {
-        router.push('/')
-      })
-      .catch(() => {
-        ElMessage.error('用户名或密码错误')
-      })
-      .finally(() => {
-        loginLoading.value = false
-      })
+  const loginHandler = async (formEl: FormInstance | undefined) => {
+    if (!formEl) return
+    await formEl.validate((valid, fields) => {
+      if (valid) {
+        const { username, password } = form.value
+        loginLoading.value = true
+        login({ username, password })
+          .then(() => {
+            router.push('/')
+          })
+          .catch(() => {
+            form.value.password = ''
+            form.value.username = ''
+          })
+          .finally(() => {
+            loginLoading.value = false
+          })
+      } else {
+        console.log('error submit!', fields)
+      }
+    })
   }
   // 回车登录
   const cleanup = useEventListener(document, 'keydown', (e) => {
     if (e.code === 'Enter') {
-      loginHandler()
+      loginHandler(ruleFormRef.value)
     }
   })
   onUnmounted(() => {
@@ -72,13 +87,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: #000;
     .login_box {
-      width: 600px;
-      height: 400px;
-      background-color: pink;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 999;
+      width: 500px;
+      height: 300px;
+      background-color: #ffffff1a;
+      backdrop-filter: blur(3px); //毛玻璃属性
       border-radius: 15px;
       overflow: hidden;
+      .login_title {
+        font-size: 30px;
+        font-weight: 700;
+        background: linear-gradient(180deg, #ffffff 0%, #0e9ae9 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .login_content {
+        width: 80%;
+      }
     }
+  }
+  :deep(.el-form .el-form-item__label) {
+    font-size: 16px;
+    color: #fff;
   }
 </style>
