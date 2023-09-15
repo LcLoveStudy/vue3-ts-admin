@@ -41,4 +41,16 @@
     emits('update:current', current.value)
     emits('currentChange')
   }
+  watch(
+    () => props.current,
+    () => {
+      current.value = props.current
+    }
+  )
+  watch(
+    () => props.size,
+    () => {
+      size.value = props.size
+    }
+  )
 </script>
