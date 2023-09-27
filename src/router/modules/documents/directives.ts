@@ -25,19 +25,6 @@ export default {
       children: []
     },
     {
-      path: '/documents/directive/focus-show',
-      name: 'focusshow',
-      component: () => import('@/views/sys/documents/directive-show/focus-show.vue'),
-      meta: {
-        title: '聚焦',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: true,
-        role: ['admin', 'superadmin', 'user']
-      },
-      children: []
-    },
-    {
       path: '/documents/directive/clickoutside',
       name: 'clickoutside',
       component: () => import('@/views/sys/documents/directive-show/clickoutside.vue'),
