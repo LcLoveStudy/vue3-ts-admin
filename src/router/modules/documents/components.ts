@@ -64,19 +64,6 @@ export default {
       component: () => import('@/views/sys/documents/code/pagination.vue')
     },
     {
-      path: '/documents/code/select',
-      name: 'select',
-      meta: {
-        title: '下拉框Select',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: false,
-        role: ['admin', 'superadmin', 'user']
-      },
-      children: [],
-      component: () => import('@/views/sys/documents/code/select-code.vue')
-    },
-    {
       path: '/documents/code/count-to',
       name: 'count-to',
       meta: {
