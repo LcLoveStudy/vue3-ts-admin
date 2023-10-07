@@ -6,7 +6,6 @@
     :selection="true"
     v-model:selectAll="selectAll"
     @selectChange="change"
-    @tableEdit="editHandle"
     height="30vh"
     v-model:page="page"
     @currentChange="currentChange"
@@ -36,7 +35,6 @@
       prop: 'name',
       label: '姓名',
       order: 1,
-      editable: true,
       width: '100'
     },
     {
@@ -113,19 +111,6 @@
     console.log(page.value)
   }
 
-  /**
-   * 编辑了表单后的回调函数
-   * @param newValue 新值
-   * @param propName 被修改的参数
-   */
-  const editHandle = (newValue: any, propName: string) => {
-    tableData.value.forEach((item: any) => {
-      if (item.id === newValue.id) {
-        item[propName] = newValue[propName]
-      }
-    })
-  }
-
   const howToUse = ref([
     {
       propName: 'tableData',
@@ -174,12 +159,6 @@
       mean: '选中状态改变的函数',
       type: 'Function',
       default: '参数：被选中的数据数组'
-    },
-    {
-      propName: '@tableEdit',
-      mean: '编辑后的回调函数',
-      type: 'Function',
-      default: '参数1：被修改的行数据;参数2：被修改的字段'
     }
   ])
 
@@ -201,12 +180,6 @@
       mean: '该列在表格中是第几列',
       type: 'number',
       default: '-'
-    },
-    {
-      propName: 'editable',
-      mean: '该列数据是否可以编辑',
-      type: 'boolean',
-      default: 'false'
     },
     {
       propName: 'sortable',
