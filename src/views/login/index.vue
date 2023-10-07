@@ -31,7 +31,7 @@
 <script setup lang="ts">
   import { useEventListener } from '@vueuse/core'
   import { useUserStore } from '@/stores/modules/user'
-  import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
+  import { type FormInstance, type FormRules } from 'element-plus'
   const { login } = useUserStore()
   const router = useRouter()
   /** 登录表单 */
