@@ -3,7 +3,7 @@
     <CountTo
       :start-val="100"
       :end-val="2000"
-      color="text-sky-600"
+      color="green"
       :font-size="30"
       :font-weight="600"
       prefix="$"
@@ -16,7 +16,7 @@
     &lt;CountTo
       :start-val="100"
       :end-val="2000"
-      color="text-sky-600"
+      color="green"
       :font-size="30"
       :font-weight="600"
       prefix="$"
