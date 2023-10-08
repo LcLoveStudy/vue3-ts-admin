@@ -8,7 +8,6 @@
       :selection="true"
       v-model:selectAll="selectAll"
       @selectChange="change"
-      @tableEdit="editHandle"
       height="30vh"
       v-model:page="page"
       @currentChange="currentChange" 
@@ -28,7 +27,6 @@
           prop: 'name',
           label: '姓名',
           order: 1,
-          editable: true,
           width: '100'
         },
         {
@@ -100,18 +98,6 @@
       })
       const currentChange = () => {
         console.log(page.value)
-      }
-      /**
-      * 编辑了表单后的回调函数
-      * @param newValue 新值
-      * @param propName 被修改的参数
-      */
-      const editHandle = (newValue: any, propName: string) => {
-        tableData.value.forEach((item: any) => {
-          if (item.id === newValue.id) {
-            item[propName] = newValue[propName]
-          }
-        })
       }
     &lt;/script&gt;
     </code>

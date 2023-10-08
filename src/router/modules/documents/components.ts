@@ -38,19 +38,6 @@ export default {
       component: () => import('@/views/sys/documents/code/table/index.vue')
     },
     {
-      path: '/documents/code/radio',
-      name: 'radio',
-      meta: {
-        title: '单选&多选',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: false,
-        role: ['admin', 'superadmin', 'user']
-      },
-      children: [],
-      component: () => import('@/views/sys/documents/code/radio-code.vue')
-    },
-    {
       path: '/documents/code/pagination',
       name: 'pagination',
       meta: {
