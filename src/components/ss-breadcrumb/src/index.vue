@@ -7,7 +7,7 @@
         </template>
         <template v-else>
           <el-dropdown>
-            <div class="hover-pointer">
+            <div class="cursor-pointer">
               {{ route.title }}
               <el-icon>
                 <arrow-down />

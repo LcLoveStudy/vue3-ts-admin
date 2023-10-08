@@ -6,21 +6,21 @@
         { value: 735, name: 'Direct' },
         { value: 580, name: 'Email', color: 'red' },
         { value: 484, name: 'Union Ads' },
-        { value: 300, name: 'Video Ads', color: 'blue' }
+        { value: 300, name: 'Video Ads', color: 'text-sky-600' }
       ]"
       :rose="true"
     />
     <!-- 代码展示 -->
-    <pre class="width-800">
+    <pre class="w-200">
         <h1>示例代码</h1>
-        <code class="language-html fs-14">
+        <code class="language-html text-sm">
         &lt;PieChart
           :data="[
             { value: 1048, name: 'Search Engine' },
             { value: 735, name: 'Direct' },
             { value: 580, name: 'Email', color: 'red' },
             { value: 484, name: 'Union Ads' },
-            { value: 300, name: 'Video Ads', color: 'blue' }
+            { value: 300, name: 'Video Ads', color: 'text-sky-600' }
           ]"
           :rose="true"
         />

@@ -1,30 +1,32 @@
 <template>
   <div class="document">
-    <div class="fs-25 fw-600">图片懒加载(v-lazy)</div>
-    <div class="mt-25">
+    <div class="text-2xl font-semibold">图片懒加载(v-lazy)</div>
+    <div class="mt-6">
       <span class="fs-20 inline-block">应用场景：</span>
       <br />
       当页面开始加载时，会请求所有的图片资源，当前屏幕没显示的图片也会请求，如果用户只看到当前屏幕内的图片后就去到其他页面，其他图片就会浪费请求资源，影像一定的性能。
-      <span class="tomato bgc-lightgray">(避免和flex使用，当使用flex布局后会立刻请求网络)</span>
+      <span class="text-red-700 bgc-lightgray">
+        (避免和flex使用，当使用flex布局后会立刻请求网络)
+      </span>
       <br />
-      <span class="fs-20 mt-20 inline-block">用法说明:</span>
+      <span class="fs-20 mt-5 inline-block">用法说明:</span>
       <br />
       在图片过多的地方使用v-lazy指令,进行图片懒加载，当往下滚动页面时,图片进入视线后才会发送请求
-      <span class="tomato bgc-lightgray">
+      <span class="text-red-700 bgc-lightgray">
         (只适用于请求服务器的图片，项目assets文件夹中的不可用)
       </span>
       <br />
-      <span class="fs-20 mt-20 inline-block">示例:</span>
+      <span class="fs-20 mt-5 inline-block">示例:</span>
       <br />
-      <div class="code mt-20">
+      <div class="code mt-5">
         &lt;img
-        <span class="tomato">v-lazy="'请求地址'"</span>
+        <span class="text-red-700">v-lazy="'请求地址'"</span>
         /&gt;
       </div>
     </div>
   </div>
   <!-- 图片列表 -->
-  <el-card class="page_main width-800 height-800">
+  <el-card class="page_main w-200">
     <img
       v-lazy="
         'https://img2.baidu.com/it/u=2098302066,1207295454&fm=253&fmt=auto&app=138&f=JPEG?w=562&h=343'
@@ -65,6 +67,8 @@
   }
 
   .page_main {
+    height: 800px;
+    width: 800px;
     position: absolute;
     top: 100px;
     right: 0;

@@ -11,6 +11,8 @@ module.exports = {
       minPixelValue: 12,
       // 忽略一些文件，不进行转换，比如我想忽略 依赖的UI框架
       exclude: ['node_modules']
-    }
+    },
+    autoprefixer: {},
+    tailwindcss: {}
   }
 }

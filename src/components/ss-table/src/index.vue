@@ -41,7 +41,7 @@
       </template>
     </template>
   </el-table>
-  <div class="width-full flex justify-end mt-20">
+  <div class="width-full flex justify-end mt-5">
     <el-pagination
       v-model:current-page="pageinfo.current"
       v-model:page-size="pageinfo.size"

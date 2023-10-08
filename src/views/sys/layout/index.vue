@@ -1,5 +1,5 @@
 <template>
-  <el-container class="container fs-16">
+  <el-container class="container fs-base">
     <!-- 右边头部 -->
     <el-header class="header">
       <Header v-model:isCollapse="isCollapse" />
@@ -31,7 +31,8 @@
 
 <style scoped lang="less">
   .container {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     height: 100%;
     font-size: 16px;
     // overflow: hidden;

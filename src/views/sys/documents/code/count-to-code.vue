@@ -3,20 +3,20 @@
     <CountTo
       :start-val="100"
       :end-val="2000"
-      color="blue"
+      color="text-sky-600"
       :font-size="30"
       :font-weight="600"
       prefix="$"
     />
   </el-card>
-  <h3 class="mt-25">示例</h3>
+  <h3 class="mt-6">示例</h3>
   <!-- 示例代码 -->
-  <pre class="width-800">
-    <code class="language-html fs-14">
+  <pre class="w-200">
+    <code class="language-html text-sm">
     &lt;CountTo
       :start-val="100"
       :end-val="2000"
-      color="blue"
+      color="text-sky-600"
       :font-size="30"
       :font-weight="600"
       prefix="$"

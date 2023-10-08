@@ -13,16 +13,16 @@
         {
           name: '2012',
           data: [18224, 23600, 30000, 124970],
-          color: 'skyblue'
+          color: 'skytext-sky-600'
         }
       ]"
       :smooth="true"
       :area="true"
     />
     <!-- 代码展示 -->
-    <pre class="width-800">
+    <pre class="w-200">
         <h1>示例代码</h1>
-        <code class="language-html fs-14">
+        <code class="language-html text-sm">
         &lt;line-chart
             :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
             x-axis-name="人数"
@@ -36,7 +36,7 @@
               {
                 name: '2012',
                 data: [18224, 23600, 30000, 124970],
-                color: 'skyblue'
+                color: 'skytext-sky-600'
               }
             ]"
             :smooth="true"

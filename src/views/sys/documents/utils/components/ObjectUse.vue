@@ -1,34 +1,34 @@
 <template>
-  <div class="flex flex-wrap ml-20">
+  <div class="flex flex-wrap ml-5">
     <!-- 深拷贝对象 -->
-    <el-card class="width-400 height-full">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100 height-full">
+      <div class="fs-base font-semibold text-red-700">
         深拷贝对象(objectCopy)
-        <el-icon class="hover-pointer" @click="copyUtils('objectCopy')">
+        <el-icon class="cursor-pointer" @click="copyUtils('objectCopy')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">深拷贝对象，不会改变原对象</div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
-        <span class="orange">objectCopy</span>
-        <span class="blue">({ a:1 , b:1 , c:1 })</span>
+      <div class="mt-2.5">深拷贝对象，不会改变原对象</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <span class="text-orange-500">objectCopy</span>
+        <span class="text-sky-600">({ a:1 , b:1 , c:1 })</span>
         -> { a:1 , b:1 , c:1 }
       </div>
     </el-card>
     <!-- 深度对象冻结，阻止vue劫持对象，提升性能。 -->
-    <el-card class="width-400 height-full ml-20">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100 height-full ml-5">
+      <div class="fs-base font-semibold text-red-700">
         深度对象冻结(deepFreeze)
-        <el-icon class="hover-pointer" @click="copyUtils('deepFreeze')">
+        <el-icon class="cursor-pointer" @click="copyUtils('deepFreeze')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">
+      <div class="mt-2.5">
         深度对象冻结，阻止vue劫持对象，提升性能。被冻结的对象和返回的对象都会被冻结，不可以再次修改
       </div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
-        <span class="orange">deepFreeze</span>
-        <span class="blue">({ a:1 , b:1 , c:1 })</span>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <span class="text-orange-500">deepFreeze</span>
+        <span class="text-sky-600">({ a:1 , b:1 , c:1 })</span>
         -> { a:1 , b:1 , c:1 }
       </div>
     </el-card>

@@ -11,7 +11,7 @@
     @currentChange="currentChange"
   >
     <template #age="{ scope }">
-      <span class="blue">{{ scope.row.age }}</span>
+      <span class="text-sky-600">{{ scope.row.age }}</span>
     </template>
     <template #option="{}">
       <el-text type="primary">做点什么</el-text>
@@ -19,9 +19,9 @@
   </ss-table>
   <!-- 代码 -->
   <TableCode />
-  <h2 class="mb-20">表格参数说明</h2>
+  <h2 class="mb-6">表格参数说明</h2>
   <howToUseTable :howToUse="howToUse" />
-  <h2 class="mt-25 mb-25">每列参数说明</h2>
+  <h2 class="mt-6 mb-6">每列参数说明</h2>
   <howToUseTable :howToUse="colPropUse" />
 </template>
 

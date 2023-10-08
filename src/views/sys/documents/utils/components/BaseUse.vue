@@ -1,116 +1,116 @@
 <template>
-  <div class="flex flex-wrap ml-20">
+  <div class="flex flex-wrap ml-5">
     <!-- 复制内容到剪贴板(getCopy) -->
-    <el-card class="width-400 height-full">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100">
+      <div class="text-base font-semibold text-red-700">
         复制内容到剪贴板(useCopy)
-        <el-icon class="hover-pointer" @click="copyUtils('useCopy')">
+        <el-icon class="cursor-pointer" @click="copyUtils('useCopy')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
         <div>
-          <span class="orange">useCopy</span>
-          <span class="blue">('测试字符串')</span>
+          <span class="text-orange-500">useCopy</span>
+          <span class="text-sky-600">('测试字符串')</span>
           -> 即可粘贴
         </div>
       </div>
     </el-card>
     <!-- 获取变量的类型(getType) -->
-    <el-card class="width-400 height-full ml-20">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100 ml-5">
+      <div class="text-base font-semibold text-red-700">
         获取变量的类型(getType)
-        <el-icon class="hover-pointer" @click="copyUtils('getType')">
+        <el-icon class="cursor-pointer" @click="copyUtils('getType')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
         <div>
-          <span class="orange">getType</span>
-          <span class="blue">('测试字符串')</span>
+          <span class="text-orange-500">getType</span>
+          <span class="text-sky-600">('测试字符串')</span>
           -> string
         </div>
         <div>
-          <span class="orange">getType</span>
-          <span class="blue">(123)</span>
+          <span class="text-orange-500">getType</span>
+          <span class="text-sky-600">(123)</span>
           -> number
         </div>
         <div>
-          <span class="orange">getType</span>
-          <span class="blue">([1,2,5])</span>
+          <span class="text-orange-500">getType</span>
+          <span class="text-sky-600">([1,2,5])</span>
           -> array
         </div>
       </div>
     </el-card>
     <!-- 获取变量的类型(getColor) -->
-    <el-card class="width-400 height-full ml-20 mb-20">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100 ml-5">
+      <div class="text-base font-semibold text-red-700">
         随机获取一个16进制的颜色(useColor)
-        <el-icon class="hover-pointer" @click="copyUtils('useColor')">
+        <el-icon class="cursor-pointer" @click="copyUtils('useColor')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">获取16进制的颜色</div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+      <div class="mt-2.5">获取16进制的颜色</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
         <el-button type="primary" size="small" @click="getRandomColor">点我获取随机颜色</el-button>
         <div class="mt-5">
-          <span class="orange">useColor</span>
-          <span class="blue">()</span>
+          <span class="text-orange-500">useColor</span>
+          <span class="text-sky-600">()</span>
           ->
           <i :style="{ color: randomColor }">{{ randomColor }}</i>
         </div>
       </div>
     </el-card>
     <!-- 存储localStorage(setItem) -->
-    <el-card class="width-400 height-full">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100 ml-5">
+      <div class="text-base font-semibold text-red-700">
         存储localStorage(setItem)
-        <el-icon class="hover-pointer" @click="copyUtils('setItem')">
+        <el-icon class="cursor-pointer" @click="copyUtils('setItem')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">将数据存储到localstorage中</div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
-        <div class="mt-5">
-          <span class="orange">setItem</span>
-          <span class="blue">('userid','12345')</span>
+      <div class="mt-2.5">将数据存储到localstorage中</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <div class="mt-1">
+          <span class="text-orange-500">setItem</span>
+          <span class="text-sky-600">('userid','12345')</span>
           -> 存储成功
         </div>
       </div>
     </el-card>
     <!-- 获取存储到localStorage的数据(getItem) -->
-    <el-card class="width-400 height-full ml-20">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100 ml-5 mt-5">
+      <div class="text-base font-semibold text-red-700">
         获取存储到localStorage的数据(getItem)
-        <el-icon class="hover-pointer" @click="copyUtils('getItem')">
+        <el-icon class="cursor-pointer" @click="copyUtils('getItem')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">获取存储到localStorage的数据</div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
+      <div class="mt-2.5">获取存储到localStorage的数据</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
         <div class="mt-5">
-          <span class="orange">getItem</span>
-          <span class="blue">('userid')</span>
+          <span class="text-orange-500">getItem</span>
+          <span class="text-sky-600">('userid')</span>
           -> 12345
         </div>
       </div>
     </el-card>
     <!-- 删除存储到localStorage的数据(removeItem) -->
-    <el-card class="width-400 height-full ml-20">
-      <div class="fs-16 fw-600 tomato">
+    <el-card class="w-100 ml-5 mt-5">
+      <div class="text-base font-semibold text-red-700">
         删除存储到localStorage的数据(removeItem)
-        <el-icon class="hover-pointer" @click="copyUtils('removeItem')">
+        <el-icon class="cursor-pointer" @click="copyUtils('removeItem')">
           <DocumentCopy />
         </el-icon>
       </div>
-      <div class="mt-10">删除存储到localStorage的数据,不传参数则删除所有</div>
-      <div class="mt-10 pl-5 pt-5 pr-5 pb-5">
-        <div class="mt-5">
-          <span class="orange">removeItem</span>
-          <span class="blue">('userid')</span>
+      <div class="mt-2.5">删除存储到localStorage的数据,不传参数则删除所有</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <div class="mt-1">
+          <span class="text-orange-500">removeItem</span>
+          <span class="text-sky-600">('userid')</span>
           -> 删除userid
-          <span class="orange">removeItem</span>
-          <span class="blue">()</span>
+          <span class="text-orange-500">removeItem</span>
+          <span class="text-sky-600">()</span>
           -> 删除所有存储的内容
         </div>
       </div>

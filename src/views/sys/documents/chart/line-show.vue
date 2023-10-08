@@ -9,9 +9,9 @@
       :area="true"
     />
     <!-- 代码展示 -->
-    <pre class="width-800">
+    <pre class="w-200">
         <h1>示例代码</h1>
-        <code class="language-html fs-14">
+        <code class="language-html text-sm">
         &lt;line-chart
             :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
             x-axis-name="星期"

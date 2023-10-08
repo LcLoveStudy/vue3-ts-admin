@@ -1,10 +1,10 @@
 <template>
-  <el-card class="mb-20 fs-25">
-    <span class="tomato">vueuse:一款非常好用官方工具库</span>
+  <el-card class="mb-5 text-2xl">
+    <span class="text-red-700">vueuse:一款非常好用官方工具库</span>
     <br />
-    <div class="flex items-center mt-10 fs-16">
+    <div class="flex items-center mt-2 text-base">
       更多配置查看
-      <el-link type="primary" @click="goVueUse"><span class="fs-16">官网</span></el-link>
+      <el-link type="primary" @click="goVueUse"><span class="text-base">官网</span></el-link>
     </div>
   </el-card>
   <el-tabs tab-position="left">

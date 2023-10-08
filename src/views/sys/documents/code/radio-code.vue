@@ -19,7 +19,7 @@
   <!-- 案例 -->
   <!-- 示例代码 -->
   <pre>
-    <code class="language-html fs-14">
+    <code class="language-html text-sm">
     &lt;ss-radio
       v-model:value="value"
       :option="[

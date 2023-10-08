@@ -1,6 +1,6 @@
 <template>
   <pre>
-    <code class="language-html fs-14">
+    <code class="language-html text-sm">
     &lt;el-checkbox v-model="selectAll" label="全选" size="large" /&gt;
     &lt;ss-table
       :tableData="tableData"
@@ -14,7 +14,7 @@
       @currentChange="currentChange" 
     &gt;
       &lt;template #age="{ scope }"&gt;
-        &lt;span class="blue" &gt;{ { scope.row.age } }&lt;/span&gt;
+        &lt;span class="text-sky-600" &gt;{ { scope.row.age } }&lt;/span&gt;
       &lt;/template&gt;
       &lt;template #option="{}"&gt;
         &lt;el-text type="primary" &gt;做点什么&lt;/el-text&gt;

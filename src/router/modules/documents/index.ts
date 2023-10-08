@@ -27,19 +27,6 @@ const DOCUMENTS: RouterType = {
       component: () => import('@/views/sys/documents/utils/index.vue'),
       children: []
     },
-    {
-      path: '/documents/style',
-      name: 'style',
-      meta: {
-        title: '原子化css',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: true,
-        role: ['admin', 'superadmin', 'user']
-      },
-      component: () => import('@/views/sys/documents/style-show/index.vue'),
-      children: []
-    },
     components,
     echarts,
     directives

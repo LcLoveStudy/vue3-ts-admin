@@ -11,10 +11,10 @@
       <ss-breadcrumb />
     </div>
     <top-menu v-if="changeMenu" />
-    <div class="width-250 flex items-center mr-25">
+    <div class="flex items-center mr-6">
       <!-- 切换菜单位置 -->
       <el-switch
-        class="mr-25"
+        class="mr-6"
         v-model="changeMenu"
         inline-prompt
         active-text="头部菜单"
@@ -22,7 +22,7 @@
         @change="menuChange"
       />
       <!-- 全屏 -->
-      <el-icon class="mr-25 hover-pointer" @click="fullScreen"><FullScreen /></el-icon>
+      <el-icon class="mr-6 cursor-pointer" @click="fullScreen"><FullScreen /></el-icon>
       <!-- 下拉框 -->
       <el-dropdown>
         <span class="logout_btn">

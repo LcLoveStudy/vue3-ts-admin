@@ -5,10 +5,10 @@
     :total="130"
     @current-change="change"
   />
-  <h3 class="mt-25">示例</h3>
+  <h3 class="mt-6">示例</h3>
   <!-- 示例代码 -->
   <pre>
-    <code class="language-html fs-14">
+    <code class="language-html text-sm">
     &lt;ss-pagination
       v-model:current="current"
       v-model:size="size"

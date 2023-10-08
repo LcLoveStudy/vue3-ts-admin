@@ -7,15 +7,15 @@
       bar-color="#000"
       :rules="[
         { min: 100, max: 199, color: 'pink' },
-        { min: 200, max: 299, color: 'skyblue' }
+        { min: 200, max: 299, color: 'skytext-sky-600' }
       ]"
       :value="[120, 200, 150, 80, 70, 110, 130]"
       :reverse="true"
     />
     <!-- 代码展示 -->
-    <pre class="width-800">
+    <pre class="w-200">
         <h1>示例代码</h1>
-        <code class="language-html fs-14">
+        <code class="language-html text-sm">
         &lt;bar-chart
             :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
             x-axis-name="星期"
@@ -23,7 +23,7 @@
             bar-color="#000"
             :rules="[
               { min: 100, max: 199, color: 'pink' },
-              { min: 200, max: 299, color: 'skyblue' }
+              { min: 200, max: 299, color: 'skytext-sky-600' }
             ]"
             :value="[120, 200, 150, 80, 70, 110, 130]"
             :reverse="true"
