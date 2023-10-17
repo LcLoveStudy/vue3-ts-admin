@@ -56,7 +56,6 @@
 
 <script setup lang="ts">
   import { type TableColType, type PageType } from './auto-table'
-  import { objectCopy } from '@/utils'
   import type { ElTable } from 'element-plus'
   defineOptions({
     name: 'SsTable'
@@ -132,10 +131,7 @@
   /** 表头数据 */
   const colData = ref<Array<TableColType>>([])
   const createColumnData = () => {
-    // 通过order对显示数据进行排序
     colData.value = props.columnData
-      .slice()
-      .sort((a: any, b: any) => a?.order - b?.order) as Array<TableColType>
   }
   createColumnData()
 

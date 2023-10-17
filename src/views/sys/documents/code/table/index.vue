@@ -34,13 +34,11 @@
     {
       prop: 'name',
       label: '姓名',
-      order: 1,
       width: '100'
     },
     {
       prop: 'sex',
       label: '性别',
-      order: 3,
       filters: [
         { text: '男', value: '男' },
         { text: '女', value: '女' }
@@ -53,16 +51,11 @@
     {
       prop: 'age',
       label: '年龄',
-      order: 2,
-      width: '',
       sortable: true
     },
     {
       prop: 'option',
-      label: '操作',
-      order: 4,
-      width: '',
-      sortable: false
+      label: '操作'
     }
   ])
 
@@ -173,12 +166,6 @@
       propName: 'label',
       mean: '在表头显示的字段中文名',
       type: 'string',
-      default: '-'
-    },
-    {
-      propName: 'order',
-      mean: '该列在表格中是第几列',
-      type: 'number',
       default: '-'
     },
     {
