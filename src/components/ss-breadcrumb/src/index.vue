@@ -7,9 +7,9 @@
         </template>
         <template v-else>
           <el-dropdown>
-            <div>
+            <div class="dropdown_item">
               {{ route.title }}
-              <el-icon>
+              <el-icon class="icon_down">
                 <arrow-down />
               </el-icon>
             </div>
@@ -46,43 +46,43 @@
   }
   // 用于渲染面包屑导航的数组
   const breadCrumbs = ref<Array<BreadCrumbsType>>([])
-
+  /**
+   * 创建面包屑导航
+   * @param {RouterType[]} RouteList 当前路由的子路由表
+   * @param {string[]} targetNameList 要查找的名称
+   */
+  const findRoute = (RouteList: RouterType[], targetNameList: string[]) => {
+    if (targetNameList.length === 0) return
+    targetNameList.forEach((item) => {
+      RouteList.forEach((routeItem) => {
+        if (routeItem.path.split('/').at(-1) === item && !routeItem.meta.hideBreadcrumb) {
+          breadCrumbs.value.push({
+            title: routeItem.meta.title,
+            path: routeItem.path,
+            children: routeItem.children.filter((r) => !r.meta.hideBreadcrumb)
+          })
+          findRoute(
+            routeItem.children,
+            targetNameList.filter((target) => target !== item)
+          )
+        }
+      })
+    })
+  }
   // 监听路由变化，当路由改变时，切割路由形成面包屑
   watch(
     () => route,
     (newValue) => {
       breadCrumbs.value = []
-      const moduleName: string = newValue.path.split('/')[1]
-      // 最外层面包屑
-      routes.forEach((item) => {
-        if (item.name === moduleName && !item.meta.hideChildrenInMenu) {
-          breadCrumbs.value.push({
-            title: item.meta.title as string,
-            path: item.path,
-            children: item.children
-          })
-        }
+      // 当前路由切割生成的数组
+      const moduleList = newValue.path.split('/').filter((item) => item !== '')
+      const currentModule = routes.filter((item) => item.path === '/' + moduleList[0])[0]
+      breadCrumbs.value.push({
+        title: currentModule.meta.title,
+        path: currentModule.path,
+        children: currentModule.children.filter((r) => !r.meta.hideBreadcrumb)
       })
-      // 二级面包屑和之后的
-      newValue.matched.forEach((item) => {
-        if (item.path.split('/')[1] === moduleName) {
-          if (!item.meta.hideBreadcrumb) {
-            breadCrumbs.value.push({
-              title: item.meta.title as string,
-              path: item.path,
-              children: (() => {
-                const childs: Array<RouterType> = []
-                ;(item.children as RouterType[]).forEach((child: RouterType) => {
-                  if (!child.meta.hideBreadcrumb) {
-                    childs.push(child)
-                  }
-                })
-                return childs as unknown as RouterType[]
-              })()
-            })
-          }
-        }
-      })
+      findRoute(currentModule.children, moduleList)
     },
     { immediate: true, deep: true }
   )
