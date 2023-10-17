@@ -15,6 +15,21 @@
         -> 00:01:20
       </div>
     </el-card>
+    <!-- 获取某个日期位于当年的第几天 -->
+    <el-card class="w-100 height-full ml-5">
+      <div class="fs-base font-semibold text-red-700">
+        获取某个日期位于当年的第几天(dayOfYear)
+        <el-icon class="cursor-pointer" @click="copyUtils('dayOfYear')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-2.5">获取某个日期位于当年的第几天</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <span class="text-orange-500">dayOfYear</span>
+        <span class="text-sky-600">(new Date('2023-2-1'))</span>
+        -> 32
+      </div>
+    </el-card>
   </div>
 </template>
 
