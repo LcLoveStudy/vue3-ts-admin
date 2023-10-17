@@ -50,7 +50,6 @@
 
 <script setup lang="ts">
   import { BarChart } from '@/components/echarts'
-  import BarTest from '@/components/echarts/bar/src/index-test.vue'
   import HowToUseTable from '../components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const howToUse = [
