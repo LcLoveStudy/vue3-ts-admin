@@ -25,19 +25,6 @@ export default {
       component: () => import('@/views/sys/documents/code/richEditor.vue')
     },
     {
-      path: '/documents/code/table',
-      name: 'table',
-      meta: {
-        title: '表格Table',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: false,
-        role: ['admin', 'superadmin', 'user']
-      },
-      children: [],
-      component: () => import('@/views/sys/documents/code/table/index.vue')
-    },
-    {
       path: '/documents/code/pagination',
       name: 'pagination',
       meta: {
