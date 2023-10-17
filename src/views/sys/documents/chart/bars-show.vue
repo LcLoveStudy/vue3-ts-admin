@@ -1,43 +1,46 @@
 <template>
   <div class="flex justify-around items-center">
     <bar-chart
-      :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
-      x-axis-name="国家"
-      y-axis-name="人数"
-      :value="[
+      :data="[
         {
-          name: '2011',
-          data: [18203, 23489, 29034, 104970],
-          color: 'red'
+          series: '2022',
+          names: ['Brazil', 'Indonesia', 'USA', 'Chain'],
+          values: [18203, 23489, 29034, 104970],
+          color: 'skyblue'
         },
         {
-          name: '2012',
-          data: [18224, 23600, 30000, 124970],
-          color: 'skytext-sky-600'
+          series: '2023',
+          names: ['Brazil', 'Indonesia', 'USA', 'Chain'],
+          values: [18224, 23600, 30000, 124970],
+          color: 'red'
         }
       ]"
+      x-axis-name="星期"
+      y-axis-name="次数"
+      reverse
     />
     <!-- 代码展示 -->
     <pre class="w-200">
         <h1>示例代码</h1>
         <code class="language-html text-sm">
         &lt;bar-chart
-            type="bars"
-            :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
-            x-axis-name="国家"
-            y-axis-name="人数"
-            :value="[
-                {
-                    name: '2011',
-                    data: [18203, 23489, 29034, 104970],
-                    color: 'red'
-                },
-                {
-                    name: '2012',
-                    data: [18224, 23600, 30000, 124970],
-                    color: 'skytext-sky-600'
-                }
+            :data="[
+              {
+                series: '2022',
+                names: ['Brazil', 'Indonesia', 'USA', 'Chain'],
+                values: [18203, 23489, 29034, 104970],
+                color: 'skyblue'
+              },
+              {
+                series: '2023',
+                names: ['Brazil', 'Indonesia', 'USA', 'Chain'],
+                values: [18224, 23600, 30000, 124970],
+                color: 'red'
+              }
             ]"
+            x-axis-name="星期"
+            y-axis-name="次数"
+            reverse
         />
         </code>
       </pre>
@@ -54,15 +57,9 @@
   })
   const howToUse = [
     {
-      propName: 'xData(必填)',
+      propName: 'data(必填)',
       mean: 'x轴上的刻度',
-      type: 'Array<string>',
-      default: '-'
-    },
-    {
-      propName: 'value(必填)',
-      mean: '显示的值,与xData的长度和下标保持一致',
-      type: 'Array<{name:string,data:number[],color?:string}>',
+      type: 'Array<{series: string;names: string[];values: number[];color?: string}>',
       default: '-'
     },
     {

@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useColor } from '@/utils'
+  import { getType, useColor } from '@/utils'
   import {
     type RuleType,
     type SeriesType,
@@ -215,9 +215,38 @@
         })
       }
     }
+    // else if (type === 'bars') {
+    //   ;(values as unknown as SeriesType[]).forEach((item) => {
+    //     series.value.push({
+    //       type: 'bar',
+    //       name: item.name,
+    //       data: item.data,
+    //       label: {
+    //         show: true,
+    //         position: props.reverse ? 'right' : 'top',
+    //         color: props.textColor,
+    //         fontSize: 12
+    //       }
+    //     })
+    //     if (item.color) {
+    //       colorList.value.push(item.color)
+    //     }
+    //   })
+    // for (let i = 0; i <= props.value!.length - 1; i++) {
+    //   colorList.value.push(useColor())
+    // }
+    // }
   }
 
   onMounted(() => {
+    // props.value && getType(props.value[0]) === 'number' ? (type = 'bar') : (type = 'bars')
+    // if (type === 'bars') {
+    //   ;(props.value as SeriesType[]).forEach((item) => {
+    //     if (!item.name || !item.data) {
+    //       console.error('多柱子柱状图的value每项应该至少包含name和data属性')
+    //     }
+    //   })
+    // }
     barColorHandler()
     initChart()
   })

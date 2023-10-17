@@ -1,32 +1,46 @@
 <template>
   <div class="flex justify-around items-center">
     <bar-chart
-      :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+      :data="[
+        { name: 'Mon', value: 120 },
+        { name: 'Tue', value: 201 },
+        { name: 'Wed', value: 150 },
+        { name: 'Thu', value: 80 },
+        { name: 'Fri', value: 70 },
+        { name: 'Sat', value: 110 },
+        { name: 'Sun', value: 130 }
+      ]"
       x-axis-name="星期"
       y-axis-name="次数"
       bar-color="#000"
       :rules="[
         { min: 100, max: 199, color: 'pink' },
-        { min: 200, max: 299, color: 'skytext-sky-600' }
+        { min: 200, max: 299, color: 'skyblue' }
       ]"
-      :value="[120, 200, 150, 80, 70, 110, 130]"
-      :reverse="true"
+      reverse
     />
     <!-- 代码展示 -->
     <pre class="w-200">
         <h1>示例代码</h1>
         <code class="language-html text-sm">
         &lt;bar-chart
-            :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+            :data="[
+              { name: 'Mon', value: 120 },
+              { name: 'Tue', value: 201 },
+              { name: 'Wed', value: 150 },
+              { name: 'Thu', value: 80 },
+              { name: 'Fri', value: 70 },
+              { name: 'Sat', value: 110 },
+              { name: 'Sun', value: 130 }
+            ]"
             x-axis-name="星期"
             y-axis-name="次数"
             bar-color="#000"
             :rules="[
               { min: 100, max: 199, color: 'pink' },
-              { min: 200, max: 299, color: 'skytext-sky-600' }
+              { min: 200, max: 299, color: 'skyblue' }
             ]"
-            :value="[120, 200, 150, 80, 70, 110, 130]"
-            :reverse="true"
+            reverse
         />
         </code>
       </pre>
@@ -36,19 +50,14 @@
 
 <script setup lang="ts">
   import { BarChart } from '@/components/echarts'
+  import BarTest from '@/components/echarts/bar/src/index-test.vue'
   import HowToUseTable from '../components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const howToUse = [
     {
-      propName: 'xData',
-      mean: 'x轴上的刻度(必填)',
-      type: 'Array<string>',
-      default: '-'
-    },
-    {
-      propName: 'value',
-      mean: '显示的值,与xData的长度和下标保持一致(必填)',
-      type: 'Array<number>',
+      propName: 'data',
+      mean: '图表数据',
+      type: 'Array<{name: string;value: number}>',
       default: '-'
     },
     {
