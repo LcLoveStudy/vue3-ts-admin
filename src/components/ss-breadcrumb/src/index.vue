@@ -7,7 +7,7 @@
         </template>
         <template v-else>
           <el-dropdown>
-            <div class="cursor-pointer">
+            <div>
               {{ route.title }}
               <el-icon>
                 <arrow-down />
@@ -70,7 +70,15 @@
             breadCrumbs.value.push({
               title: item.meta.title as string,
               path: item.path,
-              children: item.children as RouterType[]
+              children: (() => {
+                const childs: Array<RouterType> = []
+                ;(item.children as RouterType[]).forEach((child: RouterType) => {
+                  if (!child.meta.hideBreadcrumb) {
+                    childs.push(child)
+                  }
+                })
+                return childs as unknown as RouterType[]
+              })()
             })
           }
         }
