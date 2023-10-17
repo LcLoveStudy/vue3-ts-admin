@@ -68,8 +68,6 @@
 
   // 表格键名
   let keys: string[] = []
-  // 表格数据(单个柱子时使用)
-  let values: number[] = []
 
   // 判断类型
   let type = 'bar'
@@ -163,7 +161,6 @@
   /** 对传递来的数据进行处理 */
   const initPropsDataHandler = () => {
     keys = []
-    values = []
     props.data.forEach((item) => {
       if (!Object.keys(item).includes('series')) {
         type = 'bar'
