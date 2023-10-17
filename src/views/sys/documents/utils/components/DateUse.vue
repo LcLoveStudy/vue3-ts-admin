@@ -40,5 +40,3 @@
     useCopy(FunName)
   }
 </script>
-
-<style scoped lang="less"></style>
