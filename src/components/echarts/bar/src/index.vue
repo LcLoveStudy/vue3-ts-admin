@@ -68,7 +68,7 @@
 
   // 表格键名
   let keys: string[] = []
-  // 表格数据
+  // 表格数据(单个柱子时使用)
   let values: number[] = []
 
   // 判断类型
@@ -160,12 +160,11 @@
             ]
     })
   }
-
-  /** 处理柱子的颜色 */
-  const barColorHandler = () => {
+  /** 对传递来的数据进行处理 */
+  const initPropsDataHandler = () => {
     keys = []
     values = []
-    props.data.forEach((item, index) => {
+    props.data.forEach((item) => {
       if (Object.keys(item).length === 2) {
         type = 'bar'
         keys.push((item as SingBarDataType).name)
@@ -184,16 +183,12 @@
             fontSize: 12
           }
         })
-
-        if ((item as MultiBarDataType).color) {
-          colorList.value.push((item as MultiBarDataType).color as string)
-        } else {
-          for (let i = 0; i <= props.data!.length - 1; i++) {
-            colorList.value.push(useColor())
-          }
-        }
       }
     })
+  }
+
+  /** 处理柱子的颜色 */
+  const barColorHandler = () => {
     if (type === 'bar') {
       // 处理每个柱子的颜色
       values.forEach((item) => {
@@ -214,10 +209,22 @@
           })
         })
       }
+    } else if (type === 'bars') {
+      // 对多柱图的颜色进行处理，是否指定了颜色，若没有就随机
+      props.data.forEach((item) => {
+        if ((item as MultiBarDataType).color) {
+          colorList.value.push((item as MultiBarDataType).color as string)
+        } else {
+          for (let i = 0; i <= props.data!.length - 1; i++) {
+            colorList.value.push(useColor())
+          }
+        }
+      })
     }
   }
 
   onMounted(() => {
+    initPropsDataHandler()
     barColorHandler()
     initChart()
   })
