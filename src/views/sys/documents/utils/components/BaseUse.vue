@@ -72,7 +72,7 @@
   }
 
   // 获取随机颜色
-  const randomColor = ref('')
+  const randomColor = ref(useColor())
   const getRandomColor = () => {
     randomColor.value = useColor()
   }
