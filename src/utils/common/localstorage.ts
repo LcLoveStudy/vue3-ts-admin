@@ -19,7 +19,7 @@ export const setItem = (key: LocalStorageKeys, value: any) => {
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const getItem = (key: LocalStorageKeys): any => {
+export const getItem = <T>(key: LocalStorageKeys): T => {
   return JSON.parse(localStorage.getItem(key) || JSON.stringify(''))
 }
 

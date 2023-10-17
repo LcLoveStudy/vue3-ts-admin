@@ -3,7 +3,7 @@
  * @param timeStamp 秒数
  * @returns 时分秒的格式
  */
-export const hourFormat = (timeStamp: number) => {
+export const hourFormat = (timeStamp: number): string => {
   let hours = parseInt((timeStamp / 60 / 60).toString()).toString()
   let minute = parseInt(((timeStamp - Number(hours) * 60 * 60) / 60).toString()).toString()
   let second = (timeStamp - Number(hours) * 60 * 60 - Number(minute) * 60).toString()
