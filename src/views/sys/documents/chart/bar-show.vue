@@ -5,8 +5,8 @@
         { name: 'Mon', value: 120 },
         { name: 'Tue', value: 201 },
         { name: 'Wed', value: 150 },
-        { name: 'Thu', value: 80 },
-        { name: 'Fri', value: 70 },
+        { name: 'Thu', value: 80, color: 'green' },
+        { name: 'Fri', value: 70, color: 'yellow' },
         { name: 'Sat', value: 110 },
         { name: 'Sun', value: 130 }
       ]"
@@ -28,8 +28,8 @@
               { name: 'Mon', value: 120 },
               { name: 'Tue', value: 201 },
               { name: 'Wed', value: 150 },
-              { name: 'Thu', value: 80 },
-              { name: 'Fri', value: 70 },
+              { name: 'Thu', value: 80, color: 'green' },
+              { name: 'Fri', value: 70, color: 'yellow'},
               { name: 'Sat', value: 110 },
               { name: 'Sun', value: 130 }
             ]"
@@ -56,7 +56,7 @@
     {
       propName: 'data',
       mean: '图表数据',
-      type: 'Array<{name: string;value: number}>',
+      type: 'Array<{name: string;value: number;color?:string}>',
       default: '-'
     },
     {

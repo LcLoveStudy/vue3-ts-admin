@@ -9,6 +9,7 @@ export type RuleType = {
 export type SingBarDataType = {
   name: string
   value: number
+  color?: string
 }
 
 // 多个柱子的data类型

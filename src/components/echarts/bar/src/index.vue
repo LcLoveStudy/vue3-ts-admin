@@ -165,10 +165,9 @@
     keys = []
     values = []
     props.data.forEach((item) => {
-      if (Object.keys(item).length === 2) {
+      if (!Object.keys(item).includes('series')) {
         type = 'bar'
         keys.push((item as SingBarDataType).name)
-        values.push((item as SingBarDataType).value)
       } else {
         type = 'bars'
         keys = (item as MultiBarDataType).names
@@ -191,12 +190,16 @@
   const barColorHandler = () => {
     if (type === 'bar') {
       // 处理每个柱子的颜色
-      values.forEach((item) => {
+      props.data.forEach((item) => {
         chartValue.value.push({
           itemStyle: {
-            color: props.barColor ? props.barColor : useColor()
+            color: (item as SingBarDataType).color
+              ? ((item as SingBarDataType).color as string)
+              : props.barColor
+              ? props.barColor
+              : useColor()
           },
-          value: item as number
+          value: (item as SingBarDataType).value
         })
       })
       // 通过规则设置柱子颜色
