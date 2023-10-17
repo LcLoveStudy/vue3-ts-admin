@@ -15,23 +15,6 @@
         -> { a:1 , b:1 , c:1 }
       </div>
     </el-card>
-    <!-- 深度对象冻结，阻止vue劫持对象，提升性能。 -->
-    <el-card class="w-100 height-full ml-5">
-      <div class="fs-base font-semibold text-red-700">
-        深度对象冻结(deepFreeze)
-        <el-icon class="cursor-pointer" @click="copyUtils('deepFreeze')">
-          <DocumentCopy />
-        </el-icon>
-      </div>
-      <div class="mt-2.5">
-        深度对象冻结，阻止vue劫持对象，提升性能。被冻结的对象和返回的对象都会被冻结，不可以再次修改
-      </div>
-      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
-        <span class="text-orange-500">deepFreeze</span>
-        <span class="text-sky-600">({ a:1 , b:1 , c:1 })</span>
-        -> { a:1 , b:1 , c:1 }
-      </div>
-    </el-card>
   </div>
 </template>
 
