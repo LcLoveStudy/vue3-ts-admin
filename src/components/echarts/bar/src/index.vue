@@ -66,8 +66,8 @@
     }
   })
 
-  // 表格键名
-  let keys: string[] = []
+  // 图表键名
+  let xAxisData: string[] = []
 
   // 判断类型
   let type = 'bar'
@@ -104,7 +104,7 @@
       },
       xAxis: {
         type: props.reverse ? 'value' : 'category',
-        data: props.reverse ? [] : keys,
+        data: props.reverse ? [] : xAxisData,
         name: props.reverse ? props.yAxisName : props.xAxisName,
         nameTextStyle: {
           color: props.textColor
@@ -125,7 +125,7 @@
       },
       yAxis: {
         type: props.reverse ? 'category' : 'value',
-        data: props.reverse ? keys : [],
+        data: props.reverse ? xAxisData : [],
         name: props.reverse ? props.xAxisName : props.yAxisName,
         nameTextStyle: {
           color: props.textColor
@@ -160,18 +160,20 @@
   }
   /** 对传递来的数据进行处理 */
   const initPropsDataHandler = () => {
-    keys = []
+    xAxisData = []
     props.data.forEach((item) => {
+      // 通过是否有series属性判断是单柱还是多柱
       if (!Object.keys(item).includes('series')) {
         type = 'bar'
-        keys.push((item as SingBarDataType).name)
+        xAxisData.push((item as SingBarDataType).name)
       } else {
         type = 'bars'
-        keys = (item as MultiBarDataType).names
+        const muliteItem = item as MultiBarDataType
+        xAxisData = muliteItem.names
         series.value.push({
           type: 'bar',
-          name: (item as MultiBarDataType).series,
-          data: (item as MultiBarDataType).values,
+          name: muliteItem.series,
+          data: muliteItem.values,
           label: {
             show: true,
             position: props.reverse ? 'right' : 'top',
@@ -187,16 +189,16 @@
   const barColorHandler = () => {
     if (type === 'bar') {
       // 处理每个柱子的颜色
-      props.data.forEach((item) => {
+      ;(props.data as SingBarDataType[]).forEach((item) => {
         chartValue.value.push({
           itemStyle: {
-            color: (item as SingBarDataType).color
-              ? ((item as SingBarDataType).color as string)
+            color: item.color
+              ? (item.color as string)
               : props.barColor
               ? props.barColor
               : useColor()
           },
-          value: (item as SingBarDataType).value
+          value: item.value
         })
       })
       // 通过规则设置柱子颜色
@@ -211,9 +213,9 @@
       }
     } else if (type === 'bars') {
       // 对多柱图的颜色进行处理，是否指定了颜色，若没有就随机
-      props.data.forEach((item) => {
-        if ((item as MultiBarDataType).color) {
-          colorList.value.push((item as MultiBarDataType).color as string)
+      ;(props.data as MultiBarDataType[]).forEach((item) => {
+        if (item.color) {
+          colorList.value.push(item.color as string)
         } else {
           for (let i = 0; i <= props.data!.length - 1; i++) {
             colorList.value.push(useColor())

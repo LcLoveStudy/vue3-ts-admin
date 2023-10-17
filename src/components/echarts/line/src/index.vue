@@ -94,7 +94,12 @@
           type: 'shadow'
         }
       },
-      legend: type === 'lines' ? legend : {},
+      legend:
+        type === 'lines'
+          ? legend
+          : {
+              type: 'scroll'
+            },
       xAxis: {
         type: 'category',
         data: props.xData,
