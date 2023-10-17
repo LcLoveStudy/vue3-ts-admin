@@ -61,60 +61,6 @@
         </div>
       </div>
     </el-card>
-    <!-- 存储localStorage(setItem) -->
-    <el-card class="w-100 ml-5">
-      <div class="text-base font-semibold text-red-700">
-        存储localStorage(setItem)
-        <el-icon class="cursor-pointer" @click="copyUtils('setItem')">
-          <DocumentCopy />
-        </el-icon>
-      </div>
-      <div class="mt-2.5">将数据存储到localstorage中</div>
-      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
-        <div class="mt-1">
-          <span class="text-orange-500">setItem</span>
-          <span class="text-sky-600">('userid','12345')</span>
-          -> 存储成功
-        </div>
-      </div>
-    </el-card>
-    <!-- 获取存储到localStorage的数据(getItem) -->
-    <el-card class="w-100 ml-5 mt-5">
-      <div class="text-base font-semibold text-red-700">
-        获取存储到localStorage的数据(getItem)
-        <el-icon class="cursor-pointer" @click="copyUtils('getItem')">
-          <DocumentCopy />
-        </el-icon>
-      </div>
-      <div class="mt-2.5">获取存储到localStorage的数据</div>
-      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
-        <div class="mt-5">
-          <span class="text-orange-500">getItem</span>
-          <span class="text-sky-600">('userid')</span>
-          -> 12345
-        </div>
-      </div>
-    </el-card>
-    <!-- 删除存储到localStorage的数据(removeItem) -->
-    <el-card class="w-100 ml-5 mt-5">
-      <div class="text-base font-semibold text-red-700">
-        删除存储到localStorage的数据(removeItem)
-        <el-icon class="cursor-pointer" @click="copyUtils('removeItem')">
-          <DocumentCopy />
-        </el-icon>
-      </div>
-      <div class="mt-2.5">删除存储到localStorage的数据,不传参数则删除所有</div>
-      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
-        <div class="mt-1">
-          <span class="text-orange-500">removeItem</span>
-          <span class="text-sky-600">('userid')</span>
-          -> 删除userid
-          <span class="text-orange-500">removeItem</span>
-          <span class="text-sky-600">()</span>
-          -> 删除所有存储的内容
-        </div>
-      </div>
-    </el-card>
   </div>
 </template>
 

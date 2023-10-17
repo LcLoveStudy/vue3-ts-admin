@@ -72,5 +72,3 @@
     window.open(link)
   }
 </script>
-
-<style scoped lang="less"></style>
