@@ -1,46 +1,48 @@
 <template>
   <div class="flex justify-around items-center">
     <line-chart
-      :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
       x-axis-name="人数"
       y-axis-name="国家"
-      :value="[
+      :data="[
         {
-          name: '2011',
-          data: [18203, 23489, 29034, 104970],
+          names: ['Brazil', 'Indonesia', 'USA', 'China'],
+          series: '2011',
+          values: [18203, 23489, 29034, 104970],
           color: 'red'
         },
         {
-          name: '2012',
-          data: [18224, 23600, 30000, 124970],
-          color: 'skytext-sky-600'
+          names: ['Brazil', 'Indonesia', 'USA', 'China'],
+          series: '2012',
+          values: [18224, 23600, 30000, 124970],
+          color: 'skyblue'
         }
       ]"
-      :smooth="true"
-      :area="true"
+      smooth
+      area
     />
     <!-- 代码展示 -->
     <pre class="w-200">
         <h1>示例代码</h1>
         <code class="language-html text-sm">
         &lt;line-chart
-            :x-data="['Brazil', 'Indonesia', 'USA', 'China']"
-            x-axis-name="人数"
-            y-axis-name="国家"
-            :value="[
-              {
-                name: '2011',
-                data: [18203, 23489, 29034, 104970],
-                color: 'red'
-              },
-              {
-                name: '2012',
-                data: [18224, 23600, 30000, 124970],
-                color: 'skytext-sky-600'
-              }
-            ]"
-            :smooth="true"
-            :area="true"
+              x-axis-name="人数"
+              y-axis-name="国家"
+              :data="[
+                {
+                  names: ['Brazil', 'Indonesia', 'USA', 'China'],
+                  series: '2011',
+                  values: [18203, 23489, 29034, 104970],
+                  color: 'red'
+                },
+                {
+                  names: ['Brazil', 'Indonesia', 'USA', 'China'],
+                  series: '2012',
+                  values: [18224, 23600, 30000, 124970],
+                  color: 'skyblue'
+                }
+              ]"
+              smooth
+              area
         />
         </code>
       </pre>

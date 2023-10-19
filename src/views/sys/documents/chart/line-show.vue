@@ -1,24 +1,38 @@
 <template>
   <div class="flex justify-around items-center">
     <line-chart
-      :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+      :data="[
+        { name: 'Mon', value: 120 },
+        { name: 'Tue', value: 200 },
+        { name: 'Wed', value: 150 },
+        { name: 'Thu', value: 80 },
+        { name: 'Fri', value: 70 },
+        { name: 'Sat', value: 110 },
+        { name: 'Sun', value: 130 }
+      ]"
       x-axis-name="星期"
       y-axis-name="次数"
-      :value="[120, 200, 150, 80, 70, 110, 130]"
-      :smooth="true"
-      :area="true"
+      smooth
+      area
     />
     <!-- 代码展示 -->
     <pre class="w-200">
         <h1>示例代码</h1>
         <code class="language-html text-sm">
         &lt;line-chart
-            :x-data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+            :data="[
+              { name: 'Mon', value: 120 },
+              { name: 'Tue', value: 200 },
+              { name: 'Wed', value: 150 },
+              { name: 'Thu', value: 80 },
+              { name: 'Fri', value: 70 },
+              { name: 'Sat', value: 110 },
+              { name: 'Sun', value: 130 }
+            ]"
             x-axis-name="星期"
             y-axis-name="次数"
-            :value="[120, 200, 150, 80, 70, 110, 130]"
-            :smooth="true"
-            :area="true"
+            smooth
+            area
         />
         </code>
       </pre>

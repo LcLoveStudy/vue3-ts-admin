@@ -9,20 +9,16 @@
 </template>
 
 <script setup lang="ts">
-  import { getType, useColor } from '@/utils'
-  import { type LineSeriesType } from './line-chart'
+  import { useColor } from '@/utils'
+  import { type MultiLineSeriesType, type SingleLineDataType } from './line-chart'
   import * as echarts from 'echarts'
+  import type { PropType } from 'vue'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = Math.random().toString()
   const props = defineProps({
     // x轴的坐标
-    xData: {
-      type: Array,
-      required: true
-    },
-    // 值
-    value: {
-      type: Array,
+    data: {
+      type: Array as PropType<SingleLineDataType[] | MultiLineSeriesType[]>,
       required: true
     },
     // x轴的名称
@@ -63,6 +59,9 @@
       default: '400px'
     }
   })
+  /** x轴的数据 */
+  let xData: string[] = []
+  const singleLineValue: number[] = []
 
   // 判断是多条还是一条
   let type = 'line'
@@ -72,15 +71,16 @@
     data: [] as string[]
   }
   // 用于显示多折线的series
-  const series: Array<
-    {
-      type: string
-      stack: string
-      smooth: boolean
-      areaStyle: object | null
-      emphasis: { focus: string }
-    } & LineSeriesType
-  > = []
+  const series: Array<{
+    name: string
+    data: number[]
+    label: {}
+    type: string
+    stack: string
+    smooth: boolean
+    areaStyle: object | null
+    emphasis: { focus: string }
+  }> = []
   // 用于显示多折线的颜色
   const colorList: string[] = []
 
@@ -102,7 +102,7 @@
             },
       xAxis: {
         type: 'category',
-        data: props.xData,
+        data: xData,
         name: props.xAxisName,
         nameTextStyle: {
           color: props.textColor
@@ -145,7 +145,7 @@
           ? series
           : [
               {
-                data: props.value,
+                data: singleLineValue,
                 type: 'line',
                 smooth: props.smooth,
                 areaStyle: props.area ? {} : null,
@@ -160,16 +160,24 @@
     })
   }
 
-  /** 处理折线的颜色 */
-  const lineColorHandler = () => {
-    if (type === 'lines') {
-      ;(props.value as LineSeriesType[]).forEach((item) => {
-        legend.data.push(item.name)
+  /** 处理数据 */
+  const propDataHandler = () => {
+    props.data.forEach((item) => {
+      if (!Object.keys(item).includes('series')) {
+        const singleItem = item as SingleLineDataType
+        type = 'line'
+        xData.push(singleItem.name)
+        singleLineValue.push(singleItem.value)
+      } else {
+        const multiItem = item as MultiLineSeriesType
+        type = 'lines'
+        legend.data.push(multiItem.series)
+        xData = multiItem.names
         series.push({
-          name: item.name,
+          name: multiItem.series,
           type: 'line',
           stack: 'Total',
-          data: item.data,
+          data: multiItem.values,
           smooth: props.smooth,
           areaStyle: props.area ? {} : null,
           emphasis: {
@@ -182,27 +190,25 @@
             fontSize: 12
           }
         })
-        if (item.color) {
-          colorList.push(item.color)
+        if (multiItem.color) {
+          colorList.push(multiItem.color)
         }
-      })
-    } else if (type === 'line' && props.lineColor) {
+      }
+    })
+  }
+
+  /** 处理折线的颜色 */
+  const lineColorHandler = () => {
+    if (type === 'line' && props.lineColor) {
       colorList.push(props.lineColor)
     }
-    for (let i = 0; i <= props.value.length - 1; i++) {
+    for (let i = 0; i <= singleLineValue.length - 1; i++) {
       colorList.push(useColor())
     }
   }
 
   onMounted(() => {
-    getType(props.value[0]) === 'number' ? (type = 'line') : (type = 'lines')
-    if (type === 'lines') {
-      ;(props.value as LineSeriesType[]).forEach((item) => {
-        if (!item.data || !item.name) {
-          console.error('多折线图的value每项应该至少包含name和data属性')
-        }
-      })
-    }
+    propDataHandler()
     lineColorHandler()
     initChart()
   })

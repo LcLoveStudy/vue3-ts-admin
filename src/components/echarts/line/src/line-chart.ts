@@ -1,6 +1,11 @@
-export type LineSeriesType = {
-  name: string
-  data: Array<number>
+export type MultiLineSeriesType = {
+  series: string
+  names: string[]
+  values: number[]
   color?: string
-  label?: {}
+}
+
+export type SingleLineDataType = {
+  name: string
+  value: number
 }
