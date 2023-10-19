@@ -49,15 +49,9 @@
   })
   const howToUse = [
     {
-      propName: 'xData(必填)',
-      mean: 'x轴上的刻度',
-      type: 'Array<string>',
-      default: '-'
-    },
-    {
-      propName: 'value(必填)',
-      mean: '显示的值,与xData的长度和下标保持一致',
-      type: 'Array<number>',
+      propName: 'data(必填)',
+      mean: '图表数据',
+      type: 'Array<{name: string;value: number}>',
       default: '-'
     },
     {
