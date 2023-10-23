@@ -47,11 +47,15 @@
   const colorList: string[] = []
   // 用于显示的data
   const chartData: any[] = []
-
+  const chartDom = ref()
   /** 初始化chart */
   const initChart = () => {
-    const chartDom = document.getElementById(chartId) as HTMLDivElement
-    echarts.init(chartDom).setOption({
+    chartDom.value = echarts.init(document.getElementById(chartId) as HTMLDivElement)
+    setOptions()
+  }
+
+  const setOptions = () => {
+    chartDom.value.setOption({
       tooltip: {
         trigger: 'item'
       },
@@ -96,7 +100,8 @@
     })
   }
 
-  onMounted(() => {
+  /** 处理颜色 */
+  const pieColorHandler = () => {
     for (let i = 0; i <= props.data.length - 1; i++) {
       colorList.push(useColor())
     }
@@ -105,6 +110,22 @@
         console.error('饼图的data每项应该至少包含name和value属性')
       }
     })
+  }
+
+  watch(
+    () => props.data,
+    () => {
+      dataHandler()
+      pieColorHandler()
+      setOptions()
+    },
+    {
+      deep: true
+    }
+  )
+
+  onMounted(() => {
+    pieColorHandler()
     dataHandler()
     initChart()
   })

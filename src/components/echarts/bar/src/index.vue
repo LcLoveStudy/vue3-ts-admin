@@ -87,11 +87,14 @@
 
   // 当type为bars时用于显示series
   const series = ref<Array<{ type: string } & SeriesType>>([])
-
+  const chartDom = ref()
   /** 初始化chart */
   const initChart = () => {
-    const chartDom = document.getElementById(chartId) as HTMLDivElement
-    echarts.init(chartDom).setOption({
+    chartDom.value = echarts.init(document.getElementById(chartId) as HTMLDivElement)
+    setOptions()
+  }
+  const setOptions = () => {
+    chartDom.value.setOption({
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -224,6 +227,17 @@
       })
     }
   }
+  watch(
+    () => props.data,
+    () => {
+      initPropsDataHandler()
+      barColorHandler()
+      setOptions()
+    },
+    {
+      deep: true
+    }
+  )
 
   onMounted(() => {
     initPropsDataHandler()
