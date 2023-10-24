@@ -46,7 +46,7 @@
   // 颜色列表
   const colorList: string[] = []
   // 用于显示的data
-  const chartData: any[] = []
+  let chartData: any[] = []
   const chartDom = ref()
   /** 初始化chart */
   const initChart = () => {
@@ -86,6 +86,7 @@
 
   /** 处理data数据 */
   const dataHandler = () => {
+    chartData = []
     ;(props.data as PieDataType[]).forEach((item, index) => {
       if (item.color) {
         colorList[index] = item.color

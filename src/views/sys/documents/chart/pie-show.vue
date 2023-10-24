@@ -4,9 +4,9 @@
       :data="[
         { value: 1048, name: 'Search Engine' },
         { value: 735, name: 'Direct' },
-        { value: 580, name: 'Email', color: 'red' },
+        { value: 580, name: 'Email', color: 'green' },
         { value: 484, name: 'Union Ads' },
-        { value: 300, name: 'Video Ads', color: 'text-sky-600' }
+        { value: 300, name: 'Video Ads', color: 'skyblue' }
       ]"
       :rose="true"
     />
@@ -18,9 +18,9 @@
           :data="[
             { value: 1048, name: 'Search Engine' },
             { value: 735, name: 'Direct' },
-            { value: 580, name: 'Email', color: 'red' },
+            { value: 580, name: 'Email', color: 'green' },
             { value: 484, name: 'Union Ads' },
-            { value: 300, name: 'Video Ads', color: 'text-sky-600' }
+            { value: 300, name: 'Video Ads', color: 'skyblue' }
           ]"
           :rose="true"
         />
