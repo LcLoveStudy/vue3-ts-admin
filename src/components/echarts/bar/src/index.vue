@@ -16,6 +16,7 @@
     type SingBarDataType,
     type MultiBarDataType
   } from './bar-chart'
+  import { initChartById, addReset, removeReset } from '../../utils'
   import * as echarts from 'echarts'
   import type { PropType } from 'vue'
 
@@ -90,14 +91,9 @@
   let chartDom: echarts.ECharts
   /** 初始化chart */
   const initChart = () => {
-    chartDom = echarts.init(document.getElementById(chartId) as HTMLDivElement)
+    chartDom = initChartById(chartId)
     setOptions()
-    window.addEventListener('resize', resetDom)
-  }
-
-  /** 重置图表大小 */
-  const resetDom = () => {
-    chartDom.resize()
+    addReset(chartDom)
   }
 
   /** 设置图表配置和数据 */
@@ -254,6 +250,6 @@
   })
 
   onBeforeUnmount(() => {
-    window.removeEventListener('resize', resetDom)
+    removeReset(chartDom)
   })
 </script>
