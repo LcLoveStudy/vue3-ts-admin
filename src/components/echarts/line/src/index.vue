@@ -71,7 +71,7 @@
     data: [] as string[]
   }
   // 用于显示多折线的series
-  const series: Array<{
+  let series: Array<{
     name: string
     data: number[]
     label: {}
@@ -165,6 +165,8 @@
 
   /** 处理数据 */
   const propDataHandler = () => {
+    series = []
+    xData = []
     props.data.forEach((item) => {
       if (!Object.keys(item).includes('series')) {
         const singleItem = item as SingleLineDataType
