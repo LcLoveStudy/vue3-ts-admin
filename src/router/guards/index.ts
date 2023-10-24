@@ -1,5 +1,5 @@
 import type { Router } from 'vue-router'
-import { getItem , hasRole } from '@/utils'
+import { getItem, hasRole } from '@/utils'
 import { LocalStorageKeys } from '@/enums/localstorage'
 import { ElMessage } from 'element-plus'
 /** 初始化路由导航守卫 */
@@ -10,7 +10,11 @@ export const setupRouterGuards = (router: Router) => {
       next()
     } else {
       if (userinfo && userinfo.username) {
-        if (hasRole(userinfo.user_type, (to.meta as { role: string[] }).role)) {
+        if (
+          !(to.meta as { role: string[] }).role ||
+          ((to.meta as { role: string[] }).role &&
+            hasRole(userinfo.user_type, (to.meta as { role: string[] }).role))
+        ) {
           next()
         } else {
           next('/')

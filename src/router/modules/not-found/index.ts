@@ -1,23 +1,23 @@
-const HOME: RouterType = {
-  path: '/home',
-  name: 'home',
+const NOTFOUND: RouterType = {
+  path: '/404',
+  name: 'notFound',
   meta: {
-    orderNo: 2,
-    title: '首页',
-    icon: 'EditPen',
-    hideMenu: false,
-    keepChild: true,
+    orderNo: 1,
+    title: '页面找不到啦',
+    icon: '',
+    hideMenu: true,
+    keepChild: false,
     hideBreadcrumb: false,
     hideChildrenInMenu: true,
     role: ['admin', 'superadmin', 'user']
   },
   children: [
     {
-      path: '/home',
-      name: 'home',
-      component: () => import('@/views/sys/home/index.vue'),
+      path: '/404',
+      name: 'notFound',
+      component: () => import('@/views/sys/error-page/404.vue'),
       meta: {
-        title: '首页',
+        title: '页面找不到啦',
         hideMenu: true,
         keepChild: false,
         hideBreadcrumb: true,
@@ -28,4 +28,4 @@ const HOME: RouterType = {
     }
   ]
 }
-export default HOME
+export default NOTFOUND

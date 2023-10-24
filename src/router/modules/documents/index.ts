@@ -5,7 +5,7 @@ const DOCUMENTS: RouterType = {
   path: '/documents',
   name: 'documents',
   meta: {
-    orderNo: 2,
+    orderNo: 3,
     title: '使用手册',
     icon: 'CopyDocument',
     hideMenu: false,

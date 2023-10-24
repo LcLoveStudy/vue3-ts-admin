@@ -24,17 +24,7 @@ const router = createRouter({
       name: 'home',
       redirect: '/home',
       component: () => import('@/views/sys/layout/index.vue'),
-      children: [
-        ...(setupRouter(routes) as never),
-        {
-          path: '/404',
-          name: '404',
-          meta: {
-            title: '404'
-          },
-          component: () => import('@/views/sys/error-page/404.vue')
-        }
-      ]
+      children: [...(setupRouter(routes) as never)]
     },
     {
       path: '/login',
