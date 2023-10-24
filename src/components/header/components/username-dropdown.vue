@@ -9,8 +9,14 @@
       </span>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item @click="goCode">源码仓库</el-dropdown-item>
-          <el-dropdown-item @click="logoutHandle">退出登录</el-dropdown-item>
+          <el-dropdown-item @click="goCode">
+            <el-icon><Link /></el-icon>
+            源码仓库
+          </el-dropdown-item>
+          <el-dropdown-item @click="logoutHandle">
+            <el-icon><SwitchButton /></el-icon>
+            退出登录
+          </el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
