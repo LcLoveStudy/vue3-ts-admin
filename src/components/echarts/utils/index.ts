@@ -19,3 +19,5 @@ export const removeReset = (echartDom: echarts.ECharts) => {
     echartDom.resize()
   })
 }
+/** 获取随机id */
+export const getRandomId = () => Math.random().toString()

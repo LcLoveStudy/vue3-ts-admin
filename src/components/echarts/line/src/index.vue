@@ -13,9 +13,9 @@
   import { type MultiLineSeriesType, type SingleLineDataType } from './line-chart'
   import * as echarts from 'echarts'
   import type { PropType } from 'vue'
-  import { addReset, initChartById, removeReset } from '../../utils'
+  import { addReset, initChartById, removeReset, getRandomId } from '../../utils'
   // 获取随机id，防止一个页面多个echarts时，id重复
-  const chartId = Math.random().toString()
+  const chartId = getRandomId()
   const props = defineProps({
     // x轴的坐标
     data: {

@@ -12,9 +12,9 @@
   import { useColor } from '@/utils'
   import * as echarts from 'echarts'
   import { type PieDataType } from './pie-chart'
-  import { initChartById, addReset, removeReset } from '../../utils'
+  import { initChartById, addReset, removeReset, getRandomId } from '../../utils'
   // 获取随机id，防止一个页面多个echarts时，id重复
-  const chartId = Math.random().toString()
+  const chartId = getRandomId()
   const props = defineProps({
     data: {
       type: Array,

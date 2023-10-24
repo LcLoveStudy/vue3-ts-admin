@@ -16,12 +16,12 @@
     type SingBarDataType,
     type MultiBarDataType
   } from './bar-chart'
-  import { initChartById, addReset, removeReset } from '../../utils'
+  import { initChartById, addReset, removeReset, getRandomId } from '../../utils'
   import * as echarts from 'echarts'
   import type { PropType } from 'vue'
 
   // 获取随机id，防止一个页面多个echarts时，id重复
-  const chartId = Math.random().toString()
+  const chartId = getRandomId()
   const props = defineProps({
     // x轴的坐标
     data: {
