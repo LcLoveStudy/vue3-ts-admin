@@ -87,14 +87,22 @@
 
   // 当type为bars时用于显示series
   const series = ref<Array<{ type: string } & SeriesType>>([])
-  const chartDom = ref()
+  let chartDom: echarts.ECharts
   /** 初始化chart */
   const initChart = () => {
-    chartDom.value = echarts.init(document.getElementById(chartId) as HTMLDivElement)
+    chartDom = echarts.init(document.getElementById(chartId) as HTMLDivElement)
     setOptions()
+    window.addEventListener('resize', resetDom)
   }
+
+  /** 重置图表大小 */
+  const resetDom = () => {
+    chartDom.resize()
+  }
+
+  /** 设置图表配置和数据 */
   const setOptions = () => {
-    chartDom.value.setOption({
+    chartDom.setOption({
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -243,5 +251,9 @@
     initPropsDataHandler()
     barColorHandler()
     initChart()
+  })
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', resetDom)
   })
 </script>

@@ -47,15 +47,21 @@
   const colorList: string[] = []
   // 用于显示的data
   let chartData: any[] = []
-  const chartDom = ref()
+  let chartDom: echarts.ECharts
   /** 初始化chart */
   const initChart = () => {
-    chartDom.value = echarts.init(document.getElementById(chartId) as HTMLDivElement)
+    chartDom = echarts.init(document.getElementById(chartId) as HTMLDivElement)
     setOptions()
+    window.addEventListener('resize', resetDom)
+  }
+  /** 重置图表大小 */
+  const resetDom = () => {
+    chartDom.resize()
   }
 
+  /** 设置图表配置和数据 */
   const setOptions = () => {
-    chartDom.value.setOption({
+    chartDom.setOption({
       tooltip: {
         trigger: 'item'
       },
@@ -124,6 +130,9 @@
       deep: true
     }
   )
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', resetDom)
+  })
 
   onMounted(() => {
     pieColorHandler()

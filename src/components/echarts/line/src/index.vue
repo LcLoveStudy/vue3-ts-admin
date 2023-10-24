@@ -83,14 +83,22 @@
   }> = []
   // 用于显示多折线的颜色
   const colorList: string[] = []
-  const chartDom = ref()
+  let chartDom: echarts.ECharts
   /** 初始化chart */
   const initChart = () => {
-    chartDom.value = echarts.init(document.getElementById(chartId) as HTMLDivElement)
+    chartDom = echarts.init(document.getElementById(chartId) as HTMLDivElement)
     setOptions()
+    window.addEventListener('resize', resetDom)
   }
+
+  /** 重置图表大小 */
+  const resetDom = () => {
+    chartDom.resize()
+  }
+
+  /** 设置图表配置和数据 */
   const setOptions = () => {
-    chartDom.value.setOption({
+    chartDom.setOption({
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -227,5 +235,9 @@
     propDataHandler()
     lineColorHandler()
     initChart()
+  })
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', resetDom)
   })
 </script>
