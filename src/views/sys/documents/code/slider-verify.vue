@@ -1,5 +1,7 @@
 <template>
-  <div>滑块验证</div>
+  <SliderVerify />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import SliderVerify from '@/components/slider-verify'
+</script>

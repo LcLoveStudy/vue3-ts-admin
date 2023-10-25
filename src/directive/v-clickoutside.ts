@@ -2,15 +2,15 @@ export const clickoutside = {
   name: 'clickoutside',
   method: {
     mounted(el: HTMLUnknownElement, value: any) {
-      window.addEventListener('click', (e) => eventHnader(value.value, el, e))
+      window.addEventListener('click', (e) => eventHander(value.value, el, e))
     },
     unmounted(el: HTMLUnknownElement, value: any) {
-      window.removeEventListener('click', (e) => eventHnader(value.value, el, e))
+      window.removeEventListener('click', (e) => eventHander(value.value, el, e))
     }
   }
 }
 
-const eventHnader = (callback: Function, el: HTMLUnknownElement, e: Event) => {
+const eventHander = (callback: Function, el: HTMLUnknownElement, e: Event) => {
   if (!el.contains(e.target as HTMLElement)) {
     callback()
   }
