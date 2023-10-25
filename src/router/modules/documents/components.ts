@@ -3,7 +3,7 @@ export default {
   redirect: '/documents/code/table',
   name: 'code',
   meta: {
-    title: '低代码组件',
+    title: '组件封装',
     hideMenu: false,
     keepChild: true,
     hideBreadcrumb: false,
