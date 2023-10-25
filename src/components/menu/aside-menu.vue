@@ -65,7 +65,11 @@
                       v-if="!treeMenu.meta.hideMenu && hasRole(userType, treeMenu.meta.role)"
                       :index="treeMenu.path"
                     >
-                      {{ treeMenu.meta.title }}
+                      <el-tooltip effect="dark" :content="treeMenu.meta.title" placement="right">
+                        <div class="truncate">
+                          {{ treeMenu.meta.title }}
+                        </div>
+                      </el-tooltip>
                     </el-menu-item>
                   </template>
                 </el-sub-menu>
