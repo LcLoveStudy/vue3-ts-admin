@@ -51,7 +51,7 @@
     },
     {
       propName: 'width',
-      mean: '组件宽度',
+      mean: '组件宽度,最小180px',
       type: 'string',
       default: '250px'
     },

@@ -156,6 +156,7 @@
     position: relative;
     border-radius: 5px;
     overflow: hidden;
+    min-width: 180px;
     width: v-bind(width);
     height: 40px;
     background-color: #67c23a;
