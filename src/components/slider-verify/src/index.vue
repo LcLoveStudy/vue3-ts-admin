@@ -19,6 +19,10 @@
     status: {
       type: Boolean,
       default: false
+    },
+    width: {
+      type: String,
+      default: '250px'
     }
   })
 
@@ -152,7 +156,7 @@
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-    width: 250px;
+    width: v-bind(width);
     height: 40px;
     background-color: #67c23a;
     .slider_rocker {
