@@ -17,7 +17,7 @@
   const utilsOrigin = [
     {
       name: 'TailwindCss',
-      link: 'https://www.tailwindcss.cn/docs/installation',
+      link: 'https://tailwind.nodejs.cn/docs/installation',
       introduce: '原子化css框架,提供css原子类,可快速构建页面'
     },
     {
