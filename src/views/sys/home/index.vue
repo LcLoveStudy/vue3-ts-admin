@@ -3,12 +3,6 @@
   <div class="mt-2.5 pl-5">测试一下tailwindcss</div>
 </template>
 
-<script setup lang="ts">
-  import { getList } from '@/api'
-
-  getList({ page: 1 }).then((res) => {
-    // console.log(res.info.name)
-  })
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>
