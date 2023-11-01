@@ -7,3 +7,4 @@ declare module '*.vue' {
 }
 // 解决element-plus国际化的报错
 declare module 'element-plus/dist/locale/zh-cn.mjs'
+declare let Tiff
