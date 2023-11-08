@@ -59,11 +59,6 @@
     source.value = props.endVal
   }
 
-  function reset() {
-    source.value = props.startVal
-    run()
-  }
-
   function run() {
     outputValue = useTransition(source, {
       disabled,

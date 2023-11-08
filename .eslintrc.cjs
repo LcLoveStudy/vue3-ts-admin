@@ -16,6 +16,13 @@ module.exports = {
   },
   rules: {
     'vue/multi-word-component-names': 0, // 关闭对组件名称的检查
+    'vue/no-dupe-v-else-if': 1,
+    'vue/no-export-in-script-setup': 1,
+    'vue/no-unused-components': 1,
+    'vue/no-unused-vars': 1, // v-for中禁止无用的变量
+    'vue/no-use-v-if-with-v-for': 1,
+    'vue/no-useless-template-attributes': 1,
+    'vue/require-v-for-key': 1,
     eqeqeq: 'error', // 严格区分==和===
     'max-lines': ['error', { max: 500, skipComments: false, skipBlankLines: false }],
     'no-alert': 'error', // 禁止使用alert
