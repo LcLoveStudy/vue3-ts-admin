@@ -9,3 +9,9 @@
 export const objectCopy = <T>(oldObj: T): T => {
   return JSON.parse(JSON.stringify(oldObj))
 }
+
+/**
+ * 判断一个对象是否为空对象
+ * @param {obejct} obj 目标对象
+ */
+export const isEmptyObj = (obj: object) => JSON.stringify(obj) === '{}'
