@@ -12,7 +12,7 @@
   import { useColor } from '@/utils'
   import * as echarts from 'echarts'
   import { type PieDataType } from './pie-chart'
-  import { initChartById, addReset, removeReset, getRandomId } from '../../utils'
+  import { initChartById, useReset, getRandomId } from '../../utils'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = getRandomId()
   const props = defineProps({
@@ -53,7 +53,7 @@
   const initChart = () => {
     chartDom = initChartById(chartId)
     setOptions()
-    addReset(chartDom)
+    useReset(chartDom)
   }
 
   /** 设置图表配置和数据 */
@@ -127,9 +127,6 @@
       deep: true
     }
   )
-  onBeforeUnmount(() => {
-    removeReset(chartDom)
-  })
 
   onMounted(() => {
     pieColorHandler()

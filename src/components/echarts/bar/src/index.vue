@@ -16,7 +16,7 @@
     type SingBarDataType,
     type MultiBarDataType
   } from './bar-chart'
-  import { initChartById, addReset, removeReset, getRandomId } from '../../utils'
+  import { initChartById, useReset, getRandomId } from '../../utils'
   import * as echarts from 'echarts'
   import type { PropType } from 'vue'
 
@@ -93,7 +93,7 @@
   const initChart = () => {
     chartDom = initChartById(chartId)
     setOptions()
-    addReset(chartDom)
+    useReset(chartDom)
   }
 
   /** 设置图表配置和数据 */
@@ -247,9 +247,5 @@
     initPropsDataHandler()
     barColorHandler()
     initChart()
-  })
-
-  onBeforeUnmount(() => {
-    removeReset(chartDom)
   })
 </script>

@@ -13,7 +13,7 @@
   import { type MultiLineSeriesType, type SingleLineDataType } from './line-chart'
   import * as echarts from 'echarts'
   import type { PropType } from 'vue'
-  import { addReset, initChartById, removeReset, getRandomId } from '../../utils'
+  import { initChartById, useReset, getRandomId } from '../../utils'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = getRandomId()
   const props = defineProps({
@@ -89,7 +89,7 @@
   const initChart = () => {
     chartDom = initChartById(chartId)
     setOptions()
-    addReset(chartDom)
+    useReset(chartDom)
   }
 
   /** 设置图表配置和数据 */
@@ -231,9 +231,5 @@
     propDataHandler()
     lineColorHandler()
     initChart()
-  })
-
-  onBeforeUnmount(() => {
-    removeReset(chartDom)
   })
 </script>
