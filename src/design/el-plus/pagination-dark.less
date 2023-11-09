@@ -1,0 +1,24 @@
+/** 字体颜色 */
+@el-pagination-font-color: #fff;
+/** 按钮的颜色 */
+@el-pagination-button-color: rgba(0, 110, 255, 0.335);
+
+.el-pagination.is-background {
+  .el-pagination__total,
+  .el-pagination__jump {
+    color: @el-pagination-font-color;
+  }
+
+  .btn-next.is-disabled,
+  .btn-next:disabled,
+  .btn-prev.is-disabled,
+  .btn-prev:disabled,
+  .el-pager li.is-disabled,
+  .el-pager li:disabled,
+  .btn-next,
+  .btn-prev,
+  .el-pager li {
+    background-color: @el-pagination-button-color;
+    color: @el-pagination-font-color;
+  }
+}
