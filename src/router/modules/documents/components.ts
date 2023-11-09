@@ -62,6 +62,19 @@ export default {
       },
       children: [],
       component: () => import('@/views/sys/documents/code/count-to-code.vue')
+    },
+    {
+      path: '/documents/code/text-ellipsis',
+      name: 'text-ellipsis',
+      meta: {
+        title: '文本缩略TextEllipsis',
+        hideMenu: false,
+        hideBreadcrumb: false,
+        hideChildrenInMenu: false,
+        role: ['admin', 'superadmin', 'user']
+      },
+      children: [],
+      component: () => import('@/views/sys/documents/code/text-ellipsis.vue')
     }
   ]
 }
