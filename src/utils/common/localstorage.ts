@@ -9,7 +9,7 @@ import { ConstKeys } from '@/enums/const-enums'
  * @email dotb116393@163.com
  */
 export const setItem = (key: LocalStorageKeys, value: any) => {
-  localStorage.setItem(key + ConstKeys, JSON.stringify(value))
+  localStorage.setItem(key + ConstKeys.PROJECTNAME, JSON.stringify(value))
 }
 
 /**
@@ -21,7 +21,7 @@ export const setItem = (key: LocalStorageKeys, value: any) => {
  * @email dotb116393@163.com
  */
 export const getItem = <T>(key: LocalStorageKeys): T => {
-  return JSON.parse(localStorage.getItem(key + ConstKeys) || JSON.stringify(''))
+  return JSON.parse(localStorage.getItem(key + ConstKeys.PROJECTNAME) || JSON.stringify(''))
 }
 
 /**
@@ -33,7 +33,7 @@ export const getItem = <T>(key: LocalStorageKeys): T => {
  */
 export const removeItem = (key?: LocalStorageKeys) => {
   if (key) {
-    localStorage.removeItem(key + ConstKeys)
+    localStorage.removeItem(key + ConstKeys.PROJECTNAME)
   } else {
     localStorage.clear()
   }
