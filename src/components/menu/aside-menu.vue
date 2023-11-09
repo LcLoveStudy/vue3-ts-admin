@@ -1,5 +1,5 @@
 <template>
-  <div class="menu_container height-full overflow-y-auto">
+  <div class="menu_container overflow-y-auto">
     <el-menu
       class="aside_menu"
       :collapse="props.isCollapse"
@@ -117,6 +117,7 @@
     background-color: var(--container-bgc);
   }
   .menu_container {
+    height: 100%;
     &::-webkit-scrollbar {
       width: 0px;
     }
