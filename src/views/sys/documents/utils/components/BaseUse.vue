@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-wrap ml-5">
+  <div class="text-base flex flex-wrap ml-5">
     <!-- 复制内容到剪贴板(getCopy) -->
     <el-card class="w-100">
-      <div class="text-base font-semibold text-red-700">
+      <div class="font-semibold text-red-700">
         复制内容到剪贴板(useCopy)
         <el-icon class="cursor-pointer" @click="copyUtils('useCopy')">
           <DocumentCopy />
@@ -18,7 +18,7 @@
     </el-card>
     <!-- 获取变量的类型(getType) -->
     <el-card class="w-100 ml-5">
-      <div class="text-base font-semibold text-red-700">
+      <div class="font-semibold text-red-700">
         获取变量的类型(getType)
         <el-icon class="cursor-pointer" @click="copyUtils('getType')">
           <DocumentCopy />
@@ -44,7 +44,7 @@
     </el-card>
     <!-- 获取变量的类型(getColor) -->
     <el-card class="w-100 ml-5">
-      <div class="text-base font-semibold text-red-700">
+      <div class="font-semibold text-red-700">
         随机获取一个16进制的颜色(useColor)
         <el-icon class="cursor-pointer" @click="copyUtils('useColor')">
           <DocumentCopy />
