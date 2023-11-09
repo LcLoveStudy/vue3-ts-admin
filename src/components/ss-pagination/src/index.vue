@@ -3,7 +3,7 @@
     v-model:current-page="current"
     v-model:page-size="size"
     background
-    layout="total, sizes, prev, pager, next, jumper"
+    :layout="props.layout"
     :total="props.total"
     @size-change="currentChange"
     @current-change="currentChange"
@@ -19,6 +19,10 @@
       type: Number,
       default: 1
     },
+    layout: {
+      type: String,
+      default: 'total, sizes, prev, pager, next, jumper'
+    },
     size: {
       type: Number,
       default: 10
@@ -28,7 +32,7 @@
       default: 100
     }
   })
-  const emits = defineEmits(['currentChange', 'update:current', 'update:size'])
+  const emits = defineEmits(['change', 'update:current', 'update:size'])
 
   const current = ref(props.current)
   const size = ref(props.size)
@@ -39,7 +43,7 @@
   const currentChange = () => {
     emits('update:size', size.value)
     emits('update:current', current.value)
-    emits('currentChange')
+    emits('change')
   }
   watch(
     () => props.current,

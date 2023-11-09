@@ -1,10 +1,5 @@
 <template>
-  <ss-pagination
-    v-model:current="current"
-    v-model:size="size"
-    :total="130"
-    @current-change="change"
-  />
+  <ss-pagination v-model:current="current" v-model:size="size" :total="130" @change="change" />
   <h3 class="mt-6">示例</h3>
   <!-- 示例代码 -->
   <pre>
@@ -13,7 +8,7 @@
       v-model:current="current"
       v-model:size="size"
       :total="130"
-      @current-change="change"
+      @change="change"
     /&gt;
 
     &lt;script setup lang="ts"&gt;
@@ -60,8 +55,8 @@
       default: '100'
     },
     {
-      propName: '@current-change',
-      mean: '当前页改变时触发',
+      propName: '@change',
+      mean: '当前页或每页大小发生改变时触发',
       type: 'function',
       default: '-'
     }
