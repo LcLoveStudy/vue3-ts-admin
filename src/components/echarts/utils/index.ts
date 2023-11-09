@@ -1,5 +1,5 @@
 import * as echarts from 'echarts'
-import { onMounted, onUnmounted } from 'vue'
+import { onUnmounted } from 'vue'
 /**
  * 通过id传回一个Echart实例
  * @param chartId dom的id
