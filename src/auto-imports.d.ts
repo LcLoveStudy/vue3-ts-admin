@@ -86,9 +86,13 @@ declare global {
     Component,
     ComponentPublicInstance,
     ComputedRef,
+    ExtractDefaultPropTypes,
+    ExtractPropTypes,
+    ExtractPublicPropTypes,
     InjectionKey,
     PropType,
     Ref,
-    VNode
+    VNode,
+    WritableComputedRef
   } from 'vue'
 }
