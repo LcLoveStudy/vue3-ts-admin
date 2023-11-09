@@ -24,3 +24,12 @@ export const dayOfYear = (date: Date) => {
     (date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / 1000 / 60 / 60 / 24
   )
 }
+
+/**
+ * 计算两天相差多久
+ * @param {Date} date1 日期对象1
+ * @param {Date} date2 日期对象2
+ * @returns 相差的天数
+ */
+export const dayDif = (date1: Date, date2: Date) =>
+  Math.ceil((date1.getTime() - date2.getTime()) / 86400000)
