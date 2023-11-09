@@ -7,7 +7,6 @@ import store from '@/stores'
 import useElPlus from '@/components/useElPlus'
 import setupGlobDirectives from '@/directive'
 // css
-import '@/utils/page/rem.js'
 import '@/design/index.less'
 import '@/assets/style/reset.css'
 import './tailwind.css'
