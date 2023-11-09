@@ -1,5 +1,6 @@
 <template>
-  <el-table :data="howToUse" style="width: 100%">
+  <el-table :data="howToUse" style="width: 100%" stripe>
+    <el-table-column type="selection" width="55" />
     <el-table-column prop="propName" label="参数名" />
     <el-table-column prop="mean" label="说明" width="400" />
     <el-table-column prop="type" label="类型" />

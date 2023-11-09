@@ -7,12 +7,12 @@ import store from '@/stores'
 import useElPlus from '@/components/useElPlus'
 import setupGlobDirectives from '@/directive'
 // css
+import 'element-plus/dist/index.css'
 import '@/utils/page/rem'
 import '@/design/index.less'
 import '@/assets/style/reset.css'
 import './tailwind.css'
 import 'nprogress/nprogress.css'
-import 'element-plus/dist/index.css'
 import 'highlight.js/styles/github-dark-dimmed.css'
 
 const app = createApp(App)
