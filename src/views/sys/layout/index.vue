@@ -35,7 +35,6 @@
     max-width: 100%;
     height: 100%;
     font-size: 16px;
-    // overflow: hidden;
     .aside {
       height: 100%;
       width: auto;
@@ -52,7 +51,7 @@
       height: 96%;
       overflow-y: auto;
       .main {
-        background-color: var(--container-main-bgc);
+        background: var(--container-main-bgc);
         padding-bottom: 20px;
       }
     }
