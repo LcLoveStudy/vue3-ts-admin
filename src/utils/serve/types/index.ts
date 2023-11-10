@@ -4,9 +4,21 @@ import type { AxiosRequestConfig } from 'axios'
 interface HttpRequestType {
   url: string
   config?: AxiosRequestConfig & {
-    showMessage: boolean
-    message: string
-    showProgress: boolean
+    showMessage?: boolean
+    message?: string
+    showProgress?: boolean
+    // 上传文件使用以下两个
+    // headers: {
+    //   'Content-Type': 'multipart/form-data'
+    // }
+    // transformRequest: [
+    //     (data: any) => {
+    //       const fordata = new FormData()
+    //       fordata.append('file', data.file)
+    //       fordata.append('path', data.path)
+    //       return fordata
+    //     }
+    //   ]
   }
 }
 
