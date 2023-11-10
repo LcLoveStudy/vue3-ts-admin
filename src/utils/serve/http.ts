@@ -1,7 +1,6 @@
-import axios, { AxiosError, type AxiosResponse, type AxiosInstance } from 'axios'
-import { ElMessage } from 'element-plus'
-import { getItem, startProcess, endProcess } from '@/utils'
-import { LocalStorageKeys } from '@/enums/localstorage'
+import axios, { type AxiosInstance } from 'axios'
+import { initRequestInterceptors, initResponseInterceptor } from './interceptors'
+import { setFormDataConfig } from './setFormDataConfig'
 import * as HttpType from '@/utils/serve/types'
 // 创建axios实例
 const service: AxiosInstance = axios.create({
@@ -9,108 +8,20 @@ const service: AxiosInstance = axios.create({
 })
 
 // 添加请求拦截器
-service.interceptors.request.use(
-  (config: any) => {
-    const showMessage = config.showMessage
-    const message = config.message
-    const token = getItem(LocalStorageKeys.USERINFO)
-    // 是否展示弹框提示，自定义提示信息
-    if (showMessage) {
-      config.headers.showMessage = true
-      if (message) {
-        config.headers.message = encodeURIComponent(message)
-      }
-    }
-    // 是否展示头部进度条
-    if (config.showProgress) {
-      startProcess()
-    }
-    // 设置token
-    if (token) {
-      config.headers.token = token
-    }
-    return config
-  },
-  (error) => {
-    ElMessage.warning('请稍后再试')
-    return Promise.reject(error)
-  }
-)
+initRequestInterceptors(service)
 
 // 添加响应拦截器
-service.interceptors.response.use(
-  (response: AxiosResponse) => {
-    const { data } = response
-    const { showMessage, message } = response.config.headers
-    endProcess()
-    // 判断是否展示接口信息
-    if (showMessage) {
-      const messageInfo = decodeURIComponent(message)
-      ElMessage({
-        message: messageInfo !== 'undefined' ? messageInfo : data?.info?.name,
-        type: response.status === 200 ? 'success' : 'error'
-      })
-    }
-    return data
-  },
-  (error: AxiosError) => {
-    // 超出 2xx 范围的状态码都会触发该函数。
-    // 对状态码处理
-    switch (error.response?.status) {
-      case 404:
-        error.message = '请求地址不存在'
-        break
-      case 500:
-        error.message = '服务器内部错误'
-        break
-      default:
-        error.message = '网络异常'
-        break
-    }
-    endProcess()
-    ElMessage.error(error.message)
-    return Promise.reject(error)
-  }
-)
+initResponseInterceptor(service)
 
 export const http = {
   // get请求
   get<T>(arg: HttpType.HttpGetRequestType): Promise<T> {
-    if (
-      arg.config?.headers &&
-      arg.config.headers['Content-Type'] &&
-      arg.config.headers['Content-Type'] === 'multipart/form-data'
-    ) {
-      arg.config.transformRequest = [
-        (data: any) => {
-          const fordata = new FormData()
-          Object.keys(data).forEach((key) => {
-            fordata.append(key, data[key])
-          })
-          return fordata
-        }
-      ]
-    }
+    setFormDataConfig(arg)
     return service.get(arg.url, { params: arg.params, ...arg.config })
   },
   // post请求
   post<T>(arg: HttpType.HttpPostRequestType): Promise<T> {
-    // 处理文件上传
-    if (
-      arg.config?.headers &&
-      arg.config.headers['Content-Type'] &&
-      arg.config.headers['Content-Type'] === 'multipart/form-data'
-    ) {
-      arg.config.transformRequest = [
-        (data: any) => {
-          const fordata = new FormData()
-          Object.keys(data).forEach((key) => {
-            fordata.append(key, data[key])
-          })
-          return fordata
-        }
-      ]
-    }
+    setFormDataConfig(arg)
     return service.post(arg.url, { ...arg.data }, arg.config)
   }
 }
