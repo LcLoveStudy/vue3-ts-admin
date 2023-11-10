@@ -7,18 +7,10 @@ interface HttpRequestType {
     showMessage?: boolean
     message?: string
     showProgress?: boolean
-    // 上传文件使用以下两个
+    // 上传文件使用以下
     // headers: {
     //   'Content-Type': 'multipart/form-data'
     // }
-    // transformRequest: [
-    //     (data: any) => {
-    //       const fordata = new FormData()
-    //       fordata.append('file', data.file)
-    //       fordata.append('path', data.path)
-    //       return fordata
-    //     }
-    //   ]
   }
 }
 

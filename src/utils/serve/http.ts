@@ -76,10 +76,41 @@ service.interceptors.response.use(
 export const http = {
   // get请求
   get<T>(arg: HttpType.HttpGetRequestType): Promise<T> {
+    if (
+      arg.config?.headers &&
+      arg.config.headers['Content-Type'] &&
+      arg.config.headers['Content-Type'] === 'multipart/form-data'
+    ) {
+      arg.config.transformRequest = [
+        (data: any) => {
+          const fordata = new FormData()
+          Object.keys(data).forEach((key) => {
+            fordata.append(key, data[key])
+          })
+          return fordata
+        }
+      ]
+    }
     return service.get(arg.url, { params: arg.params, ...arg.config })
   },
   // post请求
   post<T>(arg: HttpType.HttpPostRequestType): Promise<T> {
+    // 处理文件上传
+    if (
+      arg.config?.headers &&
+      arg.config.headers['Content-Type'] &&
+      arg.config.headers['Content-Type'] === 'multipart/form-data'
+    ) {
+      arg.config.transformRequest = [
+        (data: any) => {
+          const fordata = new FormData()
+          Object.keys(data).forEach((key) => {
+            fordata.append(key, data[key])
+          })
+          return fordata
+        }
+      ]
+    }
     return service.post(arg.url, { ...arg.data }, arg.config)
   }
 }
