@@ -1,6 +1,6 @@
 <template>
   <div class="text-2xl font-semibold">点击目标外(v-clickoutside)</div>
-  <div class="descript_main mt-6">
+  <div class="mt-6">
     <span class="fs-20 inline-block">应用场景：</span>
     <br />
     当点击目标元素外的时候会执行该指令的回调函数
