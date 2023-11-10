@@ -1,7 +1,13 @@
+import type { AxiosRequestConfig } from 'axios'
+
 /** 所有请求都应该遵守的约定 */
 interface HttpRequestType {
   url: string
-  config?: any
+  config?: AxiosRequestConfig & {
+    showMessage: boolean
+    message: string
+    showProgress: boolean
+  }
 }
 
 /** get请求的参数限制 */
