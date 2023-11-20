@@ -56,7 +56,7 @@ export default defineConfig({
   server: {
     // 开启局域网
     host: true,
-    port: 1024,
+    port: 1025,
     open: true
   }
 })
