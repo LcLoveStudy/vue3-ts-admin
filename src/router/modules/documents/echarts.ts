@@ -39,6 +39,19 @@ export default {
       children: []
     },
     {
+      path: '/documents/echarts/stack',
+      name: 'stack',
+      component: () => import('@/views/sys/documents/chart/stack-show.vue'),
+      meta: {
+        title: '堆叠图Stack',
+        hideMenu: false,
+        hideBreadcrumb: false,
+        hideChildrenInMenu: false,
+        role: ['admin', 'superadmin', 'user']
+      },
+      children: []
+    },
+    {
       path: '/documents/echarts/line',
       name: 'line',
       component: () => import('@/views/sys/documents/chart/line-show.vue'),
