@@ -13,11 +13,12 @@
   import * as echarts from 'echarts'
   import { type PieDataType } from './pie-chart'
   import { initChartById, useReset, getRandomId } from '../../utils'
+  import type { PropType } from 'vue'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = getRandomId()
   const props = defineProps({
     data: {
-      type: Array,
+      type: Array as PropType<PieDataType[]>,
       required: true
     },
     // 是否环状
