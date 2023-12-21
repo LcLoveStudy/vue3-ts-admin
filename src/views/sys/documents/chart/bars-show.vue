@@ -83,6 +83,12 @@
       default: 'false'
     },
     {
+      propName: 'zoomable',
+      mean: '是否允许滚动缩放',
+      type: 'boolean',
+      default: 'false'
+    },
+    {
       propName: 'textColor',
       mean: '所有字体和轴线的颜色',
       type: 'string',

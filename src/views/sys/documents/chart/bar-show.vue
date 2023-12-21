@@ -80,6 +80,12 @@
       default: 'false'
     },
     {
+      propName: 'zoomable',
+      mean: '是否允许滚动缩放',
+      type: 'boolean',
+      default: 'false'
+    },
+    {
       propName: 'barColor',
       mean: '柱子颜色，未设置则随机显示',
       type: 'string',
