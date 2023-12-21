@@ -37,6 +37,11 @@
       type: Boolean,
       default: false
     },
+    // 是否允许缩放
+    zoomable: {
+      type: Boolean,
+      default: false
+    },
     // 柱子颜色，未设置则随机显示
     colorList: {
       type: Array as PropType<string[]>
@@ -107,6 +112,13 @@
         bottom: '3%',
         containLabel: true
       },
+      dataZoom: props.zoomable
+        ? [
+            {
+              type: 'inside'
+            }
+          ]
+        : [],
       yAxis: {
         type: props.reverse ? 'category' : 'value',
         data: props.reverse ? categoryList : [],

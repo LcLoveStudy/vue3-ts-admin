@@ -17,6 +17,7 @@
         { min: 100, max: 199, color: 'pink' },
         { min: 200, max: 299, color: 'skyblue' }
       ]"
+      zoomable
       reverse
     />
     <!-- 代码展示 -->
@@ -40,6 +41,7 @@
               { min: 100, max: 199, color: 'pink' },
               { min: 200, max: 299, color: 'skyblue' }
             ]"
+            zoomable
             reverse
         />
         </code>

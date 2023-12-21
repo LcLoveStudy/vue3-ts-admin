@@ -43,6 +43,11 @@
       type: Boolean,
       default: false
     },
+    // 是否允许缩放
+    zoomable: {
+      type: Boolean,
+      default: false
+    },
     // 柱子颜色，未设置则随机显示
     barColor: {
       type: String,
@@ -109,6 +114,13 @@
       legend: {
         type: 'scroll'
       },
+      dataZoom: props.zoomable
+        ? [
+            {
+              type: 'inside'
+            }
+          ]
+        : [],
       xAxis: {
         type: props.reverse ? 'value' : 'category',
         data: props.reverse ? [] : xAxisData,

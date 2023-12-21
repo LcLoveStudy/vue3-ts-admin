@@ -1,6 +1,7 @@
 <template>
   <div class="flex justify-around items-center">
     <stack-chart
+      zoomable
       :data="[
         {
           name: '测试1',
@@ -60,6 +61,7 @@
         <h1 class="mb-[-30px]">示例代码</h1>
         <code class="language-html text-sm">
         &lt;stack-chart
+            zoomable
             :data="[  { 
                         name: '测试1',
                         data: [   
@@ -121,6 +123,12 @@
     {
       propName: 'reverse',
       mean: 'x轴和y轴是否反转',
+      type: 'boolean',
+      default: 'false'
+    },
+    {
+      propName: 'zoomable',
+      mean: '是否允许滚动缩放',
       type: 'boolean',
       default: 'false'
     },

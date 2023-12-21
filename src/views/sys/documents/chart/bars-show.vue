@@ -17,6 +17,7 @@
       ]"
       x-axis-name="星期"
       y-axis-name="次数"
+      zoomable
       reverse
     />
     <!-- 代码展示 -->
@@ -40,6 +41,7 @@
             ]"
             x-axis-name="星期"
             y-axis-name="次数"
+            zoomable
             reverse
         />
         </code>
