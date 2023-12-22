@@ -49,12 +49,14 @@
     () => props.current,
     () => {
       current.value = props.current
+      emits('change')
     }
   )
   watch(
     () => props.size,
     () => {
       size.value = props.size
+      emits('change')
     }
   )
 </script>
