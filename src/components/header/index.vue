@@ -22,7 +22,7 @@
         @change="menuChange"
       />
       <!-- 全屏 -->
-      <el-icon class="mr-6 cursor-pointer" @click="useFullScreen"><FullScreen /></el-icon>
+      <el-icon class="mr-6 cursor-pointer" @click="useDocumentFullScreen"><FullScreen /></el-icon>
       <!-- 下拉框 -->
       <username-dropdown />
     </div>
@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useFullScreen } from '@/hooks'
+  import { useDocumentFullScreen } from '@/hooks'
   import topMenu from '@/components/menu/top-menu.vue'
   import SsBreadcrumb from '@/components/ss-breadcrumb'
   import UsernameDropdown from './components/username-dropdown.vue'

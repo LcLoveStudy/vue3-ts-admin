@@ -11,7 +11,7 @@ export const isFullScreen = (): boolean => {
 }
 
 /** 如果是全屏就退出全屏，否则就进入全屏 */
-export const useFullScreen = () => {
+export const useDocumentFullScreen = () => {
   const element = document.documentElement
   if (!isFullScreen()) {
     try {
