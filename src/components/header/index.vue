@@ -22,7 +22,7 @@
         @change="menuChange"
       />
       <!-- 全屏 -->
-      <el-icon class="mr-6 cursor-pointer" @click="fullScreen"><FullScreen /></el-icon>
+      <el-icon class="mr-6 cursor-pointer" @click="useFullScreen"><FullScreen /></el-icon>
       <!-- 下拉框 -->
       <username-dropdown />
     </div>
@@ -30,11 +30,11 @@
 </template>
 
 <script setup lang="ts">
+  import { useFullScreen } from '@/hooks'
   import topMenu from '@/components/menu/top-menu.vue'
   import SsBreadcrumb from '@/components/ss-breadcrumb'
   import UsernameDropdown from './components/username-dropdown.vue'
   import { useLayoutStore } from '@/stores/modules/layout'
-  import { ElMessage } from 'element-plus'
   const { getMenuPosition, setMenuPosition } = useLayoutStore()
   const props = defineProps({
     // 菜单栏的展开和折叠
@@ -55,27 +55,6 @@
   /** 点击图标后，通过自定义事件，更新折叠状态 */
   const foldMenu = () => {
     emits('update:isCollapse', !props.isCollapse)
-  }
-
-  const isFullScreen = ref(false)
-  // 控制全屏显示
-  const fullScreen = () => {
-    const element = document.documentElement
-    if (isFullScreen.value) {
-      try {
-        document.exitFullscreen()
-        isFullScreen.value = false
-      } catch (e) {
-        ElMessage.error('浏览器不支持全屏')
-      }
-    } else {
-      try {
-        isFullScreen.value = true
-        element.requestFullscreen()
-      } catch (e) {
-        ElMessage.error('浏览器不支持全屏')
-      }
-    }
   }
 </script>
 
