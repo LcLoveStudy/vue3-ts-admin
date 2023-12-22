@@ -1,7 +1,7 @@
 <template>
   <div class="text-base flex flex-wrap ml-5">
     <!-- 复制内容到剪贴板(getCopy) -->
-    <el-card class="w-100">
+    <el-card class="w-[20rem]">
       <div class="font-semibold text-red-700">
         复制内容到剪贴板(useCopy)
         <el-icon class="cursor-pointer" @click="copyUtils('useCopy')">
@@ -17,7 +17,7 @@
       </div>
     </el-card>
     <!-- 获取变量的类型(getType) -->
-    <el-card class="w-100 ml-5">
+    <el-card class="w-[20rem] ml-5">
       <div class="font-semibold text-red-700">
         获取变量的类型(getType)
         <el-icon class="cursor-pointer" @click="copyUtils('getType')">
@@ -42,8 +42,8 @@
         </div>
       </div>
     </el-card>
-    <!-- 获取变量的类型(getColor) -->
-    <el-card class="w-100 ml-5">
+    <!-- 获取变量的类型(useColor) -->
+    <el-card class="w-[20rem] ml-5">
       <div class="font-semibold text-red-700">
         随机获取一个16进制的颜色(useColor)
         <el-icon class="cursor-pointer" @click="copyUtils('useColor')">
@@ -61,21 +61,58 @@
         </div>
       </div>
     </el-card>
+    <!-- 注册键盘事件(useKeyboardEvt) -->
+    <el-card class="w-[30rem] ml-5">
+      <div class="font-semibold text-red-700">
+        键盘事件hook(useKeyboardEvt)
+        <el-icon class="cursor-pointer" @click="copyUtils('useKeyboardEvt')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-2.5">键盘事件hook,onMounted注册,onBeforeUnmount卸载</div>
+      <div class="mt-2.5">keyCode:number 按键code</div>
+      <div class="mt-2.5">callBack:Function 回调函数</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <div class="mt-1">
+          <span class="text-orange-500">useKeyboardEvt</span>
+          <span class="text-sky-600">(13,() => console.log('回车了'))</span>
+        </div>
+      </div>
+    </el-card>
+    <!-- 使用鼠标事件(useMouseEvt) -->
+    <el-card class="w-[30rem] mt-5">
+      <div class="font-semibold text-red-700">
+        使用鼠标事件(useMouseEvt)
+        <el-icon class="cursor-pointer" @click="copyUtils('useMouseEvt')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-2.5">使用鼠标事件,onMounted注册,onBeforeUnmount卸载</div>
+      <div class="mt-2.5">type:string 鼠标事件类型</div>
+      <div class="mt-2.5">callBack:Function 回调函数</div>
+      <div class="mt-2.5">target?:HTMLElement|Document 目标元素,不填默认为document</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <div class="mt-1">
+          <span class="text-orange-500">useMouseEvt</span>
+          <span class="text-sky-600">('click',() => console.log('双击了页面'))</span>
+        </div>
+      </div>
+    </el-card>
   </div>
 </template>
 
 <script setup lang="ts">
   import { useCopy, useColor } from '@/utils'
+  import { useKeyboardEvt, useMouseEvt } from '@/hooks'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
     useCopy(FunName)
   }
-
+  useKeyboardEvt(13, () => console.log('回车了'))
+  useMouseEvt('dblclick', () => console.log('双击了页面'))
   // 获取随机颜色
   const randomColor = ref(useColor())
   const getRandomColor = () => {
     randomColor.value = useColor()
   }
 </script>
-
-<style scoped lang="less"></style>

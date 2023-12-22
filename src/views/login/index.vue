@@ -2,7 +2,7 @@
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
       <div class="login_box">
-        <span class="login_title">束水智能科技有限公司</span>
+        <span class="login_title">admin{{ ConstKeys.PROJECTNAME }}</span>
         <div class="login_content">
           <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="100px">
             <el-form-item label="用户名" prop="username">
@@ -16,7 +16,7 @@
                 type="primary"
                 :loading="loginLoading"
                 style="width: 80%"
-                @click="loginHandler(ruleFormRef)"
+                @click="loginHandler"
               >
                 登录
               </el-button>
@@ -29,7 +29,8 @@
 </template>
 
 <script setup lang="ts">
-  import { useEventListener } from '@vueuse/core'
+  import { ConstKeys } from '@/enums/const-enums'
+  import { useKeyboardEvt } from '@/hooks'
   import { useUserStore } from '@/stores/modules/user'
   import { type FormInstance, type FormRules } from 'element-plus'
   const { login } = useUserStore()
@@ -47,13 +48,13 @@
 
   const loginLoading = ref(false)
   /** 点击登录按钮 */
-  const loginHandler = async (formEl: FormInstance | undefined) => {
-    if (!formEl) return
-    await formEl.validate((valid, fields) => {
+  const loginHandler = () => {
+    if (!ruleFormRef.value) return
+    ruleFormRef.value.validate(async (valid, fields) => {
       if (valid) {
         const { username, password } = form.value
         loginLoading.value = true
-        login({ username, password })
+        await login({ username, password })
           .then(() => {
             router.push('/')
           })
@@ -69,15 +70,7 @@
       }
     })
   }
-  // 回车登录
-  const cleanup = useEventListener(document, 'keydown', (e) => {
-    if (e.code === 'Enter') {
-      loginHandler(ruleFormRef.value)
-    }
-  })
-  onUnmounted(() => {
-    cleanup()
-  })
+  useKeyboardEvt(13, loginHandler)
 </script>
 
 <style scoped lang="less">

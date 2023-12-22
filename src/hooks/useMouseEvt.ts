@@ -1,7 +1,13 @@
+/**
+ * 使用鼠标事件
+ * @param type 鼠标默认事件类型
+ * @param callback 回调函数
+ * @param target 目标dom
+ */
 export const useMouseEvt = (
   type:
     | 'click'
-    | 'dbclick'
+    | 'dblclick'
     | 'mousedown'
     | 'mouseenter'
     | 'mouseleave'
@@ -17,12 +23,16 @@ export const useMouseEvt = (
     callback(e)
   }
   if (target) {
-    target.addEventListener(type, handler)
+    onMounted(() => {
+      target.addEventListener(type, handler)
+    })
     onBeforeUnmount(() => {
       target.removeEventListener(type, handler)
     })
   } else {
-    document.addEventListener(type, handler)
+    onMounted(() => {
+      document.addEventListener(type, handler)
+    })
     onBeforeUnmount(() => {
       document.removeEventListener(type, handler)
     })
