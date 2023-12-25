@@ -18,7 +18,6 @@ import 'highlight.js/styles/github-dark-dimmed.css'
 const app = createApp(App)
 
 // Register global directive
-// 注册全局指令
 setupGlobDirectives(app)
 
 /** 挂载element-plus */
