@@ -20,7 +20,7 @@ const app = createApp(App)
 // Register global directive
 setupGlobDirectives(app)
 
-/** 挂载element-plus */
+/** mount element-plus */
 useElPlus(app)
 
 app.use(store).use(router)
