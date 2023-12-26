@@ -1,5 +1,5 @@
 <template>
-  <div id="baseMap" ref="mapRef" class="w-full h-full"></div>
+  <div id="baseMap" class="w-full h-full"></div>
 </template>
 
 <script setup lang="ts">
@@ -16,4 +16,7 @@
       }
     }
   )
+  onMounted(() => {
+    console.log(mapRef.value)
+  })
 </script>
