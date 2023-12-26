@@ -3,4 +3,7 @@
   <div class="mt-2.5 pl-5">测试一下tailwindcss</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { getList } from '@/api'
+  getList({})
+</script>

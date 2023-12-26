@@ -1,4 +1,5 @@
 import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 // 配置进度条
 NProgress.configure({ showSpinner: false, minimum: 0.2, speed: 500 })
 let loadingNum = 0
