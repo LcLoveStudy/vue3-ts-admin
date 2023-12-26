@@ -1,7 +1,17 @@
-import type { LatLngExpression } from 'leaflet'
 import MissingImg from './missing.png'
 import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+
+/**
+ * 配置项
+ * 缩放,默认true
+ * 比例尺,默认false
+ */
+export type LeafletOptionsType = {
+  showZoom?: boolean
+  showScale?: boolean
+}
+
 /**
  * 初始化地图
  * @param mapId 地图dom的id
@@ -9,9 +19,14 @@ import 'leaflet/dist/leaflet.css'
  * @param center 初始时的中心点
  * @returns
  * mapRef 地图实例
- * currentLnglat 鼠标当前所在位置
+ * currentLnglat {lng:number,lat:number} 鼠标当前所在位置
  */
-export const useLeaflet = (mapId: string, url: string, center: LatLngExpression) => {
+export const useLeaflet = (
+  mapId: string,
+  url: string,
+  center: [number, number],
+  options?: LeafletOptionsType
+) => {
   const mapRef = ref()
   const currentLnglat = ref({
     lng: 0,
@@ -28,7 +43,7 @@ export const useLeaflet = (mapId: string, url: string, center: LatLngExpression)
   onMounted(() => {
     mapRef.value = L.map(mapId, {
       center,
-      zoomControl: true,
+      zoomControl: !(options && !options.showZoom),
       zoom: 13,
       minZoom: 0,
       maxZoom: 15,
@@ -36,10 +51,15 @@ export const useLeaflet = (mapId: string, url: string, center: LatLngExpression)
       layers: [osm],
       maxBounds: bounds
     })
+    /** 监听鼠标移动事件 */
     mapRef.value.on('mousemove', function (e: any) {
       currentLnglat.value.lat = e.latlng.lat.toFixed(5)
       currentLnglat.value.lng = e.latlng.lng.toFixed(5)
     })
+    // 比例尺
+    if (options?.showScale) {
+      L.control.scale().addTo(mapRef.value)
+    }
   })
   return { mapRef, currentLnglat }
 }
