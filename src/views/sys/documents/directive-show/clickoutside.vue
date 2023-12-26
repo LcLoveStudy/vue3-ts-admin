@@ -1,18 +1,18 @@
 <template>
   <div class="text-2xl font-semibold">点击目标外(v-clickoutside)</div>
   <div class="mt-6">
-    <span class="fs-20 inline-block">应用场景：</span>
+    <span class="text-[20px] inline-block">应用场景：</span>
     <br />
     当点击目标元素外的时候会执行该指令的回调函数
     <br />
-    <span class="fs-20 mt-5 inline-block">用法说明:</span>
+    <span class="text-[20px] mt-5 inline-block">用法说明:</span>
     <br />
     在需要的地方使用v-clickoutside指令
     <span class="text-red-700 bgc-lightgray">(指令的值为一个回调函数)</span>
     <br />
-    <span class="fs-20 mt-5 inline-block">示例:</span>
+    <span class="text-[20px] mt-5 inline-block">示例:</span>
     <br />
-    <pre class="w-150">
+    <pre class="w-[50rem]">
       <code>
         &lt;div <span class="text-red-700">v-clickoutside="clickoutside"</span>&gt;
             点我外面的任何地方都会+1
@@ -63,8 +63,8 @@
     top: 100px;
     right: 100px;
     position: absolute;
-    width: 300px;
-    height: 200px;
+    width: 20rem;
+    height: 12rem;
     background-color: #fff;
   }
 </style>

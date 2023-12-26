@@ -26,7 +26,7 @@
     </div>
   </div>
   <!-- 图片列表 -->
-  <el-card class="page_main w-200">
+  <el-card class="page_main">
     <img
       v-lazy="
         'https://img2.baidu.com/it/u=2098302066,1207295454&fm=253&fmt=auto&app=138&f=JPEG?w=562&h=343'
@@ -68,7 +68,7 @@
 
   .page_main {
     height: 800px;
-    width: 800px;
+    width: 50rem;
     position: absolute;
     top: 100px;
     right: 0;
