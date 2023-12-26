@@ -7,7 +7,9 @@ export const setFormDataConfig = (
   arg: HttpType.HttpPostRequestType | HttpType.HttpGetRequestType
 ) => {
   if (
-    arg.config?.headers &&
+    arg &&
+    arg.config &&
+    arg.config.headers &&
     arg.config.headers['Content-Type'] &&
     arg.config.headers['Content-Type'] === 'multipart/form-data'
   ) {
