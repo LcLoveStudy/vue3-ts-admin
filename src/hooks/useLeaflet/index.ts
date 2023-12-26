@@ -1,3 +1,6 @@
+/**
+ * 用到的依赖:leaflet
+ */
 import MissingImg from './missing.png'
 import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
