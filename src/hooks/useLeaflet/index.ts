@@ -4,7 +4,7 @@
 import MissingImg from './missing.png'
 import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-
+import { useMiniMap } from './useMiniMap'
 /**
  * 配置项
  * 缩放,默认true
@@ -13,6 +13,10 @@ import 'leaflet/dist/leaflet.css'
 export type LeafletOptionsType = {
   showZoom?: boolean
   showScale?: boolean
+  miniMap?: {
+    show?: boolean
+    position?: 'bottomleft' | 'bottomright' | 'topleft' | 'topright'
+  }
 }
 
 /**
@@ -46,7 +50,8 @@ export const useLeaflet = (
   onMounted(() => {
     mapRef.value = L.map(mapId, {
       center,
-      zoomControl: !(options && !options.showZoom),
+      zoomControl:
+        (options && options.showZoom === undefined) || (options && options.showZoom) || !options,
       zoom: 13,
       minZoom: 0,
       maxZoom: 15,
@@ -63,6 +68,15 @@ export const useLeaflet = (
     if (options?.showScale) {
       L.control.scale().addTo(mapRef.value)
     }
+    if (options?.miniMap?.show) {
+      useMiniMap(
+        mapRef.value,
+        url,
+        options && options.miniMap && options.miniMap.position
+          ? options.miniMap.position
+          : 'bottomleft'
+      )
+    }
   })
   /** 卸载地图 */
   onBeforeUnmount(() => {
@@ -70,3 +84,4 @@ export const useLeaflet = (
   })
   return { mapRef, currentLnglat }
 }
+export * from './useMiniMap'
