@@ -9,7 +9,6 @@
     'https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.jpg',
     [23.445, 120.35],
     {
-      showZoom: true,
       miniMap: {
         show: true,
         position: 'topright'
