@@ -7,5 +7,8 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [],
+  corePlugins: {
+    preflight: false // 取消对element-plus的影响
+  }
 }
