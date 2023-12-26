@@ -8,7 +8,6 @@ import useElPlus from '@/components/useElPlus'
 import setupGlobDirectives from '@/directive'
 // css
 import './tailwind.css'
-import 'element-plus/dist/index.css'
 import '@/utils/page/rem'
 import '@/design/index.less'
 import '@/assets/style/reset.css'
