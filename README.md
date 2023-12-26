@@ -35,6 +35,7 @@ yarn build
 │ ├── design        全局样式设计，主要对element-plus的样式重置
 │ ├── directive     自定义指令
 │ ├── store         数据存储store
+│ ├── hooks         自定义hook
 │ ├── main.ts       入口文件
 │ ├── utils         工具函数文件夹
 │ ├── App.vue       根组件
@@ -43,7 +44,9 @@ yarn build
 │ │ └── index.ts    路由的入口文件
 │ └── views         页面文件夹
 ├── types           类型声明
+├── tailwind.config tailwind配置
 ├── package.json    项目依赖和指令
+├── vite.config.ts  vite配置
 
 ```
 
@@ -51,4 +54,3 @@ yarn build
 
 为了展示，添加了很多于业务无关的依赖，在上线打包前将无关依赖删除确保体积最小
 highlight.js 代码高亮
-tiff.js 显示 tiff 图片(utils/file/showTif.ts 文件也需删除)
