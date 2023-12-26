@@ -1,5 +1,5 @@
 /**
- * 用到的依赖:leaflet
+ * 用到的依赖:leaflet,@types/leaflet
  */
 import MissingImg from './missing.png'
 import * as L from 'leaflet'
