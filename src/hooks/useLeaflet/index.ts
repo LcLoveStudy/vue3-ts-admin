@@ -4,7 +4,10 @@ import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 /**
  * 初始化地图
- * @param url
+ * @param mapId 地图dom的id
+ * @param url 瓦片图的url
+ * @param center 初始时的中心点
+ * @returns mapRef 地图实例
  */
 export const useLeaflet = (mapId: string, url: string, center: LatLngExpression) => {
   const mapRef = ref()
