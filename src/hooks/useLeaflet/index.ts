@@ -61,5 +61,9 @@ export const useLeaflet = (
       L.control.scale().addTo(mapRef.value)
     }
   })
+  /** 卸载地图 */
+  onBeforeUnmount(() => {
+    mapRef.value.remove()
+  })
   return { mapRef, currentLnglat }
 }
