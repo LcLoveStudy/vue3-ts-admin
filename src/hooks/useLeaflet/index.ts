@@ -7,8 +7,9 @@ import 'leaflet/dist/leaflet.css'
 import { useMiniMap } from './useMiniMap'
 /**
  * 配置项
- * 缩放,默认true
- * 比例尺,默认false
+ * showZoom:缩放控件,默认true
+ * showScale:比例尺控件,默认false
+ * miniMap:鹰眼图控件{ show:默认false,position:位置 }
  */
 export type LeafletOptionsType = {
   showZoom?: boolean
@@ -68,6 +69,7 @@ export const useLeaflet = (
     if (options?.showScale) {
       L.control.scale().addTo(mapRef.value)
     }
+    // 鹰眼图
     if (options?.miniMap?.show) {
       useMiniMap(
         mapRef.value,
