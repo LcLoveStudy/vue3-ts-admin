@@ -46,7 +46,8 @@ export default defineConfig({
           vue: ['vue', 'pinia', 'vue-router'],
           echarts: ['echarts'],
           wangeditor: ['@wangeditor/editor', '@wangeditor/editor-for-vue'],
-          elPlus: ['element-plus'],
+          elementPlus: ['element-plus'],
+          leaflet: ['leaflet', 'leaflet-minimap'],
           elementIcons: ['@element-plus/icons-vue']
         }
       }
