@@ -12,7 +12,7 @@
   import { type PropType } from 'vue'
   import { initChartById, useReset, getRandomId } from '../../utils'
   import type { StackDataItemType, StackSeriesType } from './stack-chart'
-  import { objectCopy } from '@/utils'
+  import { deepClone } from '@/utils'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = getRandomId()
   let chartDom: echarts.ECharts
@@ -157,7 +157,7 @@
 
   /** 规范化处理data,让没有数据的一项value为0，防止某一个缺失 */
   const specifyDataHandler = () => {
-    dataList = objectCopy(props.data)
+    dataList = deepClone(props.data)
     dataList.forEach((item) => {
       const itemLegendList: string[] = []
       item.data.forEach((l) => {
