@@ -60,6 +60,34 @@
         </div>
       </div>
     </el-card>
+    <!-- 返回一个被full填充的长度为length的数组(arrFull) -->
+    <el-card class="w-100 height-full mt-4">
+      <div class="fs-base font-semibold text-red-700">
+        返回一个被full填充的长度为length的数组(arrFull)
+        <el-icon class="cursor-pointer" @click="copyUtils('arrFull')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-2.5">
+        参数1:返回数组的长度
+        <br />
+        参数2:用于填充的参数
+        <br />
+      </div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <div>
+          <span class="text-orange-500">arrFull</span>
+          <span class="text-sky-600">(2,1)</span>
+          -> [1,1]
+        </div>
+        <div class="mt-2.5">
+          <span class="text-orange-500">arrFull</span>
+          <span class="text-sky-600">(-1,'111')</span>
+          -> []
+        </div>
+      </div>
+    </el-card>
+    <!-- 对数组排序(arrSort) -->
   </div>
 </template>
 
