@@ -1,6 +1,5 @@
 export * from './common/localstorage'
 export * from './page/nprogress'
-export * from './page/theme'
 export * from './array'
 export * from './object'
 export * from './page/percentage'
