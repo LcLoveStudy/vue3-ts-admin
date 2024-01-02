@@ -1,89 +1,6 @@
-/** 下面是侧边栏收起来后的弹出框样式 */
-.el-menu.el-menu--popup.el-menu--popup-right-start {
-  padding: 0 !important;
-  //弹出框没有子项的二级菜单
-  .el-menu-item {
-    height: var(--menu-item-height);
-    background: var(--container-bgc) !important;
-    color: var(--theme-color);
-    &:hover {
-      color: var(--menu-item-active) !important;
-    }
-    &.is-active {
-      color: var(--menu-item-active) !important;
-      background: var(--menu-item-active-bgc) !important;
-      border-right: 2px solid var(--menu-item-active);
-    }
-  }
-  // 弹出框有子项的二级菜单
-  .el-sub-menu {
-    .el-sub-menu__title {
-      height: var(--menu-item-height);
-      &:hover {
-        background: var(--container-bgc) !important;
-        color: var(--menu-item-active) !important;
-      }
-    }
-    &.is-active {
-      .el-menu-item.is-active {
-        background: var(--menu-item-active-bgc) !important;
-        border-right: 2px solid var(--menu-item-active) !important;
-      }
-      .el-sub-menu__title {
-        background: var(--menu-item-active-bgc) !important;
-        color: var(--menu-item-active) !important;
-        border-right: 2px solid var(--menu-item-active);
-      }
-    }
-  }
-}
-//选中状态下的有子项的一级菜单样式
-.el-menu .el-sub-menu.is-active .el-sub-menu__title.el-tooltip__trigger.el-tooltip__trigger {
-  background: var(--menu-item-active-bgc) !important;
-}
-/** 上面是侧边栏收起来后的弹出框样式 */
-
-/** 下面是侧边菜单和头部菜单的样式 */
+/** 下面是头部菜单的样式 */
 .el-menu {
   border: none !important;
-  /** 下面是没折叠时的侧边菜单 */
-  &.el-menu--vertical {
-    .el-menu-item {
-      font-size: 0.875rem;
-      height: var(--menu-item-height);
-      background: var(--container-bgc);
-      &:hover {
-        color: var(--menu-item-active) !important;
-        background: var(--container-bgc);
-      }
-      &.is-active {
-        color: var(--menu-item-active) !important;
-        background: var(--menu-item-active-bgc);
-        border-right: 2px solid var(--menu-item-active);
-      }
-    }
-    .el-sub-menu {
-      &.is-active > .el-sub-menu__title {
-        color: var(--menu-item-active) !important;
-      }
-      .el-sub-menu__title {
-        font-size: 0.875rem;
-        background: var(--container-bgc);
-        height: var(--menu-item-height);
-        &:hover {
-          color: var(--menu-item-active) !important;
-          background: var(--container-bgc) !important;
-        }
-      }
-      .el-sub-menu .el-sub-menu__title,
-      .el-menu-item {
-        height: var(--menu-item-height);
-        text-indent: 1rem;
-      }
-    }
-  }
-  /** 上面是没折叠时的侧边菜单 */
-
   /** 下面是头部菜单 */
   &.el-menu--horizontal {
     .el-menu-item {
@@ -141,3 +58,7 @@
   }
 }
 /** 上面是头部导航弹框样式 */
+//选中状态下的有子项的一级菜单样式
+.el-menu .el-sub-menu.is-active .el-sub-menu__title.el-tooltip__trigger.el-tooltip__trigger {
+  background: var(--menu-item-active-bgc) !important;
+}
