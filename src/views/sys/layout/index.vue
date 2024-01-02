@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-  import AsideMenu from './components/menu/aside-menu'
+  import AsideMenu from './components/aside-menu'
   import Header from './components/header/index.vue'
   import { useLayoutStore } from '@/stores/modules/layout'
   import { storeToRefs } from 'pinia'

@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
   import { useDocumentFullScreen } from '@/hooks'
-  import topMenu from '../menu/top-menu.vue'
+  import topMenu from './components/top-menu'
   import SsBreadcrumb from '@/components/ss-breadcrumb'
   import UsernameDropdown from './components/username-dropdown.vue'
   import { useLayoutStore } from '@/stores/modules/layout'
