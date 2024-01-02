@@ -2,13 +2,13 @@
   <el-container class="container fs-base">
     <!-- 右边头部 -->
     <el-header class="header">
-      <Header v-model:isCollapse="asideMenuFold" />
+      <Header />
     </el-header>
     <!-- 右边主体 -->
     <el-container class="main_container">
       <!-- 侧边菜单栏 -->
       <el-aside class="aside" v-if="menuPosition == 'aside'">
-        <aside-menu :isCollapse="asideMenuFold" />
+        <aside-menu />
       </el-aside>
       <!-- 右边主体 -->
       <el-main class="main scrollbar">
@@ -22,10 +22,7 @@
   import { AsideMenu, Header } from './components'
   import { useLayoutStore } from '@/stores/modules/layout'
   import { storeToRefs } from 'pinia'
-  const { menuPosition, asideMenuFold } = storeToRefs(useLayoutStore())
-
-  /** 是否折叠侧边菜单 */
-  const isCollapse = ref(false)
+  const { menuPosition } = storeToRefs(useLayoutStore())
 </script>
 
 <style scoped lang="less">

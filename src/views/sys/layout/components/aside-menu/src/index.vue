@@ -2,7 +2,7 @@
   <div class="menu_container overflow-y-auto">
     <el-menu
       class="aside_menu"
-      :collapse="props.isCollapse"
+      :collapse="asideMenuFold"
       router
       text-color="var(--theme-color)"
       :default-active="currentRoute"
@@ -86,16 +86,11 @@
   import { routes } from '@/router/index'
   import { hasRole } from '@/utils'
   import { useUserStore } from '@/stores/modules/user'
+  import { useLayoutStore } from '@/stores/modules/layout'
+  import { storeToRefs } from 'pinia'
+  const { asideMenuFold } = storeToRefs(useLayoutStore())
   const { userinfo } = useUserStore()
   const userType = userinfo?.user_type ? userinfo.user_type : 'admin'
-
-  const props = defineProps({
-    // 菜单栏的展开和折叠
-    isCollapse: {
-      default: false,
-      type: Boolean
-    }
-  })
   const route = useRoute()
 
   // 当前路由，绑定菜单的default-active属性

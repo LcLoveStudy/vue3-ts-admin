@@ -17,7 +17,7 @@ export const useLayoutStore = defineStore('layout', () => {
    */
   const getMenuPosition = () => {
     menuPosition.value = getItem(LocalStorageKeys.MENUPOSITION) || 'aside'
-    return getItem(LocalStorageKeys.MENUPOSITION) === 'top'
+    return getItem<'top' | 'aside'>(LocalStorageKeys.MENUPOSITION) === 'top'
   }
   return { menuPosition, setMenuPosition, getMenuPosition, asideMenuFold }
 })
