@@ -11,7 +11,7 @@ import './tailwind.css'
 import '@/utils/page/rem'
 import '@/design/index.less'
 import '@/assets/style/reset.css'
-import 'highlight.js/styles/github-dark-dimmed.css'
+import 'highlight.js/styles/github-dark-dimmed.css' // 代码着色
 
 const app = createApp(App)
 
