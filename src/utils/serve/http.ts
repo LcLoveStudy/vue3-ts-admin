@@ -22,6 +22,6 @@ export const http = {
   // post请求
   post<T>(arg: HttpType.HttpPostRequestType): Promise<T> {
     setFormDataConfig(arg)
-    return service.post(arg.url, { ...arg.data }, arg.config)
+    return service.post(arg.url, arg.data, arg.config)
   }
 }
