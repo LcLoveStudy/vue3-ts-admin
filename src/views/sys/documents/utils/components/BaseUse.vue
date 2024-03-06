@@ -98,6 +98,28 @@
         </div>
       </div>
     </el-card>
+    <!-- 防抖函数(debounce) -->
+    <el-card class="w-[30rem] mt-5 ml-4">
+      <div class="font-semibold text-red-700">
+        防抖函数(debounce)
+        <el-icon class="cursor-pointer" @click="copyUtils('debounce')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-2.5">防抖函数,在相应的时间后会执行一次,如果再次触发会重新计时</div>
+      <div class="mt-2.5">cb:Function 回调函数</div>
+      <div class="mt-2.5">delay:number 延迟的时间</div>
+      <div class="mt-2.5">immediate?:boolean 是否立刻执行</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <div class="mt-1">
+          <span class="text-sky-600">
+            @input=
+            <span class="text-orange-500">debounce</span>
+            (() => { console.log(input.value) }, 1000)
+          </span>
+        </div>
+      </div>
+    </el-card>
   </div>
 </template>
 
