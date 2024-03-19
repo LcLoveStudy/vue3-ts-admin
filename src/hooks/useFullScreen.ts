@@ -26,4 +26,6 @@ export const useDocumentFullScreen = () => {
       ElMessage.error('浏览器不支持全屏')
     }
   }
+  const isFulling = isFullScreen()
+  return { isFulling }
 }
