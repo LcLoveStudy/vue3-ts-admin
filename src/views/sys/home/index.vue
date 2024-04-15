@@ -4,6 +4,6 @@
 </template>
 
 <script setup lang="ts">
-  import { getList } from '@/api'
-  getList({})
+  // import { getList } from '@/api'
+  // getList({})
 </script>

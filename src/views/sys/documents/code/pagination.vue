@@ -1,10 +1,10 @@
 <template>
-  <ss-pagination v-model:current="current" v-model:size="size" :total="130" @change="change" />
+  <lc-pagination v-model:current="current" v-model:size="size" :total="130" @change="change" />
   <h3 class="mt-6">示例</h3>
   <!-- 示例代码 -->
   <pre>
     <code class="language-html text-sm">
-    &lt;ss-pagination
+    &lt;lc-pagination
       v-model:current="current"
       v-model:size="size"
       :total="130"
@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-  import SsPagination from '@/components/ss-pagination'
+  import LcPagination from '@/components/lc-pagination'
   import HowToUseTable from '../components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const current = ref(1)
@@ -64,3 +64,4 @@
 </script>
 
 <style scoped></style>
+@/components/lc-pagination
