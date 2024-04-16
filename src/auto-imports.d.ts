@@ -6,12 +6,8 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
-  const SsBreadcrumb: typeof import('./components/index')['SsBreadcrumb']
-  const SsPagination: typeof import('./components/index')['SsPagination']
-  const SsScrollbar: typeof import('./components/index')['SsScrollbar']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
-  const createComponents: typeof import('./components/createComponents')['createComponents']
   const customRef: typeof import('vue')['customRef']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
@@ -49,9 +45,6 @@ declare global {
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
-  const ssBreadcrumb: typeof import('./components/lc-breadcrumb/index')['default']
-  const ssPagination: typeof import('./components/lc-pagination/index')['default']
-  const ssScrollbar: typeof import('./components/lc-scrollbar/index')['default']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
@@ -61,7 +54,6 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
-  const useElPlus: typeof import('./components/useElPlus')['default']
   const useLink: typeof import('vue-router')['useLink']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
@@ -74,17 +66,5 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type {
-    Component,
-    ComponentPublicInstance,
-    ComputedRef,
-    ExtractDefaultPropTypes,
-    ExtractPropTypes,
-    ExtractPublicPropTypes,
-    InjectionKey,
-    PropType,
-    Ref,
-    VNode,
-    WritableComputedRef
-  } from 'vue'
+  export type { Component, ComponentPublicInstance, ComputedRef, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, VNode, WritableComputedRef } from 'vue'
 }
