@@ -1,4 +1,3 @@
-import { endProcess } from '@/utils/page/nprogress'
 import type { AxiosError, AxiosInstance, AxiosResponse } from 'axios'
 import { ElMessage } from 'element-plus'
 
@@ -6,12 +5,12 @@ import { ElMessage } from 'element-plus'
  * 初始化响应拦截器
  * @param service axios实例对象
  */
-export const initResponseInterceptor = (service: AxiosInstance) => {
+export const initResponseInterceptor = (service: AxiosInstance, endProcess: Function) => {
   service.interceptors.response.use(
     (response: AxiosResponse) => {
       const { data } = response
       const { showMessage, message } = response.config.headers
-      endProcess()
+      endProcess(response.config.url as string)
       // 判断是否展示接口信息
       if (showMessage) {
         const messageInfo = decodeURIComponent(message)
@@ -36,7 +35,7 @@ export const initResponseInterceptor = (service: AxiosInstance) => {
           error.message = '网络异常'
           break
       }
-      endProcess()
+      endProcess(error.config?.url as string)
       ElMessage.error(error.message)
       return Promise.reject(error)
     }

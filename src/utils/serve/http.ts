@@ -2,16 +2,18 @@ import axios, { type AxiosInstance } from 'axios'
 import { initRequestInterceptors, initResponseInterceptor } from './interceptors'
 import { setFormDataConfig } from './setFormDataConfig'
 import * as HttpType from '@/utils/serve/types'
+import { useLoadingProcess } from '@/hooks'
+const { endProcess, startProcess } = useLoadingProcess()
 // 创建axios实例
 const service: AxiosInstance = axios.create({
   baseURL: ''
 })
 
 // 添加请求拦截器
-initRequestInterceptors(service)
+initRequestInterceptors(service, startProcess)
 
 // 添加响应拦截器
-initResponseInterceptor(service)
+initResponseInterceptor(service, endProcess)
 
 export const http = {
   // get请求
