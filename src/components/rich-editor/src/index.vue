@@ -23,11 +23,11 @@
   defineOptions({
     name: 'RichEditor'
   })
+  const valueHtml = defineModel({
+    type: String,
+    default: ''
+  })
   const props = defineProps({
-    value: {
-      type: String,
-      default: ''
-    },
     heigth: {
       type: String,
       default: '300px'
@@ -37,18 +37,16 @@
       default: ''
     }
   })
-  const emits = defineEmits(['update:value', 'change'])
+  const emits = defineEmits(['change'])
   // 获取实例
   const editorRef = shallowRef()
-  // 内容 HTML
-  const valueHtml = ref(props.value)
   // 工具栏
   const toolbarConfig = {}
   const editorConfig = { placeholder: '请输入内容...' }
 
   // 内容改变时，获取当前的html内容并更新父组件传递来的参数
   const handleChange = (editor: { getHtml: () => string }) => {
-    emits('update:value', editor.getHtml())
+    valueHtml.value = editor.getHtml()
     emits('change', editor.getHtml())
   }
 

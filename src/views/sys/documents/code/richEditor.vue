@@ -7,7 +7,7 @@
       <el-link type="primary" @click="goWangEditor"><span class="fs-base">官网</span></el-link>
     </div>
   </h2>
-  <RichEditor v-model:value="inputValue" @change="inputChange" />
+  <RichEditor v-model="inputValue" @change="inputChange" />
 </template>
 
 <script setup lang="ts">
