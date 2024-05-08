@@ -1,5 +1,6 @@
 import type { UserType } from '#/userinfo'
 import { LocalStorageKeys } from '@/enums/localstorage'
+import type { ProcessHandlerFnType } from '@/hooks'
 import { getItem } from '@/utils'
 import type { AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
@@ -8,7 +9,10 @@ import { ElMessage } from 'element-plus'
  * 初始化请求拦截器
  * @param service axios实例对象
  */
-export const initRequestInterceptors = (service: AxiosInstance, startProcess: Function) => {
+export const initRequestInterceptors = (
+  service: AxiosInstance,
+  startProcess: ProcessHandlerFnType
+) => {
   service.interceptors.request.use(
     (config: any) => {
       const showMessage = config.showMessage

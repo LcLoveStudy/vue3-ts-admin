@@ -1,3 +1,4 @@
+import type { ProcessHandlerFnType } from '@/hooks'
 import type { AxiosError, AxiosInstance, AxiosResponse } from 'axios'
 import { ElMessage } from 'element-plus'
 
@@ -5,7 +6,10 @@ import { ElMessage } from 'element-plus'
  * 初始化响应拦截器
  * @param service axios实例对象
  */
-export const initResponseInterceptor = (service: AxiosInstance, endProcess: Function) => {
+export const initResponseInterceptor = (
+  service: AxiosInstance,
+  endProcess: ProcessHandlerFnType
+) => {
   service.interceptors.response.use(
     (response: AxiosResponse) => {
       const { data } = response
