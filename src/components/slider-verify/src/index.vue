@@ -16,17 +16,17 @@
 
 <script setup lang="ts">
   defineProps({
-    status: {
-      type: Boolean,
-      default: false
-    },
     width: {
       type: String,
       default: '250px'
     }
   })
+  const status = defineModel('status', {
+    type: Boolean,
+    default: false
+  })
 
-  const emits = defineEmits(['onSuccess', 'update:status'])
+  const emits = defineEmits(['onSuccess'])
 
   /** 是否拖拽到底部 */
   const isEnd = ref(false)
@@ -115,13 +115,13 @@
         window.removeEventListener('mousedown', mouseDownHandler)
         window.removeEventListener('mouseup', mouseUpHandler)
         window.removeEventListener('mousemove', mouseMoveHandler)
-        emits('update:status', true)
+        status.value = true
         emits('onSuccess')
       } else {
         window.addEventListener('mousedown', mouseDownHandler)
         window.addEventListener('mouseup', mouseUpHandler)
         window.addEventListener('mousemove', mouseMoveHandler)
-        emits('update:status', false)
+        status.value = false
       }
     }
   )
