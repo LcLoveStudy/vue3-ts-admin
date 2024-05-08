@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-wrap ml-5">
+  <div class="grid grid-cols-4 gap-4 ml-5">
     <!-- 深拷贝对象 -->
-    <el-card class="w-100">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         深拷贝对象(deepClone)
         <el-icon class="cursor-pointer" @click="copyUtils('deepClone')">
@@ -16,7 +16,7 @@
       </div>
     </el-card>
     <!-- 判断一个对象是否为空对象 -->
-    <el-card class="w-100 ml-[1rem]">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         判断一个对象是否为空对象(isEmptyObj)
         <el-icon class="cursor-pointer" @click="copyUtils('isEmptyObj')">

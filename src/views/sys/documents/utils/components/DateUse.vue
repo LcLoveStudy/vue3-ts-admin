@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-wrap ml-5">
+  <div class="grid grid-cols-4 gap-4 ml-5">
     <!-- 将秒数转换时分秒。 -->
-    <el-card class="w-100 height-full ml-5">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         将秒数转换时分秒(hourFormat)
         <el-icon class="cursor-pointer" @click="copyUtils('hourFormat')">
@@ -16,7 +16,7 @@
       </div>
     </el-card>
     <!-- 获取某个日期位于当年的第几天 -->
-    <el-card class="w-100 height-full ml-5">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         获取某个日期位于当年的第几天(dayOfYear)
         <el-icon class="cursor-pointer" @click="copyUtils('dayOfYear')">
@@ -31,7 +31,7 @@
       </div>
     </el-card>
     <!-- 计算两天相差多久 -->
-    <el-card class="w-100 height-full ml-5">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         计算两天相差多久(dayDif)
         <el-icon class="cursor-pointer" @click="copyUtils('dayDif')">

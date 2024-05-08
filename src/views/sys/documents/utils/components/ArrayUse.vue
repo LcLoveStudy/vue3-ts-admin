@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-wrap ml-5">
+  <div class="grid grid-cols-4 gap-4 ml-5">
     <!-- 是否为数组(isArray) -->
-    <el-card class="w-100 height-full">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         是否为数组(isArray)
         <el-icon class="cursor-pointer" @click="copyUtils('isArray')">
@@ -23,7 +23,7 @@
       </div>
     </el-card>
     <!-- 对数组排序(arrSort) -->
-    <el-card class="w-150 height-full ml-5">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         对数组排序(arrSort)
         <el-icon class="cursor-pointer" @click="copyUtils('arrSort')">
@@ -61,7 +61,7 @@
       </div>
     </el-card>
     <!-- 返回一个被full填充的长度为length的数组(arrFull) -->
-    <el-card class="w-100 height-full mt-4">
+    <el-card>
       <div class="fs-base font-semibold text-red-700">
         返回一个被full填充的长度为length的数组(arrFull)
         <el-icon class="cursor-pointer" @click="copyUtils('arrFull')">

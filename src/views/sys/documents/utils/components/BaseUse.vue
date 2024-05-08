@@ -1,7 +1,7 @@
 <template>
-  <div class="text-base flex flex-wrap ml-5">
+  <div class="grid grid-cols-4 gap-4 ml-5">
     <!-- 复制内容到剪贴板(getCopy) -->
-    <el-card class="w-[20rem]">
+    <el-card>
       <div class="font-semibold text-red-700">
         复制内容到剪贴板(useCopy)
         <el-icon class="cursor-pointer" @click="copyUtils('useCopy')">
@@ -17,7 +17,7 @@
       </div>
     </el-card>
     <!-- 获取变量的类型(getType) -->
-    <el-card class="w-[20rem] ml-5">
+    <el-card>
       <div class="font-semibold text-red-700">
         获取变量的类型(getType)
         <el-icon class="cursor-pointer" @click="copyUtils('getType')">
@@ -43,7 +43,7 @@
       </div>
     </el-card>
     <!-- 获取变量的类型(useColor) -->
-    <el-card class="w-[20rem] ml-5">
+    <el-card>
       <div class="font-semibold text-red-700">
         随机获取一个16进制的颜色(useColor)
         <el-icon class="cursor-pointer" @click="copyUtils('useColor')">
@@ -62,7 +62,7 @@
       </div>
     </el-card>
     <!-- 注册键盘事件(useKeyboardEvt) -->
-    <el-card class="w-[30rem] ml-5">
+    <el-card>
       <div class="font-semibold text-red-700">
         键盘事件hook(useKeyboardEvt)
         <el-icon class="cursor-pointer" @click="copyUtils('useKeyboardEvt')">
@@ -80,7 +80,7 @@
       </div>
     </el-card>
     <!-- 使用鼠标事件(useMouseEvt) -->
-    <el-card class="w-[30rem] mt-5">
+    <el-card>
       <div class="font-semibold text-red-700">
         使用鼠标事件(useMouseEvt)
         <el-icon class="cursor-pointer" @click="copyUtils('useMouseEvt')">
@@ -99,7 +99,7 @@
       </div>
     </el-card>
     <!-- 防抖函数(debounce) -->
-    <el-card class="w-[30rem] mt-5 ml-4">
+    <el-card>
       <div class="font-semibold text-red-700">
         防抖函数(debounce)
         <el-icon class="cursor-pointer" @click="copyUtils('debounce')">
