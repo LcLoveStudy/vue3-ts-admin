@@ -5,6 +5,7 @@ import router from '@/router'
 import store from '@/stores'
 // init
 import useElPlus from '@/components/useElPlus'
+import useMyComponents from '@/components/useMyComponents'
 import setupGlobDirectives from '@/directive'
 // css
 import './tailwind.css'
@@ -15,11 +16,12 @@ import 'highlight.js/styles/github-dark-dimmed.css' // 代码着色
 
 const app = createApp(App)
 
-// Register global directive
+// register global directive
 setupGlobDirectives(app)
 
-/** mount element-plus */
+/** mount element-plus and custom components */
 useElPlus(app)
+useMyComponents(app)
 
 app.use(store).use(router)
 

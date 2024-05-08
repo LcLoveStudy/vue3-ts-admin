@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-  import LcPagination from '@/components/lc-pagination'
   import HowToUseTable from '../components/how-to-use-table.vue'
   import highlight from 'highlight.js'
   const current = ref(1)
