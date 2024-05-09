@@ -2,7 +2,7 @@
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
       <div class="login_box">
-        <span class="login_title">admin{{ ConstKeys.PROJECTNAME }}</span>
+        <span class="login_title">admin{{ ConstEnums.PROJECT_NAME }}</span>
         <div class="login_content">
           <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="100px">
             <el-form-item label="用户名" prop="username">
@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ConstKeys } from '@/enums/const-enums'
+  import { ConstEnums } from '@/enums/const-enums'
   import { useKeyboardEvt } from '@/hooks'
   import { useUserStore } from '@/stores/modules/user'
   import { type FormInstance, type FormRules } from 'element-plus'

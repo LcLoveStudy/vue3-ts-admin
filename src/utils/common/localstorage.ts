@@ -1,5 +1,5 @@
 import { LocalStorageKeys } from '@/enums/localstorage'
-import { ConstKeys } from '@/enums/const-enums'
+import { ConstEnums } from '@/enums/const-enums'
 /**
  * 用于在localstorage中存储item的函数
  * @param {*} key   键名
@@ -9,7 +9,7 @@ import { ConstKeys } from '@/enums/const-enums'
  * @email dotb116393@163.com
  */
 export const setItem = (key: LocalStorageKeys, value: any) => {
-  localStorage.setItem(key + ConstKeys.PROJECTNAME, JSON.stringify(value))
+  localStorage.setItem(key + ConstEnums.PROJECT_NAME, JSON.stringify(value))
 }
 
 /**
@@ -21,7 +21,7 @@ export const setItem = (key: LocalStorageKeys, value: any) => {
  * @email dotb116393@163.com
  */
 export const getItem = <T>(key: LocalStorageKeys): T => {
-  return JSON.parse(localStorage.getItem(key + ConstKeys.PROJECTNAME) || JSON.stringify(''))
+  return JSON.parse(localStorage.getItem(key + ConstEnums.PROJECT_NAME) || JSON.stringify(''))
 }
 
 /**
@@ -33,7 +33,7 @@ export const getItem = <T>(key: LocalStorageKeys): T => {
  */
 export const removeItem = (key?: LocalStorageKeys) => {
   if (key) {
-    localStorage.removeItem(key + ConstKeys.PROJECTNAME)
+    localStorage.removeItem(key + ConstEnums.PROJECT_NAME)
   } else {
     localStorage.clear()
   }
