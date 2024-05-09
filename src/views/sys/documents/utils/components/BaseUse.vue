@@ -42,19 +42,21 @@
         </div>
       </div>
     </el-card>
-    <!-- 获取变量的类型(useColor) -->
+    <!-- 获取变量的类型(getRandomColor) -->
     <el-card>
       <div class="font-semibold text-red-700">
-        随机获取一个16进制的颜色(useColor)
-        <el-icon class="cursor-pointer" @click="copyUtils('useColor')">
+        随机获取一个16进制的颜色(getRandomColor)
+        <el-icon class="cursor-pointer" @click="copyUtils('getRandomColor')">
           <DocumentCopy />
         </el-icon>
       </div>
       <div class="mt-2.5">获取16进制的颜色</div>
       <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
-        <el-button type="primary" size="small" @click="getRandomColor">点我获取随机颜色</el-button>
+        <el-button type="primary" size="small" @click="getRandomColorHandler">
+          点我获取随机颜色
+        </el-button>
         <div class="mt-5">
-          <span class="text-orange-500">useColor</span>
+          <span class="text-orange-500">getRandomColor</span>
           <span class="text-sky-600">()</span>
           ->
           <i :style="{ color: randomColor }">{{ randomColor }}</i>
@@ -124,7 +126,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useCopy, useColor } from '@/utils'
+  import { useCopy, getRandomColor } from '@/utils'
   import { useKeyboardEvt, useMouseEvt } from '@/hooks'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
@@ -133,8 +135,8 @@
   useKeyboardEvt(13, () => console.log('回车了'))
   useMouseEvt('dblclick', () => console.log('双击了页面'))
   // 获取随机颜色
-  const randomColor = ref(useColor())
-  const getRandomColor = () => {
-    randomColor.value = useColor()
+  const randomColor = ref(getRandomColor())
+  const getRandomColorHandler = () => {
+    randomColor.value = getRandomColor()
   }
 </script>

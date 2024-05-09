@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useColor } from '@/utils'
+  import { getRandomColor } from '@/utils'
   import * as echarts from 'echarts'
   import { type PieDataType } from './pie-chart'
   import { initChartById, useReset, getRandomId } from '../../utils'
@@ -108,7 +108,7 @@
   /** 处理颜色 */
   const pieColorHandler = () => {
     for (let i = 0; i <= props.data.length - 1; i++) {
-      colorList.push(useColor())
+      colorList.push(getRandomColor())
     }
     ;(props.data as PieDataType[]).forEach((item) => {
       if (!item.name || !item.value) {

@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useColor } from '@/utils'
+  import { getRandomColor } from '@/utils'
   import { type MultiLineSeriesType, type SingleLineDataType } from './line-chart'
   import * as echarts from 'echarts'
   import type { PropType } from 'vue'
@@ -212,7 +212,7 @@
       colorList.push(props.lineColor)
     }
     for (let i = 0; i <= singleLineValue.length - 1; i++) {
-      colorList.push(useColor())
+      colorList.push(getRandomColor())
     }
   }
   watch(

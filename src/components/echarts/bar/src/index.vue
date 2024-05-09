@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useColor } from '@/utils'
+  import { getRandomColor } from '@/utils'
   import {
     type RuleType,
     type SeriesType,
@@ -215,7 +215,7 @@
               ? (item.color as string)
               : props.barColor
               ? props.barColor
-              : useColor()
+              : getRandomColor()
           },
           value: item.value
         })
@@ -237,7 +237,7 @@
           colorList.value.push(item.color as string)
         } else {
           for (let i = 0; i <= props.data!.length - 1; i++) {
-            colorList.value.push(useColor())
+            colorList.value.push(getRandomColor())
           }
         }
       })
