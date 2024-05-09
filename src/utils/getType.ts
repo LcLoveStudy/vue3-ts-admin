@@ -22,5 +22,7 @@ export type AllType =
  * @example getType({}) //object
  */
 export const getType = (variable: unknown): AllType => {
+  if (variable === null) return 'null'
+  if (variable === undefined) return 'undefined'
   return Object.prototype.toString.call(variable).slice(8, -1).toLowerCase() as AllType
 }
