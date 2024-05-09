@@ -6,7 +6,7 @@ import type { LocalStorageKeys } from '@/enums/localstorage'
  * @param key
  * @returns 返回一个ref对象，修改该对象会同步到localstorage中，赋值为null时清空该localstorage
  */
-export const useLocalStorage = (key: LocalStorageKeys) => {
+export const useLocalStorage = <T>(key: LocalStorageKeys): Ref<T> => {
   const storageItem = ref(
     JSON.parse(localStorage.getItem(key + ConstEnums.PROJECT_NAME) || JSON.stringify(''))
   )
@@ -24,7 +24,5 @@ export const useLocalStorage = (key: LocalStorageKeys) => {
       deep: true
     }
   )
-  return {
-    storageItem
-  }
+  return storageItem
 }
