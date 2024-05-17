@@ -1,7 +1,6 @@
 export * from './common'
 export * from './array'
 export * from './object'
-export * from './page/percentage'
 export * from './time'
 export * from './file/useDownload'
 export * from './file/showTif'
