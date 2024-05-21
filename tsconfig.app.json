@@ -1,6 +1,6 @@
 {
   "extends": "./node_modules/@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "types/**/*.d.ts", "types/**/*.ts"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/types/**/*.d.ts", "src/types/**/*.ts"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     // 若TS版本为5.x，此处值应为"node"
@@ -11,7 +11,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "#/*": ["./types/*"]
+      "#/*": ["src/types/*"]
     }
   }
 }

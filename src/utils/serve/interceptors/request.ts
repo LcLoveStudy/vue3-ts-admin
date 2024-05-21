@@ -1,4 +1,3 @@
-import type { UserType } from '#/userinfo'
 import { LocalStorageKeys } from '@/enums/localstorage'
 import type { ProcessHandlerFnType } from '@/hooks'
 import { getItem } from '@/utils'

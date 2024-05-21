@@ -15,7 +15,7 @@
  * }
  * children:子路由配置
  */
-interface RouterType {
+declare interface RouterType {
   path: string
   name: string
   redirect?: string
