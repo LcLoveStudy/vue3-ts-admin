@@ -2,5 +2,5 @@
 declare interface UserType {
   username: string
   password: string
-  user_type: string
+  userType: string
 }

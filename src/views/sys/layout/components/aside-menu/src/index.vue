@@ -90,7 +90,7 @@
   import { storeToRefs } from 'pinia'
   const { asideMenuFold } = storeToRefs(useLayoutStore())
   const { userinfo } = useUserStore()
-  const userType = userinfo?.user_type ? userinfo.user_type : 'admin'
+  const userType = userinfo?.userType ? userinfo.userType : 'admin'
   const route = useRoute()
 
   // 当前路由，绑定菜单的default-active属性

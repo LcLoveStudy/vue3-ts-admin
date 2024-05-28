@@ -6,7 +6,7 @@ import { useLocalStorage } from '@/hooks'
 /** 初始化路由导航守卫 */
 export const setupRouterGuards = (router: Router) => {
   router.beforeEach((to, from, next) => {
-    const userinfo = useLocalStorage<{ username: string; user_type: string }>(
+    const userinfo = useLocalStorage<{ username: string; userType: string }>(
       LocalStorageKeys.USERINFO
     )
     if (to.path === '/login') {
@@ -16,7 +16,7 @@ export const setupRouterGuards = (router: Router) => {
         if (
           !(to.meta as { role: string[] }).role ||
           ((to.meta as { role: string[] }).role &&
-            hasRole(userinfo.value.user_type, (to.meta as { role: string[] }).role))
+            hasRole(userinfo.value.userType, (to.meta as { role: string[] }).role))
         ) {
           next()
         } else {

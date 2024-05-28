@@ -84,7 +84,7 @@
   import { useUserStore } from '@/stores/modules/user'
   const route = useRoute()
   const { userinfo } = useUserStore()
-  const userType = userinfo?.user_type ? userinfo.user_type : 'admin'
+  const userType = userinfo?.userType ? userinfo.userType : 'admin'
   // 当前路由，绑定菜单的default-active属性
   const currentRoute = ref('')
   // 监听路由变化，当路由改变时，改变默认选项，防止页面刷新丢失菜单高亮
