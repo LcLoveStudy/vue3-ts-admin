@@ -11,12 +11,13 @@
 
 <script setup lang="ts">
   import { useLayoutStore } from '@/stores/modules/layout'
-  const { getMenuPosition, setMenuPosition } = useLayoutStore()
+  import { storeToRefs } from 'pinia'
+  const { menuPosition } = storeToRefs(useLayoutStore())
   // 是否改变菜单位置
-  const changeMenu = ref(getMenuPosition())
+  const changeMenu = ref(menuPosition.value === 'top')
   // 改变菜单位置
   const menuChange = () => {
-    setMenuPosition(changeMenu.value ? 'top' : 'aside')
+    menuPosition.value = changeMenu.value ? 'top' : 'aside'
   }
 </script>
 
