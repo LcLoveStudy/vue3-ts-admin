@@ -27,8 +27,8 @@ export const initRequestInterceptors = (
         startProcess(config.url)
       }
       // 设置token
-      if (token) {
-        config.headers.token = token
+      if (token.value) {
+        config.headers.token = token.value
       }
       return config
     },
