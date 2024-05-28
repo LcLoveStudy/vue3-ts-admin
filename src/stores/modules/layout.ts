@@ -5,6 +5,6 @@ import { useLocalStorage } from '@/hooks'
 
 export const useLayoutStore = defineStore('layout', () => {
   const asideMenuFold = ref(false)
-  const menuPosition = useLocalStorage<'aside' | 'top'>(LocalStorageKeys.MENUPOSITION, 'top')
+  const menuPosition = useLocalStorage<'aside' | 'top'>(LocalStorageKeys.MENUPOSITION, 'aside')
   return { menuPosition, asideMenuFold }
 })
