@@ -1,14 +1,14 @@
 import { ref } from 'vue'
 import { LocalStorageKeys } from '@/enums/localstorage'
-import { getItem, setItem } from '@/utils'
+import { getItem } from '@/utils'
 import { defineStore } from 'pinia'
+import { useLocalStorage } from '@/hooks'
 
 export const useLayoutStore = defineStore('layout', () => {
   const asideMenuFold = ref(false)
-  const menuPosition = ref<'aside' | 'top'>(getItem(LocalStorageKeys.MENUPOSITION) || 'aside')
+  const menuPosition = useLocalStorage<'aside' | 'top'>(LocalStorageKeys.MENUPOSITION)
   /** 设置菜单位置 */
   const setMenuPosition = (position: 'aside' | 'top') => {
-    setItem(LocalStorageKeys.MENUPOSITION, position)
     menuPosition.value = position
   }
   /**

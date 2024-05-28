@@ -1,16 +1,5 @@
 import { LocalStorageKeys } from '@/enums/localstorage'
 import { ConstEnums } from '@/enums/const-enums'
-/**
- * 用于在localstorage中存储item的函数
- * @param {*} key   键名
- * @param {*} value 值
- * @example setItem('userid','12345')
- * @author 李畅
- * @email dotb116393@163.com
- */
-export const setItem = (key: LocalStorageKeys, value: any) => {
-  localStorage.setItem(key + ConstEnums.PROJECT_NAME, JSON.stringify(value))
-}
 
 /**
  * 用于获取当前项目存储在localstorage中的item，当item不存在时返回空字符串''
