@@ -1,3 +1,3 @@
 export * from './debounce'
 export * from './localstorage'
-export * from './copyTxt'
+export * from './copy'
