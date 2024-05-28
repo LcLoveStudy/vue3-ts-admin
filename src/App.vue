@@ -3,6 +3,18 @@
 </template>
 
 <script setup lang="ts">
-  import { useWebsiteTitle } from './hooks'
-  useWebsiteTitle()
+  import { useTitle } from '@vueuse/core'
+  import { ConstEnums } from '@/enums/const-enums'
+  const route = useRoute()
+  const title = ref('')
+  watch(
+    () => route.path,
+    () => {
+      title.value = (route.meta.title as string) + ConstEnums.PROJECT_NAME
+      useTitle(title.value)
+    },
+    {
+      immediate: true
+    }
+  )
 </script>
