@@ -11,7 +11,7 @@
       <!-- 切换菜单位置 -->
       <menu-position-switch />
       <!-- 全屏 -->
-      <el-icon class="mr-6 cursor-pointer" @click="useDocumentFullScreen"><FullScreen /></el-icon>
+      <el-icon class="mr-6 cursor-pointer" @click="pageFullScreen"><FullScreen /></el-icon>
       <!-- 下拉框 -->
       <username-dropdown />
     </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useDocumentFullScreen } from '@/hooks'
+  import { pageFullScreen } from '@/utils'
   import {
     AsideMenuFoldBtn,
     MenuPositionSwitch,
