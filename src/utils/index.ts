@@ -1,5 +1,4 @@
 export * from './common'
-export * from './page/pageFullScreen'
 export * from './array'
 export * from './object'
 export * from './time'
