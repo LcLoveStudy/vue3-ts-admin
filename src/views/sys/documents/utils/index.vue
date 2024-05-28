@@ -1,5 +1,5 @@
 <template>
-  <el-tabs tab-position="left">
+  <el-tabs>
     <el-tab-pane label="通用">
       <BaseUse />
     </el-tab-pane>
