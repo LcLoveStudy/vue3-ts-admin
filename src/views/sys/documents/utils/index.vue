@@ -24,9 +24,6 @@
   import arrayUse from './components/ArrayUse.vue'
   import stringUse from './components/StringUse.vue'
   import DateUse from './components/DateUse.vue'
-  const goVueUse = () => {
-    window.open('https://vueuse.org/')
-  }
 </script>
 
 <style scoped lang="less"></style>
