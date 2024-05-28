@@ -20,8 +20,13 @@
 
 <script setup lang="ts">
   import { useDocumentFullScreen } from '@/hooks'
-  import { AsideMenuFoldBtn, MenuPositionSwitch, TopMenu, UsernameDropdown } from './components'
-  import LcBreadcrumb from '@/components/lc-breadcrumb'
+  import {
+    AsideMenuFoldBtn,
+    MenuPositionSwitch,
+    TopMenu,
+    UsernameDropdown,
+    LcBreadcrumb
+  } from './components'
   import { useLayoutStore } from '@/stores/modules/layout'
   import { storeToRefs } from 'pinia'
   const { menuPosition } = storeToRefs(useLayoutStore())
