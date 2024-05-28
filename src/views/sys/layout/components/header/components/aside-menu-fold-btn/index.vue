@@ -1,6 +1,7 @@
 <template>
   <el-icon class="fold_icon" @click="asideMenuFold = !asideMenuFold">
-    <Operation />
+    <Expand v-if="asideMenuFold" />
+    <Fold v-else />
   </el-icon>
 </template>
 
