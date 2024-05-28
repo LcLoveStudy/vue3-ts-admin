@@ -1,5 +1,4 @@
 import { LocalStorageKeys } from '@/enums/localstorage'
-import { removeItem } from '@/utils'
 import { defineStore } from 'pinia'
 import { useLocalStorage } from '@/hooks'
 interface LoginRequestData {
@@ -15,7 +14,7 @@ export const useUserStore = defineStore('user', () => {
   }
   /** 退出登录操作 */
   const logout = async () => {
-    removeItem()
+    localStorage.clear()
     userinfo.value = null
   }
   return { userinfo, login, logout }
