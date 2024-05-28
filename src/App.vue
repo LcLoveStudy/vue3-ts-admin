@@ -10,7 +10,7 @@
   watch(
     () => route.path,
     () => {
-      title.value = (route.meta.title as string) + ConstEnums.PROJECT_NAME
+      title.value = `${route.meta.title} - ${ConstEnums.PROJECT_NAME}`
       useTitle(title.value)
     },
     {

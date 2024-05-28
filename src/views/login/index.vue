@@ -2,7 +2,7 @@
   <div class="login_page">
     <div class="login_box flex items-center justify-center">
       <div class="login_box">
-        <span class="login_title">admin{{ ConstEnums.PROJECT_NAME }}</span>
+        <span class="login_title">{{ ConstEnums.PROJECT_NAME }}</span>
         <div class="login_content">
           <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="100px">
             <el-form-item label="用户名" prop="username">
