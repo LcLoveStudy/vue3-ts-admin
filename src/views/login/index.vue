@@ -15,7 +15,7 @@
               <el-button
                 type="primary"
                 :loading="loginLoading"
-                style="width: 80%"
+                style="width: 100%"
                 @click="loginHandler"
               >
                 登录
@@ -88,12 +88,12 @@
       justify-content: space-around;
       z-index: 999;
       width: 500px;
-      height: 300px;
       background-color: #ffffff1a;
       backdrop-filter: blur(3px); //毛玻璃属性
       border-radius: 15px;
       overflow: hidden;
       .login_title {
+        margin: 20px 0;
         font-size: 30px;
         font-weight: 700;
         background: linear-gradient(180deg, #ffffff 0%, #0e9ae9 100%);
