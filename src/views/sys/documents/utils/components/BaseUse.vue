@@ -3,14 +3,14 @@
     <!-- 复制内容到剪贴板(getCopy) -->
     <el-card>
       <div class="font-semibold text-red-700">
-        复制内容到剪贴板(useCopy)
-        <el-icon class="cursor-pointer" @click="copyUtils('useCopy')">
+        复制内容到剪贴板(copyTxt)
+        <el-icon class="cursor-pointer" @click="copyUtils('copyTxt')">
           <DocumentCopy />
         </el-icon>
       </div>
       <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
         <div>
-          <span class="text-orange-500">useCopy</span>
+          <span class="text-orange-500">copyTxt</span>
           <span class="text-sky-600">('测试字符串')</span>
           -> 即可粘贴
         </div>
@@ -126,11 +126,11 @@
 </template>
 
 <script setup lang="ts">
-  import { useCopy, getRandomColor } from '@/utils'
+  import { copyTxt, getRandomColor } from '@/utils'
   import { useKeyboardEvt, useMouseEvt } from '@/hooks'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
-    useCopy(FunName)
+    copyTxt(FunName)
   }
   useKeyboardEvt(13, () => console.log('回车了'))
   useMouseEvt('dblclick', () => console.log('双击了页面'))

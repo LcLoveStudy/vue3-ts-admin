@@ -8,7 +8,7 @@ import { saveAs } from 'file-saver'
  * @author 李畅
  * @email dotb116393@163.com
  */
-export const useDownload = async (url: string | Blob, fileName: string): Promise<void> => {
+export const downloadFileByUrl = async (url: string | Blob, fileName: string): Promise<void> => {
   await new Promise(() => {
     saveAs(url, fileName)
   })

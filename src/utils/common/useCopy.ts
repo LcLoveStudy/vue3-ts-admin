@@ -5,7 +5,7 @@ import { ElMessage } from 'element-plus'
  * @example
  * getCopy('这是测试文字')
  */
-export const useCopy = (content: string) => {
+export const copyTxt = (content: string) => {
   try {
     navigator.clipboard.writeText(content) // 把要复制的内容拷贝到剪贴板
     ElMessage.success('复制成功')
