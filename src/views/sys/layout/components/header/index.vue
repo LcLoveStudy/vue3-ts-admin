@@ -1,5 +1,5 @@
 <template>
-  <div class="my_header">
+  <div class="my_header shadow-lg">
     <div class="flex items-center h-full">
       <!-- 折叠图标 -->
       <aside-menu-fold-btn v-if="menuPosition === 'aside'" />
