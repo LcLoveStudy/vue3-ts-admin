@@ -25,5 +25,3 @@
   import stringUse from './components/StringUse.vue'
   import DateUse from './components/DateUse.vue'
 </script>
-
-<style scoped lang="less"></style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-4 gap-4 ml-5">
+  <div class="grid grid-cols-4 gap-4">
     <!-- 是否为字符串(isString) -->
     <el-card>
       <div class="fs-base font-semibold text-red-700">

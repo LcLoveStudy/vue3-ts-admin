@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-4 gap-4 ml-5">
+  <div class="grid grid-cols-4 gap-4">
     <!-- 复制内容到剪贴板(getCopy) -->
     <el-card>
       <div class="font-semibold text-red-700">
