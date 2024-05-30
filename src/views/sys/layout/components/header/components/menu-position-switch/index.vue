@@ -1,6 +1,5 @@
 <template>
   <el-switch
-    class="mr-6"
     v-model="changeMenu"
     inline-prompt
     active-text="头部菜单"

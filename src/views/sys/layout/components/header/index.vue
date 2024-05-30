@@ -7,11 +7,10 @@
       <lc-breadcrumb />
     </div>
     <top-menu v-if="menuPosition === 'top'" />
-    <div class="flex items-center mr-6">
+    <div class="flex items-center mr-12">
       <!-- 切换菜单位置 -->
       <menu-position-switch />
-      <!-- 下拉框 -->
-      <username-dropdown />
+      <logout-button />
     </div>
   </div>
 </template>
@@ -21,6 +20,7 @@
     AsideMenuFoldBtn,
     MenuPositionSwitch,
     TopMenu,
+    logoutButton,
     UsernameDropdown,
     LcBreadcrumb
   } from './components'
