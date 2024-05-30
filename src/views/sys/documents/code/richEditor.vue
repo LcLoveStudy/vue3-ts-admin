@@ -1,12 +1,7 @@
 <template>
-  <h2 class="mb-5 text-2xl">
-    <span class="text-red-700">wangEditor:一款非常好用简洁的富文本编辑器</span>
-    <br />
-    <div class="flex items-center mt-6 fs-base">
-      更多配置查看
-      <el-link type="primary" @click="goWangEditor"><span class="fs-base">官网</span></el-link>
-    </div>
-  </h2>
+  <el-link class="mb-4" type="primary" @click="goWangEditor">
+    <span class="text-2xl">wangEditor:一款非常好用简洁的富文本编辑器</span>
+  </el-link>
   <RichEditor v-model="inputValue" @change="inputChange" />
 </template>
 
