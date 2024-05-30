@@ -5,7 +5,7 @@
     >
       <div class="flex items-center">
         <div class="lg:text-[2.5rem] font-medium">欢迎登录</div>
-        <div class="lg:text-[1.5rem] lg:ml-[1.25rem] text-[#999999]">
+        <div class="lg:text-[1.5rem] lg:ml-[1.25rem] text-[#999]">
           {{ ConstEnums.PROJECT_NAME }}
         </div>
       </div>
