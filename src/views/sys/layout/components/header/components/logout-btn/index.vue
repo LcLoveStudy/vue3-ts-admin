@@ -1,6 +1,6 @@
 <template>
   <div
-    class="logout_btn lg:w-[1.625rem] lg:h-[1.625rem] cursor-pointer lg:ml-[1.875rem]"
+    class="logout_btn lg:w-[1.5rem] lg:h-[1.5rem] cursor-pointer lg:ml-[1.875rem]"
     @click="logoutClickHandler"
   ></div>
 </template>
