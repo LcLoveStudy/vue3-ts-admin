@@ -1,6 +1,14 @@
 <template>
-  <div class="w-[12.5rem] leading-10 pl-5 line-clamp-10 text-lg bg-lime-500">首页</div>
-  <div class="mt-2.5 pl-5">测试一下tailwindcss</div>
+  <el-link type="primary" @click="toCodeBase">
+    <el-icon size="20"><Link /></el-icon>
+    <span class="text-xl ml-2">源码仓库</span>
+  </el-link>
+  <collection-comp class="mt-4" />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import CollectionComp from './components/collection.vue'
+  const toCodeBase = () => {
+    window.open('https://gitee.com/lichang666/v3-ts')
+  }
+</script>

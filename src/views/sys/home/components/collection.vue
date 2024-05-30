@@ -1,11 +1,11 @@
 <template>
-  <div class="flex items-center flex-wrap pl-12">
+  <div class="grid grid-cols-5 gap-4">
     <el-card
       shadow="hover"
       v-for="util in utilsOrigin"
       :key="util.name"
       @click="goUtils(util.link)"
-      class="cursor-pointer w-72 h-28 mb-5 mr-5"
+      class="cursor-pointer"
     >
       <div class="text-xl text-sky-700 hover:underline underline-offset-4">{{ util.name }}</div>
       <div class="mt-2 text-sm">{{ util.introduce }}</div>

@@ -15,19 +15,6 @@ const DOCUMENTS: RouterType = {
   },
   children: [
     {
-      path: '/documents/home',
-      name: 'total',
-      meta: {
-        title: '集合',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: true,
-        role: ['admin', 'superadmin', 'user']
-      },
-      component: () => import('@/views/sys/documents/index.vue'),
-      children: []
-    },
-    {
       path: '/documents/utils',
       name: 'utils',
       meta: {
