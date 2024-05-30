@@ -21,7 +21,6 @@
     MenuPositionSwitch,
     TopMenu,
     logoutButton,
-    UsernameDropdown,
     LcBreadcrumb
   } from './components'
   import { useLayoutStore } from '@/stores/modules/layout'
