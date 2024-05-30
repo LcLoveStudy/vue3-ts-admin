@@ -35,7 +35,7 @@ export default {
         role: ['admin', 'superadmin', 'user']
       },
       children: [],
-      component: () => import('@/views/sys/documents/code/richEditor.vue')
+      component: () => import('@/views/sys/documents/code/rich-editor.vue')
     },
     {
       path: '/documents/code/pagination',
