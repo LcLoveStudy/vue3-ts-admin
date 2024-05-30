@@ -1,27 +1,27 @@
 <template>
   <el-tabs>
     <el-tab-pane label="通用">
-      <BaseUse />
+      <base-use />
     </el-tab-pane>
     <el-tab-pane label="object">
-      <objectUse />
+      <object-use />
     </el-tab-pane>
     <el-tab-pane label="array">
-      <arrayUse />
+      <array-use />
     </el-tab-pane>
     <el-tab-pane label="string">
-      <stringUse />
+      <string-use />
     </el-tab-pane>
     <el-tab-pane label="date">
-      <DateUse />
+      <date-use />
     </el-tab-pane>
   </el-tabs>
 </template>
 
 <script setup lang="ts">
-  import BaseUse from './components/BaseUse.vue'
-  import objectUse from './components/ObjectUse.vue'
-  import arrayUse from './components/ArrayUse.vue'
-  import stringUse from './components/StringUse.vue'
-  import DateUse from './components/DateUse.vue'
+  import BaseUse from './components/base-use.vue'
+  import ObjectUse from './components/object-use.vue'
+  import ArrayUse from './components/array-use.vue'
+  import StringUse from './components/string-use.vue'
+  import DateUse from './components/date-use.vue'
 </script>
