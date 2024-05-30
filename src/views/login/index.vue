@@ -1,34 +1,61 @@
 <template>
   <div class="login_page">
-    <div class="login_box flex items-center justify-center">
-      <div class="login_box">
-        <span class="login_title">{{ ConstEnums.PROJECT_NAME }}</span>
-        <div class="login_content">
-          <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="100px">
-            <el-form-item label="用户名" prop="username">
-              <el-input v-model="form.username" />
-            </el-form-item>
-            <el-form-item label="密码" prop="password">
-              <el-input v-model="form.password" type="password" />
-            </el-form-item>
-            <el-form-item>
-              <el-button
-                type="primary"
-                :loading="loginLoading"
-                style="width: 100%"
-                @click="loginHandler"
-              >
-                登录
-              </el-button>
-            </el-form-item>
-          </el-form>
+    <div
+      class="absolute lg:w-[35rem] lg:h-[31rem] lg:top-[15rem] lg:right-[18rem] lg:py-[3.87rem] lg:px-[6.25rem] bg-white rounded"
+    >
+      <div class="flex items-center">
+        <div class="lg:text-[2.5rem] font-medium">欢迎登录</div>
+        <div class="lg:text-[1.5rem] lg:ml-[1.25rem] text-[#999999]">
+          {{ ConstEnums.PROJECT_NAME }}
         </div>
+      </div>
+      <div class="h-[5px] lg:w-[5.6rem] bg-[#579FF8] rounded ml-[12px]"></div>
+      <div class="login_content lg:mt-[2.5rem]">
+        <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="0">
+          <el-form-item prop="username">
+            <el-input
+              class="lg:h-[3.75rem]"
+              v-model="form.username"
+              size="large"
+              placeholder="请输入用户名"
+            >
+              <template #prefix>
+                <el-icon size="20"><UserFilled /></el-icon>
+              </template>
+            </el-input>
+          </el-form-item>
+          <el-form-item prop="password">
+            <el-input
+              class="lg:h-[3.75rem] lg:mt-4"
+              v-model="form.password"
+              type="password"
+              size="large"
+              placeholder="请输入密码"
+            >
+              <template #prefix>
+                <el-icon size="20"><Lock /></el-icon>
+              </template>
+            </el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button
+              class="lg:h-[3.75rem] lg:mt-4"
+              type="primary"
+              :loading="loginLoading"
+              style="width: 100%"
+              @click="loginHandler"
+            >
+              登录
+            </el-button>
+          </el-form-item>
+        </el-form>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import { Lock } from '@element-plus/icons-vue'
   import { ConstEnums } from '@/enums/const-enums'
   import { useKeyboardEvt } from '@/hooks'
   import { useUserStore } from '@/stores/modules/user'
@@ -77,37 +104,12 @@
   .login_page {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    .login_box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      z-index: 999;
-      width: 500px;
-      background-color: #ffffff1a;
-      backdrop-filter: blur(3px); //毛玻璃属性
-      border-radius: 15px;
-      overflow: hidden;
-      .login_title {
-        margin: 20px 0;
-        font-size: 30px;
-        font-weight: 700;
-        background: linear-gradient(180deg, #ffffff 0%, #0e9ae9 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .login_content {
-        width: 80%;
-      }
-    }
+    position: relative;
+    background: url('@/assets/images/login.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
-  :deep(.el-form .el-form-item__label) {
-    font-size: 16px;
-    color: #fff;
+  :deep(.el-icon svg) {
+    font-size: 24px;
   }
 </style>
