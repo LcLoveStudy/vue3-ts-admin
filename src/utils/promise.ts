@@ -3,10 +3,12 @@ export const runMicroTasks = (fn: MutationCallback) => {
   if (process && typeof process.nextTick === 'function') {
     // node环境
     process.nextTick(fn)
-  } else if (typeof MutationObserver === 'function') {
-    const ob = new MutationObserver(fn)
-    ob.observe(document.body, { attributes: true })
-  } else {
+  }
+  //   else if (typeof MutationObserver === 'function') {
+  //     const ob = new MutationObserver(fn)
+  //     ob.observe(document.body, { attributes: true })
+  //   }
+  else {
     setTimeout(fn)
   }
 }
