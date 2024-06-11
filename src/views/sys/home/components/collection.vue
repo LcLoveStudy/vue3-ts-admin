@@ -31,7 +31,7 @@
       introduce: '一个纯css动画库'
     },
     {
-      name: 'iconfont',
+      name: 'Iconfont',
       link: 'https://www.iconfont.cn/',
       introduce: '阿里巴巴图标库'
     },
@@ -56,14 +56,19 @@
       introduce: '易学易用，性能出色，适用场景丰富的 Web 前端框架'
     },
     {
-      name: 'eslint',
+      name: 'Eslint',
       link: 'https://www.tkcnn.com/eslint/',
       introduce: '可组装的 JavaScript 和 JSX 检查工具'
     },
     {
-      name: 'prettier',
+      name: 'Prettier',
       link: 'https://www.prettier.cn/',
       introduce: '一个“有态度”的代码格式化工具'
+    },
+    {
+      name: 'Vite',
+      link: 'https://www.vitejs.net/',
+      introduce: '下一代前端开发与构建工具'
     }
   ]
 
