@@ -21,7 +21,6 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
       redirect: '/home',
       component: () => import('@/views/sys/layout/index.vue'),
       children: [...(setupRouter(routes) as never)]
