@@ -30,21 +30,6 @@
         -> 32
       </div>
     </el-card>
-    <!-- 计算两天相差多久 -->
-    <el-card>
-      <div class="fs-base font-semibold text-red-700">
-        计算两天相差多久(dayDif)
-        <el-icon class="cursor-pointer" @click="copyUtils('dayDif')">
-          <DocumentCopy />
-        </el-icon>
-      </div>
-      <div class="mt-2.5">第一个日期和第二个日期的相差天数</div>
-      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
-        <span class="text-orange-500">dayDif</span>
-        <span class="text-sky-600">(new Date('2023-2-12'), new Date('2023-2-10'))</span>
-        -> 2
-      </div>
-    </el-card>
   </div>
 </template>
 
