@@ -21,7 +21,7 @@
 :white_check_mark: (白色复选框):white_check_mark:增加测试
 :memo: (备忘录):memo:撰写文档
 :book: (书):book:撰写文档
-:hammer: (锤子):hammer:重大重构
+:hammer: (锤子):hammer:重构
 :art: (调色板):art:改进代码结构/代码格式
 :fire: (火焰):fire:移除代码或文件
 :pencil2: (铅笔):pencil2:修复 typo
