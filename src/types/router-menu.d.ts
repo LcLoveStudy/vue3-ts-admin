@@ -1,3 +1,14 @@
+declare type RouterMetaType = {
+  hideChildrenInMenu: boolean
+  orderNo?: number
+  icon?: string
+  title: string
+  role: Array<string>
+  hideMenu: boolean
+  hideBreadcrumb: boolean
+  keepChild?: boolean
+}
+
 /**
  * 路由的类型规范
  * path:路径(如果有子路由需要和子路由第一项保持一致)
@@ -19,15 +30,6 @@ declare interface RouterType {
   name: string
   redirect?: string
   component?: Function
-  meta: {
-    hideChildrenInMenu: boolean
-    orderNo?: number
-    icon?: string
-    title: string
-    role: Array<string>
-    hideMenu: boolean
-    hideBreadcrumb: boolean
-    keepChild?: boolean
-  }
+  meta: RouterMetaType
   children: Array<RouterType> | never
 }
