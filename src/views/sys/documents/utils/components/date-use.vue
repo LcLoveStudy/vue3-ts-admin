@@ -30,6 +30,26 @@
         -> 32
       </div>
     </el-card>
+    <!-- 判断参数是否是Date或者是否能被转换为Date类型 -->
+    <el-card>
+      <div class="fs-base font-semibold text-red-700">
+        判断参数是否是Date或者是否能被转换为Date类型(isDateLike)
+        <el-icon class="cursor-pointer" @click="copyUtils('isDateLike')">
+          <DocumentCopy />
+        </el-icon>
+      </div>
+      <div class="mt-2.5">判断参数是否是Date或者是否能被转换为Date类型</div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <span class="text-orange-500">isDateLike</span>
+        <span class="text-sky-600">('2024-1-1')</span>
+        -> true
+      </div>
+      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
+        <span class="text-orange-500">isDateLike</span>
+        <span class="text-sky-600">('ssss')</span>
+        -> false
+      </div>
+    </el-card>
   </div>
 </template>
 
