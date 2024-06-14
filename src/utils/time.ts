@@ -31,8 +31,6 @@ export const dayOfYear = (date: Date) => {
  */
 export const isDateLike = (param: unknown): boolean => {
   if (param instanceof Date) return true
-  // if(['string','number'].includes(typeof param)){
   const date = new Date(param as string | number)
   return date instanceof Date && !isNaN(date.getTime())
-  // }
 }
