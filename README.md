@@ -1,6 +1,6 @@
 # vue3+ts+el-plus
 
-仓库为项目初始化模板，使用的 vite 构建，包含 vue3.3+typescript+element-plus+tailwindcss，开箱即用，已经删除无用代码与无用文件，创建了基本的 axios 二次封装（请根据需求进行修改）以及 vue，vue-router 包的自动引入；配置了侧边导航栏和顶部导航（自行根据需求修改）；配置了面包屑导航等组件；配置了 eslint，pretty 等校验工具；
+仓库为项目初始化模板，使用的 vite 构建，包含 vue3.4+typescript+element-plus+tailwindcss，开箱即用，已经删除无用代码与无用文件，创建了基本的 axios 二次封装（请根据需求进行修改）以及 vue，vue-router 包的自动引入；配置了侧边导航栏和顶部导航（自行根据需求修改）；配置了面包屑导航等组件；配置了 eslint，pretty 等校验工具；
 
 ## 下载依赖
 
