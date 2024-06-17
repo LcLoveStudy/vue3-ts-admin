@@ -15,11 +15,9 @@
 :arrow_up: (上升箭头):arrow_up:升级依赖
 :arrow_down: (下降箭头):arrow_down:降级依赖
 :zap: (闪电):zap:提升性能
-:racehorse: (赛马):racehorse:提升性能
 :chart_with_upwards_trend: (上升趋势图):chart_with_upwards_trend:添加分析或跟踪代码
 :rocket: (火箭):rocket:部署功能
 :white_check_mark: (白色复选框):white_check_mark:增加测试
-:memo: (备忘录):memo:撰写文档
 :book: (书):book:撰写文档
 :hammer: (锤子):hammer:重构
 :art: (调色板):art:改进代码结构/代码格式
