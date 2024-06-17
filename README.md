@@ -1,23 +1,23 @@
 # vue3+ts+el-plus
 
-仓库为项目初始化模板，使用的 vite 构建，包含 vue3.4+typescript+element-plus+tailwindcss，开箱即用，已经删除无用代码与无用文件，创建了基本的 axios 二次封装（请根据需求进行修改）以及 vue，vue-router 包的自动引入；配置了侧边导航栏和顶部导航（自行根据需求修改）；配置了面包屑导航等组件；配置了 eslint，pretty 等校验工具；
+仓库为vite构建包含vue3.4 + typescript + element-plus + tailwindcss 的开箱即用模板；实现了axios二次封装；根据路由自动生成菜单、面包屑导航；配置了 eslint，pretty 等校验工具；整合了各类工具函数和Hooks；
 
 ## 下载依赖
 
 ```sh
-yarn install
+pnpm install
 ```
 
 ### 启动项目
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 ### 项目打包
 
 ```sh
-yarn build
+pnpm build
 ```
 
 ### 目录说明
@@ -39,11 +39,11 @@ yarn build
 │ ├── main.ts       入口文件
 │ ├── utils         工具函数文件夹
 │ ├── App.vue       根组件
+│ ├── types         类型声明
 │ ├── router        路由配置
 │ │ └── modules     路由模块
 │ │ └── index.ts    路由的入口文件
 │ └── views         页面文件夹
-├── types           类型声明
 ├── tailwind.config tailwind配置
 ├── package.json    项目依赖和指令
 ├── vite.config.ts  vite配置
@@ -51,6 +51,25 @@ yarn build
 ```
 
 ### 推荐删除
-
 为了展示，添加了很多于业务无关的依赖，在上线打包前将无关依赖删除确保体积最小
-highlight.js 代码高亮
+
+1.代码高亮
+```js
+highlight.js
+```
+
+2.用于tiff图片的显示
+```js
+tiff.js 
+```
+
+3.leaflet瓦片图相关
+```js
+leaflet leaflet-minimap @types/leaflet 
+```
+
+4.wangeditor富文本相关
+```js
+@wangeditor/editor @wangeditor/editor-for-vue
+```
+
