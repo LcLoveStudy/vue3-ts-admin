@@ -133,7 +133,6 @@
       <div class="mt-2.5">防抖函数,在相应的时间后会执行一次,如果再次触发会重新计时</div>
       <div class="mt-2.5">cb:Function 回调函数</div>
       <div class="mt-2.5">delay:number 延迟的时间</div>
-      <div class="mt-2.5">immediate?:boolean 是否立刻执行</div>
       <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
         <div class="mt-1">
           <span class="text-sky-600">
@@ -157,13 +156,14 @@
   useKeyboardEvt(13, () => console.log('回车了'))
   useMouseEvt('dblclick', () => console.log('双击了页面'))
   // 获取随机颜色
-  const randomColor = ref(getRandomColor())
+  const randomColor = ref('')
   const getRandomColorHandler = () => {
     randomColor.value = getRandomColor()
   }
   let hover = ref(false)
 
   onMounted(() => {
+    getRandomColorHandler()
     hover = useHover(document.querySelector('.bg-black') as HTMLDivElement)
   })
 </script>
