@@ -18,7 +18,7 @@
 :chart_with_upwards_trend: (上升趋势图):chart_with_upwards_trend:添加分析或跟踪代码
 :rocket: (火箭):rocket:部署功能
 :white_check_mark: (白色复选框):white_check_mark:增加测试
-:book: (书):book:撰写文档
+:memo: (书):book:撰写文档
 :hammer: (锤子):hammer:重构
 :art: (调色板):art:改进代码结构/代码格式
 :fire: (火焰):fire:移除代码或文件
