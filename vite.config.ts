@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
+import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,6 +21,10 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', 'vue-router'],
       dts: './src/auto-imports.d.ts'
+    }),
+    legacy({
+      targets: ['ie>=11'],
+      additionalLegacyPolyfills: ['regenerator-runtime/runtime']
     })
   ],
   css: {
