@@ -1,5 +1,7 @@
-### 本文为git提交规范说明
-##### 建议下载插件Markdown Preview Enhanced预览
+### 本文为 git 提交规范说明
+
+##### 建议下载插件 Markdown Preview Enhanced 预览
+
 :tada: (庆祝):tada:初次提交
 :new: (全新):new:引入新功能
 :bookmark: (书签):bookmark:发行/版本标签
