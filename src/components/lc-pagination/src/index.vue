@@ -29,7 +29,7 @@
     },
     total: {
       type: Number,
-      default: 100
+      default: 0
     }
   })
   const emits = defineEmits(['change'])
