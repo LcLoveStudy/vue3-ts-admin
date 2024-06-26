@@ -1,20 +1,5 @@
 <template>
   <div class="grid grid-cols-4 gap-4">
-    <!-- 将秒数转换时分秒。 -->
-    <el-card>
-      <div class="fs-base font-semibold text-red-700">
-        将秒数转换时分秒(hourFormat)
-        <el-icon class="cursor-pointer" @click="copyUtils('hourFormat')">
-          <DocumentCopy />
-        </el-icon>
-      </div>
-      <div class="mt-2.5">将秒数转换为时分秒</div>
-      <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
-        <span class="text-orange-500">hourFormat</span>
-        <span class="text-sky-600">(80)</span>
-        -> 00:01:20
-      </div>
-    </el-card>
     <!-- 获取某个日期位于当年的第几天 -->
     <el-card>
       <div class="fs-base font-semibold text-red-700">
