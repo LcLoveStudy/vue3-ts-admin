@@ -112,13 +112,13 @@
       <div class="mt-2.5">element:监听的元素</div>
       <div class="mt-2.5">callBack:Function 回调函数</div>
       <div class="mt-2.5">return:是否hover状态</div>
-      <div class="flex items-center justify-center w-full h-20 bg-black text-white">
+      <div id="hover-box" class="flex items-center justify-center w-full h-20 bg-black text-white">
         {{ hover ? 'hover' : 'not hover' }}
       </div>
       <div class="mt-2.5 pl-1 pt-1 pr-1 pb-1">
         <div class="mt-1">
           <span class="text-orange-500">const hovered = useHover</span>
-          <span class="text-sky-600">('.hover-box')</span>
+          <span class="text-sky-600">('hover-box')</span>
         </div>
       </div>
     </el-card>
@@ -160,10 +160,9 @@
   const getRandomColorHandler = () => {
     randomColor.value = getRandomColor()
   }
-  let hover = ref(false)
+  const hover = useHover('hover-box')
 
   onMounted(() => {
     getRandomColorHandler()
-    hover = useHover(document.querySelector('.bg-black') as HTMLDivElement)
   })
 </script>
