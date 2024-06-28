@@ -58,12 +58,6 @@
   // 点击复制图表
   const copyUtils = (FunName: string) => {
     copyTxt(FunName)
-      .then(() => {
-        ElMessage.success('复制成功')
-      })
-      .catch((err) => {
-        ElMessage.error(err)
-      })
   }
 </script>
 
