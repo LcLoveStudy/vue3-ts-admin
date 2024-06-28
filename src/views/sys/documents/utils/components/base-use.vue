@@ -149,7 +149,7 @@
 <script setup lang="ts">
   import { getRandomColor } from '@lichang666/utils'
   import { copyTxt } from '@/utils'
-  import { useKeyboardEvt, useMouseEvt, useHover } from '@/hooks'
+  import { useKeyboardEvt, useMouseEvt, useHover } from '@lichang666/hooks-vue'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
     copyTxt(FunName)

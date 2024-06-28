@@ -57,7 +57,7 @@
 <script setup lang="ts">
   import { Lock } from '@element-plus/icons-vue'
   import { ConstEnums } from '@/enums/const-enums'
-  import { useKeyboardEvt } from '@/hooks'
+  import { useKeyboardEvt } from '@lichang666/hooks-vue'
   import { useUserStore } from '@/stores/modules/user'
   import { type FormInstance, type FormRules } from 'element-plus'
   const { login } = useUserStore()

@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useTitle } from '@/hooks'
+  import { useTitle } from '@lichang666/hooks-vue'
   import { ConstEnums } from '@/enums/const-enums'
   const route = useRoute()
   const title = useTitle('')
