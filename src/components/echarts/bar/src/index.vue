@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-  import { getRandomColor } from '@/utils'
+  import { getRandomColor } from '@lichang666/utils'
   import {
     type RuleType,
     type SeriesType,

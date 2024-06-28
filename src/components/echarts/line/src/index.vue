@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-  import { getRandomColor } from '@/utils'
+  import { getRandomColor } from '@lichang666/utils'
   import { type MultiLineSeriesType, type SingleLineDataType } from './line-chart'
   import * as echarts from 'echarts'
   import type { PropType } from 'vue'

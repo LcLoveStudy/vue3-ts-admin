@@ -6,7 +6,7 @@
 <script setup lang="ts">
   import { ref, computed, watchEffect, unref, onMounted, watch } from 'vue'
   import { useTransition, TransitionPresets } from '@vueuse/core'
-  import { getType } from '@/utils'
+  import { getType } from '@lichang666/utils'
 
   const props = defineProps({
     startVal: { type: Number, default: 0 },

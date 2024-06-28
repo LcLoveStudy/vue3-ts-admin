@@ -12,7 +12,7 @@
   import { type PropType } from 'vue'
   import { initChartById, useReset, getRandomId } from '../../utils'
   import type { StackDataItemType, StackSeriesType } from './stack-chart'
-  import { deepClone } from '@/utils'
+  import { deepClone } from '@lichang666/utils'
   // 获取随机id，防止一个页面多个echarts时，id重复
   const chartId = getRandomId()
   let chartDom: echarts.ECharts
