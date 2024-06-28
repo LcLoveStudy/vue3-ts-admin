@@ -54,7 +54,6 @@
 
 <script setup lang="ts">
   import { copyTxt } from '@/utils'
-  import { ElMessage } from 'element-plus'
   // 点击复制图表
   const copyUtils = (FunName: string) => {
     copyTxt(FunName)
