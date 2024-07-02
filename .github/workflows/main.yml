@@ -28,7 +28,8 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4 # 使用别人写好的 actions
         with:
+          BRANCH: master # github page指定分支
           github_token: ${{ secrets.GITHUB_TOKEN }} # 此处修改为你的Secret名称
           publish_dir: ./dist
