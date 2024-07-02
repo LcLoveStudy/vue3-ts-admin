@@ -13,7 +13,7 @@ export default defineConfig({
     // 打包后去掉console，debugger
     drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : []
   },
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [
     vue(),
     vueJsx(),
