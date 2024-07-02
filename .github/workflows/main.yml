@@ -32,4 +32,5 @@ jobs:
         with:
           BRANCH: master # github page指定分支
           github_token: ${{ secrets.GITHUB_TOKEN }} # 此处修改为你的Secret名称
-          publish_dir: ./dist
+          FOLDER: ./dist # build后生成的目录
+          clean: true
