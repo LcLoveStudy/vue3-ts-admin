@@ -1,26 +1,31 @@
 name: Vue Deploy
-on: # 监听 main 分支上的 push 事件
+
+on:
   push:
     branches:
       - master
+
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest # 构建环境使用 ubuntu
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout # 获取源码
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Install pnpm # 安装pnpm
-        uses: pnpm/action-setup@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          version: 6.0.2
+          node-version: 20.12.1
 
-      - name: Install and Build # 下载依赖 打包项目
-        run: |
-          pnpm install
-          pnpm run build
+      - name: Install Pnpm
+        run: npm install -g pnpm # 安装 PNPM
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
