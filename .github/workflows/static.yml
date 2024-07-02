@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 20.12.1
+        run: npm install -g pnpm # 安装 PNPM
 
       - name: Install dependencies
         run: pnpm install
