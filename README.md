@@ -1,75 +1,70 @@
-# vue3+ts+el-plus
+# Vue3.x+Typescript+ElementPlus+Tailwindcss
 
-仓库为vite构建包含vue3.4 + typescript + element-plus + tailwindcss 的开箱即用模板；实现了axios二次封装；根据路由自动生成菜单、面包屑导航；配置了 eslint，pretty 等校验工具；整合了各类工具函数和Hooks；
+This repository use `vue3.4` + `typescript` + `element-plus` + `tailwindcss`;Secondary packaging of `Axios`;Automaticakky generate menus and breadcrumb navigation based on router;Equipped with `ESLint`,`Prettier` and other tools;
 
-## 下载依赖
+## Install
 
 ```sh
 pnpm install
 ```
 
-## 启动项目
+## Start
 
 ```sh
 pnpm dev
 ```
 
-## 项目打包
+## Build
 
 ```sh
 pnpm build
 ```
 
-## 目录说明
+## Catalog Description
 
 ```sh
 ├── public
 │ └── favicon.ico
-│ └── ipconfig.ts   ip和端口管理
 ├── src
-│ ├── assets        静态文件
-│ │ ├── images      图片
-│ │ └── font        字体包
-│ │ └── style       样式
-│ ├── components    全局共用组件
-│ ├── design        全局样式设计，主要对element-plus的样式重置
-│ ├── directive     自定义指令
-│ ├── store         数据存储store
-│ ├── hooks         自定义hook
-│ ├── main.ts       入口文件
-│ ├── utils         工具函数文件夹
-│ ├── App.vue       根组件
-│ ├── types         类型声明
-│ ├── router        路由配置
-│ │ └── modules     路由模块
-│ │ └── index.ts    路由的入口文件
-│ └── views         页面文件夹
-├── tailwind.config tailwind配置
-├── package.json    项目依赖和指令
-├── vite.config.ts  vite配置
+│ ├── assets        Static files
+│ │ ├── images      Images
+│ │ └── font        Fonts
+│ │ └── style       Styles
+│ ├── components    Global shared components
+│ ├── design        Global style,mainly for resetting the style of ElementPlus
+│ ├── directive     Custom  Directives
+│ ├── store         Pinia
+│ ├── hooks         Custom Hooks
+│ ├── main.ts
+│ ├── utils         Global shared utils
+│ ├── App.vue
+│ ├── types         Type Declarations
+│ ├── router        Config of router
+│ │ └── modules     Route modules
+│ │ └── index.ts
+│ └── views         Page files
+├── tailwind.config Config of Tailwind
+├── package.json
+├── vite.config.ts  Config of Vite
 
 ```
 
-## 推荐删除
-为了展示，添加了很多于业务无关的依赖，在上线打包前将无关依赖删除确保体积最小
+## Recommended deletion
 
-1.代码高亮
-```js
-highlight.js
-```
+In order to demonstrate, many business irrelevant dependencies have been added. Before going live for packaging, these irrelevant dependencies will be removed to ensure minimal volume
 
-2.用于tiff图片的显示
-```js
-tiff.js 
-```
+1. Code highlighting
 
-3.leaflet瓦片图相关
-```js
-leaflet leaflet-minimap @types/leaflet 
-```
+   `highlight.js`
 
-4.wangeditor富文本相关
-```js
-@wangeditor/editor @wangeditor/editor-for-vue
-```
+2. Used for displaying tiff images
 
+   `tiff.js`
+
+3. Leaflet tile diagram
+
+   `leaflet` `leaflet-minimap` `@types/leaflet`
+
+4. Wangeditor rich editor
+
+   `@wangeditor/editor` `@wangeditor/editor-for-vue`
