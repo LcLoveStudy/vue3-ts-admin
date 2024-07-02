@@ -30,4 +30,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+         FOLDER: dist # build后生成的目录
           github_token: ${{ secrets.vue3 }} # 此处修改为你的Secret名称
