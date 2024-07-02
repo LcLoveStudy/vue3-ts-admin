@@ -1,34 +1,30 @@
-name: Vue Deploy
-
-on:
+name: Build and Deploy
+on: # 监听 main 分支上的 push 事件
   push:
     branches:
-      - master
-
+      - main
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest # 构建环境使用 ubuntu
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Checkout # 获取源码
+        uses: actions/checkout@v3
         with:
-          node-version: 20.12.1
+          persist-credentials: false
 
-      - name: Install Pnpm
-        run: npm install -g pnpm # 安装 PNPM
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Install pnpm # 安装pnpm
+        uses: pnpm/action-setup@v2
         with:
+          version: 6.0.2
+
+      - name: Install and Build # 下载依赖 打包项目
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Deploy # 将打包内容发布到 github page
+        uses: JamesIves/github-pages-deploy-action@v4 # 使用别人写好的 actions
+        with: # 自定义环境变量
+          BRANCH: gh-pages # github page指定分支
           FOLDER: dist # build后生成的目录
-          github_token: ${{ secrets.vue3 }} # 此处修改为你的Secret名称
+          clean: true
