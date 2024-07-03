@@ -1,0 +1,1 @@
+import{o as d,A as r}from"./vue-fd42cc31.js";const a=(o,n)=>{const e=t=>{t.keyCode===o&&n()};d(()=>{document.addEventListener("keydown",e)}),r(()=>{document.removeEventListener("keydown",e)})};export{a as u};

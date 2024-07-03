@@ -1,0 +1,1 @@
+import{u as a,L as s}from"./index-7297c013.js";import{aC as t}from"./vue-fd42cc31.js";import"./leaflet-0b2bee73.js";const g=t("user",()=>{const o=a(s.USERINFO);return{userinfo:o,login:async({username:e,password:r})=>{o.value={username:e,password:r,userType:"admin"}},logout:async()=>{localStorage.clear(),o.value=null}}});export{g as u};

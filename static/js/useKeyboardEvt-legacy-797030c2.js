@@ -1,0 +1,1 @@
+System.register(["./vue-legacy-687152d2.js"],(function(e,n){"use strict";var t,o;return{setters:[function(e){t=e.o,o=e.A}],execute:function(){e("u",(function(e,n){var u=function(t){t.keyCode===e&&n()};t((function(){document.addEventListener("keydown",u)})),o((function(){document.removeEventListener("keydown",u)}))}))}}}));
