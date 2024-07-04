@@ -2,6 +2,20 @@
 
 This repository use `vue3.4` + `typescript` + `element-plus` + `tailwindcss`;Secondary packaging of `Axios`;Automaticakky generate menus and breadcrumb navigation based on router;Equipped with `ESLint`,`Prettier` and other tools;
 
+<a href="https://lclovestudy.github.io/template-vue3.x-ts/#/login" title="System demonstration">System demonstration</a>
+
+## Preview
+
+1. Login
+
+   ![alt text](./src/assets/images/image.png)
+
+2. Home
+   ![alt text](./src/assets/images/image-1.png)
+
+3. Cumstom Components
+   ![alt text](./src/assets/images/image-2.png)
+
 ## Install
 
 ```sh
