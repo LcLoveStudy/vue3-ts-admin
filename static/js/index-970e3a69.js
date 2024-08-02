@@ -1,0 +1,1 @@
+import{d as t,a as o,c as n}from"./vue-ff40cb36.js";const l=t({__name:"index",setup(c){const e=()=>{window.open("https://lclovestudy.github.io/-lichang666/")};return(s,r)=>(o(),n("h1",{onClick:e,class:"cursor-pointer text-blue-400 text-center text-4xl"}," 前往工具库文档网站 "))}});export{l as default};

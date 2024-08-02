@@ -1,1 +1,0 @@
-import{i as t}from"./echarts-a7d4e912.js";import{Z as n}from"./vue-fd42cc31.js";const r=e=>t(document.getElementById(e)),s=e=>{window.addEventListener("resize",()=>{e.resize()}),n(()=>{window.removeEventListener("resize",()=>{e.resize()})})},d=()=>Math.random().toString();export{d as g,r as i,s as u};
