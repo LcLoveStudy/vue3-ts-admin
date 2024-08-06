@@ -2,9 +2,10 @@
   /** 下面是没折叠时的侧边菜单 */
   &.el-menu--vertical {
     .el-menu-item {
-      font-size: 0.875rem;
+      font-size: 0.9rem;
       height: var(--menu-item-height);
       background: var(--container-bgc);
+      transition: all 0.3s ease-in-out;
       &:hover {
         color: var(--menu-item-active) !important;
         background: var(--container-bgc);
@@ -20,7 +21,7 @@
         color: var(--menu-item-active) !important;
       }
       .el-sub-menu__title {
-        font-size: 0.875rem;
+        font-size: 0.9rem;
         background: var(--container-bgc);
         height: var(--menu-item-height);
         &:hover {
@@ -31,6 +32,7 @@
       .el-sub-menu .el-sub-menu__title,
       .el-menu-item {
         height: var(--menu-item-height);
+        font-size: 0.9rem;
         text-indent: 1rem;
       }
     }
@@ -44,7 +46,6 @@
   .el-menu-item {
     height: var(--menu-item-height);
     background: var(--container-bgc) !important;
-    color: var(--theme-color);
     &:hover {
       color: var(--menu-item-active) !important;
     }

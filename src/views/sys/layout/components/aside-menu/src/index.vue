@@ -4,7 +4,7 @@
       class="aside_menu"
       :collapse="asideMenuFold"
       router
-      text-color="var(--theme-color)"
+      text-color="#333"
       :default-active="currentRoute"
     >
       <!-- 从这里开始循环菜单 -->
@@ -108,7 +108,7 @@
 <style scoped lang="less">
   .aside_menu {
     height: 100%;
-    font-weight: 700;
+    font-weight: 400;
     background-color: var(--container-bgc);
   }
   .menu_container {
@@ -119,7 +119,7 @@
   }
   //折叠起来页不会改变宽度
   .aside_menu:not(.el-menu--collapse) {
-    width: 12.5rem;
+    width: 12vw;
     min-height: 25rem;
   }
 </style>
