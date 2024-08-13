@@ -57,7 +57,6 @@
 <script setup lang="ts">
   import { Lock } from '@element-plus/icons-vue'
   import { ConstEnums } from '@/enums/const-enums'
-  import { useKeyboardEvt } from '@lichang666/hooks-vue'
   import { useUserStore } from '@/stores/modules/user'
   import type { FormInstance, FormRules } from 'element-plus'
   const { login } = useUserStore()
@@ -97,7 +96,6 @@
       }
     })
   }
-  useKeyboardEvt(13, loginHandler)
 </script>
 
 <style scoped lang="less">
