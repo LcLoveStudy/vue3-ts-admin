@@ -18,7 +18,6 @@ initResponseInterceptor(service, endProcess)
 export const http = {
   // get请求
   get<T>(arg: HttpType.HttpGetRequestType): Promise<T> {
-    setFormDataConfig(arg)
     return service.get(arg.url, { params: arg.params, ...arg.config })
   },
   // post请求
