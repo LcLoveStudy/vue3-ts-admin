@@ -74,11 +74,3 @@ In order to demonstrate, many business irrelevant dependencies have been added. 
 2. Used for displaying tiff images
 
    `tiff.js`
-
-3. Leaflet tile diagram
-
-   `leaflet` `leaflet-minimap` `@types/leaflet`
-
-4. Wangeditor rich editor
-
-   `@wangeditor/editor` `@wangeditor/editor-for-vue`

@@ -50,9 +50,7 @@ export default defineConfig({
         manualChunks: {
           vue: ['vue', 'pinia', 'vue-router'],
           echarts: ['echarts'],
-          wangeditor: ['@wangeditor/editor', '@wangeditor/editor-for-vue'],
           elementPlus: ['element-plus'],
-          leaflet: ['leaflet', 'leaflet-minimap'],
           elementIcons: ['@element-plus/icons-vue']
         }
       }

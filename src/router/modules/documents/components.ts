@@ -25,19 +25,6 @@ export default {
       component: () => import('@/views/sys/documents/code/slider-verify.vue')
     },
     {
-      path: '/documents/code/rich',
-      name: 'rich',
-      meta: {
-        title: '富文本RichEditor',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: false,
-        role: ['admin', 'superadmin', 'user']
-      },
-      children: [],
-      component: () => import('@/views/sys/documents/code/rich-editor.vue')
-    },
-    {
       path: '/documents/code/pagination',
       name: 'pagination',
       meta: {

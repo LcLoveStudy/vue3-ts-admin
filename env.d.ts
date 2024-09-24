@@ -10,4 +10,3 @@ declare module '*.vue' {
   export default componentOptions
 }
 declare let Tiff
-declare module 'leaflet-minimap'
