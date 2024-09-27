@@ -69,6 +69,11 @@
       name: 'Vite',
       link: 'https://www.vitejs.net/',
       introduce: '下一代前端开发与构建工具'
+    },
+    {
+      name: '@lichang666/utils',
+      link: 'https://lclovestudy.github.io/-lichang666/',
+      introduce: '作者维护的常用工具库'
     }
   ]
 

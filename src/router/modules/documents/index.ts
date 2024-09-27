@@ -13,23 +13,6 @@ const DOCUMENTS: RouterType = {
     hideChildrenInMenu: false,
     role: ['admin', 'superadmin', 'user']
   },
-  children: [
-    {
-      path: '/documents/utils',
-      name: 'utils',
-      meta: {
-        title: '工具函数',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: true,
-        role: ['admin', 'superadmin', 'user']
-      },
-      component: () => import('@/views/sys/documents/utils/index.vue'),
-      children: []
-    },
-    components,
-    echarts,
-    directives
-  ]
+  children: [components, echarts, directives]
 }
 export default DOCUMENTS
