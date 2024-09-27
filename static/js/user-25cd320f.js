@@ -1,1 +1,0 @@
-import{u as r,L as s}from"./index-b9f0b06f.js";import{aD as t}from"./vue-53114f36.js";const g=t("user",()=>{const o=r(s.USERINFO);return{userinfo:o,login:async({username:e,password:a})=>{o.value={username:e,password:a,userType:"admin"}},logout:async()=>{localStorage.clear(),o.value=null}}});export{g as u};
