@@ -35,3 +35,4 @@ jobs:
         with:
           github_token: ${{ secrets.vue3 }} # 此处修改为你的Secret名称
           publish_dir: ./dist
+          publish_branch: gh-pages # 或你指定的分支
