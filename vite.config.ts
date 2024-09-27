@@ -3,7 +3,6 @@ import { defineConfig } from 'vite'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import legacy from '@vitejs/plugin-legacy'
 
@@ -16,7 +15,6 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? './' : '/',
   plugins: [
     vue(),
-    vueJsx(),
     // 自动引入依赖
     AutoImport({
       imports: ['vue', 'vue-router'],
