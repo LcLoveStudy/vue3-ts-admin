@@ -1,5 +1,4 @@
 export * from './common'
 export * from './file/downloadFileByUrl'
-export * from './file/showTif'
 export * from './auth/hasRole'
 export * from './serve/http'

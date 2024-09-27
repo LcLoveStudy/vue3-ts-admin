@@ -70,7 +70,3 @@ In order to demonstrate, many business irrelevant dependencies have been added. 
 1. Code highlighting
 
    `highlight.js`
-
-2. Used for displaying tiff images
-
-   `tiff.js`
