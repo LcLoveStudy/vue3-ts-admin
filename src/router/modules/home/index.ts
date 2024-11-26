@@ -14,7 +14,7 @@ const HOME: RouterType = {
   children: [
     {
       path: '/home',
-      name: 'home',
+      name: '/home',
       component: () => import('@/views/sys/home/index.vue'),
       meta: {
         title: '首页',
