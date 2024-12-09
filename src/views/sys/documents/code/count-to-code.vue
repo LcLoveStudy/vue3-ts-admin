@@ -91,5 +91,3 @@
     }
   ])
 </script>
-
-<style scoped></style>

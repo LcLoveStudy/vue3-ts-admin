@@ -52,4 +52,3 @@
 </script>
 
 <style scoped></style>
-@/components/lc-pagination
