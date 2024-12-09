@@ -1,21 +1,19 @@
 <template>
-  <lc-pagination v-model:current="current" v-model:size="size" :total="130" @change="change" />
+  <lc-pagination v-model="page" @change="change" />
   <h3 class="mt-6">示例</h3>
   <!-- 示例代码 -->
   <pre>
     <code class="language-html text-sm">
-    &lt;lc-pagination
-      v-model:current="current"
-      v-model:size="size"
-      :total="130"
-      @change="change"
-    /&gt;
+    &lt;lc-pagination v-model="page" @change="change" /&gt;
 
     &lt;script setup lang="ts"&gt;
-      const current = ref(1)
-      const size = ref(10)
+      const page = reactive({
+        current: 1,
+        size: 10,
+        total: 100
+      })
       const change = () => {
-        console.log(current.value, size.value)
+        console.log(page.current, page.size)
       }
     &lt;/script&gt;
     </code>
@@ -26,32 +24,23 @@
 <script setup lang="ts">
   import HowToUseTable from '../components/how-to-use-table.vue'
   import highlight from 'highlight.js'
-  const current = ref(1)
-  const size = ref(10)
+  const page = reactive({
+    current: 1,
+    size: 10,
+    total: 100
+  })
   const change = () => {
-    console.log(current.value, size.value)
+    console.log(page.current, page.size)
   }
   onMounted(() => {
     highlight.highlightAll()
   })
   const howToUse = ref([
     {
-      propName: 'v-model:current',
-      mean: '当前页',
-      type: 'number',
-      default: '1'
-    },
-    {
-      propName: 'v-model:size',
-      mean: '每页大小',
-      type: 'number',
-      default: '10'
-    },
-    {
-      propName: 'total',
-      mean: '数据总数',
-      type: 'number',
-      default: '100'
+      propName: 'v-model',
+      mean: '当前分页信息',
+      type: '{current: number, size: number, total: number}',
+      default: '-'
     },
     {
       propName: '@change',
