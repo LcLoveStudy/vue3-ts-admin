@@ -1,20 +1,20 @@
 <template>
   <div class="login_page">
     <div
-      class="absolute lg:w-[35rem] lg:h-[31rem] lg:top-[15rem] lg:right-[18rem] lg:py-[3.87rem] lg:px-[6.25rem] bg-white rounded"
+      class="absolute lg:top-[15rem] lg:right-[18rem] lg:py-8 lg:px-16 bg-[rgba(255,255,255,0.4)] rounded"
     >
       <div class="flex items-center">
-        <div class="lg:text-[2.5rem] font-medium">欢迎登录</div>
-        <div class="lg:text-[1.5rem] lg:ml-[1.25rem] text-[#999]">
+        <div class="lg:text-3xl font-medium">欢迎登录</div>
+        <div class="lg:text-2xl lg:ml-[1.25rem] text-[#999]">
           {{ ConstEnums.PROJECT_NAME }}
         </div>
       </div>
       <div class="h-[5px] lg:w-[5.6rem] bg-[#579FF8] rounded ml-[12px]"></div>
-      <div class="login_content lg:mt-[2.5rem]">
+      <div class="lg:mt-8">
         <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="0">
           <el-form-item prop="username">
             <el-input
-              class="lg:h-[3.75rem]"
+              class="lg:h-10"
               v-model="form.username"
               size="large"
               placeholder="请输入用户名"
@@ -26,7 +26,7 @@
           </el-form-item>
           <el-form-item prop="password">
             <el-input
-              class="lg:h-[3.75rem] lg:mt-4"
+              class="lg:h-10 lg:mt-2"
               v-model="form.password"
               type="password"
               size="large"
@@ -39,7 +39,7 @@
           </el-form-item>
           <el-form-item>
             <el-button
-              class="lg:h-[3.75rem] lg:mt-4"
+              class="lg:h-8 lg:mt-2"
               type="primary"
               :loading="loginLoading"
               style="width: 100%"
