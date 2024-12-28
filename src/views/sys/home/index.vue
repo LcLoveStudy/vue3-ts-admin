@@ -9,6 +9,6 @@
 <script setup lang="ts">
   import CollectionComp from './components/collection.vue'
   const toCodeBase = () => {
-    window.open('https://gitee.com/lichang666/v3-ts')
+    window.open('https://github.com/LcLoveStudy/template-vue3.x-ts')
   }
 </script>
