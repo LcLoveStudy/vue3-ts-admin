@@ -7,7 +7,7 @@
     <!-- 右边主体 -->
     <el-container class="main_container">
       <!-- 侧边菜单栏 -->
-      <el-aside class="aside" v-if="menuPosition == 'aside'">
+      <el-aside class="aside">
         <aside-menu />
       </el-aside>
       <!-- 右边主体 -->
@@ -20,9 +20,6 @@
 
 <script setup lang="ts">
   import { AsideMenu, Header } from './components'
-  import { useLayoutStore } from '@/stores/modules/layout'
-  import { storeToRefs } from 'pinia'
-  const { menuPosition } = storeToRefs(useLayoutStore())
 </script>
 
 <style scoped lang="less">

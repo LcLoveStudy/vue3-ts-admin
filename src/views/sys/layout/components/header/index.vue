@@ -2,30 +2,18 @@
   <div class="my_header">
     <div class="flex items-center h-full">
       <!-- 折叠图标 -->
-      <aside-menu-fold-btn v-if="menuPosition === 'aside'" />
+      <aside-menu-fold-btn />
       <!-- 面包屑导航 -->
       <lc-breadcrumb />
     </div>
-    <top-menu v-if="menuPosition === 'top'" />
     <div class="flex items-center mr-12">
-      <!-- 切换菜单位置 -->
-      <menu-position-switch />
       <logout-button />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import {
-    AsideMenuFoldBtn,
-    MenuPositionSwitch,
-    TopMenu,
-    logoutButton,
-    LcBreadcrumb
-  } from './components'
-  import { useLayoutStore } from '@/stores/modules/layout'
-  import { storeToRefs } from 'pinia'
-  const { menuPosition } = storeToRefs(useLayoutStore())
+  import { AsideMenuFoldBtn, logoutButton, LcBreadcrumb } from './components'
 </script>
 
 <style scoped lang="less">
