@@ -36,10 +36,10 @@
 
     .header {
       padding: 0;
-      height: 5vh;
+      height: 7vh;
       background-color: var(--container-bgc);
       border-bottom: 1px solid #ebebeb;
-      z-index: 1000;
+      z-index: 2;
     }
     .main_container {
       height: 96%;
