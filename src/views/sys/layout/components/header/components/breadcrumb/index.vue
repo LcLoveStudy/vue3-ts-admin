@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center text-sm text-[#666] ml-4">
+  <div class="flex items-center text-base text-[#666] ml-4">
     <template v-for="item in breadCrumbs" :key="item.path">
       <div class="flex items-center">
         <el-icon class="mr-2" :icon="item.icon" v-if="item.icon !== ''">
