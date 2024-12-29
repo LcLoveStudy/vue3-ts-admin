@@ -16,7 +16,7 @@
     width: 65px;
     height: 100%;
     display: flex;
-    font-size: 25px;
+    font-size: 1.8rem;
     justify-content: center;
     align-items: center;
     cursor: pointer;
