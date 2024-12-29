@@ -25,7 +25,7 @@ jobs:
         run: pnpm install # 安装依赖
 
       - name: Build
-        run: pnpm run build --verbose # 构建项目并输出详细日志
+        run: pnpm build # 构建项目并输出详细日志
 
       - name: List files in dist directory
         run: ls -al ./dist # 确保 dist 目录包含构建文件
