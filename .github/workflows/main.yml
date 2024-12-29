@@ -3,7 +3,7 @@ name: template-vue3-ts
 on:
   push:
     branches:
-      - master
+      - master # 监控 master 分支的推送事件
 
 jobs:
   build-and-deploy:
@@ -11,28 +11,28 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # 使用 checkout v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 20
+          node-version: 20 # 使用 Node.js 20
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm # 安装 pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install # 安装依赖
 
       - name: Build
-        run: pnpm run build
+        run: pnpm run build --verbose # 构建项目并输出详细日志
 
-      - name: Inter Dist File
-        run: cd ./dist
+      - name: List files in dist directory
+        run: ls -al ./dist # 确保 dist 目录包含构建文件
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.vue3 }} # 此处修改为你的Secret名称
-          publish_dir: ./dist
-          publish_branch: gh-pages # 或你指定的分支
+          github_token: ${{ secrets.vue3 }} # 使用设置的 GitHub token
+          publish_dir: ./dist # 发布目录
+          publish_branch: gh-pages # 发布到 gh-pages 分支
