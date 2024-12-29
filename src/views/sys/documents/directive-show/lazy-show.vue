@@ -67,11 +67,11 @@
   }
 
   .page_main {
-    height: 800px;
+    height: 80vh;
     width: 50rem;
     position: absolute;
-    top: 100px;
-    right: 0;
+    top: 10vh;
+    right: 1vw;
     overflow-y: auto;
 
     img {
