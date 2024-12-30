@@ -22,7 +22,7 @@ const router = createRouter({
     {
       path: '/',
       redirect: '/home',
-      component: () => import('@/views/sys/layout/index.vue'),
+      component: () => import('@/layout/index.vue'),
       children: [...(setupRouter(routes) as never)]
     },
     {
