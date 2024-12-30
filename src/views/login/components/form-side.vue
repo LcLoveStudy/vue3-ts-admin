@@ -4,7 +4,7 @@
       <h1 class="text-5xl">欢迎回来</h1>
       <img class="w-16" :src="DogIcon" />
     </div>
-    <div class="mt-4 text-xl text-slate-200 select-none">输入您的账号密码登录系统</div>
+    <div class="mt-6 text-xl text-slate-200 select-none">输入您的账号密码登录系统</div>
     <el-form ref="loginFormRef" :model="loginForm" :rules="rules" label-width="auto" class="mt-8">
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" placeholder="请输入用户名" />
