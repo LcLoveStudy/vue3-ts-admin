@@ -8,7 +8,7 @@
     <!-- 未拖拽到的部分 -->
     <div class="fail_bar"></div>
     <!-- 文字提示 -->
-    <span class="verify_tip" :style="{ color: isEnd ? '#fff' : '#64748b' }">
+    <span class="verify_tip" :style="{ color: isEnd ? '#fff' : '#6b7280' }">
       {{ isEnd ? '验证通过' : '请按住滑块拖动' }}
     </span>
   </div>
@@ -171,7 +171,7 @@
     min-width: 180px;
     width: v-bind(width);
     height: 45px;
-    background-color: #67c23a;
+    background-color: #34d399;
     .slider_rocker {
       position: absolute;
       top: 0;

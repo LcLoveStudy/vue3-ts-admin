@@ -17,7 +17,7 @@
           class="mt-8"
         />
       </el-form-item>
-      <el-form-item prop="validate">
+      <el-form-item prop="status">
         <slider-verify class="mt-8" v-model:status="loginForm.status" width="100%" />
       </el-form-item>
     </el-form>
@@ -46,7 +46,17 @@
   const rules = reactive<FormRules>({
     username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
     password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
-    status: [{ required: true, message: '请拖动滑块验证' }]
+    status: [
+      {
+        validator: (_rule: any, value: any, callback: any) => {
+          if (!value) {
+            callback(new Error('请拖动滑块验证'))
+          } else {
+            callback()
+          }
+        }
+      }
+    ]
   })
 
   /** 点击登录按钮 */
