@@ -60,10 +60,6 @@
           .then(() => {
             router.push('/')
           })
-          .catch(() => {
-            loginForm.password = ''
-            loginForm.username = ''
-          })
           .finally(() => {
             loginLoading.value = false
           })
