@@ -8,7 +8,7 @@
     <!-- 未拖拽到的部分 -->
     <div class="fail_bar"></div>
     <!-- 文字提示 -->
-    <span class="verify_tip" :style="{ color: isEnd ? '#fff' : '#6b7280' }">
+    <span class="verify_tip" :style="{ color: isEnd ? '#fff' : 'transparent' }">
       {{ isEnd ? '验证通过' : '请按住滑块拖动' }}
     </span>
   </div>
@@ -196,7 +196,29 @@
       width: 100%;
       height: 100%;
       font-size: 12px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-clip: text;
+      background-size: 200%;
+      animation: lightSweep 10s infinite;
     }
+
+    @keyframes lightSweep {
+      0% {
+        background-position: -200%;
+      }
+      50% {
+        background-position: 200%;
+      }
+      100% {
+        background-position: -200%;
+      }
+    }
+
     .fail_bar {
       position: absolute;
       top: 0;
