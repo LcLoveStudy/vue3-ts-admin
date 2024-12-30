@@ -17,6 +17,9 @@
           class="mt-8"
         />
       </el-form-item>
+      <el-form-item prop="validate">
+        <slider-verify class="mt-8" v-model:status="loginForm.status" width="100%" />
+      </el-form-item>
     </el-form>
     <el-button @click="loginHandler" :loading="loginLoading" class="w-full mt-8" type="primary">
       登录
@@ -25,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+  import SliderVerify from '@/components/slider-verify'
   import DogIcon from '@/assets/images/login/dog.png'
   import { useUserStore } from '@/stores/modules/user'
   import type { FormInstance, FormRules } from 'element-plus'
@@ -33,14 +37,16 @@
   const loginFormRef = ref<FormInstance>()
   const loginForm = reactive({
     username: '',
-    password: ''
+    password: '',
+    status: false
   })
 
   const loginLoading = ref(false)
 
   const rules = reactive<FormRules>({
     username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-    password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+    password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+    status: [{ required: true, message: '请拖动滑块验证' }]
   })
 
   /** 点击登录按钮 */
