@@ -8,7 +8,7 @@
     <!-- 未拖拽到的部分 -->
     <div class="fail_bar"></div>
     <!-- 文字提示 -->
-    <span class="verify_tip" :style="{ color: isEnd ? '#fff' : '#000' }">
+    <span class="verify_tip" :style="{ color: isEnd ? '#fff' : '#64748b' }">
       {{ isEnd ? '验证通过' : '请按住滑块拖动' }}
     </span>
   </div>
@@ -53,16 +53,25 @@
 
   /** 处理鼠标抬起 */
   const mouseUpHandler = () => {
+    if (!rockerDom.value) return
     if (selectRocker.value) {
       const sliderBoxDom = document.querySelector('.slider_verify_box') as HTMLDivElement
       selectRocker.value = false
       cursorInitPlace = 0
       if (
-        (rockerDom.value as HTMLDivElement).style.left !==
-        sliderBoxDom?.clientWidth - (rockerDom.value as HTMLDivElement).clientWidth + 'px'
+        rockerDom.value.style.left !==
+        sliderBoxDom?.clientWidth - rockerDom.value.clientWidth + 'px'
       ) {
-        ;(document.querySelector('.fail_bar') as HTMLDivElement).style.left = '0px'
-        ;(rockerDom.value as HTMLDivElement).style.left = '0px'
+        const failBarDom = document.querySelector('.fail_bar') as HTMLDivElement
+        rockerDom.value.style.transition = 'all 0.5s'
+        failBarDom.style.transition = 'all 0.5s'
+        failBarDom.style.left = '0px'
+        rockerDom.value.style.left = '0px'
+        setTimeout(() => {
+          if (!rockerDom.value) return
+          rockerDom.value.style.transition = 'none'
+          failBarDom.style.transition = 'none'
+        }, 500)
       } else {
         isEnd.value = true
       }
@@ -102,8 +111,11 @@
 
   /** 重置 */
   const resetVerify = () => {
-    ;(document.querySelector('.fail_bar') as HTMLDivElement).style.left = '0px'
-    ;(rockerDom.value as HTMLDivElement).style.left = '0px'
+    if (!rockerDom.value) return
+    const failBarDom = document.querySelector('.fail_bar') as HTMLDivElement
+    if (!failBarDom) return
+    failBarDom.style.left = '0px'
+    rockerDom.value.style.left = '0px'
     isEnd.value = false
   }
 
@@ -152,13 +164,13 @@
 
 <style scoped lang="less">
   .slider_verify_box {
-    border: 1px solid #ccc;
+    border: 1px solid #334155;
     position: relative;
     border-radius: 5px;
     overflow: hidden;
     min-width: 180px;
     width: v-bind(width);
-    height: 40px;
+    height: 45px;
     background-color: #67c23a;
     .slider_rocker {
       position: absolute;
@@ -167,8 +179,8 @@
       cursor: move;
       z-index: 2;
       height: 100%;
-      width: 40px;
-      background-color: #fff;
+      width: 45px;
+      background-color: #334155;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -190,7 +202,7 @@
       top: 0;
       height: 100%;
       width: 100%;
-      background-color: #eee;
+      background-color: #16181c;
     }
   }
 </style>
