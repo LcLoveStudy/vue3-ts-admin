@@ -52,7 +52,7 @@
   /** 点击登录按钮 */
   const loginHandler = () => {
     if (!loginFormRef.value) return
-    loginFormRef.value.validate(async (valid, fields) => {
+    loginFormRef.value.validate(async (valid) => {
       if (valid) {
         const { username, password } = loginForm
         loginLoading.value = true
