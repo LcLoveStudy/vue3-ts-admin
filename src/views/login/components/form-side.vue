@@ -12,7 +12,7 @@
       :model="loginForm"
       :rules="rules"
       label-width="auto"
-      class="tablet:mt-8 phone:mt-[2vh]"
+      class="tablet:mt-8 phone:mt-[3vh]"
     >
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" placeholder="请输入用户名" />
