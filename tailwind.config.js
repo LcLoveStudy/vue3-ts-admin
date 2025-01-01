@@ -2,7 +2,13 @@
 module.exports = {
   content: ['./index.html', './src/**/*.vue'],
   theme: {
-    extend: {}
+    extend: {
+      screens: {
+        phone: '320px', // 自定义断点
+        tablet: '640px',
+        desktop: '1280px'
+      }
+    }
   },
   variants: {
     extend: {}

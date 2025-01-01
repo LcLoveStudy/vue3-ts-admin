@@ -1,5 +1,5 @@
 <template>
-  <div class="primary_box flex items-center justify-center">
+  <div class="primary_box phone:hidden tablet:flex items-center justify-center">
     <img class="w-1/3 select-none primary_img" :src="PrimaryImg" />
   </div>
 </template>

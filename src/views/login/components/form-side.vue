@@ -1,11 +1,19 @@
 <template>
-  <div class="bg-[#16181c] text-white px-12">
-    <div class="flex items-center gap-4 mt-16 select-none">
-      <h1 class="text-5xl">欢迎回来</h1>
-      <img class="w-16" :src="DogIcon" />
+  <div class="bg-[#16181c] text-white tablet:px-12 phone:px-[5vw]">
+    <div class="flex items-center gap-4 tablet:mt-16 phone:mt-[4vh] select-none">
+      <h1 class="tablet:text-5xl phone:text-[24px]">欢迎回来</h1>
+      <img class="tablet:w-16 phone:w-[36px]" :src="DogIcon" />
     </div>
-    <div class="mt-6 text-xl text-slate-200 select-none">输入您的账号密码登录系统</div>
-    <el-form ref="loginFormRef" :model="loginForm" :rules="rules" label-width="auto" class="mt-8">
+    <div class="mt-6 tablet:text-xl phone:text-[14px] text-slate-200 select-none">
+      输入您的账号密码登录系统
+    </div>
+    <el-form
+      ref="loginFormRef"
+      :model="loginForm"
+      :rules="rules"
+      label-width="auto"
+      class="tablet:mt-8 phone:mt-[2vh]"
+    >
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" placeholder="请输入用户名" />
       </el-form-item>
@@ -87,7 +95,6 @@
   }
   :deep(.el-input__inner) {
     color: white;
-    font-size: 1.5rem;
   }
   :deep(.el-form-item__error) {
     margin-top: 7px;

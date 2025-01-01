@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full grid grid-cols-[2fr_1fr]">
+  <div class="h-full grid tablet:grid-cols-[2fr_1fr]">
     <primary-side />
     <form-side />
   </div>
