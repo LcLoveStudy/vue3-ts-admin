@@ -109,6 +109,78 @@
     }
   }
 
+  /** 判断是否是滑块的事件 */
+  const isSliderEvent = (e: Event) => {
+    return rockerDom.value?.contains(e.target as Node)
+  }
+
+  /** 处理触摸事件 - 按下 */
+  const touchStartHandler = (e: TouchEvent) => {
+    // 只有在滑块上按下时才允许禁用滚动
+    if (!isSliderEvent(e)) return
+    cursorInitPlace = e.touches[0].clientX
+    selectRocker.value = true
+    // 禁用默认行为
+    e.preventDefault()
+  }
+
+  /** 处理触摸事件 - 移动 */
+  const touchMoveHandler = (e: TouchEvent) => {
+    if (!selectRocker.value || !isSliderEvent(e)) return
+
+    // 禁用默认行为（防止页面滚动）
+    e.preventDefault()
+
+    const sliderBoxDom = document.querySelector('.slider_verify_box')
+    if (sliderBoxDom?.contains(e.target as Node)) {
+      const moveDistance =
+        e.touches[0].clientX - rockerInitPlace - (cursorInitPlace - rockerInitPlace)
+      const failBarDom = document.querySelector('.fail_bar') as HTMLDivElement
+      failBarDom.style.left = moveDistance + (rockerDom.value as HTMLDivElement).clientWidth + 'px'
+      if (moveDistance <= 0) {
+        isEnd.value = false
+        ;(rockerDom.value as HTMLDivElement).style.left = '0px'
+      } else if (
+        moveDistance >=
+        sliderBoxDom?.clientWidth - (rockerDom.value as HTMLDivElement).clientWidth - 10
+      ) {
+        isEnd.value = true
+        ;(rockerDom.value as HTMLDivElement).style.left =
+          sliderBoxDom?.clientWidth - (rockerDom.value as HTMLDivElement).clientWidth + 'px'
+      } else {
+        isEnd.value = false
+        ;(rockerDom.value as HTMLDivElement).style.left = moveDistance + 'px'
+      }
+    }
+  }
+
+  /** 处理触摸事件 - 结束 */
+  const touchEndHandler = () => {
+    if (!rockerDom.value) return
+    if (selectRocker.value) {
+      selectRocker.value = false
+      cursorInitPlace = 0
+      const sliderBoxDom = document.querySelector('.slider_verify_box') as HTMLDivElement
+      if (
+        rockerDom.value.style.left !==
+        sliderBoxDom?.clientWidth - rockerDom.value.clientWidth + 'px'
+      ) {
+        const failBarDom = document.querySelector('.fail_bar') as HTMLDivElement
+        rockerDom.value.style.transition = 'all 0.5s'
+        failBarDom.style.transition = 'all 0.5s'
+        failBarDom.style.left = '0px'
+        rockerDom.value.style.left = '0px'
+        setTimeout(() => {
+          if (!rockerDom.value) return
+          rockerDom.value.style.transition = 'none'
+          failBarDom.style.transition = 'none'
+        }, 500)
+      } else {
+        isEnd.value = true
+      }
+    }
+  }
+
   /** 重置 */
   const resetVerify = () => {
     if (!rockerDom.value) return
@@ -127,21 +199,31 @@
         window.removeEventListener('mousedown', mouseDownHandler)
         window.removeEventListener('mouseup', mouseUpHandler)
         window.removeEventListener('mousemove', mouseMoveHandler)
+        window.removeEventListener('touchstart', touchStartHandler)
+        window.removeEventListener('touchmove', touchMoveHandler)
+        window.removeEventListener('touchend', touchEndHandler)
         status.value = true
         emits('onSuccess')
       } else {
         window.addEventListener('mousedown', mouseDownHandler)
         window.addEventListener('mouseup', mouseUpHandler)
         window.addEventListener('mousemove', mouseMoveHandler)
+        window.addEventListener('touchstart', touchStartHandler)
+        window.addEventListener('touchmove', touchMoveHandler)
+        window.addEventListener('touchend', touchEndHandler)
         status.value = false
       }
     }
   )
+
   /** 初始化时执行 */
   const rockerMove = () => {
     window.addEventListener('mousedown', mouseDownHandler)
     window.addEventListener('mouseup', mouseUpHandler)
     window.addEventListener('mousemove', mouseMoveHandler)
+    window.addEventListener('touchstart', touchStartHandler, { passive: false })
+    window.addEventListener('touchmove', touchMoveHandler, { passive: false })
+    window.addEventListener('touchend', touchEndHandler, { passive: false })
   }
 
   onMounted(() => {
@@ -159,6 +241,9 @@
     window.removeEventListener('mousedown', mouseDownHandler)
     window.removeEventListener('mouseup', mouseUpHandler)
     window.removeEventListener('mousemove', mouseMoveHandler)
+    window.removeEventListener('touchstart', touchStartHandler)
+    window.removeEventListener('touchmove', touchMoveHandler)
+    window.removeEventListener('touchend', touchEndHandler)
   })
 </script>
 
