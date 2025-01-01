@@ -85,9 +85,9 @@
 <script setup lang="ts">
   import { routes } from '@/router/index'
   import { hasRole } from '@/utils'
-  import { useUserStore, useLayoutStore } from '@/stores'
+  import { useUserStore, useCustomStore } from '@/stores'
   import { storeToRefs } from 'pinia'
-  const { asideMenuFold } = storeToRefs(useLayoutStore())
+  const { asideMenuFold } = storeToRefs(useCustomStore())
   const { userinfo } = useUserStore()
   const userType = userinfo?.userType ? userinfo.userType : 'admin'
   const route = useRoute()

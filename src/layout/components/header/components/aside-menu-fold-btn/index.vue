@@ -7,8 +7,8 @@
 
 <script setup lang="ts">
   import { storeToRefs } from 'pinia'
-  import { useLayoutStore } from '@/stores'
-  const { asideMenuFold } = storeToRefs(useLayoutStore())
+  import { useCustomStore } from '@/stores'
+  const { asideMenuFold } = storeToRefs(useCustomStore())
 </script>
 
 <style lang="less" scoped>
