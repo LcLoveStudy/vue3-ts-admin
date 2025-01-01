@@ -2,7 +2,7 @@
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import router from '@/router'
-import store from '@/stores'
+import { createPinia } from 'pinia'
 // init
 import useElPlus from '@/components/useElPlus'
 import useMyComponents from '@/components/useMyComponents'
@@ -23,7 +23,7 @@ setupGlobDirectives(app)
 useElPlus(app)
 useMyComponents(app)
 
-app.use(store).use(router)
+app.use(createPinia()).use(router)
 
 router.isReady().then(() => {
   app.mount('#app')

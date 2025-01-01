@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
   import { storeToRefs } from 'pinia'
-  import { useLayoutStore } from '@/stores/modules/layout'
+  import { useLayoutStore } from '@/stores'
   const { asideMenuFold } = storeToRefs(useLayoutStore())
 </script>
 

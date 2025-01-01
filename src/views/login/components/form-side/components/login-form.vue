@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
   import SliderVerify from '@/components/slider-verify'
-  import { useUserStore } from '@/stores/modules/user'
+  import { useUserStore } from '@/stores'
   import type { FormInstance, FormRules } from 'element-plus'
   const router = useRouter()
   const { login } = useUserStore()

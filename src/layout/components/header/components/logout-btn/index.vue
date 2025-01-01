@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useUserStore } from '@/stores/modules/user'
+  import { useUserStore } from '@/stores'
   const { logout } = useUserStore()
   const router = useRouter()
   /** 点击退出登录 */

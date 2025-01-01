@@ -8,7 +8,7 @@
       :default-active="currentRoute"
     >
       <!-- 从这里开始循环菜单 -->
-      <template v-for="menu in routes" :key="menu.routePath">
+      <template v-for="menu in routes" :key="menu.path">
         <!-- 这里开始时只有一级菜单 -->
         <el-menu-item
           v-if="
@@ -85,8 +85,7 @@
 <script setup lang="ts">
   import { routes } from '@/router/index'
   import { hasRole } from '@/utils'
-  import { useUserStore } from '@/stores/modules/user'
-  import { useLayoutStore } from '@/stores/modules/layout'
+  import { useUserStore, useLayoutStore } from '@/stores'
   import { storeToRefs } from 'pinia'
   const { asideMenuFold } = storeToRefs(useLayoutStore())
   const { userinfo } = useUserStore()
