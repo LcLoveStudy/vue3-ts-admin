@@ -11,6 +11,24 @@ module.exports = {
       },
       colors: {
         'dark-primary': '#1d2025'
+      },
+      backgroundImage: {
+        'img-dark': `radial-gradient(
+            circle at center,
+            black 0%,
+            black 25%,
+            #1e2a47 50%,
+            black 75%,
+            black 100%
+          )`,
+        'img-light': `radial-gradient(
+            circle at center,
+            #f8fafc 0%,
+            #f8fafc 25%,
+            #dbeafe 50%,
+            #f8fafc 75%,
+            #f8fafc 100%
+          )`
       }
     }
   },

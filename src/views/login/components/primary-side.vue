@@ -1,5 +1,7 @@
 <template>
-  <div class="primary_box phone:hidden tablet:flex items-center justify-center">
+  <div
+    class="primary_box bg-img-light dark:bg-img-dark phone:hidden tablet:flex items-center justify-center"
+  >
     <img class="w-1/3 select-none primary_img" :src="PrimaryImg" />
   </div>
 </template>
@@ -10,15 +12,6 @@
 
 <style lang="less" scoped>
   .primary_box {
-    /** 径像渐变 */
-    background-image: radial-gradient(
-      circle at center,
-      black 0%,
-      black 25%,
-      #1e2a47 50%,
-      black 75%,
-      black 100%
-    );
     @keyframes riseAndFall {
       0% {
         transform: translateY(0);
