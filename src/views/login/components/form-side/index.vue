@@ -1,7 +1,7 @@
 <template>
   <div class="dark:bg-[#16181c] dark:text-white tablet:px-12 phone:px-[5vw] phone:pt-6">
     <div class="flex items-center justify-end">
-      <div class="px-8 py-4 rounded-full flex items-center dark:bg-dark-primary">
+      <div class="px-8 py-4 rounded-full flex items-center bg-slate-100 dark:bg-dark-primary">
         <theme-checkout class="cursor-pointer" />
       </div>
     </div>
