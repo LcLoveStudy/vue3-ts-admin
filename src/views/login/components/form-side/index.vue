@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-[#16181c] text-white tablet:px-12 phone:px-[5vw] phone:pt-6">
+  <div class="dark:bg-[#16181c] dark:text-white tablet:px-12 phone:px-[5vw] phone:pt-6">
     <div class="flex items-center justify-end">
-      <div class="px-8 py-4 rounded-full flex items-center bg-dark-primary">
+      <div class="px-8 py-4 rounded-full flex items-center dark:bg-dark-primary">
         <theme-checkout class="cursor-pointer" />
       </div>
     </div>
@@ -9,7 +9,7 @@
       <h1 class="tablet:text-5xl phone:text-[24px]">欢迎回来</h1>
       <img class="tablet:w-16 phone:w-[36px]" :src="DogIcon" />
     </div>
-    <div class="mt-6 tablet:text-xl phone:text-[14px] text-slate-200 select-none">
+    <div class="mt-6 tablet:text-xl phone:text-[14px] dark:text-slate-200 select-none">
       输入您的账号密码登录系统
     </div>
     <login-form />
