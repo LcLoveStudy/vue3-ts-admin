@@ -1,6 +1,6 @@
 <template>
-  <sun-icon @click="theme = 'dark'" v-if="theme === 'light'" />
-  <moon-icon @click="theme = 'light'" v-else />
+  <sun-icon @click="checkoutTheme" v-if="theme === 'light'" />
+  <moon-icon @click="checkoutTheme" v-else />
 </template>
 
 <script setup lang="ts">
@@ -9,4 +9,5 @@
   import { useCustomStore } from '@/stores'
   import { storeToRefs } from 'pinia'
   const { theme } = storeToRefs(useCustomStore())
+  const { checkoutTheme } = useCustomStore()
 </script>
