@@ -1,13 +1,19 @@
 <template>
   <el-form ref="loginFormRef" :model="loginForm" :rules="rules" class="tablet:mt-8 phone:mt-[3vh]">
     <el-form-item prop="username">
-      <el-input v-model="loginForm.username" placeholder="请输入用户名" />
+      <div class="bg-dark-primary mt-8 w-full">
+        <el-input v-model="loginForm.username" placeholder="请输入用户名" />
+      </div>
     </el-form-item>
     <el-form-item prop="password">
-      <el-input v-model="loginForm.password" placeholder="请输入密码" show-password class="mt-8" />
+      <div class="bg-dark-primary mt-8 w-full">
+        <el-input v-model="loginForm.password" placeholder="请输入密码" show-password />
+      </div>
     </el-form-item>
     <el-form-item prop="status">
-      <slider-verify class="mt-8" v-model:status="loginForm.status" width="100%" />
+      <div class="bg-dark-primary mt-8 w-full">
+        <slider-verify v-model:status="loginForm.status" width="100%" />
+      </div>
     </el-form-item>
   </el-form>
   <el-button @click="loginHandler" :loading="loginLoading" class="w-full mt-8" type="primary">

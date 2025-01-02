@@ -5,6 +5,7 @@ import { useLocalStorage } from '@/hooks'
 
 export const useCustomStore = defineStore('custom', () => {
   const asideMenuFold = ref(false)
+  const theme = useLocalStorage<'dark' | 'light'>(LocalStorageKeys.THEME, 'light') // 主题色
   const menuPosition = useLocalStorage<'aside' | 'top'>(LocalStorageKeys.MENUPOSITION, 'aside')
-  return { menuPosition, asideMenuFold }
+  return { menuPosition, asideMenuFold, theme }
 })

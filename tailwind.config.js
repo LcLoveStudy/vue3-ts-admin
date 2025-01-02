@@ -7,6 +7,9 @@ module.exports = {
         phone: '320px', // 自定义断点
         tablet: '640px',
         desktop: '1280px'
+      },
+      colors: {
+        'dark-primary': '#1d2025'
       }
     }
   },
