@@ -1,0 +1,1 @@
+import{_ as o}from"./index-b47be323.js";import{ag as t,y as _,z as c,P as n}from"./vue-2ce12c24.js";import"./elementPlus-72f9ee0e.js";import"./elementIcons-50c2eace.js";const r={},s={class:"main"};function a(i,d){const e=t("router-view");return _(),c("div",s,[n(e)])}const u=o(r,[["render",a],["__scopeId","data-v-a085ec3c"]]);export{u as default};
