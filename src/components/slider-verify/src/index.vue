@@ -1,12 +1,12 @@
 <template>
-  <div class="slider_verify_box">
+  <div class="slider_verify_box border-[1px] border-solid border-[#dcdfe6] dark:border-[#334155]">
     <!-- 滑块 -->
-    <div ref="rockerDom" class="slider_rocker">
+    <div ref="rockerDom" class="slider_rocker bg-white dark:bg-[#334155]">
       <el-icon v-if="!isEnd"><SwitchButton /></el-icon>
       <el-icon v-else><Select /></el-icon>
     </div>
     <!-- 未拖拽到的部分 -->
-    <div class="fail_bar"></div>
+    <div class="fail_bar bg-gray-100 dark:bg-dark-primary"></div>
     <!-- 文字提示 -->
     <span class="verify_tip" :style="{ color: isEnd ? '#fff' : 'transparent' }">
       {{ isEnd ? '验证通过' : '请按住滑块拖动' }}
@@ -249,7 +249,6 @@
 
 <style scoped lang="less">
   .slider_verify_box {
-    border: 1px solid #334155;
     position: relative;
     border-radius: 5px;
     overflow: hidden;
@@ -265,7 +264,6 @@
       z-index: 2;
       height: 100%;
       width: 45px;
-      background-color: #334155;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -281,26 +279,21 @@
       width: 100%;
       height: 100%;
       font-size: 12px;
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
+      background: linear-gradient(90deg, #000 0%, #fff 50%, #000 100%);
       background-clip: text;
       background-size: 200%;
-      animation: lightSweep 10s infinite;
+      animation: lightSweep 4s infinite;
     }
 
     @keyframes lightSweep {
       0% {
-        background-position: -200%;
+        background-position: -100%;
       }
       50% {
-        background-position: 200%;
+        background-position: 100%;
       }
       100% {
-        background-position: -200%;
+        background-position: -100%;
       }
     }
 
@@ -309,7 +302,6 @@
       top: 0;
       height: 100%;
       width: 100%;
-      background-color: #16181c;
     }
   }
 </style>

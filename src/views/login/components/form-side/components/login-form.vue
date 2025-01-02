@@ -1,22 +1,22 @@
 <template>
   <el-form ref="loginFormRef" :model="loginForm" :rules="rules" class="tablet:mt-8 phone:mt-[3vh]">
     <el-form-item prop="username">
-      <div class="dark:bg-dark-primary mt-8 w-full">
-        <el-input v-model="loginForm.username" placeholder="请输入用户名" />
-      </div>
+      <el-input v-model="loginForm.username" class="mt-8" placeholder="请输入用户名" />
     </el-form-item>
     <el-form-item prop="password">
-      <div class="dark:bg-dark-primary mt-8 w-full">
-        <el-input v-model="loginForm.password" placeholder="请输入密码" show-password />
-      </div>
+      <el-input v-model="loginForm.password" class="mt-8" placeholder="请输入密码" show-password />
     </el-form-item>
     <el-form-item prop="status">
-      <div class="bg-dark-primary mt-8 w-full">
-        <slider-verify v-model:status="loginForm.status" width="100%" />
-      </div>
+      <slider-verify v-model:status="loginForm.status" width="100%" class="mt-8" />
     </el-form-item>
   </el-form>
-  <el-button @click="loginHandler" :loading="loginLoading" class="w-full mt-8" type="primary">
+  <el-button
+    @click="loginHandler"
+    size="large"
+    :loading="loginLoading"
+    class="w-full mt-8"
+    type="primary"
+  >
     登录
   </el-button>
 </template>
@@ -72,13 +72,8 @@
 
 <style lang="less" scoped>
   :deep(.el-input__wrapper) {
-    background: transparent;
-    box-shadow: 0 0 0 1px #334155 inset;
     padding: 8px 16px;
     border-radius: 8px;
-  }
-  :deep(.el-input__inner) {
-    color: white;
   }
   :deep(.el-form-item__error) {
     margin-top: 7px;

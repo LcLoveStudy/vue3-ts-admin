@@ -1,5 +1,5 @@
 <template>
-  <sun-icon @click="checkoutTheme" v-if="theme === 'light'" />
+  <sun-icon @click="checkoutTheme" v-if="theme === 'dark'" />
   <moon-icon @click="checkoutTheme" v-else />
 </template>
 
