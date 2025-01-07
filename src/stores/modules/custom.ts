@@ -8,11 +8,6 @@ export const useCustomStore = defineStore('custom', () => {
   const theme = useLocalStorage<'dark' | 'light'>(LocalStorageKeys.THEME, 'light') // 主题色
   /** 切换默认主题 */
   const checkoutTheme = () => {
-    if (!document.startViewTransition) {
-      theme.value = theme.value === 'dark' ? 'light' : 'dark'
-      document.documentElement.classList.toggle('dark')
-      return
-    }
     const transition = document.startViewTransition(() => {
       theme.value = theme.value === 'dark' ? 'light' : 'dark'
       document.documentElement.classList.toggle('dark')
