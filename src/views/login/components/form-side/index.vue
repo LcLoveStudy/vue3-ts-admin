@@ -4,7 +4,7 @@
       <div
         class="phone:px-[16px] phone:py-[8px] tablet:mt-0 phone:mt-[4vh] tablet:px-8 tablet:py-4 rounded-full flex items-center bg-slate-100 dark:bg-dark-primary"
       >
-        <theme-checkout class="cursor-pointer" />
+        <theme-checkout />
       </div>
     </div>
     <div class="flex items-center gap-4 tablet:mt-8 phone:mt-[4vh] select-none">

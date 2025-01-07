@@ -1,6 +1,8 @@
 <template>
-  <sun-icon @click="checkoutTheme" v-if="theme === 'dark'" />
-  <moon-icon @click="checkoutTheme" v-else />
+  <div class="flex items-center cursor-pointer theme-btn">
+    <sun-icon @click="checkoutTheme" v-if="theme === 'dark'" />
+    <moon-icon @click="checkoutTheme" v-else />
+  </div>
 </template>
 
 <script setup lang="ts">
