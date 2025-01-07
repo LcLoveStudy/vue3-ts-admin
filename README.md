@@ -8,7 +8,8 @@ This repository use `vue3.4` + `typescript` + `element-plus` + `tailwindcss`;Sec
 
 1. Login
 
-   ![alt text](./src/assets/images/image.png)
+   ![alt text](./src/assets/images/dark.png)
+   ![alt text](./src/assets/images/light.png)
 
 2. Home
    ![alt text](./src/assets/images/image-1.png)
