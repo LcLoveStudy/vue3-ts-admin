@@ -1,7 +1,9 @@
 <template>
   <el-container class="container fs-base">
     <!-- 右边头部 -->
-    <el-header class="header">
+    <el-header
+      class="header border-0 border-b-[1px] border-solid border-[#ebebeb] dark:border-[#424242] bg-white dark:bg-dark-primary"
+    >
       <Header />
     </el-header>
     <!-- 右边主体 -->
@@ -37,8 +39,6 @@
     .header {
       padding: 0;
       height: 7vh;
-      background-color: var(--container-bgc);
-      border-bottom: 1px solid #ebebeb;
       z-index: 2;
     }
     .main_container {

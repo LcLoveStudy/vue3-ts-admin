@@ -1,7 +1,7 @@
 <template>
   <div class="menu_container overflow-y-auto">
     <el-menu
-      class="aside_menu"
+      class="aside_menu bg-white dark:bg-dark-primary"
       :collapse="asideMenuFold"
       router
       text-color="#333"
@@ -16,7 +16,7 @@
           "
           :index="menu.path"
         >
-          <el-icon :icon="menu.meta.icon">
+          <el-icon class="desktop:text-base" :icon="menu.meta.icon">
             <template v-if="menu.meta.icon">
               <component :is="menu.meta.icon" />
             </template>
@@ -28,7 +28,7 @@
         <template v-else-if="!menu.meta.hideMenu && hasRole(userType, menu.meta.role)">
           <el-sub-menu :index="menu.path">
             <template #title>
-              <el-icon class="icon">
+              <el-icon class="text-base">
                 <template v-if="menu.meta.icon">
                   <component :is="menu.meta.icon" />
                 </template>
@@ -108,7 +108,6 @@
   .aside_menu {
     height: 100%;
     font-weight: 400;
-    background-color: var(--container-bgc);
   }
   .menu_container {
     height: 100%;
