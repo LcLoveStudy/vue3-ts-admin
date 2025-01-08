@@ -7,12 +7,14 @@
       <lc-breadcrumb />
     </div>
     <div class="flex items-center mr-12">
+      <ThemeCheckout />
       <logout-button />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import { ThemeCheckout } from '@/views/login/components/form-side/components'
   import { AsideMenuFoldBtn, logoutButton, LcBreadcrumb } from './components'
 </script>
 
