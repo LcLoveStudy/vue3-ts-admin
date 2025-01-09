@@ -25,19 +25,6 @@ export default {
       component: () => import('@/views/sys/documents/code/slider-verify.vue')
     },
     {
-      path: '/documents/code/pagination',
-      name: 'pagination',
-      meta: {
-        title: '分页Pagination',
-        hideMenu: false,
-        hideBreadcrumb: false,
-        hideChildrenInMenu: false,
-        role: ['admin', 'superadmin', 'user']
-      },
-      children: [],
-      component: () => import('@/views/sys/documents/code/pagination.vue')
-    },
-    {
       path: '/documents/code/count-to',
       name: 'count-to',
       meta: {

@@ -5,7 +5,6 @@ import router from '@/router'
 import { createPinia } from 'pinia'
 // init
 import useElPlus from '@/components/useElPlus'
-import useMyComponents from '@/components/useMyComponents'
 import setupGlobDirectives from '@/directive'
 // css
 import './tailwind.css'
@@ -22,7 +21,6 @@ setupGlobDirectives(app)
 
 /** mount element-plus and custom components */
 useElPlus(app)
-useMyComponents(app)
 
 app.use(createPinia()).use(router)
 
