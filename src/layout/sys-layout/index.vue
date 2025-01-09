@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex">
-    <div class="h-full">
+    <div class="h-full w-auto">
       <slot name="aside"></slot>
     </div>
     <div class="flex-1 h-full">
