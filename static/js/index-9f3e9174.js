@@ -1,1 +1,0 @@
-import{i as t}from"./echarts-702d66e5.js";import{S as n}from"./vue-2ce12c24.js";const r=e=>t(document.getElementById(e)),s=e=>{window.addEventListener("resize",()=>{e.resize()}),n(()=>{window.removeEventListener("resize",()=>{e.resize()})})},d=()=>Math.random().toString();export{d as g,r as i,s as u};
