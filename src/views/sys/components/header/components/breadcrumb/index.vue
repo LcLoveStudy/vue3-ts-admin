@@ -1,12 +1,16 @@
 <template>
-  <div class="flex items-center text-base text-[#666] ml-4">
-    <template v-for="item in breadCrumbs" :key="item.path">
+  <div class="flex items-center text-base text-[#666] dark:text-slate-300 ml-4">
+    <template v-for="item in breadCrumbs" :key="item.name">
       <div class="flex items-center">
         <el-icon class="mr-2" :icon="item.icon" v-if="item.icon !== ''">
           <component :is="item.icon" />
           <!-- 动态渲染icon -->
         </el-icon>
-        <span :class="[{ 'text-[#333]': item === breadCrumbs[breadCrumbs.length - 1] }]">
+        <span
+          :class="[
+            item === breadCrumbs[breadCrumbs.length - 1] ? 'text-[#333] dark:text-white' : ''
+          ]"
+        >
           {{ item.name }}
         </span>
       </div>
