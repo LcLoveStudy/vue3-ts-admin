@@ -1,9 +1,8 @@
 <template>
   <el-menu
-    class="aside_menu bg-white dark:bg-dark-primary"
+    class="bg-white dark:bg-dark-primary"
     :collapse="asideMenuFold"
     router
-    text-color="#333"
     :default-active="currentRoute"
   >
     <!-- 从这里开始循环菜单 -->

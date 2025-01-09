@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full flex">
     <div
-      class="h-full duration-[380ms] overflow-hidden"
+      class="h-full desktop:p-2 duration-[380ms] overflow-hidden bg-white dark:bg-dark-primary"
       :class="[asideMenuFold ? 'w-[5vw]' : 'w-[15vw]']"
     >
       <slot name="aside"></slot>
