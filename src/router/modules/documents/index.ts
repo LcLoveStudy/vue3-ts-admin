@@ -1,6 +1,5 @@
 import directives from './directives'
 import components from './components'
-import echarts from './echarts'
 const DOCUMENTS: RouterType = {
   path: '/documents',
   name: 'documents',
@@ -13,6 +12,6 @@ const DOCUMENTS: RouterType = {
     hideChildrenInMenu: false,
     role: ['admin', 'superadmin', 'user']
   },
-  children: [components, echarts, directives]
+  children: [components, directives]
 }
 export default DOCUMENTS
