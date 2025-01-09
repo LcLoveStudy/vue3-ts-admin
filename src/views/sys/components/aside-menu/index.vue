@@ -101,15 +101,3 @@
     { immediate: true, deep: true }
   )
 </script>
-
-<style scoped lang="less">
-  .aside_menu {
-    height: 100%;
-    font-weight: 400;
-  }
-  //折叠起来页不会改变宽度
-  .aside_menu:not(.el-menu--collapse) {
-    width: 15vw;
-    min-height: 25rem;
-  }
-</style>

@@ -1,9 +1,12 @@
 <template>
   <div class="w-full h-full flex">
-    <div class="h-full w-auto">
+    <div
+      class="h-full duration-[380ms] overflow-hidden"
+      :class="[asideMenuFold ? 'w-[5vw]' : 'w-[15vw]']"
+    >
       <slot name="aside"></slot>
     </div>
-    <div class="flex-1 h-full">
+    <div class="h-full duration-[380ms]" :class="[asideMenuFold ? 'w-[95vw]' : 'w-[85vw]']">
       <div class="h-[7vh] bg-white dark:bg-dark-primary">
         <slot name="header"></slot>
       </div>
@@ -14,4 +17,8 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { useCustomStore } from '@/stores'
+  import { storeToRefs } from 'pinia'
+  const { asideMenuFold } = storeToRefs(useCustomStore())
+</script>
