@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full flex">
     <div
-      class="h-full desktop:p-2 duration-[380ms] border-0 border-r-[1px] border-solid border-[#eee] dark:border-[#434343] overflow-hidden bg-white dark:bg-dark-primary"
+      class="h-full tablet:p-2 duration-[380ms] border-0 border-r-[1px] border-solid border-[#eee] dark:border-[#434343] overflow-hidden bg-white dark:bg-dark-primary"
       :class="[asideMenuFold ? 'w-[5vw]' : 'w-[15vw]']"
     >
       <slot name="aside"></slot>
@@ -12,7 +12,7 @@
       >
         <slot name="header"></slot>
       </div>
-      <div class="desktop:p-6 bg-[--container-main-bgc] h-[93vh]">
+      <div class="tablet:p-6 bg-[--container-main-bgc] h-[93vh]">
         <router-view />
       </div>
     </div>
