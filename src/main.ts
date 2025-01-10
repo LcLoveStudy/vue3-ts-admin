@@ -12,6 +12,7 @@ import '@/utils/page/rem'
 import '@/design/index.less'
 import '@/assets/style/reset.css'
 import '@/assets/style/dark.less'
+import 'element-plus/theme-chalk/dark/css-vars.css'
 import 'highlight.js/styles/github-dark-dimmed.css' // 代码着色
 
 const app = createApp(App)
