@@ -1,8 +1,10 @@
 <template>
-  <el-icon class="fold_icon text-black dark:text-white" @click="asideMenuFold = !asideMenuFold">
-    <Expand v-if="asideMenuFold" />
-    <Fold v-else />
-  </el-icon>
+  <div class="fold_icon tablet:px-2 rounded" :class="[asideMenuFold ? '' : 'tablet:ml-4']">
+    <el-icon class="text-black dark:text-white" @click="asideMenuFold = !asideMenuFold">
+      <Expand v-if="asideMenuFold" />
+      <Fold v-else />
+    </el-icon>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -13,12 +15,10 @@
 
 <style lang="less" scoped>
   .fold_icon {
-    width: 65px;
-    height: 100%;
-    display: flex;
-    font-size: 1.8rem;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
     cursor: pointer;
   }
 

@@ -4,12 +4,17 @@
       <my-header />
     </template>
     <template #aside>
-      <aside-menu />
+      <div class="h-full">
+        <div class="h-[90%] overflow-y-auto">
+          <aside-menu />
+        </div>
+        <aside-menu-fold-btn />
+      </div>
     </template>
   </sys-layout>
 </template>
 
 <script setup lang="ts">
   import SysLayout from '@/layout/sys-layout/index.vue'
-  import { AsideMenu, Header as MyHeader } from './components'
+  import { AsideMenu, Header as MyHeader, AsideMenuFoldBtn } from './components'
 </script>
