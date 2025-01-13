@@ -1,6 +1,7 @@
 <template>
   <div class="my_header">
     <div class="flex items-center h-full">
+      <phone-menu />
       <!-- 面包屑导航 -->
       <lc-breadcrumb />
     </div>
@@ -13,7 +14,7 @@
 
 <script setup lang="ts">
   import { ThemeCheckout } from '@/views/login/components/form-side/components'
-  import { logoutButton, LcBreadcrumb } from './components'
+  import { logoutButton, LcBreadcrumb, PhoneMenu } from './components'
 </script>
 
 <style scoped lang="less">

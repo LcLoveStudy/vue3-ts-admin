@@ -14,24 +14,24 @@
         "
         :index="menu.path"
       >
-        <el-icon class="desktop:text-base" :icon="menu.meta.icon">
+        <el-icon class="tablet:text-base" :icon="menu.meta.icon">
           <template v-if="menu.meta.icon">
             <component :is="menu.meta.icon" />
           </template>
           <!-- 动态渲染icon -->
         </el-icon>
-        <span>{{ menu.meta.title }}</span>
+        <span class="phone:text-5xl tablet:text-base">{{ menu.meta.title }}</span>
       </el-menu-item>
       <!-- 这里开始是有子菜单的 -->
       <template v-else-if="!menu.meta.hideMenu && hasRole(userType, menu.meta.role)">
         <el-sub-menu :index="menu.path">
           <template #title>
-            <el-icon class="text-base">
+            <el-icon class="phone:text-5xl tablet:text-base">
               <template v-if="menu.meta.icon">
                 <component :is="menu.meta.icon" />
               </template>
             </el-icon>
-            <span>{{ menu.meta.title }}</span>
+            <span class="phone:text-5xl tablet:text-base">{{ menu.meta.title }}</span>
           </template>
           <template v-for="twoMenu in menu.children" :key="twoMenu.path">
             <!-- 这里开始是没有三级菜单的二级菜单 -->
@@ -43,7 +43,9 @@
               "
               :index="twoMenu.path"
             >
-              {{ twoMenu.meta.title }}
+              <span class="phone:text-5xl tablet:text-base">
+                {{ twoMenu.meta.title }}
+              </span>
             </el-menu-item>
             <!-- 这里开始是有三级菜单的二级菜单 -->
             <template
@@ -55,7 +57,7 @@
             >
               <el-sub-menu :key="twoMenu.path" :index="twoMenu.path">
                 <template #title>
-                  <span>{{ twoMenu.meta.title }}</span>
+                  <span class="phone:text-5xl tablet:text-base">{{ twoMenu.meta.title }}</span>
                 </template>
                 <!-- 三级菜单 -->
                 <template v-for="treeMenu in twoMenu.children" :key="treeMenu.path">
@@ -64,7 +66,7 @@
                     :index="treeMenu.path"
                   >
                     <el-tooltip effect="dark" :content="treeMenu.meta.title" placement="right">
-                      <div class="truncate">
+                      <div class="truncate phone:text-5xl tablet:text-base">
                         {{ treeMenu.meta.title }}
                       </div>
                     </el-tooltip>

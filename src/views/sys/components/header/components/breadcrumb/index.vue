@@ -1,8 +1,10 @@
 <template>
-  <div class="flex items-center text-base text-[#666] dark:text-slate-300 ml-4">
+  <div
+    class="flex items-center phone:text-7xl tablet:text-base text-[#666] dark:text-slate-300 phone:ml-[16px] tablet:ml-4"
+  >
     <template v-for="item in breadCrumbs" :key="item.name">
       <div class="flex items-center">
-        <el-icon class="mr-2" :icon="item.icon" v-if="item.icon !== ''">
+        <el-icon class="tablet:mr-2 phone:mr-[8px]" :icon="item.icon" v-if="item.icon !== ''">
           <component :is="item.icon" />
           <!-- 动态渲染icon -->
         </el-icon>
@@ -14,7 +16,10 @@
           {{ item.name }}
         </span>
       </div>
-      <el-icon v-if="item !== breadCrumbs[breadCrumbs.length - 1]" class="mx-2">
+      <el-icon
+        v-if="item !== breadCrumbs[breadCrumbs.length - 1]"
+        class="tablet:mx-2 phone:mx-[8px]"
+      >
         <ArrowRight />
       </el-icon>
     </template>
