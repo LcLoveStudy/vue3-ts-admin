@@ -17,7 +17,7 @@
       >
         <slot name="header"></slot>
       </div>
-      <div class="phone:p-[16px] tablet:p-6 bg-[--container-main-bgc] h-[93vh]">
+      <div class="phone:p-[16px] tablet:p-6 bg-[--container-main-bgc] h-[93vh] overflow-y-auto">
         <router-view />
       </div>
     </div>
