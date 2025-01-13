@@ -54,17 +54,19 @@
   /** 点击登录按钮 */
   const loginHandler = () => {
     if (!loginFormRef.value) return
-    loginFormRef.value.validate(async (valid) => {
+    loginFormRef.value.validate((valid) => {
       if (valid) {
         const { username, password } = loginForm
         loginLoading.value = true
-        await login({ username, password })
-          .then(() => {
-            router.push('/')
-          })
-          .finally(() => {
-            loginLoading.value = false
-          })
+        setTimeout(async () => {
+          await login({ username, password })
+            .then(() => {
+              router.push('/')
+            })
+            .finally(() => {
+              loginLoading.value = false
+            })
+        }, 1000)
       }
     })
   }
