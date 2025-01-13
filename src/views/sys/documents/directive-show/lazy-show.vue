@@ -28,7 +28,7 @@
   </div>
   <!-- 图片列表 -->
   <el-card
-    class="page_main phone:h-[40vh] tablet:h-[80vh] phone:mt-[3vh] tablet:top-[10vh] tablet:right-[1vw] phone:w-[90vw] tablet:w-[50vw]"
+    class="page_main phone:h-[40vh] tablet:h-[80vh] phone:mt-[3vh] tablet:top-[10vh] tablet:right-[1vw] phone:w-[90vw] tablet:w-[40vw]"
   >
     <img
       class="phone:h-[20vh] tablet:h-[60v]"
