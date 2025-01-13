@@ -1,7 +1,7 @@
 <template>
   <div class="my_header">
     <div class="flex items-center h-full">
-      <phone-menu />
+      <phone-menu class="phone:block tablet:hidden" />
       <!-- 面包屑导航 -->
       <lc-breadcrumb />
     </div>
