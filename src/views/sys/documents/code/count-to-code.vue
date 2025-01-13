@@ -9,10 +9,10 @@
       prefix="$"
     />
   </el-card>
-  <h3 class="mt-6">示例</h3>
+  <h3 class="phone:mt-[24px] tablet:mt-6 phone:text-6xl tablet:text-base">示例</h3>
   <!-- 示例代码 -->
   <pre class="w-200">
-    <code class="language-html text-sm">
+    <code class="language-html phone:text-6xl tablet:text-sm">
     &lt;CountTo
       :start-val="100"
       :end-val="2000"

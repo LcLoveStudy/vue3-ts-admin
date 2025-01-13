@@ -1,14 +1,14 @@
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center phone:text-6xl tablet:text-base">
     <SliderVerify ref="slider" v-model:status="status" @on-success="successHandler" />
-    <el-button class="ml-[1rem]" @click="resetVerify">重置</el-button>
+    <el-button class="ml-4" @click="resetVerify">重置</el-button>
   </div>
-  <h3 class="mt-6">示例</h3>
+  <h3 class="phone:mt-[24px] tablet:mt-6 phone:text-6xl tablet:text-base">示例</h3>
   <!-- 示例代码 -->
   <pre class="w-200">
-    <code class="language-html text-sm">
+    <code class="language-html phone:text-6xl tablet:text-sm">
     &lt;SliderVerify ref="slider" v-model:status="status" @on-success="successHandler"/&gt;
-    &lt;el-button class="ml-[1rem]" @click="resetVerify"/&gt;重置&lt;/el-button/&gt;
+    &lt;el-button class="ml-4" @click="resetVerify"/&gt;重置&lt;/el-button/&gt;
     &lt;script setup lang="ts"&gt;
       const slider = ref()
       const status = ref(false)

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center phone:text-7xl tablet:text-base text-[#666] dark:text-slate-300 phone:ml-[16px] tablet:ml-4"
+    class="flex items-center phone:text-5xl tablet:text-base text-[#666] dark:text-slate-300 phone:ml-[16px] tablet:ml-4"
   >
     <template v-for="item in breadCrumbs" :key="item.name">
       <div class="flex items-center">

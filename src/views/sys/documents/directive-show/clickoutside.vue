@@ -1,18 +1,15 @@
 <template>
-  <div class="text-2xl font-semibold">点击目标外(v-clickoutside)</div>
-  <div class="mt-6">
-    <span class="text-[20px] inline-block">应用场景：</span>
-    <br />
-    当点击目标元素外的时候会执行该指令的回调函数
-    <br />
-    <span class="text-[20px] mt-5 inline-block">用法说明:</span>
-    <br />
-    在需要的地方使用v-clickoutside指令
+  <div class="phone:text-7xl tablet:text-2xl font-semibold">点击目标外(v-clickoutside)</div>
+  <div
+    class="phone:mt-[24px] tablet:mt-6 flex flex-col phone:text-6xl tablet:text-xl phone:gap-[20px] tablet:gap-5"
+  >
+    <span class="inline-block">应用场景：</span>
+    <span>当点击目标元素外的时候会执行该指令的回调函数</span>
+    <span class="tablet:mt-5 inline-block">用法说明:</span>
+    <span>在需要的地方使用v-clickoutside指令</span>
     <span class="text-red-700 bgc-lightgray">(指令的值为一个回调函数)</span>
-    <br />
-    <span class="text-[20px] mt-5 inline-block">示例:</span>
-    <br />
-    <pre class="w-[50rem]">
+    <span class="mt-5 inline-block">示例:</span>
+    <pre>
       <code>
         &lt;div <span class="text-red-700">v-clickoutside="clickoutside"</span>&gt;
             点我外面的任何地方都会+1
@@ -28,7 +25,10 @@
       </code>
     </pre>
   </div>
-  <div class="testbox" v-clickoutside="clickoutside">
+  <div
+    class="testbox tablet:top-[100px] tablet:right-[100px] phone:p-[24px] tablet:p-24 phone:text-6xl tablet:text-xl"
+    v-clickoutside="clickoutside"
+  >
     <div>点我外面的任何地方都会+1</div>
     <div class="mt-5">{{ num }}</div>
   </div>
@@ -60,11 +60,7 @@
     justify-content: center;
     align-items: center;
     color: #000;
-    top: 100px;
-    right: 100px;
     position: absolute;
-    width: 20rem;
-    height: 12rem;
     background-color: #fff;
   }
 </style>

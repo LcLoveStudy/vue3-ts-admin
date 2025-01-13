@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-5 gap-4">
+  <div class="grid phone:grid-cols-2 tablet:grid-cols-5 phone:gap-[16px] tablet:gap-4">
     <el-card
       shadow="hover"
       v-for="util in utilsOrigin"
@@ -7,8 +7,12 @@
       @click="goUtils(util.link)"
       class="cursor-pointer"
     >
-      <div class="text-xl text-sky-700 hover:underline underline-offset-4">{{ util.name }}</div>
-      <div class="mt-2 text-sm">{{ util.introduce }}</div>
+      <div class="phone:text-6xl tablet:text-xl text-sky-700 hover:underline underline-offset-4">
+        {{ util.name }}
+      </div>
+      <div class="phone:mt-[8px] tablet:mt-2 phone:text-5xl tablet:text-sm">
+        {{ util.introduce }}
+      </div>
     </el-card>
   </div>
 </template>
