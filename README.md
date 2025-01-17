@@ -1,8 +1,8 @@
 # Vue3.x+Typescript+ElementPlus+Tailwindcss
 
-This repository use `vue3.4` + `typescript` + `element-plus` + `tailwindcss`;Secondary packaging of `Axios`;Automaticakky generate menus and breadcrumb navigation based on router;Equipped with `ESLint`,`Prettier` and other tools;
+This repository use `vue3.5` + `typescript` + `element-plus` + `tailwindcss`;Secondary packaging of `Axios`;Automaticakky generate menus and breadcrumb navigation based on router;Equipped with `ESLint`,`Prettier` and other tools;
 
-<a href="https://lclovestudy.github.io/template-vue3.x-ts/#/login" title="System demonstration">System demonstration</a>
+<a href="https://lclovestudy.github.io/vue3-ts-admin/#/login" title="System demonstration">System demonstration</a>
 
 ## Preview
 
