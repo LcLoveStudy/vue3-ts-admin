@@ -10,18 +10,12 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 .eslintcache
-.vscode
 
 node_modules
-.DS_Store
 dist
 dist-ssr
 coverage
-*.local
-
-
-/cypress/videos/
-/cypress/screenshots/
+*.loca
 
 # Editor directories and files
 .vscode/*
