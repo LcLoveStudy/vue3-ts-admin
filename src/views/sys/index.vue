@@ -5,7 +5,7 @@
     </template>
     <template #aside>
       <div class="h-full">
-        <div class="h-[90%] overflow-y-auto">
+        <div class="h-[90%] overflow-x-hidden overflow-y-auto">
           <aside-menu />
         </div>
         <aside-menu-fold-btn />
