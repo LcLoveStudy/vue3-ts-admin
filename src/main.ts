@@ -4,9 +4,10 @@ import App from '@/App.vue'
 import router from '@/router'
 import { createPinia } from 'pinia'
 // init
-import useElPlus from '@/components/useElPlus'
 import setupGlobDirectives from '@/directive'
+import initPlugins from './plugins'
 // css
+import 'element-plus/dist/index.css'
 import './tailwind.css'
 import '@/utils/page/rem'
 import '@/design/index.less'
@@ -21,7 +22,7 @@ const app = createApp(App)
 setupGlobDirectives(app)
 
 /** mount element-plus and custom components */
-useElPlus(app)
+initPlugins(app)
 
 app.use(createPinia()).use(router)
 
