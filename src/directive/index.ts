@@ -1,7 +1,26 @@
-import type { App } from 'vue'
-import { lazy } from './v-lazy'
-import { clickoutside } from './v-clickoutside'
-const directives = [lazy, clickoutside]
+import type { App, ObjectDirective } from 'vue'
+
+export type DirectiveObject = {
+  name: string
+  method: ObjectDirective
+}
+
+type ExportModuleObject = {
+  [key: string]: DirectiveObject
+}
+
+const directives: DirectiveObject[] = []
+const modules = import.meta.glob('./*.ts', { eager: true })
+
+Object.keys(modules).forEach((key) => {
+  const module = modules[key] as ExportModuleObject
+  if (module) {
+    for (const name in module) {
+      directives.push(module[name])
+    }
+  }
+})
+
 /** 注册全局指令 */
 const createDirective = (app: App<Element>) => {
   directives.forEach((item) => {

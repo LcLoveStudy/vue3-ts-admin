@@ -1,5 +1,6 @@
 import error from '@/assets/images/error.png'
-export const lazy = {
+import type { DirectiveObject } from '.'
+export const lazy: DirectiveObject = {
   name: 'lazy',
   method: {
     mounted(el: HTMLElement, value: any) {

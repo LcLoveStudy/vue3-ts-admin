@@ -1,4 +1,6 @@
-export const clickoutside = {
+import type { DirectiveObject } from '.'
+
+export const clickoutside: DirectiveObject = {
   name: 'clickoutside',
   method: {
     mounted(el: HTMLUnknownElement, value: any) {
