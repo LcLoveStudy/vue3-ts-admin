@@ -1,5 +1,5 @@
-import { LocalStorageKeys } from '@/enums/localstorage'
-import { useLocalStorage, type ProcessHandlerFnType } from '@/hooks'
+import { useUserStore } from '@/stores'
+import { type ProcessHandlerFnType } from '@/hooks'
 import type { AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 /**
@@ -12,7 +12,7 @@ export const initRequestInterceptors = (
 ) => {
   service.interceptors.request.use(
     (config: any) => {
-      const token = useLocalStorage<UserType>(LocalStorageKeys.USERINFO)
+      const { token } = useUserStore()
       const showMessage = config.showMessage
       const message = config.message
       // 是否展示弹框提示，自定义提示信息
@@ -27,8 +27,8 @@ export const initRequestInterceptors = (
         startProcess(config.url)
       }
       // 设置token
-      if (token.value) {
-        config.headers.token = token.value
+      if (token) {
+        config.headers.token = token
       }
       return config
     },
