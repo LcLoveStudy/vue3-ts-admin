@@ -50,6 +50,5 @@ export const useCustomStore = defineStore('custom', () => {
     }
   })
 
-  const menuPosition = useLocalStorage<'aside' | 'top'>(LocalStorageKeys.MENUPOSITION, 'aside')
-  return { menuPosition, asideMenuFold, theme, checkoutTheme }
+  return { asideMenuFold, theme, checkoutTheme }
 })
