@@ -24,9 +24,6 @@ a {
 }
 
 :root {
-  --theme-color: #000;
-  /* 鼠标经过时的颜色 */
-  --hover-backgroundColor: #eeeeee57;
   /* 主体部分的背景颜色 */
   --container-main-bgc: #eceff4;
 }
