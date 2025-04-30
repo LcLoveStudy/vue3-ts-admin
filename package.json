@@ -19,7 +19,6 @@
     "@vitejs/plugin-legacy": "^5.4.1",
     "@vueuse/core": "^10.3.0",
     "axios": "^1.4.0",
-    "echarts": "^5.4.3",
     "element-plus": "^2.9.9",
     "highlight.js": "^11.8.0",
     "less": "^4.3.0",

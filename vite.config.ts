@@ -47,7 +47,6 @@ export default defineConfig({
         // 分包
         manualChunks: {
           vue: ['vue', 'pinia', 'vue-router'],
-          echarts: ['echarts'],
           elementPlus: ['element-plus'],
           elementIcons: ['@element-plus/icons-vue']
         }
