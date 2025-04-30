@@ -25,13 +25,14 @@
       </code>
     </pre>
   </div>
-  <div
-    class="testbox tablet:top-[100px] tablet:right-[100px] phone:p-[24px] tablet:p-24 phone:text-6xl tablet:text-xl"
+  <el-card
+    shadow="hover"
+    class="absolute tablet:top-[100px] tablet:right-[100px] phone:p-[24px] tablet:p-24 phone:text-6xl tablet:text-xl"
     v-clickoutside="clickoutside"
   >
     <div>点我外面的任何地方都会+1</div>
     <div class="mt-5">{{ num }}</div>
-  </div>
+  </el-card>
 </template>
 
 <script setup lang="ts">
@@ -52,15 +53,5 @@
     padding: 5px 10px;
     background-color: #ccc;
     color: rgb(0, 132, 255);
-  }
-
-  .testbox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    position: absolute;
-    background-color: #fff;
   }
 </style>
