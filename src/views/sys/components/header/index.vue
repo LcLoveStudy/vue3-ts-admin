@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ThemeCheckout } from '@/views/login/components/form-side/components'
+  import ThemeCheckout from '@/components/theme-checkout/index.vue'
   import { logoutButton, LcBreadcrumb, PhoneMenu } from './components'
 </script>
 

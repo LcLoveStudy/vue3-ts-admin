@@ -20,5 +20,6 @@
 
 <script setup lang="ts">
   import DogIcon from '@/assets/images/login/dog.png'
-  import { LoginForm, ThemeCheckout } from './components'
+  import ThemeCheckout from '@/components/theme-checkout/index.vue'
+  import { LoginForm } from './components'
 </script>
